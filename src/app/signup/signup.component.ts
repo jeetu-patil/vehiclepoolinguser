@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { User } from '../model/user';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +10,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupComponent implements OnInit {
 
-  constructor() { }
+  user:User=new User();
+
+  constructor(private userService: UserService,private router:Router) { }
 
   ngOnInit(): void {
   }
 
+  signupUser(){
+    this.userService.signupUser(this.user).subscribe(data => {
+      alert("Signup Success!");
+      this.router.navigate(['verification-otp']);
+    });
+  }
 }

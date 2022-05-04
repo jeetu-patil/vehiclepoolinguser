@@ -1,48 +1,47 @@
 <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
-      <form action="#" class="sign-in-form">
         <h2 class="title">Sign up</h2>
         <div class="imgcontainer">
-          <img src="../../assets/Images/profile.png" alt="Avatar" class="avatar">
+          <img src="../../assets/Images/profile.png" class="avatar">
         </div>
 
         <div class="split left">
        <div class="form-group">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" />
+          <input [(ngModel)]="user.name" type="text" placeholder="Username" />
         </div>
         <div class="form-group">
           <i class="	fas fa-envelope-square"></i>
-          <input type="text" placeholder="Email" />
+          <input [(ngModel)]="user.email" type="email" placeholder="Email" />
         </div>
         <div class="form-group">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
+          <input [(ngModel)]="user.password" type="password" placeholder="Password" />
         </div>
       </div>
       <div class="split right">
-        <!-- <div class="form-group">
-          <i class="fas fa-mobile-alt"></i>
-          <input type="text" placeholder="Mobile" />
-        </div>  -->
+
         <div class="form-group">
           <i class="fas fa-user"></i>
-          <input type="number" placeholder="Age" />
+          <input [(ngModel)]="user.age" type="number" placeholder="Age" />
         </div>
         <div class="form-group">
           <i class="	fas fa-restroom"></i>
-          <input type="password" placeholder="Gender" />
+          <input [(ngModel)]="user.gender" type="text" placeholder="Gender" />
         </div>
         <div class="form-group" >
           <i class="fas fa-id-card"></i>
-          <input type="text" placeholder="Aadhar Number" />
+          <input [(ngModel)]="user.aadhar" type="text" placeholder="Aadhar Number" />
         </div>
+        <div class="form-group" >
+          <i class="fas fa-id-card"></i>
+          <input [(ngModel)]="user.mobile" type="number" placeholder="Number" />
+        </div>
+        <div class="form-group">
+          <button type="submit" (click)="signupUser()" class="btn btn-primary" >Sign up</button>
+    </div>
       </div>
-      <div class="button">
-            <button type="submit" value="SIGNUP" class="btn solid" >Sign up</button>
-      </div>
-          </form>
     </div>
     </div>
 

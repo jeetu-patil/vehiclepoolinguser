@@ -1,4 +1,4 @@
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { VerificationOtpComponent } from './verification-otp/verification-otp.component';
 import { LoaderComponent } from './loader/loader.component';
 import { RideDetailComponent } from './ride-detail/ride-detail.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,9 @@ import { RideDetailComponent } from './ride-detail/ride-detail.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [AuthGuard,{
     provide:HTTP_INTERCEPTORS,
