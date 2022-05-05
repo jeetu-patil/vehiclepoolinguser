@@ -14,6 +14,8 @@ import { VerificationOtpComponent } from './verification-otp/verification-otp.co
 import { LoaderComponent } from './loader/loader.component';
 import { RideDetailComponent } from './ride-detail/ride-detail.component';
 import { FormsModule } from '@angular/forms';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { FormsModule } from '@angular/forms';
     FooterComponent,
     VerificationOtpComponent,
     LoaderComponent,
-    RideDetailComponent
+    RideDetailComponent,
+    VerifyEmailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
