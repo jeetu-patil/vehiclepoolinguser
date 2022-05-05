@@ -1,4 +1,4 @@
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -14,6 +14,10 @@ import { VerificationOtpComponent } from './verification-otp/verification-otp.co
 import { LoaderComponent } from './loader/loader.component';
 import { RideDetailComponent } from './ride-detail/ride-detail.component';
 import { VehicledetailComponent } from './vehicledetail/vehicledetail.component';
+import { FormsModule } from '@angular/forms';
+import { VerifyEmailComponent } from './verify-email/verify-email.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -25,11 +29,15 @@ import { VehicledetailComponent } from './vehicledetail/vehicledetail.component'
     VerificationOtpComponent,
     LoaderComponent,
     RideDetailComponent,
-    VehicledetailComponent
+    VehicledetailComponent,
+    VerifyEmailComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
   ],
   providers: [AuthGuard,{
     provide:HTTP_INTERCEPTORS,
