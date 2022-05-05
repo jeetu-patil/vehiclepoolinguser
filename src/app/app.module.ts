@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { VerificationOtpComponent } from './verification-otp/verification-otp.component';
 import { LoaderComponent } from './loader/loader.component';
 import { RideDetailComponent } from './ride-detail/ride-detail.component';
+import { VehicledetailComponent } from './vehicledetail/vehicledetail.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { RideDetailComponent } from './ride-detail/ride-detail.component';
     FooterComponent,
     VerificationOtpComponent,
     LoaderComponent,
-    RideDetailComponent
+    RideDetailComponent,
+    VehicledetailComponent
   ],
   imports: [
     BrowserModule,

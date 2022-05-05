@@ -148,7 +148,7 @@ form.sign-in-form {
   color: #fff;
   text-transform: uppercase;
   font-weight: 600;
-  margin: 10px 0;
+  margin: 30px 0;
   cursor: pointer;
   transition: 0.5s;
   -webkit-border-radius: 4px;
@@ -446,3 +446,27 @@ form.sign-in-form {
 
 
 }
+
+.or{
+position :relative;
+}
+
+.or-text::before{
+content: '';
+position : absolute;
+top: 12px;
+left: 35px;
+height: 1px;
+width:100px;
+background: #000000;
+}
+.or-text::after{
+  content: '';
+  position : absolute;
+  top: 12px;
+  right: 35px;
+  height: 1px;
+  width:100px;
+  background: #000000;
+
+  }
