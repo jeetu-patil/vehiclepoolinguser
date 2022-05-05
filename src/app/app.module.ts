@@ -13,9 +13,11 @@ import { FooterComponent } from './footer/footer.component';
 import { VerificationOtpComponent } from './verification-otp/verification-otp.component';
 import { LoaderComponent } from './loader/loader.component';
 import { RideDetailComponent } from './ride-detail/ride-detail.component';
+import { VehicledetailComponent } from './vehicledetail/vehicledetail.component';
 import { FormsModule } from '@angular/forms';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
 
 @NgModule({
   declarations: [
@@ -27,6 +29,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     VerificationOtpComponent,
     LoaderComponent,
     RideDetailComponent,
+    VehicledetailComponent,
     VerifyEmailComponent,
     PageNotFoundComponent
   ],

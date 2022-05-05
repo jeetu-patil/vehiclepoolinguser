@@ -1,0 +1,33 @@
+.box-info {
+  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
+}
+
+.bg-image {
+  background-image: url("../../assets/Images/otp3.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+h1 {
+  padding-top: 50px;
+  text-align: center;
+}
+
+.cat-name {
+  margin-left: 30%;
+}
+
+.cat-name .btn {
+  margin: 10%;
+}
+
+
+
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

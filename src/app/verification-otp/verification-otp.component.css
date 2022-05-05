@@ -1,0 +1,81 @@
+*{
+  border-radius: 0px !important;
+  font-family: "Poppins", sans-serif;
+}
+
+body{
+  background-color: #e1e1e1 !important;
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.card{
+  border: none !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  margin-top: 70px;
+}
+
+.card-header{
+  color: white !important;
+  /* background: #00ffd5 !important; */
+  background: linear-gradient(-45deg, #4481eb 0%, #ffffff 100%);
+  text-align: center;
+}
+
+.card-header > img{
+  width: 180px;
+  height: 180px;
+}
+
+.input-container input{
+  width: 40px;
+  height: 40px;
+}
+
+.form-control:focus{
+  box-shadow: none !important;
+  border: 1px solid #3366FF !important;
+}
+
+.verify-btn{
+  border-radius: 5px !important;
+  border: 0px !important;
+  width: 140px;
+  background-color: #3366FF !important;
+  -webkit-border-radius: 5px !important;
+  -moz-border-radius: 5px !important;
+  -ms-border-radius: 5px !important;
+  -o-border-radius: 5px !important;
+}
+
+.form-group{
+  margin: 10px 0;
+  position: relative;
+}
+
+.otp input{
+text-align: center;
+}
+
+.form-group i{
+  position: absolute;
+
+  left: 5px;
+}
+.form-group input{
+  width: 250px;
+  font-weight: 200;
+  padding: 5px 5px 5px 5px;
+  border: 0;
+  border-bottom: 1px solid rgb(162, 162, 162);
+  outline: 0;
+
+}
+.resendotp{
+  margin: 35px;
+}
+
