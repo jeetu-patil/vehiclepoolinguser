@@ -10,12 +10,12 @@ export class UserService {
 
   constructor(private http:HttpClient) { }
 
-  signupUser(user: User) {
+  signupUser(user: User):Observable<any> {
     return this.http.post("http://localhost:3000/user/signup",user);
   }
 
-  getOtp(mobile:any):Observable<any> {
-    return this.http.get("http://localhost:3000/user/verify-mobile/"+mobile)
+  getOtp(mobile:any,userId:any):Observable<any> {
+    return this.http.get("http://localhost:3000/user/verify-mobile/"+mobile+"/"+userId);
   }
 
   verifyMobile(mobile:any) {

@@ -20,7 +20,7 @@ export class SignupComponent implements OnInit {
   signupUser(){
     this.userService.signupUser(this.user).subscribe(data => {
       alert("Signup Success!");
-      this.router.navigate(['verification-otp']);
+      this.router.navigate(['verification-otp',data._id]);
     });
   }
 }

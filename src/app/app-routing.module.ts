@@ -10,7 +10,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 const routes: Routes = [
   { path: "sign-in", component: SigninComponent },
   { path: "sign-up", component: SignupComponent},
-  { path: "verification-otp", component: VerificationOtpComponent},
+  { path: "verification-otp/:userId", component: VerificationOtpComponent},
   { path: "ridedetail", component: RideDetailComponent},
   { path: "verify-email", component:VerifyEmailComponent},
   { path: "**" , component:PageNotFoundComponent}
