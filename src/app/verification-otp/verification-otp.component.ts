@@ -26,14 +26,14 @@ export class VerificationOtpComponent implements OnInit {
 
   verifyNumber(){
     if(this.tempOtp==this.otp)
-    { 
+    {
       this.userService.verifyMobile(this.mobile).subscribe(data => {
         alert("Your MObile Number Varify Successfully...");
-        this.router.navigate(['sign-in']);
-      });    
+        this.router.navigate(['verify-email']);
+      });
     }
     else
-    { 
+    {
       console.log("Temp : "+this.tempOtp+" Otp : "+this.otp);
       alert("You entered wrong otp plzz enter again...");
       this.router.navigate(['verification-otp']);

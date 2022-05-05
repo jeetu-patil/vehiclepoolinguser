@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class AuthGuard implements CanActivate {
-  
+
   constructor(private router: Router){}
   canActivate(): any{
     if(sessionStorage.getItem("userId"))
@@ -14,5 +14,5 @@ export class AuthGuard implements CanActivate {
     else
       this.router.navigate(['signin']);
   }
-  
+
 }
