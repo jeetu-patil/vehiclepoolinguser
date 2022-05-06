@@ -17,6 +17,7 @@ import { VehicledetailComponent } from './vehicledetail/vehicledetail.component'
 import { FormsModule } from '@angular/forms';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 
 @NgModule({
@@ -31,7 +32,8 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RideDetailComponent,
     VehicledetailComponent,
     VerifyEmailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
