@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GoogleLoginProvider, SocialAuthService } from 'angularx-social-login';
 import { UserService } from '../services/user.service';
-
+import { ToastrService } from 'ngx-toastr';
+import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -10,11 +11,10 @@ import { UserService } from '../services/user.service';
 })
 export class SigninComponent implements OnInit {
 
-  constructor(private social:SocialAuthService,private userService:UserService,private router:Router) { }
+  constructor(private social:SocialAuthService,private userService:UserService,private router:Router ,private toastr : ToastrService) { }
 
   email:string = "";
   password:string = "";
-  
   ngOnInit(): void {
   }
 
@@ -24,11 +24,11 @@ export class SigninComponent implements OnInit {
       this.social.authState.subscribe(data => {
         this.userService.loginWithGoogle(data.email).subscribe(data1 => {
           if(!data1) {
-            window.alert("You are not register with us..");
+            this.toastr.info("You are not register with us..");
             this.router.navigate(["/signup"]);
           }
           else{
-            window.alert("Welcom to Ride With Us");
+            this.toastr.success("Login Success","Success");
             console.log(data1);
             sessionStorage.setItem("jwt-token",data1.token);
             sessionStorage.setItem("userId",data1.result._id);
@@ -46,11 +46,20 @@ export class SigninComponent implements OnInit {
   signinUser(){
     console.log(this.email+"  ----   "+this.password);
       this.userService.signinUser(this.email,this.password).subscribe(data=>{
-        if(data.status=="Login Success"){
+          this.toastr.success("Login Success","Success");
           sessionStorage.setItem("jwt-token",data.token);
           sessionStorage.setItem("userId",data.result._id);
           this.router.navigate(['home']);
+      },err=>{
+        console.log(err);
+        if(err instanceof HttpErrorResponse){
+          if(err.status == 401){
+            this.toastr.error("Invalid User","Unauthorized request");
+          }
+          else if(err.status == 500){
+            this.toastr.error("Internal Server Error","Error");
+          }
         }
       });
+    }
   }
-}
