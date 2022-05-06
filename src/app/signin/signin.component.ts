@@ -15,7 +15,6 @@ export class SigninComponent implements OnInit {
 
   email:string = "";
   password:string = "";
-
   ngOnInit(): void {
   }
 

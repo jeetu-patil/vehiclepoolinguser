@@ -20,9 +20,10 @@ export class SignupComponent implements OnInit {
   }
 
   signupUser(){
+    console.log(this.user)
       this.userService.signupUser(this.user).subscribe(data => {
       console.log(data)
-     this.toastr.success("SignUp success","success");
+     this.toastr.success("SignUp success","success")
        this.router.navigate(['verification-otp',data._id]);
      },err=>{
       if(err instanceof HttpErrorResponse){
