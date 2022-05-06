@@ -17,10 +17,10 @@ export class VerificationOtpComponent implements OnInit {
   constructor(private router: Router,private userService: UserService,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.userId=this.activatedRoute.snapshot.paramMap.get('userId');
   }
 
   mobileVerify(){
+    this.userId=this.activatedRoute.snapshot.paramMap.get('userId');
     this.userService.getOtp(this.mobile,this.userId).subscribe(data => {
       console.log(data);
       this.tempOtp=data.otp;
