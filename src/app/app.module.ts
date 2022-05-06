@@ -1,7 +1,7 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthGuard } from './auth.guard';
@@ -18,7 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { SocialLoginModule,GoogleLoginProvider } from 'angularx-social-login';
-
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const socialProvider ={
   provide:"SocialAuthServiceConfig",
@@ -49,7 +49,9 @@ const socialProvider ={
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    SocialLoginModule
+    SocialLoginModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot()
   ],
   providers: [socialProvider,AuthGuard,{
     provide:HTTP_INTERCEPTORS,
