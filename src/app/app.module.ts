@@ -17,7 +17,18 @@ import { VehicledetailComponent } from './vehicledetail/vehicledetail.component'
 import { FormsModule } from '@angular/forms';
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SocialLoginModule,GoogleLoginProvider } from 'angularx-social-login';
 
+
+const socialProvider ={
+  provide:"SocialAuthServiceConfig",
+  useValue:{
+    providers:[{
+      id:GoogleLoginProvider.PROVIDER_ID,
+      provider:new GoogleLoginProvider("903687778738-tv34dkt0hqr6mbg1s4bja0g2crfchgbm.apps.googleusercontent.com")
+    }]
+  }
+};
 
 @NgModule({
   declarations: [
@@ -38,8 +49,9 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    SocialLoginModule
   ],
-  providers: [AuthGuard,{
+  providers: [socialProvider,AuthGuard,{
     provide:HTTP_INTERCEPTORS,
     useClass:InterceptorService,
     multi:true

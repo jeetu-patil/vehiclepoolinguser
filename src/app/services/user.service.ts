@@ -22,6 +22,14 @@ export class UserService {
     return this.http.get("http://localhost:3000/user/verifymobile/"+mobile);
   }
 
+  loginWithGoogle(email:any):Observable<any>{
+    return this.http.post("http://localhost:3000/user/loginwithgoogle",{email:email});
+  }
+
+  getUser():Observable<any>{
+    let id=sessionStorage.getItem("userId");
+    return this.http.get("http://localhost:3000/user/getuser/"+id);
+  }
   signinUser(email:string,password:string):Observable<any>{
      return this.http.post("http://localhost:3000/user/signin",{email:email,password:password});
   }
