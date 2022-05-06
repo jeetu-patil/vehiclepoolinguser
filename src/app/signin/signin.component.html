@@ -1,17 +1,17 @@
  <div class="container">
   <div class="forms-container">
     <div class="signin-signup">
-      <form action="#" class="sign-in-form">
+      <div class="sign-in-form">
         <h2 class="title">Sign in</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Username" />
+          <input [(ngModel)]="email" type="email" placeholder="email" />
         </div>
         <div class="input-field">
           <i class="fas fa-lock"></i>
-          <input type="password" placeholder="Password" />
+          <input [(ngModel)]="password" type="password" placeholder="Password" />
         </div>
-        <input type="submit" value="Login" class="btn solid" />
+        <input type="submit" (click)="signinUser()" value="Login" class="btn solid" />
         <div class="or">
           <span class="or-text">
             OR
@@ -24,7 +24,7 @@
           <label class="pt-4 text-decoration:red;" style="margin-left:10px">Sign in with Google</label>
 
         </div>
-      </form>
+      </div>
     </div>
   </div>
 
