@@ -24,7 +24,6 @@ export class SignupComponent implements OnInit {
        this.router.navigate(['verification-otp',data._id]);
      });
   }
-
   navigateToSignin(){
     this.router.navigate(['sign-in']);
   }

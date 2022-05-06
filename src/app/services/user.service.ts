@@ -30,4 +30,7 @@ export class UserService {
     let id=sessionStorage.getItem("userId");
     return this.http.get("http://localhost:3000/user/getuser/"+id);
   }
+  signinUser(email:string,password:string):Observable<any>{
+     return this.http.post("http://localhost:3000/user/signin",{email:email,password:password});
+  }
 }
