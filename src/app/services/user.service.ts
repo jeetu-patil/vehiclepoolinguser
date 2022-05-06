@@ -21,4 +21,8 @@ export class UserService {
   verifyMobile(mobile:any) {
     return this.http.get("http://localhost:3000/user/verifymobile/"+mobile);
   }
+
+  signinUser(email:string,password:string):Observable<any>{
+     return this.http.post("http://localhost:3000/user/signin",{email:email,password:password});
+  }
 }
