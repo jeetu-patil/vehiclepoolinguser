@@ -12,7 +12,7 @@
 
   <div class="product-card ">
     <div class="row">
-      <div class="outer-card ">
+      <div class="outer-card " >
         <div class="card-search">
           <table>
             <tr>
@@ -68,28 +68,28 @@
 
   <div class="product-card ">
     <div class="row">
-      <div class="outer-card ">
+      <div class="outer-card " *ngFor="let publish of publishRide">
         <div class="card publish">
           <div class="card-content">
             <table>
               <tr>
                 <div class="card-image">
                   <th>
-                    <img class="img-fluid" src="../../assets/Images/background1.jpg" />
+                    <img class="img-fluid" [src]="publish.publisherId.vehicle.image" height="300" width="300"/>
                   </th>
                   <th>
 
                     <div class="form-group">
-                      <input type="email" name="email" placeholder="From" autocomplete="off">
+                      <input type="email" name="email" [value]="publish.fromId.place" autocomplete="off">
                     </div>
                   </th>
                   <th>
                     <div class="form-group">
-                      <input type="email" name="email" placeholder="To" autocomplete="off">
+                      <input type="email" name="email" [value]="publish.toId.place" autocomplete="off">
                     </div>
                   </th>
                   <th>
-                    <input type="submit" value="View" class="btn solid2" />
+                    <input type="submit" style="border: 1px solid;border-radius: 100px" value="View" class="btn solid2" />
                   </th>
                 </div>
               </tr>

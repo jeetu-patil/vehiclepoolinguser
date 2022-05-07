@@ -16,7 +16,7 @@
       </div>
       <div class="input-field">
         <i class="fas fa-lock"></i>
-        <input id="password1" type="password" name="password" required minlength="6" maxlength="6"
+        <input id="password1" type="password" name="password" required minlength="6" 
           placeholder="Password" [(ngModel)]="password" pattern="^[0-9-]{1,6}$" #password1="ngModel" />
         <span style="font-size: 8px; color: red;" *ngIf="password1.errors?.required && password1.touched">!Please
           Enter Your Password</span>

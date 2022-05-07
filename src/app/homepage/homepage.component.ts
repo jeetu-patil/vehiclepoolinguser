@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Publishride } from '../model/publishride';
+import { PublishrideService } from '../services/publishride.service';
 
 @Component({
   selector: 'app-homepage',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private publisRideService: PublishrideService) { }
 
+  publishRide!:any;
   ngOnInit(): void {
+    this.publisRideService.getAllPublishRides().subscribe(data => {
+      this.publishRide=data;
+      console.log(this.publishRide)
+    },err =>{
+
+    });
   }
 
 }
