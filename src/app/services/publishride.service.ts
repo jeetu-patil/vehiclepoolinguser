@@ -21,4 +21,8 @@ export class PublishrideService {
   addPublisherDetails(formData:FormData) {
     return this.http.post<any>("http://localhost:3000/publishride/firstpublishride",formData);
   }
+
+  submitDetail(from:any,to:any,message:any,time:any,date:any){
+    return this.http.post<any>("http://localhost:3000/publishride/publishride",{})
+  }
 }

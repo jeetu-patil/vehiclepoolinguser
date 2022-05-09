@@ -20,6 +20,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomepageComponent } from './homepage/homepage.component';
 import { SocialLoginModule,GoogleLoginProvider } from 'angularx-social-login';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
 
 
 const socialProvider ={
@@ -45,7 +46,8 @@ const socialProvider ={
     VehicledetailComponent,
     VerifyEmailComponent,
     PageNotFoundComponent,
-    HomepageComponent
+    HomepageComponent,
+    RidedetailinfoComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +56,7 @@ const socialProvider ={
     HttpClientModule,
     SocialLoginModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [socialProvider,AuthGuard,{
     provide:HTTP_INTERCEPTORS,
