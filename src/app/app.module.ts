@@ -25,6 +25,7 @@ import { SuccessMessageComponent } from './success-message/success-message.compo
 import { PublisherdetailComponent } from './publisherdetail/publisherdetail.component';
 import { CheckandbookComponent } from './checkandbook/checkandbook.component';
 import { HistoryRidesComponent } from './history-rides/history-rides.component';
+import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
 
 
 const socialProvider ={
@@ -56,6 +57,8 @@ const socialProvider ={
     PublisherdetailComponent,
     CheckandbookComponent,
     HistoryRidesComponent
+    RidedetailinfoComponent
+
   ],
   imports: [
     BrowserModule,
@@ -64,7 +67,7 @@ const socialProvider ={
     HttpClientModule,
     SocialLoginModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [socialProvider,AuthGuard,{
     provide:HTTP_INTERCEPTORS,
