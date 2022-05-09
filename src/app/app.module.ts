@@ -21,6 +21,12 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { SocialLoginModule,GoogleLoginProvider } from 'angularx-social-login';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { UserProfileComponent } from './user-profile/user-profile.component';
+import { RidePublishInfoComponent } from './ride-publish-info/ride-publish-info.component';
+import { SuccessMessageComponent } from './success-message/success-message.component';
+import { PublisherdetailComponent } from './publisherdetail/publisherdetail.component';
+import { CheckandbookComponent } from './checkandbook/checkandbook.component';
+import { HistoryRidesComponent } from './history-rides/history-rides.component';
+import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
 
 
 const socialProvider ={
@@ -48,6 +54,13 @@ const socialProvider ={
     PageNotFoundComponent,
     HomepageComponent,
     UserProfileComponent
+    RidePublishInfoComponent,
+    SuccessMessageComponent,
+    PublisherdetailComponent,
+    CheckandbookComponent,
+    HistoryRidesComponent
+    RidedetailinfoComponent
+
   ],
   imports: [
     BrowserModule,
@@ -56,7 +69,7 @@ const socialProvider ={
     HttpClientModule,
     SocialLoginModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
   ],
   providers: [socialProvider,AuthGuard,{
     provide:HTTP_INTERCEPTORS,

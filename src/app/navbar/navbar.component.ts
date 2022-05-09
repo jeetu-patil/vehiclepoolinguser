@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PublishrideService } from '../services/publishride.service';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -8,7 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService,private publisRideService: PublishrideService,private router:Router) { }
 
   name:any;
   ngOnInit(): void {
@@ -26,5 +28,17 @@ export class NavbarComponent implements OnInit {
   signout(){
     sessionStorage.removeItem("userId");
     sessionStorage.removeItem("jwt-token");
+  }
+
+  navigateToVehicleDetail(){
+    console.log("hello");
+    this.publisRideService.getDetailOfPubliisher().subscribe(data => {
+      console.log(data)
+        if(data.count==0){
+          this.router.navigate(['vehicle-detail']);
+        }
+        else
+          this.router.navigate(['rideinfo']);
+    });
   }
 }

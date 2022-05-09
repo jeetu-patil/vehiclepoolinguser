@@ -5,25 +5,22 @@
         <h2 class="title">Vehicle Details</h2>
         <div class="input-field">
           <i class="fas fa-user"></i>
-          <input type="text" placeholder="Vehicle Name" />
+          <input [(ngModel)]="name" type="text" placeholder="Vehicle Name" />
         </div>
         <div class="input-field">
           <i class="far fa-edit"></i>
-          <input type="text" placeholder="Vehicle Number" />
+          <input type="number" [(ngModel)]="number" placeholder="Vehicle Number" />
         </div>
 <div class="card align" >
         <div class="wheelertype  m-3" >
           <div class="form-check form-check-inline ">
             <label for="vehicletype"><h4>Vehicle Type</h4></label><br><br>
-            <input class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <input [(ngModel)]="wheeler" class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="2">
             <label class="form-check-label pl-3" class="m-2" for="inlineRadio1"> 2-Wheeler</label>
           </div><br>
+          
           <div class="form-check form-check-inline">
-            <input class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
-            <label class="form-check-label pl-3" class="m-2"  for="inlineRadio2">3-Wheeler</label>
-          </div><br>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <input [(ngModel)]="wheeler" class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="4">
             <label class="form-check-label pl-3" class="m-2"  for="inlineRadio2">4-Wheeler</label>
           </div>
           </div>
@@ -32,18 +29,18 @@
           <label for="VehicleImage" class="mt-3" style="margin-right:104px;"><h4>Upload Vehicle Image</h4></label>
         <div class="input-field ">
           <i class="fas fa-image" style="margin-bottom: 400px"></i>
-          <input type="file" class="pt-3" placeholder="Select Image" />
+          <input (change)="selectImage($event)" type="file" class="pt-3" placeholder="Select Image" />
         </div>
         </div>
         <div>
         <label for="license" class="mt-3" style="margin-right:104px;"><h4>Upload License Image</h4></label>
         <div class="input-field">
           <i class="fas fa-image" style="margin-bottom: 400px"></i>
-          <input type="file" class="pt-3" placeholder="Select Image" />
+          <input (change)="selectImage1($event)" type="file" class="pt-3" placeholder="Select Image" />
         </div>
         </div>
       </div>
-      <input type="submit" value="Ok" class="btn solid2" />
+      <input (click)="submitDetail()" type="submit" value="Ok" class="btn solid2" />
     </div>
   </div>
 

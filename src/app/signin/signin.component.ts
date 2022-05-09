@@ -32,7 +32,7 @@ export class SigninComponent implements OnInit {
             console.log(data1);
             sessionStorage.setItem("jwt-token",data1.token);
             sessionStorage.setItem("userId",data1.result._id);
-            this.router.navigate(["/"])
+            this.router.navigate([""])
           }
         })
       })
@@ -47,9 +47,10 @@ export class SigninComponent implements OnInit {
     console.log(this.email+"  ----   "+this.password);
       this.userService.signinUser(this.email,this.password).subscribe(data=>{
           this.toastr.success("Login Success","Success");
+          console.log(data);
           sessionStorage.setItem("jwt-token",data.token);
           sessionStorage.setItem("userId",data.result._id);
-          this.router.navigate(['home']);
+          this.router.navigate([""]);
       },err=>{
         console.log(err);
         if(err instanceof HttpErrorResponse){

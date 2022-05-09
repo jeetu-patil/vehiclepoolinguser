@@ -157,16 +157,7 @@
   }
 }
 
-
-
-
-.navbar {
-  width: 100vw;
-  background: rgba(255,255,255,0.5);
-  backdrop-filter: blur(15px);
-
-}
-
+/* add */
 .navbar-brand {
   font-size: 24px;
   font-weight: 500;
@@ -255,9 +246,7 @@
 }
 
 @media only screen and (max-width: 768px) {
-  /* .navbar-brand{
-  color: rgb(255, 153, 0) !important;
-} */
+
   .navbar-nav {
       display: flex;
       justify-content: center;
