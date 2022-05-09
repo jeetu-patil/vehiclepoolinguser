@@ -8,6 +8,7 @@ import { VehicledetailComponent } from './vehicledetail/vehicledetail.component'
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 const routes: Routes = [
   { path: "sign-in", component: SigninComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
   { path: "ridedetail", component: RideDetailComponent},
   { path: "verify-email", component:VerifyEmailComponent},
-  { path: "**" , component:PageNotFoundComponent}
+  { path: "view-profile" , component:UserProfileComponent},
+  { path: "**" , component:PageNotFoundComponent},
 
 ];
 
