@@ -8,6 +8,7 @@ import { VehicledetailComponent } from './vehicledetail/vehicledetail.component'
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { UserProfileComponent } from './user-profile/user-profile.component';
 
 import { RidePublishInfoComponent } from './ride-publish-info/ride-publish-info.component';
 import { SuccessMessageComponent } from './success-message/success-message.component';
@@ -25,6 +26,7 @@ const routes: Routes = [
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
   { path: "ridedetail", component: RideDetailComponent,canActivate:[AuthGuard]},
   { path: "verify-email", component:VerifyEmailComponent},
+  { path: "view-profile" , component:UserProfileComponent},
   { path: "publish-info", component:RidePublishInfoComponent},
   { path: "success" , component:SuccessMessageComponent},
   { path: "publisherdetail" , component:PublisherdetailComponent},

@@ -28,7 +28,7 @@
       <ul class="dropdown-menu" aria-labelledby="userProfile">
         <li><a *ngIf="!isLoggedIn()" routerLink="sign-up" class="nav-link dropdown-item">Sign Up</a>
         <li><a *ngIf="!isLoggedIn()" routerLink="sign-in" class="nav-link dropdown-item">Sign In</a>
-        <li><a *ngIf="isLoggedIn()" class="nav-link dropdown-item"><i class="fa fa-user"></i>Profile</a></li>
+        <li><a *ngIf="isLoggedIn()"  routerLink="view-profile" class="nav-link dropdown-item"><i class="fa fa-user"></i>Profile</a></li>
         <li><a *ngIf="isLoggedIn()" class="nav-link dropdown-item"><i class="fa fa-car"></i>Your Rides</a></li>
         <li><a *ngIf="isLoggedIn()" class="nav-link dropdown-item"><i class="fas fa-comment" aria-hidden="true"></i>Inbox</a></li>
         <li><a (click)="signout()" *ngIf="isLoggedIn()" class="nav-link dropdown-item"><i class="fas fa-sign-out-alt" aria-hidden="true"></i>Sign Out</a>
