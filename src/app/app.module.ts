@@ -20,6 +20,11 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import { HomepageComponent } from './homepage/homepage.component';
 import { SocialLoginModule,GoogleLoginProvider } from 'angularx-social-login';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RidePublishInfoComponent } from './ride-publish-info/ride-publish-info.component';
+import { SuccessMessageComponent } from './success-message/success-message.component';
+import { PublisherdetailComponent } from './publisherdetail/publisherdetail.component';
+import { CheckandbookComponent } from './checkandbook/checkandbook.component';
+import { HistoryRidesComponent } from './history-rides/history-rides.component';
 import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
 
 
@@ -47,7 +52,13 @@ const socialProvider ={
     VerifyEmailComponent,
     PageNotFoundComponent,
     HomepageComponent,
+    RidePublishInfoComponent,
+    SuccessMessageComponent,
+    PublisherdetailComponent,
+    CheckandbookComponent,
+    HistoryRidesComponent
     RidedetailinfoComponent
+
   ],
   imports: [
     BrowserModule,

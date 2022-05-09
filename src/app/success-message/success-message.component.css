@@ -1,0 +1,76 @@
+.banner {
+  /* background: linear-gradient( rgba(0, 255, 26, 0.201), rgba(255, 255, 255, 0.526)); */
+  background-color: rgb(90, 192, 90);
+  /* background-image: url("../../assets/Images/blue5.jpg"); */
+  background-repeat: no-repeat;
+  background-size:contain;
+
+}
+
+.banner img{
+  margin-left:600px;
+  margin-top: 100px;
+}
+
+.content {
+  height: 120vh;
+  width: 100vw;
+  position: relative;
+}
+
+.text {
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.text h2 {
+  text-shadow: 4px 4px 4px rgb(144, 245, 252);
+}
+
+.text h2 {
+  padding-top: 40px;
+  font-size: 70px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: white;
+  background: linear-gradient( rgba(252, 253, 255, 0.908), rgba(0, 174, 255, 0.941), rgb(117, 197, 227), rgba(38, 0, 255, 0.941));
+  background-size: auto 180%;
+  -webkit-background-clip: text;
+
+
+}
+
+.solid2 {
+  width: 150px;
+  background-color: #3d80f4;
+  border: none;
+  outline: none;
+  height: 49px;
+  border-radius: 100px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin: 50px 0;
+  margin-left: 670px;
+  cursor: pointer;
+  transition: 0.5s;
+  -webkit-border-radius: 100px;
+  -moz-border-radius: 100px;
+  -ms-border-radius: 100px;
+  -o-border-radius: 100px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
