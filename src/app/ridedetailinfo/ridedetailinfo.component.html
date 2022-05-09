@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="forms-container">
+      <div class="signin-signup">
+        <div class="sign-in-form">
+          <h2 class="title ">PUBLISH RIDE</h2>
+          <div class="">
+            <!-- <input [(ngModel)]="from" type="text" name="From" placeholder="From" /> -->
+            <input [(ngModel)]="from" class="" list="datalistOptions" id="exampleDataList" placeholder="From">
+            <datalist id="datalistOptions">
+            <option  *ngFor="let pla of places" [value]="pla.place ">
+            </datalist>
+          </div>
+          <div class="">
+            <!-- <input [(ngModel)]="to" type="text" name="To" placeholder="To" /> -->
+            <input [(ngModel)]="to" class="" list="datalistOptions" id="exampleDataList" placeholder="From">
+            <datalist id="datalistOptions">
+            <option *ngFor="let pla of places" [value]="pla.place">
+            </datalist>
+          </div>
+          <div class="input-field">
+            <div class="form-group search2 pt-3">
+              <input [(ngModel)]="date" type="date" id="birthday" name="birthday">
+            </div>
+          </div>
+          <label class="time" style="margin-right:320px;margin-top:20px" class="fas fa-clock">Time</label>
+          <div class="input-field">
+            <input [(ngModel)]="time" type="time" style="margin-right:-300px;margin-top:5px"  name="appt" placeholder="TIme" />
+          </div>
+          <div class="form-group" style="width:380px;margin-top: 20px;">
+            <label>Your Message</label>
+            <textarea [(ngModel)]="message" class="form-control" name="msg" cols="30" rows="6"></textarea>
+          </div>
+          <input (click)="submitDetail()" type="submit" value="Publish" class="btn solid" />
+          <div class="or">
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <div class="panels-container">
+      <div class="panel left-panel">
+        <div class="content">
+          <p>
+           Publish your ride for Sharing
+          </p>
+          <div class="content">
+            <h3 class="pb-4">Please Fill Complete Details</h3>
+            <button class="btn solid" id="sign-up-btn">
+              <i class="far fa-arrow-alt-circle-left" style="height: 20px;width: 20px;"></i>
+             BACK
+            </button>
+          </div>
+          <img src="../assets/Images/CarFOrUi2.png" class="image" alt="" />
+        </div>
+      </div>
+    </div>
+  </div>

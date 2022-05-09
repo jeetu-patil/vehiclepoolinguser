@@ -9,6 +9,7 @@ import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
 import { AuthGuard } from './auth.guard';
+import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
 
 const routes: Routes = [
   { path: "sign-in", component: SigninComponent },
@@ -16,8 +17,9 @@ const routes: Routes = [
   { path: "", component: HomepageComponent},
   { path: "vehicle-detail", component: VehicledetailComponent,canActivate:[AuthGuard]},
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
-  { path: "ridedetail", component: RideDetailComponent},
+  { path: "ridedetail", component: RideDetailComponent,canActivate:[AuthGuard]},
   { path: "verify-email", component:VerifyEmailComponent},
+  {path : "rideinfo", component:RidedetailinfoComponent,canActivate:[AuthGuard]},
   { path: "**" , component:PageNotFoundComponent}
 
 ];
