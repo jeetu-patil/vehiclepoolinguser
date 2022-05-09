@@ -8,6 +8,11 @@ import { VehicledetailComponent } from './vehicledetail/vehicledetail.component'
 import { VerifyEmailComponent } from './verify-email/verify-email.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { RidePublishInfoComponent } from './ride-publish-info/ride-publish-info.component';
+import { SuccessMessageComponent } from './success-message/success-message.component';
+// import { NavbarComponent } from './navbar/navbar.component';
+import { PublisherdetailComponent } from './publisherdetail/publisherdetail.component';
+import { CheckandbookComponent } from './checkandbook/checkandbook.component';
 
 const routes: Routes = [
   { path: "sign-in", component: SigninComponent },
@@ -17,6 +22,11 @@ const routes: Routes = [
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
   { path: "ridedetail", component: RideDetailComponent},
   { path: "verify-email", component:VerifyEmailComponent},
+  { path: "publish-info", component:RidePublishInfoComponent},
+  { path: "success" , component:SuccessMessageComponent},
+  { path: "publisherdetail" , component:PublisherdetailComponent},
+  { path: "checkandbook" , component:CheckandbookComponent},
+  // { path: "navbar" , component:NavbarComponent},
   { path: "**" , component:PageNotFoundComponent}
 
 ];
