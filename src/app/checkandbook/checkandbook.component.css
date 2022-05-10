@@ -109,8 +109,11 @@ header {
   grid-area: header;
 }
 
-.userProfile {
+.userProfile h1 {
   grid-area: userProfile;
+  font-size:300%;
+  margin:50px;
+
 }
 
 .work_skills {
@@ -126,12 +129,14 @@ header {
 }
 
 /* ===== =====>>  Container Cards Css  <<===== =====  */
-.container .card {
+.container .ride {
   background: var(--glass-bg);
   backdrop-filter: blur(3rem);
   border-radius: 0.5rem;
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.05);
   padding: var(--p-1-5);
+  width: 50%;
+  margin-left: 60px;
 }
 
 /* ===== =====>>  Container Header/Navbar Css  <<===== =====  */
@@ -498,4 +503,116 @@ input[type="checkbox"]:checked + label::after {
   -moz-border-radius: 100px;
   -ms-border-radius: 100px;
   -o-border-radius: 100px;
+}
+
+li {
+  width: 2em;
+  height: 2em;
+  text-align: center;
+  line-height: 2em;
+  border-radius: 1em;
+  background: dodgerblue;
+  margin: 0 1em;
+  display:flexbox;
+  margin:50px;
+  color: white;
+  position: relative;
+}
+
+li::before{
+  content: '';
+  position:fixed;
+  top: 5em;
+  left: 4.5em;
+  width: 0.2em;
+  height: 5em;
+  background: dodgerblue;
+  z-index: -1;
+}
+
+
+li:first-child::before {
+  display: none;
+}
+
+.active {
+  background: dodgerblue;
+}
+
+.active ~ li {
+  background: lightblue;
+}
+
+.active ~ li::before {
+  background: lightblue;
+}
+
+.work_skills {
+  display:flex;
+}
+
+.line h4,h2{
+  display: flex;
+}
+
+.line span{
+  margin-left: 40px;
+  align-self: center;
+}
+
+.line{
+  margin:45px;
+  padding:5px;
+}
+
+.about{
+  margin: 50px 0 10px 60px;
+}
+
+.message-rider{
+  margin: 50px 0 10px 60px;
+}
+
+
+
+.solid3 {
+   margin-left: 600px;
+   margin-top: 60px;
+  /*width: 150px;
+  */padding:10px 35px;
+  background-color: #3d80f4;
+  border: none;
+  outline: none;
+  height: 50px;
+  border-radius: 4px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  /*margin: 0px 0;
+  margin-left: 50px;
+  */cursor: pointer;
+  transition: 0.5s;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+
+.solid3:hover {
+  background-color: #0062b2;
+  color: #ffffff;
+}
+
+.a-mess,.list{
+  width: 660px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.container{
+  display:flex;
+}
+
+.image{
+  margin: 150px;
 }
