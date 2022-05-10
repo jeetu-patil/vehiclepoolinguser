@@ -1,0 +1,66 @@
+<div class="product-card ">
+    <div class="row">
+      <div class="outer-card ">
+        <div class="card publish" *ngFor="let publish of publishRides">
+          <div class="card-content" >
+            <table>
+              <tr>
+                <div class="card-image">
+                  <th>
+                    <img class="img-fluid" [src]="publish.publisherId.vehicle.image" />
+                  </th>
+                  <th>
+                    <div class="form-group">
+                      <label>
+                        <h4 class="p-3">From</h4>
+                      </label>
+                      <input type="text" name="from" [value]="publish.fromId.place" autocomplete="off">
+                    </div>
+                  </th>
+                  <th>
+                    <div class="form-group">
+                      <label>
+                        <h4 class="p-3">To</h4>
+                      </label>
+                     <input type="text" name="to" [value]="publish.toId.place" autocomplete="off">
+                    </div>
+                  </th>
+                  <th>
+                    <div class="input-field">
+                      <label class="calender" style="margin-right:50px;margin-left:20px;margin-top:20px"
+                        class="fas fa-calculator">Date : {{publish.rideDate | date:'dd/MM/yyyy'}}</label>
+                      <div class="form-group search2 pt-3">
+                      </div>
+                    </div>
+                  </th>
+                  
+                  <th>
+                    <input type="submit" (click)="viewRide(publish._id)" value="View" class="btn solid2" />
+                  </th>
+                </div>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-card " *ngIf="status">
+    <div class="row">
+      <div class="outer-card ">
+        <div class="card publish" *ngFor="let publish of publishRides">
+          <div class="card-content" >
+            <table>
+              <tr>
+                  <h1>No Ride On That Day . Sorry For Inconvinience...</h1>
+              </tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+

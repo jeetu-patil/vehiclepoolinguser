@@ -3,18 +3,17 @@
       <div class="signin-signup">
         <div class="sign-in-form">
           <h2 class="title ">PUBLISH RIDE</h2>
-          <div class="">
+          <div class="input-field">
             <!-- <input [(ngModel)]="from" type="text" name="From" placeholder="From" /> -->
-            <input [(ngModel)]="from" class="" list="datalistOptions" id="exampleDataList" placeholder="From">
+            <input [(ngModel)]="from" list="datalistOptions" id="exampleDataList" placeholder="From">
             <datalist id="datalistOptions">
-            <option  *ngFor="let pla of places" [value]="pla.place ">
+            <option *ngFor="let pla of places" [value]="pla.place ">
             </datalist>
           </div>
-          <div class="">
-            <!-- <input [(ngModel)]="to" type="text" name="To" placeholder="To" /> -->
-            <input [(ngModel)]="to" class="" list="datalistOptions" id="exampleDataList" placeholder="From">
+          <div class="input-field">
+            <input [(ngModel)]="to" list="datalistOptions" placeholder="To">
             <datalist id="datalistOptions">
-            <option *ngFor="let pla of places" [value]="pla.place">
+              <option *ngFor="let pla of places" [value]="pla.place ">
             </datalist>
           </div>
           <div class="input-field">
@@ -30,6 +29,11 @@
             <label>Your Message</label>
             <textarea [(ngModel)]="message" class="form-control" name="msg" cols="30" rows="6"></textarea>
           </div>
+
+          <div class="input-field">
+            <input type="number" [(ngModel)]="seat" placeholder="Seat Available"/>
+          </div>
+
           <input (click)="submitDetail()" type="submit" value="Publish" class="btn solid" />
           <div class="or">
           </div>

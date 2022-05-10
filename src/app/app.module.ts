@@ -27,6 +27,8 @@ import { PublisherdetailComponent } from './publisherdetail/publisherdetail.comp
 import { CheckandbookComponent } from './checkandbook/checkandbook.component';
 import { HistoryRidesComponent } from './history-rides/history-rides.component';
 import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SearchridesComponent } from './searchrides/searchrides.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
@@ -66,7 +68,8 @@ const socialProvider = {
     PublisherdetailComponent,
     CheckandbookComponent,
     HistoryRidesComponent,
-    RidedetailinfoComponent
+    RidedetailinfoComponent,
+    SearchridesComponent
   ],
   imports: [
     BrowserModule,
@@ -78,7 +81,8 @@ const socialProvider = {
     SocialLoginModule,
     MatIconModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    Ng2SearchPipeModule,
   ],
   providers: [
     socialProvider,

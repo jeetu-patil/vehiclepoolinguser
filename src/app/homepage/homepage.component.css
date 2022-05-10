@@ -30,7 +30,7 @@
   color: white;
   background: linear-gradient( rgba(252, 253, 255, 0.908), rgba(0, 174, 255, 0.941), rgb(117, 197, 227), rgba(38, 0, 255, 0.941));
   background-size: auto 180%;
-  -webkit-background-clip: text;
+  /* -webkit-background-clip: text; */
   -webkit-text-fill-color: transparent;
   animation: shine 8s linear infinite;
 }

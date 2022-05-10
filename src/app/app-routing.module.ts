@@ -16,26 +16,25 @@ import { PublisherdetailComponent } from './publisherdetail/publisherdetail.comp
 import { CheckandbookComponent } from './checkandbook/checkandbook.component';
 import { AuthGuard } from './auth.guard';
 import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
+import { SearchridesComponent } from './searchrides/searchrides.component';
 
 const routes: Routes = [
   { path: "sign-in", component: SigninComponent },
   { path: "sign-up", component: SignupComponent},
-  { path: "", component: HomepageComponent},
-  { path: "vehicle-detail",
-   component: VehicledetailComponent,
-  //  canActivate:[AuthGuard]
+  { path: "", component: HomepageComponent,
+    children: [
+      {path :"searchride/:from/:to/:date" ,component:SearchridesComponent}
+    ]
   },
+  { path: "vehicle-detail", component: VehicledetailComponent,canActivate:[AuthGuard]},
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
-  { path: "ridedetail",
-  component: RideDetailComponent,
-  // canActivate:[AuthGuard]
-},
+  { path: "ridedetail/:publishId", component: RideDetailComponent,canActivate:[AuthGuard]},
   { path: "verify-email", component:VerifyEmailComponent},
-  { path: "view-profile" , component:UserProfileComponent},
-  { path: "publish-info", component:RidePublishInfoComponent},
+  { path: "view-profile" , component:UserProfileComponent,canActivate:[AuthGuard]},
+  { path: "publish-info", component:RidePublishInfoComponent,canActivate:[AuthGuard]},
   { path: "success" , component:SuccessMessageComponent},
-  { path: "publisherdetail" , component:PublisherdetailComponent},
-  { path: "checkandbook" , component:CheckandbookComponent},
+  { path: "publisherdetail" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
+  { path: "checkandbook" , component:CheckandbookComponent,canActivate:[AuthGuard]},
   // { path: "navbar" , component:NavbarComponent},
   {
     path : "rideinfo",

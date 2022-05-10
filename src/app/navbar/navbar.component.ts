@@ -31,9 +31,7 @@ export class NavbarComponent implements OnInit {
   }
 
   navigateToVehicleDetail(){
-    console.log("hello");
-    this.publisRideService.getDetailOfPubliisher().subscribe(data => {
-      console.log(data)
+        this.publisRideService.getDetailOfPubliisher().subscribe(data => {
         if(data.count==0){
           this.router.navigate(['vehicle-detail']);
         }

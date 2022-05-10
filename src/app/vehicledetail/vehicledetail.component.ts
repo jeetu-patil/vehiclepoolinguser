@@ -13,40 +13,30 @@ export class VehicledetailComponent implements OnInit {
 
   constructor(private publishrideService: PublishrideService,private toastr:ToastrService,private router:Router) { }
 
-  drivin:any;
-  vehcile:any;
   name:any
   wheeler:any;
   number:any
-  image:any=[];
+  image:any;
 
   ngOnInit(): void {
   }
 
   selectImage(event:any){
     const file = event.target.files[0];
-    this.drivin = file;
-  }
-
-  selectImage1(event:any){
-    const file = event.target.files[0];
-    this.vehcile= file;
+    this.image = file;
   }
 
   submitDetail(){
-    this.image[0]=this.vehcile;
-    this.image[1]=this.drivin;
-    console.log(this.image)
-
-
+    let id:any=sessionStorage.getItem("userId");
     let formData =new FormData();
     formData.append("image",this.image);
     formData.append("name",this.name);
     formData.append("number",this.number);
     formData.append("wheeler",this.wheeler)
+    formData.append("userId",id);
     this.publishrideService.addPublisherDetails(formData).subscribe(data => {
-      this.toastr.success("SignUp success","success")
-       this.router.navigate(['']);
+      this.toastr.success("Detailed success","success")
+       this.router.navigate(['rideinfo']);
      },err=>{
       if(err instanceof HttpErrorResponse){
         if(err.status == 500){
