@@ -1,9 +1,12 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
 
-body,
+/* You can add global styles to this file, and also import other style files */
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* body,
 input {
   font-family: "Poppins", sans-serif;
-}
+} */
 
 
 .toast-center-center {
@@ -195,3 +198,5 @@ button.toast-close-button {
     width: 25em;
   }
 }
+
+
