@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+import { PublishrideService } from '../services/publishride.service';
 
 @Component({
   selector: 'app-ride-detail',
@@ -7,9 +9,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RideDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService,private router:Router) { }
 
+  id:any;
+  publish:any;
   ngOnInit(): void {
+    this.id=this.activatedRoute.snapshot.paramMap.get("publishId");
+    this.publisRideService.getParticularRideDetail(this.id).subscribe(data => {
+      this.publish=data;
+    },err => {
+
+    });
   }
 
 }

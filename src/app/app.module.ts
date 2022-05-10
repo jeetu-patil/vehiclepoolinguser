@@ -27,6 +27,8 @@ import { PublisherdetailComponent } from './publisherdetail/publisherdetail.comp
 import { CheckandbookComponent } from './checkandbook/checkandbook.component';
 import { HistoryRidesComponent } from './history-rides/history-rides.component';
 import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { SearchridesComponent } from './searchrides/searchrides.component';
 
 
 const socialProvider ={
@@ -53,13 +55,14 @@ const socialProvider ={
     VerifyEmailComponent,
     PageNotFoundComponent,
     HomepageComponent,
-    UserProfileComponent
+    UserProfileComponent,
     RidePublishInfoComponent,
     SuccessMessageComponent,
     PublisherdetailComponent,
     CheckandbookComponent,
-    HistoryRidesComponent
-    RidedetailinfoComponent
+    HistoryRidesComponent,
+    RidedetailinfoComponent,
+    SearchridesComponent
 
   ],
   imports: [
@@ -70,6 +73,7 @@ const socialProvider ={
     SocialLoginModule,
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
+    Ng2SearchPipeModule,
   ],
   providers: [socialProvider,AuthGuard,{
     provide:HTTP_INTERCEPTORS,

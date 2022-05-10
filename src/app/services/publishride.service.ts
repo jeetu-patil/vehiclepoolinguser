@@ -18,11 +18,20 @@ export class PublishrideService {
     return this.http.get<any>("http://localhost:3000/publishride/checkuserride/"+sessionStorage.getItem("userId"));
   }
 
-  addPublisherDetails(formData:FormData) {
-    return this.http.post<any>("http://localhost:3000/publishride/firstpublishride",formData);
+  addPublisherDetails(formData:any) :Observable<any>{
+    return this.http.post("http://localhost:3000/publishride/firstpublishride",formData);
   }
 
-  submitDetail(from:any,to:any,message:any,time:any,date:any){
-    return this.http.post<any>("http://localhost:3000/publishride/publishride",{})
+  submitPublisherDetail(fromId:any,toId:any,message:any,date:any,d:any,amount:any,seat:any,time:any){
+    let id=sessionStorage.getItem("userId");
+    return this.http.post("http://localhost:3000/publishride/publishride",{fromId:fromId,toId:toId,msgForBooker:message,publisherId:id,rideDate:date,rideTime:time,seatAvailable:seat,distance:d,amountPerPerson:amount,totalAmount:amount});
+  }
+
+  getParticularRideDetail(id:any){
+    return this.http.get("http://localhost:3000/publishride/particualride/"+id);
+  }
+
+  getRidesOfBooker(from:any,to:any, date:any):Observable<any>{
+    return this.http.post("http://localhost:3000/publishride/ridesforbooker",{to:to,date:date,from:from});
   }
 }
