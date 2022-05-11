@@ -1,17 +1,17 @@
 <div class="container">
     <div class="form-box">
-      <form action="#" class="form">
+      <div action="#" class="form-change">
         <div class="head">
             <h1>Sign In</h1>
         </div>
   <div class="form-group">
           <i class="fa fa-mail-bulk"></i>
-          <input type="email" name="email" placeholder="Email"  autocomplete="off">
+          <input type="email" [(ngModel)]="email" placeholder="Email"  autocomplete="off">
         </div>
 
         <div class="form-group">
           <i class="fa fa-lock" aria-hidden="true"></i>
-          <input type="password" name="password" placeholder="Password" autocomplete="off">
+          <input type="password" [(ngModel)]="password" placeholder="Password" autocomplete="off">
         </div>
         <div class="links">
           <span>New User ? <a class="already" href="sign-up">Sign Up</a></span>
@@ -19,15 +19,15 @@
         </div>
 
         <div class="form-group signbtn">
-          <a  class="btn signin">Sign In</a>
+          <a style="cursor:pointer" (click)="signinUser()" class="btn signin">Sign In</a>
         </div>
-        <span class="or">
+        <span class="or mt-3">
           OR
         </span>
-        <div class="google-btn">
-          <a  class="btn-google">Sign in with Google <i class="fa fa-google"></i></a>
+        <div class="google-btn mt-3">
+          <a  (click)="signInWithGoogle()" style="cursor:pointer" class="btn-google">Sign in with Google <i class="fa fa-google"></i></a>
         </div>
 
-      </form>
+      </div>
     </div>
   </div>

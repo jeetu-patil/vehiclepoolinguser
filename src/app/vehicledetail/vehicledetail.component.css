@@ -5,13 +5,13 @@
   justify-content: center;
   align-items: center;
 }
-.form{
+.form-change{
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
 }
-.form{
+.form-change{
   background: #fff;
   padding: 20px 70px 20px 70px;
   border-radius: 8px;

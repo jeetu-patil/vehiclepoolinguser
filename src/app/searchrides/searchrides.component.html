@@ -1,56 +1,28 @@
-<div class="product-card ">
-    <div class="row">
-      <div class="outer-card ">
-        <div class="card publish" *ngFor="let publish of publishRides">
-          <div class="card-content" >
-            <table>
-              <tr>
-                <div class="card-image">
-                  <th>
-                    <img class="img-fluid" [src]="publish.publisherId.vehicle.image" />
-                  </th>
-                  <th>
-                    <div class="form-group">
-                      <label>
-                        <h4 class="p-3">From</h4>
-                      </label>
-                      <input type="text" name="from" [value]="publish.fromId.place" autocomplete="off">
-                    </div>
-                  </th>
-                  <th>
-                    <div class="form-group">
-                      <label>
-                        <h4 class="p-3">To</h4>
-                      </label>
-                     <input type="text" name="to" [value]="publish.toId.place" autocomplete="off">
-                    </div>
-                  </th>
-                  <th>
-                    <div class="input-field">
-                      <label class="calender" style="margin-right:50px;margin-left:20px;margin-top:20px"
-                        class="fas fa-calculator">Date : {{publish.rideDate | date:'dd/MM/yyyy'}}</label>
-                      <div class="form-group search2 pt-3">
-                      </div>
-                    </div>
-                  </th>
-                  
-                  <th>
-                    <input type="submit" (click)="viewRide(publish._id)" value="View" class="btn solid2" />
-                  </th>
-                </div>
-              </tr>
-            </table>
-          </div>
-
+<div class="ride-heading">
+  <h1>YOUR SEARCH RIDES</h1>
+</div>
+<section class="category mt-3">
+  <div class="row justify-content-around" style="width: 80%; margin: auto; margin-bottom: 20px;">
+    <div class="col-md-4 mt-5" *ngFor="let publish of publishRide">
+      <div class="card" >
+        <img [src]="publish.publisherId.vehicle.image" height="200px">
+        <div class="card-body">
+          <h5 class="card-title"><b>From : </b>{{publish.fromId.place}}</h5>
+          <h5 class="card-title "><b>From : </b>{{publish.toId.place}}</h5>
+          <h5 class="card-title "><b>Date : </b>{{publish.rideDate | date:'dd/MM/yyyy'}}</h5>
+        </div>
+        <div class="card-body">
+          <a (click)="viewRide(publish._id)" style="cursor:pointer;" class="card-link">View Ride Details</a>
         </div>
       </div>
     </div>
   </div>
+</section>
 
   <div class="product-card " *ngIf="status">
     <div class="row">
       <div class="outer-card ">
-        <div class="card publish" *ngFor="let publish of publishRides">
+        <div class="card publish" *ngFor="let publish of publishRide">
           <div class="card-content" >
             <table>
               <tr>

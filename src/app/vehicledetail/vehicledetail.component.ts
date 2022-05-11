@@ -36,7 +36,7 @@ export class VehicledetailComponent implements OnInit {
     formData.append("userId",id);
     this.publishrideService.addPublisherDetails(formData).subscribe(data => {
       this.toastr.success("Detailed success","success")
-       this.router.navigate(['rideinfo']);
+       this.router.navigate(['publish-info']);
      },err=>{
       if(err instanceof HttpErrorResponse){
         if(err.status == 500){
