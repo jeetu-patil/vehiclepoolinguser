@@ -15,7 +15,6 @@ import { SuccessMessageComponent } from './success-message/success-message.compo
 import { PublisherdetailComponent } from './publisherdetail/publisherdetail.component';
 import { CheckandbookComponent } from './checkandbook/checkandbook.component';
 import { AuthGuard } from './auth.guard';
-import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
 import { SearchridesComponent } from './searchrides/searchrides.component';
 
 const routes: Routes = [
@@ -26,22 +25,18 @@ const routes: Routes = [
       {path :"searchride/:from/:to/:date" ,component:SearchridesComponent}
     ]
   },
-  { path: "vehicle-detail", component: VehicledetailComponent
+  { path: "vehicle-detail", component: VehicledetailComponent,canActivate:[AuthGuard]},
+  { path: "verification-otp/:userId", component: VerificationOtpComponent},
+  { path: "ridedetail/:publishId", component: RideDetailComponent
   // ,canActivate:[AuthGuard]
 },
-  { path: "verification-otp/:userId", component: VerificationOtpComponent},
-  { path: "ridedetail/:publishId", component: RideDetailComponent,canActivate:[AuthGuard]},
   { path: "verify-email", component:VerifyEmailComponent},
   { path: "view-profile" , component:UserProfileComponent,canActivate:[AuthGuard]},
-  { path: "publish-info", component:RidePublishInfoComponent
-  // ,canActivate:[AuthGuard]
-},
+  { path: "publish-info", component:RidePublishInfoComponent,canActivate:[AuthGuard]},
   { path: "success" , component:SuccessMessageComponent},
   { path: "publisherdetail" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
   { path: "checkandbook" , component:CheckandbookComponent,canActivate:[AuthGuard]},
   // { path: "navbar" , component:NavbarComponent},
-  {
-    path : "rideinfo",component:RidedetailinfoComponent,canActivate:[AuthGuard]},
   { path: "**" , component:PageNotFoundComponent}
 
 ];
