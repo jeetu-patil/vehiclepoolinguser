@@ -29,7 +29,7 @@ body{
 .card-header{
   color: white !important;
   /* background: #00ffd5 !important; */
-  background: linear-gradient(-45deg, #4481eb 0%, #ffffff 100%);
+  background: linear-gradient(-45deg, #005af4 0%, #ffffff 100%);
   text-align: center;
 }
 
@@ -45,14 +45,14 @@ body{
 
 .form-control:focus{
   box-shadow: none !important;
-  border: 1px solid #3366FF !important;
+  border: 1px solid #020f34 !important;
 }
 
 .verify-btn{
   border-radius: 5px !important;
   border: 0px !important;
   width: 140px;
-  background-color: #3366FF !important;
+  background-color: #030f34 !important;
   -webkit-border-radius: 5px !important;
   -moz-border-radius: 5px !important;
   -ms-border-radius: 5px !important;
@@ -86,3 +86,8 @@ text-align: center;
   margin: 35px;
 }
 
+.bg-image{
+  /* background-image:url("../../assets/Images/blue5.jpg"); */
+  background-repeat: no-repeat;
+  background-size:cover;
+}

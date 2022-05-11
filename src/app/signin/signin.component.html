@@ -1,58 +1,40 @@
-<div class="container">
-  <div class="forms-container">
-    <div class="signin-signup">
-      <div class="sign-in-form">
-        <h2 class="title">Sign in</h2>
-        <div class="input-field">
-          <i class="fas fa-user"></i>
-          <input id="email1" email type="email" name="email"
-            pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" required placeholder="Email"
-            [(ngModel)]="email" #email1="ngModel" />
-          <span style="font-size: 8px; color: red;" *ngIf="email1.errors?.required && email1.touched">!Please enter your
-            email</span>
-          <div *ngIf="email1.errors?.pattern" style="font-size: 8px; color: red;">
-            Invalid Email patter
-          </div>
+  <div class="container">
+    <div class="form-box">
+      <form action="#" class="form">
+        <div class="head">
+            <h1>Sign In</h1>
         </div>
-        <div class="input-field">
-          <i class="fas fa-lock"></i>
-          <input id="password1" type="password" name="password" required minlength="6" maxlength="6"
-            placeholder="Password" [(ngModel)]="password" pattern="^[0-9-]{1,6}$" #password1="ngModel" />
-          <span style="font-size: 8px; color: red;" *ngIf="password1.errors?.required && password1.touched">!Please
-            Enter Your Password</span>
-          <span *ngIf="password1.errors?.pattern" style="font-size: 8px; color: red;">alphabets not support</span>
-          <div style="font-size: 8px; color: red;" *ngIf="password1.errors?.['minlength']">
-            minimum 6 number in password
-          </div>
+  <div class="form-group">
+          <i class="fa fa-mail-bulk"></i>
+          <input type="email" name="email" placeholder="Email"  autocomplete="off">
         </div>
-        <input type="submit" (click)="signinUser()" [disabled]="email1.errors?.required|| password1.errors?.required"
-          value="Login" class="btn solid" />
-        <div class="or">
-          <span class="or-text">
-            OR
-          </span>
-        </div>
-        <div class="social-media">
-          <a (click)="signInWithGoogle()" class="social-icon mt-3">
-            <i class="fab fa-google"></i>
-          </a>
-          <label class="pt-4 text-decoration:red;" style="margin-left:10px">Sign in with Google</label>
 
+        <div class="form-group">
+          <i class="fa fa-lock" aria-hidden="true"></i>
+          <input type="password" name="password" placeholder="Password" autocomplete="off">
         </div>
-      </div>
+        <div class="links">
+          <span>New User ? <a class="already" href="sign-up">Sign Up</a></span>
+          <a href="" class="forget">Forget Password</a>
+        </div>
+
+        <div class="form-group signbtn">
+          <a  class="btn signin">Sign In</a>
+        </div>
+        <span class="or">
+          OR
+        </span>
+        <div class="google-btn">
+          <a  class="btn-google">Sign in with Google <i class="fa fa-google"></i></a>
+        </div>
+
+      </form>
     </div>
   </div>
 
-  <div class="panels-container">
-    <div class="panel right-panel">
-      <div class="content">
-        <h3>New here ?</h3>
-        <p>
-          If You are New User Please Register First , Thank You
-        </p>
-        <button (click)="navigateToSignup()" class="btn transparent" id="sign-up-btn"></button>
-        <img src="../assets/Images/CarFOrUi2.png" class="image" alt="" />
-      </div>
-    </div>
-  </div>
-</div>
+
+
+
+
+
+

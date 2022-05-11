@@ -1,6 +1,7 @@
 .navbar {
   width: 100vw;
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
+  /* background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));; */
+  background-color: rgb(3, 2, 48);
   backdrop-filter: blur(15px);
 
 
@@ -67,7 +68,7 @@
 }
 
 .dropdown #userProfile i {
-  color: rgb(83, 83, 83);
+  color: rgb(255, 255, 255);
   font-size: 28px;
   vertical-align: middle;
 }
@@ -76,7 +77,7 @@
   text-decoration: none;
   font-size: 14px;
   font-weight: 300;
-  color: #000;
+  color: rgb(255, 255, 255);
   /* z-index: 1; */
 }
 .dropdown .name .fa-user-circle{
@@ -162,7 +163,7 @@
   font-size: 24px;
   font-weight: 500;
   position: relative;
-  color: #000;
+  color: rgb(255, 255, 255);
 }
 
 .navbar-brand small {
@@ -183,7 +184,7 @@
 .nav-item .nav-link {
   padding: 0;
   font-weight: 500;
-  color: #000;
+  color: rgb(255, 255, 255);
 }
 
 .nav-item:hover .nav-link {
@@ -197,7 +198,7 @@
   height: 2px;
   top: 30px;
   left: 0;
-  background: #000;
+  background: rgb(255, 255, 255);
   opacity: 0;
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
@@ -219,7 +220,7 @@
 }
 
 .dropdown #userProfile i {
-  color: rgb(83, 83, 83);
+  color: rgb(255, 255, 255);
   font-size: 28px;
   vertical-align: middle;
 }
