@@ -52,41 +52,47 @@
 
 <div class="container">
   <div class="form-box">
-    <form action="#" class="form">
+    <div action="#" class="form-change">
       <div class="head">
         <h2 class="title ">PUBLISH RIDE</h2>
       </div>
       <div class="form-group">
         <i class="fa fa-circle" aria-hidden="true"></i>
-        <input  type="text" name="From" placeholder="From" />
-      </div>
+        <input [(ngModel)]="from" list="datalistOptions" id="exampleDataList" placeholder="From">
+        <datalist id="datalistOptions">
+          <option *ngFor="let pla of places" [value]="pla.place ">
+        </datalist>
+       </div>
 
       <div class="form-group">
         <i class="fa fa-circle "></i>
-        <input  type="text" name="To" placeholder="To" />
+        <input [(ngModel)]="to" list="datalistOptions" id="exampleDataList" placeholder="To">
+        <datalist id="datalistOptions">
+          <option *ngFor="let pla of places" [value]="pla.place ">
+        </datalist>
       </div>
       <div class="form-group">
         <i class="fa fa-user" aria-hidden="true"></i>
-        <input type="number"  name="number" placeholder="Available Sit" />
+        <input type="number"  [(ngModel)]="seat" placeholder="Available Seat" />
       </div>
       <div class="form-group">
         <i class="fa fa-calendar" aria-hidden="true"></i>
-        <input type="date" id="birthday" name="birthday">
+        <input [(ngModel)]="date" type="date" id="birthday">
       </div>
       <div class="form-group">
         <i class="fa fa-times-circle" aria-hidden="true"></i>
-        <input type="time"  name="appt" placeholder="time" />
+        <input type="time"  [(ngModel)]="time" placeholder="time" />
       </div>
 
 
       <div class="form-group">
         <label>Your Message</label>
-        <textarea class="form-control" name="msg" ></textarea>
+        <textarea class="form-control" [(ngModel)]="message" placeholder="Message"></textarea>
       </div>
      <div class="form-group">
-        <a class="btn signup">Publish</a>
+        <a (click)="submitDetail()" style="cursor:pointer" class="btn signup">Publish</a>
       </div>
-    </form>
+    </div>
   </div>
 </div>
 

@@ -1,69 +1,4 @@
-ul {
-  padding:0;
-}
-ul li{
-  list-style:none;
-  font-size:13px;
-  line-height:25px;
-  letter-spacing:1px;
-
-}
-ul li a{
-  text-decoration:none;
-  letter-spacing:1px;
-
-}
-.content-body p{
-  font-size:13px;
-  line-height:20px;
-  letter-spacing:0.5px;
-}
-.footer {
-  padding:30px 0;
-  margin-top:40px;
-  margin-top:200px;
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
-}
-.footer-content .content-heading{
-  font-size:18px;
-  letter-spacing:2px;
-  font-weight:600;
-  padding: 0 0 10px 0;
-}
-
-.footer-block{
-
-  padding:20px 40px;
-  display:flex;
-  justify-content:center;
-}
-.links ul li a{
-  color:var(--dark);
-  font-weight:500;
-
-}
-
-.social-links{
- display: flex;
-}
-.social-links li{
-  margin-right:30px ;
-}
-.social-links li a i{
-  font-size: 24px;
-  color: rgb(0, 9, 91);
-}
-.copywrite{
-  padding-top: 20px;
-}
-
-
-
-
-
-
-
- /* *{
+*{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -72,11 +7,11 @@ ul li a{
 body{
   min-height: 100vh;
   width: 100%;
-  background: #000000;
+  background: #EEECEB;
 }
 footer{
-  position: fixed;
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
+  /* position: fixed; */
+  background: #1B2A49;
   width: 100%;
   bottom: 0;
   left: 0;
@@ -88,7 +23,7 @@ footer::before{
   top: 100px;
   height: 1px;
   width: 100%;
-  background: #AFAFB6;
+  /* background: #AFAFB6; */
 }
 footer .content{
   max-width: 1250px;
@@ -102,7 +37,7 @@ footer .content .top{
   margin-bottom: 50px;
 }
 .content .top .logo-details{
-  color: rgb(0, 0, 0);
+  color: #fff;
   font-size: 30px;
 }
 .content .top .media-icons{
@@ -115,7 +50,7 @@ footer .content .top{
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
-  color: rgb(0, 0, 0);
+  color: #fff;
   font-size: 17px;
   text-decoration: none;
   transition: all 0.4s ease;
@@ -135,10 +70,10 @@ footer .content .top{
   background: #fff;
 }
 .top .media-icons a:nth-child(3){
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
+  background: #E1306C;
 }
 .top .media-icons a:nth-child(3):hover{
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
+  color: #E1306C;
   background: #fff;
 }
 .top .media-icons a:nth-child(4){
@@ -149,10 +84,10 @@ footer .content .top{
   background: #fff;
 }
 .top .media-icons a:nth-child(5){
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
+  background: #FF0000;
 }
 .top .media-icons a:nth-child(5):hover{
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
+  color: #FF0000;
   background: #fff;
 }
 footer .content .link-boxes{
@@ -164,7 +99,7 @@ footer .content .link-boxes .box{
   width: calc(100% / 5 - 10px);
 }
 .content .link-boxes .box .link_name{
-  color: rgb(0, 0, 0);
+  color: #fff;
   font-size: 18px;
   font-weight: 400;
   margin-bottom: 10px;
@@ -177,14 +112,14 @@ footer .content .link-boxes .box{
   bottom: -2px;
   height: 2px;
   width: 35px;
-  background: rgb(255, 0, 0);
+  background: #fff;
 }
 .content .link-boxes .box li{
   margin: 6px 0;
   list-style: none;
 }
 .content .link-boxes .box li a{
-  color: rgb(0, 0, 0);
+  color: #fff;
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
@@ -203,7 +138,7 @@ footer .content .link-boxes .box{
   width: calc(100% + 55px);
   outline: none;
   border: 2px solid #AFAFB6;
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
+  background: #1B2A49;
   border-radius: 4px;
   padding: 0 15px;
   font-size: 15px;
@@ -216,7 +151,7 @@ footer .content .link-boxes .box{
 }
 .link-boxes .input-box input[type="button"]{
   background: #fff;
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));;
+  color: #1B2A49;
   border: none;
   font-size: 18px;
   font-weight: 500;
@@ -230,7 +165,7 @@ footer .content .link-boxes .box{
 }
 footer .bottom-details{
   width: 100%;
-  background-image: linear-gradient(rgb(0, 238, 255), rgb(0, 0, 0));;
+  background: #1B2A49;
 }
 footer .bottom-details .bottom_text{
   max-width: 1250px;
@@ -243,7 +178,7 @@ footer .bottom-details .bottom_text{
 .bottom-details .bottom_text a{
   font-size: 14px;
   font-weight: 300;
-  color: rgb(0, 0, 0);
+  color: #fff;
   opacity: 0.8;
   text-decoration: none;
 }
@@ -303,4 +238,4 @@ footer .bottom-details .bottom_text{
   footer .content .link-boxes .input-box{
     width: 100%;
   }
-} */
+}

@@ -26,7 +26,6 @@ import { SuccessMessageComponent } from './success-message/success-message.compo
 import { PublisherdetailComponent } from './publisherdetail/publisherdetail.component';
 import { CheckandbookComponent } from './checkandbook/checkandbook.component';
 import { HistoryRidesComponent } from './history-rides/history-rides.component';
-import { RidedetailinfoComponent } from './ridedetailinfo/ridedetailinfo.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SearchridesComponent } from './searchrides/searchrides.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -68,7 +67,6 @@ const socialProvider = {
     PublisherdetailComponent,
     CheckandbookComponent,
     HistoryRidesComponent,
-    RidedetailinfoComponent,
     SearchridesComponent
   ],
   imports: [

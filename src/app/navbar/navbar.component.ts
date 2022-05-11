@@ -36,7 +36,7 @@ export class NavbarComponent implements OnInit {
           this.router.navigate(['vehicle-detail']);
         }
         else
-          this.router.navigate(['rideinfo']);
+          this.router.navigate(['publish-info']);
     });
   }
 }
