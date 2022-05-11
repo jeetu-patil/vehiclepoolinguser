@@ -15,18 +15,19 @@ export class SearchridesComponent implements OnInit {
   from:any;
   to:any
   date:any;
-  publishRides:any;
+  publishRide:any;
   status=false;
+  seat:any;
 
   ngOnInit(): void {
     this.from =this.activatedRoute.snapshot.paramMap.get("from");
     this.to =this.activatedRoute.snapshot.paramMap.get("to");
     this.date =this.activatedRoute.snapshot.paramMap.get("date");
+    this.seat =this.activatedRoute.snapshot.paramMap.get("seat");
 
-
-    this.publisRideService.getRidesOfBooker(this.from, this.to, this.date).subscribe(data => {
+    this.publisRideService.getRidesOfBooker(this.from, this.to, this.date,this.seat).subscribe(data => {
       if(data.length>0){
-        this.publishRides=data;
+        this.publishRide=data;
       }
       else
       {
@@ -38,7 +39,7 @@ export class SearchridesComponent implements OnInit {
   }
 
   viewRide(publishId:any){
-    this.router.navigate(['ridedetail/'+publishId]);
+    this.router.navigate(['ridedetail/'+publishId+'/'+this.seat+'/'+publishId]);
   }
 
 }

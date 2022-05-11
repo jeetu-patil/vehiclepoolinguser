@@ -13,6 +13,8 @@ export class RideDetailComponent implements OnInit {
 
   id:any;
   publish:any;
+  seat:any;
+
   ngOnInit(): void {
     this.id=this.activatedRoute.snapshot.paramMap.get("publishId");
     this.publisRideService.getParticularRideDetail(this.id).subscribe(data => {
@@ -20,6 +22,15 @@ export class RideDetailComponent implements OnInit {
     },err => {
 
     });
+
+    this.seat=this.activatedRoute.snapshot.paramMap.get("seat");
+  }
+
+
+  bookRide(){
+    this.publisRideService.bookRide(this.seat).subscribe(data => {
+      alert("Booked..");
+    })
   }
 
 }
