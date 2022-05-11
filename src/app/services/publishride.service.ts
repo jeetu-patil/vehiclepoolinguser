@@ -31,7 +31,12 @@ export class PublishrideService {
     return this.http.get("http://localhost:3000/publishride/particualride/"+id);
   }
 
-  getRidesOfBooker(from:any,to:any, date:any):Observable<any>{
-    return this.http.post("http://localhost:3000/publishride/ridesforbooker",{to:to,date:date,from:from});
+  getRidesOfBooker(from:any,to:any, date:any,seat:any):Observable<any>{
+    return this.http.post("http://localhost:3000/publishride/ridesforbooker",{to:to,date:date,from:from,seat:seat});
+  }
+
+
+  bookRide(seat:any){
+    return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId")});
   }
 }

@@ -18,6 +18,7 @@ export class HomepageComponent implements OnInit {
   to:any;
   date:any;
   status=true;
+  seat:any;
   places:any=[];
 
   ngOnInit(): void {
@@ -37,14 +38,14 @@ export class HomepageComponent implements OnInit {
   }
 
   viewRide(publishId:any){
-    this.router.navigate(['ridedetail/'+publishId]);
+    this.router.navigate(['ridedetail/'+publishId+'/'+1]);
   }
 
   searchRides(){
   let fromPlace = this.places.find((i: { place: any; }) => i.place === this.from);
   let toPlace = this.places.find((i: { place: any; }) => i.place === this.to);
   this.status=false;
-  this.router.navigate(['searchride',fromPlace._id,toPlace._id,this.date],{relativeTo:this.activatedRoute});
+  this.router.navigate(['searchride',fromPlace._id,toPlace._id,this.date,this.seat]);
   }
 
 }

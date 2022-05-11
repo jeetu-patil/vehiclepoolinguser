@@ -15,13 +15,13 @@
                     </datalist>
       </div>
       <div class="search-bar form-group">
-        <input class="search-box form-control" type="date">
+        <input [(ngModel)]="date" class="search-box form-control" type="date">
       </div>
       <div class="search-bar form-group">
-        <input class="search-box form-control" placeholder="Number of seats" min="1" type="number">
+        <input [(ngModel)]="seat" class="search-box form-control" placeholder="Number of seats" min="1" type="number">
       </div>
       <div class="search-bar form-group button-search">
-        <input class="search-box form-control" type="button" id="search-btn" value="Search"/>
+        <input (click)="searchRides()" class="search-box form-control" type="button" id="search-btn" value="Search"/>
       </div>
     </div>
 

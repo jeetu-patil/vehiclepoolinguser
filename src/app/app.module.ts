@@ -24,7 +24,6 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { RidePublishInfoComponent } from './ride-publish-info/ride-publish-info.component';
 import { SuccessMessageComponent } from './success-message/success-message.component';
 import { PublisherdetailComponent } from './publisherdetail/publisherdetail.component';
-import { CheckandbookComponent } from './checkandbook/checkandbook.component';
 import { HistoryRidesComponent } from './history-rides/history-rides.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { SearchridesComponent } from './searchrides/searchrides.component';
@@ -65,7 +64,6 @@ const socialProvider = {
     RidePublishInfoComponent,
     SuccessMessageComponent,
     PublisherdetailComponent,
-    CheckandbookComponent,
     HistoryRidesComponent,
     SearchridesComponent
   ],
