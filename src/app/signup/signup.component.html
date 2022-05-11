@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="form-box">
+    <form action="#" class="form">
+      <div class="head">
+         <h1>Sign Up</h1>
+      </div>
+      <div class="form-group">
+        <i class="fa fa-user" aria-hidden="true"></i>
+        <input  type="text" name="name" placeholder="Name" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <i class="fa fa-mail-bulk    "></i>
+        <input  type="email" name="email" placeholder="Email"  autocomplete="off">
+      </div>
+      <div class="form-group">
+        <i class="fa fa-mobile" aria-hidden="true"></i>
+        <input  type="text" name="mobile" placeholder="Mobile" autocomplete="off">
+      </div>
+      <div class="form-group">
+        <i class="fa fa-lock" aria-hidden="true"></i>
+        <input type="password" name="password" placeholder="Password" autocomplete="off">
+      </div>
+
+      <div class="form-group">
+        <i class="fa fa-book"></i>
+        <input id="aadhar1" type="text" name="user.aadhar" required minlength="12" maxlength="12"
+          placeholder="Aadhar No." pattern="^[0-9-]{1,15}$" />
+      </div>
+
+      <div class="form-check form-check-inline">
+        <input name="user.gender"  required class="form-check-input" class="m-2"
+          type="radio" id="inlineRadio1" value="female"  />
+        <label class="form-check-label" class="m-2" for="inlineRadio2">Female</label>
+        <input name="user.gender"  required class="form-check-input" class="m-2"
+        type="radio" id="inlineRadio1" value="male"  />
+        <label class="form-check-label" class="m-2" for="inlineRadio2">Male</label>
+      </div>
+      <!-- <span style="font-size: 8px; color: red;">!Please chose Your Gender</span> -->
+
+
+      <div class="form-group">
+        <a class="btn signup">Sign Up</a>
+      </div>
+
+      <span>Already Registered ? <a class="already" href="sign-in">Sign In</a></span>
+    </form>
+  </div>
+</div>

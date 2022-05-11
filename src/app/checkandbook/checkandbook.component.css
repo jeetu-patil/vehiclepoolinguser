@@ -517,6 +517,7 @@ li {
   margin:50px;
   color: white;
   position: relative;
+  /* margin-left: 150px; */
 }
 
 li::before{
@@ -528,6 +529,8 @@ li::before{
   height: 5em;
   background: dodgerblue;
   z-index: -1;
+  margin-top: 180px;
+
 }
 
 
@@ -541,10 +544,12 @@ li:first-child::before {
 
 .active ~ li {
   background: lightblue;
+
 }
 
 .active ~ li::before {
   background: lightblue;
+
 }
 
 .work_skills {
