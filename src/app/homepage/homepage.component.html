@@ -1,0 +1,134 @@
+<div class="container-fluid banner">
+</div>
+
+<div class="container search-form">
+      <div class="search-bar form-group">
+        <input [(ngModel)]="from" list="datalistOptions" class="search-box form-control" id="from" placeholder="From">
+                    <datalist id="datalistOptions">
+                    <option *ngFor="let pla of places" [value]="pla.place">
+                    </datalist>
+      </div>
+      <div class="search-bar form-group">
+        <input [(ngModel)]="to" list="datalistOptions" class="search-box form-control"  id="exampleDataList" placeholder="To">
+                    <datalist id="datalistOptions">
+                    <option *ngFor="let pla of places" [value]="pla.place">
+                    </datalist>
+      </div>
+      <div class="search-bar form-group">
+        <input class="search-box form-control" type="date">
+      </div>
+      <div class="search-bar form-group">
+        <input class="search-box form-control" placeholder="Number of seats" min="1" type="number">
+      </div>
+      <div class="search-bar form-group button-search">
+        <input class="search-box form-control" type="button" id="search-btn" value="Search"/>
+      </div>
+    </div>
+
+
+
+<div class="ride-heading">
+  <h1>PUBLISH RIDES</h1>
+</div>
+<section class="category mt-3">
+  <div class="row justify-content-around" style="width: 80%; margin: auto; margin-bottom: 20px;">
+    <div class="col-md-4 mt-5" *ngFor="let publish of publishRide">
+      <div class="card" >
+        <img [src]="publish.publisherId.vehicle.image" height="200px">
+        <div class="card-body">
+          <h5 class="card-title"><b>From : </b>{{publish.fromId.place}}</h5>
+          <h5 class="card-title "><b>From : </b>{{publish.toId.place}}</h5>
+          <h5 class="card-title "><b>Date : </b>{{publish.rideDate | date:'dd/MM/yyyy'}}</h5>
+        </div>
+        <div class="card-body">
+          <a (click)="viewRide(publish._id)" style="cursor:pointer;" class="card-link">View Ride Details</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<div class="container">
+  <div class="row">
+    <h1 class="help">Ridesharely Help Center</h1>
+    <div class="col-md-6">
+      <div>
+      <h3>How do I book a vehiclepool ride?</h3>
+      <p>
+        You can book a vehiclepool ride on our ridesharely.com.
+        Simply search for your<span id="dots">...</span><span id="more"></span> destination, choose the date you want to travel
+         and pick the carpool that suits you best! Some rides can be booked
+         instantly, while other rides require manual approval from the driver.
+          Either way, booking a carpool ride is fast, simple and easy.
+      </p>
+
+    </div>
+      <h3 class="pt-5">How do I cancel my carpool ride?</h3>
+      <p>
+        If you have a change of plans, you can always cancel your carpool ride
+        from the ‘Your rides’ section of our app. The sooner you cancel, the
+        better. That way the driver has time to accept new passengers.
+        The amount of your refund will depend on how far in advance you cancel.
+         If you cancel more than 24 hours before departure, for example,
+         you’ll receive a full refund, excluding the service fee.
+      </p>
+
+      <h3 class="pt-4">How much does a carpool ride cost?</h3>
+      <p>
+        The costs of a carpool ride can vary greatly, and depend on factors
+         like distance, time of departure, the demand of that ride and more.
+          It is also up to the driver to decide how much to charge per seat,
+          so it’s hard to put an exact price tag on a ride. Check out some of
+          our top carpool destinations to get an idea of price, or start
+          searching for your next carpool ride on blablacar.com.
+      </p>
+
+    </div>
+    <div class="col-md-6">
+      <h3>How do I publish a carpool ride?</h3>
+      <p>
+        Offering a carpool ride on BlaBlaCar is easy. To publish your ride,
+         use our mobile app or blablacar.com. Indicate your departure and
+         arrival points, the date and time of your departure, how many
+          passengers you can take and the price per seat. You’ll also need
+          to choose how you want to accept bookings (either automatically
+           or manually), and you have the option of adding any important
+           details you think your passengers should know about. Then tap
+           ‘Publish ride’ and you’re done!
+      </p>
+
+      <h3 class="pt-4">What are the benefits of travelling by carpool?</h3>
+      <p>
+        There are multiple advantages to carpooling, over other means
+         of transport. Travelling by carpool is usually more affordable,
+          especially for longer distances. Carpooling is also more eco-friendly,
+           as sharing a car means there will be fewer cars on the road,
+            and therefore fewer emissions. Taking a carpool ride is also
+            a safe way to travel in the current times. Because there are
+            only a few people in a car, you have fewer points of contact
+            and there’s less risk than other travel options.
+      </p>
+
+
+      <h3 class="pt-2">How do I start carpooling?</h3>
+      <p>Carpooling with BlaBlaCar is super easy, and free! Simply sign up for an account and tell us some basic details about yourself. Once you have a BlaBlaCar account, you can start booking or publishing rides directly on our app or website.</p>
+     </div>
+
+  <div id="sub-hero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 text-center2" id="sub-banner">
+                <img src="../../assets/Images/homebanner1.jpg" class="img-fluid" alt="" />
+            </div>
+            <div class="col-md-6" id="subhero-text">
+                <h3>Our Mission</h3>
+                <p>
+                    Our Rides offers a stunning variety of rides in different different routes,lovely rides.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+</div>
