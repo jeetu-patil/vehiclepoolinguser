@@ -1,0 +1,260 @@
+.product-content {
+  padding: 0 50px;
+}
+
+.product-content .buttons a {
+  padding: 5px 20px;
+  font-weight: 600;
+}
+
+.product-content .buttons .cart {
+  margin-left: 30px;
+}
+
+.product-name {
+  margin: 40px 0 20px 0;
+}
+
+.product-name h1 {
+  font-size: 28px;
+}
+
+.price-rating {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.price-rating .price {
+  font-size: 22px;
+  font-weight: 500;
+}
+
+.price-rating .free-shiping {
+  margin: 10px 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.price-rating .rating {
+  width: fit-content;
+  padding: 2px 8px;
+  background-color: var(--secondary);
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.price-rating .rating span {
+  margin-left: 5px;
+}
+
+.product-discription .title {
+  margin-bottom: 20px;
+}
+
+.product-discription .title h2 {
+  font-size: 24px;
+}
+
+.product-discription .discription {
+  /* letter-spacing: 1px; */
+  line-height: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  .left {
+      padding: 20px 50px;
+  }
+  .left .product_image {
+      height: 350px;
+      /* width: 250px; */
+      text-align: center;
+  }
+}
+
+.form-box
+{
+  padding: 50px 0 0 0 ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.form{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+.form{
+  background: #fff;
+  padding: 20px 70px 20px 70px;
+  border-radius: 8px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.form .logo svg{
+  width: 104px;
+  height: 146px;
+  ;
+}
+.form-group{
+  margin: 20px 0;
+  position: relative;
+}
+.form-group i{
+  position: absolute;
+  top: 10px;
+  left: 5px;
+}
+.form-group input{
+  width: 350px;
+  font-weight: 500;
+  padding: 5px 10px 5px 50px;
+  border: 0;
+  border-bottom: 2px solid rgb(196, 196, 196);
+  outline: 0;
+}
+
+.form .already
+{
+  text-decoration: none;
+  color: #000;
+  font-weight: 600;
+  font-size: 14px;
+}
+.form-group .signup{
+  padding: 8px 30px !important;
+  margin-bottom: 10px;
+  font-size:16px;
+  letter-spacing: 2px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.form span{
+  font-weight: 500;
+}
+.form span .already
+{
+  text-decoration: underline;
+  color: rgb(3, 45, 71);
+  letter-spacing: 2px;
+}
+
+.btn{
+  background-color:rgb(2, 2, 50);
+  color: #fff;
+margin-left:50px;
+margin-top:30px;
+}
+
+.align{
+  padding-right:30px;
+  margin: 20px;
+}
+
+.input-field {
+  max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.6rem;
+  position: relative;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
+
+.input-field i {
+  text-align: center;
+  line-height: 55px;
+  color: #000000;
+  transition: 0.5s;
+  font-size: 1.1rem;
+}
+
+.input-field input {
+  background: none;
+  outline: none;
+  border: none;
+  line-height: 1;
+  font-weight: 600;
+  font-size: 1.0rem;
+  color: rgb(125, 125, 125);
+}
+
+.input-field input::placeholder {
+  color: #aaa;
+  font-weight: 500;
+}
+
+@media (max-width: 576px) {
+  .wheelertype .form-check {
+    display:flex;
+    width: 100%;
+    padding-right:180px;
+  }
+}
+
+ #userProfile i {
+  color: rgb(0, 0, 0);
+  font-size: 28px;
+  /* vertical-align: middle; */
+}
+
+.dropdown .name{
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 300;
+  color: #000;
+}
+
+.form-group{
+  padding-left: 15px;
+}
+
+.name{
+  margin-left: 30px;
+  text-decoration:none;
+  font-size: 20px;
+}
+
+.from{
+  margin:30px;
+  font-size: 20px;
+  margin-left: 15px;
+}
+
+.fa-user-circle{
+  color: grey;
+  font-size:30px;
+}
+
+.vl {
+  border-left: 6px solid black;
+  height: 100px;
+  margin-left:97px;
+  margin-top: -72px;
+  margin-bottom: -68px;
+}
+
+.detail{
+  margin-top:80px;
+}
+
+.material-icons{
+  margin-bottom:40px;
+}
