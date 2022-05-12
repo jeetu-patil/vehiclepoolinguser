@@ -30,6 +30,7 @@ import { SearchridesComponent } from './searchrides/searchrides.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
+import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpage.component';
 
 
 const socialProvider = {
@@ -65,7 +66,8 @@ const socialProvider = {
     SuccessMessageComponent,
     PublisherdetailComponent,
     HistoryRidesComponent,
-    SearchridesComponent
+    SearchridesComponent,
+    AcceptrequestpageComponent
   ],
   imports: [
     BrowserModule,

@@ -34,4 +34,8 @@ export class UserService {
      return this.http.post("http://localhost:3000/user/signin",{email:email,password:password});
   }
 
+  getPublisher(userId:any){
+    return this.http.get("http://localhost:3000/user/getuser/"+userId);
+  }
+
 }
