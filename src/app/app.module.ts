@@ -30,6 +30,12 @@ import { SearchridesComponent } from './searchrides/searchrides.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
+import { UserridesComponent } from './userrides/userrides.component';
+import { BookridesComponent } from './bookrides/bookrides.component';
+import { PublishrideComponent } from './publishride/publishride.component';
+import { BookhistoryComponent } from './bookhistory/bookhistory.component';
+import { PublishhistoryComponent } from './publishhistory/publishhistory.component';
+import { ConfirmbookerComponent } from './confirmbooker/confirmbooker.component';
 
 
 const socialProvider = {
@@ -65,7 +71,13 @@ const socialProvider = {
     SuccessMessageComponent,
     PublisherdetailComponent,
     HistoryRidesComponent,
-    SearchridesComponent
+    SearchridesComponent,
+    UserridesComponent,
+    BookridesComponent,
+    PublishrideComponent,
+    BookhistoryComponent,
+    PublishhistoryComponent,
+    ConfirmbookerComponent
   ],
   imports: [
     BrowserModule,
