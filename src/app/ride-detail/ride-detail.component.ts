@@ -19,6 +19,7 @@ export class RideDetailComponent implements OnInit {
     this.id=this.activatedRoute.snapshot.paramMap.get("publishId");
     this.publisRideService.getParticularRideDetail(this.id).subscribe(data => {
       this.publish=data;
+      console.log(this.publish)
     },err => {
 
     });
@@ -28,9 +29,21 @@ export class RideDetailComponent implements OnInit {
 
 
   bookRide(){
-    this.publisRideService.bookRide(this.seat).subscribe(data => {
-      alert("Booked..");
+    this.publisRideService.bookRide(this.seat,this.publish.publisherId._id).subscribe(data => {
+      this.publisRideService.requestToThePublisher(this.publish.publisherId._id).subscribe(data => {
+        alert("Your request sent to the publisher please wait fotr response..");
+      })
     })
   }
 
+  getLength(){
+    if(this.publish.publisherId.image.length>0)
+      return true;
+    else  
+      return false;
+  }
+
+  navigateToDetail(publisherId:any){
+    this.router.navigate(['publisherdetail',publisherId])
+  }
 }

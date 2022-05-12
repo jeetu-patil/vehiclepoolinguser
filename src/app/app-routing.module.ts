@@ -15,6 +15,7 @@ import { SuccessMessageComponent } from './success-message/success-message.compo
 import { PublisherdetailComponent } from './publisherdetail/publisherdetail.component';
 import { AuthGuard } from './auth.guard';
 import { SearchridesComponent } from './searchrides/searchrides.component';
+import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpage.component';
 
 const routes: Routes = [
   { path: "sign-in", component: SigninComponent },
@@ -28,8 +29,9 @@ const routes: Routes = [
   { path: "view-profile" , component:UserProfileComponent,canActivate:[AuthGuard]},
   { path: "publish-info", component:RidePublishInfoComponent,canActivate:[AuthGuard]},
   { path: "success" , component:SuccessMessageComponent},
-  { path: "publisherdetail" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
+  { path: "publisherdetail/:userId" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
   // { path: "navbar" , component:NavbarComponent},
+  {path:'acceptrequest',component:AcceptrequestpageComponent},
   { path: "**" , component:PageNotFoundComponent}
 
 ];

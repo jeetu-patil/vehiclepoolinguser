@@ -36,7 +36,11 @@ export class PublishrideService {
   }
 
 
-  bookRide(seat:any){
-    return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId")});
+  bookRide(seat:any,publisherId:any){
+    return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),publisherId:publisherId});
+  }
+
+  requestToThePublisher(publisherId:any){
+    return this.http.post("http://localhost:3000/publishride/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),publisherId:publisherId});
   }
 }
