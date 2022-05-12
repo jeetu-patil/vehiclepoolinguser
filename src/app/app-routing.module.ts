@@ -21,6 +21,7 @@ import { PublishrideComponent } from './publishride/publishride.component';
 import { BookhistoryComponent } from './bookhistory/bookhistory.component';
 import { PublishhistoryComponent } from './publishhistory/publishhistory.component';
 import { ConfirmbookerComponent } from './confirmbooker/confirmbooker.component';
+import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpage.component';
 
 const routes: Routes = [
   { path: "sign-in", component: SigninComponent },
@@ -40,14 +41,13 @@ const routes: Routes = [
 },
 { path: "confirmbooker", component:ConfirmbookerComponent},
   { path: "publish-info", component:RidePublishInfoComponent,canActivate:[AuthGuard]},
-  { path: "success" , component:SuccessMessageComponent},
-  { path: "publisherdetail" , component:PublisherdetailComponent
-  // ,canActivate:[AuthGuard]
-},
+  { path: "success" , component:SuccessMessageComponent},,
 { path: "bookrides" , component:BookridesComponent},
 { path: "publishride", component:PublishrideComponent},
 { path: "userrides", component:UserridesComponent},
+  { path: "publisherdetail/:userId" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
   // { path: "navbar" , component:NavbarComponent},
+  {path:'acceptrequest',component:AcceptrequestpageComponent},
   { path: "**" , component:PageNotFoundComponent}
 
 ];

@@ -1,39 +1,41 @@
 <div class="container ">
   <div class="form-box">
-    <form action="#" class="form mt-5">
+    <div action="#" class="form mt-5">
       <div class="product-content">
-        <h1 style="font-size:30px; margin-left:20px;">12 March 2021</h1>
+        <h1 style="font-size:30px; margin-left:20px;">{{publish.rideDate | date:'dd/MM/yyyy'}}</h1>
         <div class="detail" style="margin-left: 73px;">
-          <a type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i>
-            <a href="" class="name">Sapna</a>
-          </a>
+          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="!getLength()" type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+
+          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="getLength()"><img [src]="publish.publisherId.image" id="userProfile"/></a>
+
+            <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" class="name">{{publish.publisherId.name}}</a>
+        
         </div>
         <div class="from">
-
+          <label style="padding-right:10px;"></label>
           <i class="material-icons" style="color:black;">radio_button_checked</i>
-          <label style="padding-left:10px; font-size:10px"> Kalani Nagarv,Airport Road,SuperCoridor,indore</label>
+          <label style="padding-left:10px;"> {{publish.fromId.place}}</label>
         </div>
         <div class="vl">
         </div>
         <div class="from">
-          <i class="material-icons " style="">radio_button_checked</i>
-          <label style="padding-left:10px;">Kalani Nagar</label>
+          <i class="material-icons " style="color:black; margin-top: 35px;margin-left:73px; ">radio_button_checked</i>
+          <label style="padding-left:10px;">{{publish.toId.place}}</label>
         </div>
         <div class="from">
-          <label>Date : 20/5/2021</label>
+          <label>Date : {{publish.rideDate | date:'dd/MM/yyyy'}}</label>
         </div>
         <div class="from">
-          <label>Price for 1 Person : Rs. 50</label>
+          <label>Price for 1 Person : {{publish.amountPerPerson}}</label>
         </div>
         <h2>Message :</h2>
         <div class="card">
-          <h3 style="padding-left:10px;">I am Comfertable with Smoking.</h3>
-          <h3 style="padding-left:10px;">I am very Good Person</h3>
+          <h3 style="padding-left:10px;">{{publish.msgForBooker}}</h3>
         </div>
         <div class="form-group">
-          <a class="btn signup">Book Now</a>
+          <a style="cursor:pointer;" (click)="bookRide()" class="btn signup">Book Now</a>
         </div>
       </div>
-    </form>
+    </div>
   </div>
 </div>
