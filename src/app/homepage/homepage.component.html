@@ -6,28 +6,29 @@
 
 <!-- --------------------Search Bar--------------------------------- -->
 <div class="container search-form">
-      <div class="search-bar form-group">
-        <input [(ngModel)]="from" list="datalistOptions" class="search-box form-control" id="from" placeholder="From">
-                    <datalist id="datalistOptions">
-                    <option *ngFor="let pla of places" [value]="pla.place">
-                    </datalist>
-      </div>
-      <div class="search-bar form-group">
-        <input [(ngModel)]="to" list="datalistOptions" class="search-box form-control"  id="exampleDataList" placeholder="To">
-                    <datalist id="datalistOptions">
-                    <option *ngFor="let pla of places" [value]="pla.place">
-                    </datalist>
-      </div>
-      <div class="search-bar form-group">
-        <input [(ngModel)]="date" class="search-box form-control" type="date">
-      </div>
-      <div class="search-bar form-group">
-        <input [(ngModel)]="seat" class="search-box form-control" placeholder="Number of seats" min="1" type="number">
-      </div>
-      <div class="search-bar form-group button-search">
-        <input (click)="searchRides()" class="search-box form-control" type="button" id="search-btn" value="Search"/>
-      </div>
-    </div>
+  <div class="search-bar form-group">
+    <input [(ngModel)]="from" list="datalistOptions" class="search-box form-control" id="from" placeholder="From">
+    <datalist id="datalistOptions">
+      <option *ngFor="let pla of places" [value]="pla.place">
+    </datalist>
+  </div>
+  <div class="search-bar form-group">
+    <input [(ngModel)]="to" list="datalistOptions" class="search-box form-control" id="exampleDataList"
+      placeholder="To">
+    <datalist id="datalistOptions">
+      <option *ngFor="let pla of places" [value]="pla.place">
+    </datalist>
+  </div>
+  <div class="search-bar form-group">
+    <input [(ngModel)]="date" class="search-box form-control" type="date">
+  </div>
+  <div class="search-bar form-group">
+    <input [(ngModel)]="seat" class="search-box form-control" placeholder="Number of seats" min="1" type="number">
+  </div>
+  <div class="search-bar form-group button-search">
+    <input (click)="searchRides()" class="search-box form-control" type="button" id="search-btn" value="Search" />
+  </div>
+</div>
 
 
 
@@ -40,7 +41,7 @@
 <section class="category mt-3">
   <div class="row justify-content-around" style="width: 80%; margin: auto; margin-bottom: 20px;">
     <div class="col-md-4 mt-5" *ngFor="let publish of publishRide">
-      <div class="card" >
+      <div class="card">
         <img [src]="publish.publisherId.vehicle.image" height="200px">
         <div class="card-body">
           <h5 class="card-title"><b>From : </b>{{publish.fromId.place}}</h5>
@@ -59,63 +60,70 @@
 
 <div class="container mt-5">
   <div class="row">
-      <h1 class="heading1 text-center">Why RideSharely ?</h1>
-      <div class="col-md-6">
-        <div class="row mt-5 r1">
-          <div class="col-md-4 Center">
-            <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/bc_img_insurance.svg" height="130px" width="200px" alt="">
-          </div>
-           <div class="col-md-8 mt-3 Center">
-             <h2>Travel Smart with Insurance</h2>
-              <p>We wish you a safe trip every time. That’s why when you ride on rideSharely, we cover every trip with insurance.</p>
-           </div>
+    <h1 class="heading1 text-center">Why RideSharely ?</h1>
+    <div class="col-md-6">
+      <div class="row mt-5 r1">
+        <div class="col-md-4 Center">
+          <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/bc_img_insurance.svg" height="130px" width="200px"
+            alt="">
         </div>
-
-        <div class="row mt-5">
-          <div class="col-md-4 Center">
-            <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/img_savings.svg" height="130px" width="200px" alt="">
-          </div>
-           <div class="col-md-8 mt-3 Center">
-             <h2>Save More on every ride</h2>
-             <p> With RideSharely you get the best value for rides with opportunities to earn bonus.</p>
-           </div>
-        </div>
-
-        <div class="row mt-5">
-          <div class="col-md-4 Center">
-            <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/img_no_transaction_charge.svg" height="130px" width="200px" alt="">
-          </div>
-           <div class="col-md-8 mt-3 Center">
-            <h2>No Transaction Charges</h2>
-            <p>
-              We believe in making every ride even more pleasant, therefore enjoy your pool without any transaction charges.</p>
-           </div>
+        <div class="col-md-8 mt-3 Center">
+          <h2>Travel Smart with Insurance</h2>
+          <p>We wish you a safe trip every time. That’s why when you ride on rideSharely, we cover every trip with
+            insurance.</p>
         </div>
       </div>
 
-      <div class="col-md-6">
-        <div class="row mt-5">
-          <div class="col-md-4 Center">
-            <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/img_privacy.svg" height="130px" width="200px" alt="">
-          </div>
-           <div class="col-md-8 mt-3 Center">
-            <h2>Privacy Protected</h2>
-            <p>
-              Your details are kept safe with us. When you call fellow travellers, the call is routed through the app with phone masking enabled.</p>
-           </div>
+      <div class="row mt-5">
+        <div class="col-md-4 Center">
+          <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/img_savings.svg" height="130px" width="200px" alt="">
         </div>
-
-        <div class="row mt-5">
-          <div class="col-md-4 Center">
-            <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/bc_img_friends.svg" height="130px" width="200px" alt="">
-          </div>
-           <div class="col-md-8 mt-3 Center">
-            <h2>Networking on the go</h2>
-            <p>
-              Create new friendships with your fellow bikepoolers or carpoolers. Connect with various professionals and enjoy networking while on your rides.</p>
-           </div>
+        <div class="col-md-8 mt-3 Center">
+          <h2>Save More on every ride</h2>
+          <p> With RideSharely you get the best value for rides with opportunities to earn bonus.</p>
         </div>
       </div>
+
+      <div class="row mt-5">
+        <div class="col-md-4 Center">
+          <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/img_no_transaction_charge.svg" height="130px"
+            width="200px" alt="">
+        </div>
+        <div class="col-md-8 mt-3 Center">
+          <h2>No Transaction Charges</h2>
+          <p>
+            We believe in making every ride even more pleasant, therefore enjoy your pool without any transaction
+            charges.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="row mt-5">
+        <div class="col-md-4 Center">
+          <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/img_privacy.svg" height="130px" width="200px" alt="">
+        </div>
+        <div class="col-md-8 mt-3 Center">
+          <h2>Privacy Protected</h2>
+          <p>
+            Your details are kept safe with us. When you call fellow travellers, the call is routed through the app with
+            phone masking enabled.</p>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-4 Center">
+          <img src="https://s2.rdbuz.com/rbpool/why_redbus_rpool/bc_img_friends.svg" height="130px" width="200px"
+            alt="">
+        </div>
+        <div class="col-md-8 mt-3 Center">
+          <h2>Networking on the go</h2>
+          <p>
+            Create new friendships with your fellow bikepoolers or carpoolers. Connect with various professionals and
+            enjoy networking while on your rides.</p>
+        </div>
+      </div>
+    </div>
 
   </div>
 </div>
@@ -123,54 +131,57 @@
 <!-- ------------------carousel--------------------------------- -->
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+      aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+      aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+      aria-label="Slide 3"></button>
   </div>
   <div class="container">
-  <div class="carousel-inner" id="sub-hero">
-    <div class="carousel-item active">
-      <div class="row">
-        <div class="col-md-6 text-center2" id="sub-banner">
-          <img src="../../assets/Images/homebanner1.jpg" class="img-fluid" alt="" />
-      </div>
-    <div class="col-md-6" id="subhero-text">
-          <h3>Our Mission</h3>
-          <p>
+    <div class="carousel-inner" id="sub-hero">
+      <div class="carousel-item active">
+        <div class="row">
+          <div class="col-md-6 text-center2" id="sub-banner">
+            <img src="../../assets/Images/homebanner1.jpg" class="img-fluid" alt="" />
+          </div>
+          <div class="col-md-6" id="subhero-text">
+            <h3>Our Mission</h3>
+            <p>
               Our Rides offers a stunning variety of rides in different different routes,lovely rides.
-          </p>
-      </div>
-    </div>
+            </p>
+          </div>
+        </div>
 
-    </div>
-    <div class="carousel-item">
-      <div class="row">
-        <div class="col-md-6 text-center2" id="sub-banner">
-          <img src="../../assets/Images/homebanner1.jpg" class="img-fluid" alt="" />
       </div>
-    <div class="col-md-6" id="subhero-text">
-          <h3>Our Mission</h3>
-          <p>
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-md-6 text-center2" id="sub-banner">
+            <img src="../../assets/Images/homebanner1.jpg" class="img-fluid" alt="" />
+          </div>
+          <div class="col-md-6" id="subhero-text">
+            <h3>Our Mission</h3>
+            <p>
               Our Rides offers a stunning variety of rides in different different routes,lovely rides.
-          </p>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
-   </div>
-    <div class="carousel-item">
-      <div class="row">
-        <div class="col-md-6 text-center2" id="sub-banner">
-          <img src="../../assets/Images/homebanner1.jpg" class="img-fluid" alt="" />
-      </div>
-    <div class="col-md-6" id="subhero-text">
-          <h3>Our Mission</h3>
-          <p>
+      <div class="carousel-item">
+        <div class="row">
+          <div class="col-md-6 text-center2" id="sub-banner">
+            <img src="../../assets/Images/homebanner1.jpg" class="img-fluid" alt="" />
+          </div>
+          <div class="col-md-6" id="subhero-text">
+            <h3>Our Mission</h3>
+            <p>
               Our Rides offers a stunning variety of rides in different different routes,lovely rides.
-          </p>
+            </p>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   </div>
-</div>
 
   <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -189,34 +200,35 @@
     <h1 class="help">Ridesharely Help Center</h1>
     <div class="col-md-6">
       <div>
-      <h2>How do I book a vehiclepool ride?</h2>
-      <p>
-        You can book a vehiclepool ride on our ridesharely.com.
-        Simply search for your<span id="dots">...</span><span id="more"></span> destination, choose the date you want to travel
-         and pick the carpool that suits you best! Some rides can be booked
-         instantly, while other rides require manual approval from the driver.
+        <h2>How do I book a vehiclepool ride?</h2>
+        <p>
+          You can book a vehiclepool ride on our ridesharely.com.
+          Simply search for your<span id="dots">...</span><span id="more"></span> destination, choose the date you want
+          to travel
+          and pick the carpool that suits you best! Some rides can be booked
+          instantly, while other rides require manual approval from the driver.
           Either way, booking a carpool ride is fast, simple and easy.
-      </p>
+        </p>
 
-    </div>
+      </div>
       <h2 class="pt-5">How do I cancel my carpool ride?</h2>
       <p>
         If you have a change of plans, you can always cancel your carpool ride
         from the ‘Your rides’ section of our app. The sooner you cancel, the
         better. That way the driver has time to accept new passengers.
         The amount of your refund will depend on how far in advance you cancel.
-         If you cancel more than 24 hours before departure, for example,
-         you’ll receive a full refund, excluding the service fee.
+        If you cancel more than 24 hours before departure, for example,
+        you’ll receive a full refund, excluding the service fee.
       </p>
 
       <h2 class="pt-4">How much does a carpool ride cost?</h2>
       <p>
         The costs of a carpool ride can vary greatly, and depend on factors
-         like distance, time of departure, the demand of that ride and more.
-          It is also up to the driver to decide how much to charge per seat,
-          so it’s hard to put an exact price tag on a ride. Check out some of
-          our top carpool destinations to get an idea of price, or start
-          searching for your next carpool ride on blablacar.com.
+        like distance, time of departure, the demand of that ride and more.
+        It is also up to the driver to decide how much to charge per seat,
+        so it’s hard to put an exact price tag on a ride. Check out some of
+        our top carpool destinations to get an idea of price, or start
+        searching for your next carpool ride on blablacar.com.
       </p>
 
     </div>
@@ -224,30 +236,32 @@
       <h2>How do I publish a carpool ride?</h2>
       <p>
         Offering a carpool ride on BlaBlaCar is easy. To publish your ride,
-         use our mobile app or blablacar.com. Indicate your departure and
-         arrival points, the date and time of your departure, how many
-          passengers you can take and the price per seat. You’ll also need
-          to choose how you want to accept bookings (either automatically
-           or manually), and you have the option of adding any important
-           details you think your passengers should know about. Then tap
-           ‘Publish ride’ and you’re done!
+        use our mobile app or blablacar.com. Indicate your departure and
+        arrival points, the date and time of your departure, how many
+        passengers you can take and the price per seat. You’ll also need
+        to choose how you want to accept bookings (either automatically
+        or manually), and you have the option of adding any important
+        details you think your passengers should know about. Then tap
+        ‘Publish ride’ and you’re done!
       </p>
 
       <h2 class="pt-4">What are the benefits of travelling by carpool?</h2>
       <p>
         There are multiple advantages to carpooling, over other means
-         of transport. Travelling by carpool is usually more affordable,
-          especially for longer distances. Carpooling is also more eco-friendly,
-           as sharing a car means there will be fewer cars on the road,
-            and therefore fewer emissions. Taking a carpool ride is also
-            a safe way to travel in the current times. Because there are
-            only a few people in a car, you have fewer points of contact
-            and there’s less risk than other travel options.
+        of transport. Travelling by carpool is usually more affordable,
+        especially for longer distances. Carpooling is also more eco-friendly,
+        as sharing a car means there will be fewer cars on the road,
+        and therefore fewer emissions. Taking a carpool ride is also
+        a safe way to travel in the current times. Because there are
+        only a few people in a car, you have fewer points of contact
+        and there’s less risk than other travel options.
       </p>
 
 
       <h2 class="pt-2">How do I start carpooling?</h2>
-      <p>Carpooling with BlaBlaCar is super easy, and free! Simply sign up for an account and tell us some basic details about yourself. Once you have a BlaBlaCar account, you can start booking or publishing rides directly on our app or website.</p>
-     </div>
-</div>
+      <p>Carpooling with BlaBlaCar is super easy, and free! Simply sign up for an account and tell us some basic details
+        about yourself. Once you have a BlaBlaCar account, you can start booking or publishing rides directly on our app
+        or website.</p>
+    </div>
+  </div>
 </div>
