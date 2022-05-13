@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { PublishrideService } from '../services/publishride.service';
 
 @Component({
@@ -8,13 +9,27 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class BookridesComponent implements OnInit {
 
-  constructor(private publishRideService: PublishrideService) { }
+  constructor(private publishRideService: PublishrideService,private router:Router) { }
 
   bookRides:any;
   ngOnInit(): void {
     this.publishRideService.getAllBookRides().subscribe(data => {
       this.bookRides = data;
-      console.log(this.bookRides)
     });
+  }
+
+  getLength(len:any){
+    if(len>0)
+      return true;
+    else  
+      return false;
+  }
+
+  cancelRide(){
+
+  }
+
+  navigateToDetail(id:any){
+    this.router.navigate(['publisherdetail',id]);
   }
 }

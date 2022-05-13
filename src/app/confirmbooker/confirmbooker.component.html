@@ -4,21 +4,23 @@
       <div class="container-fluid d-flex justify-content-center align-items-center bg-image">
         <div class="card text-center">
           <div class="card-header p-5">
-            <img src="../../assets/Images/profile.png">
+            <a (click)="navigateToDetail(p.bookerId._id)" style="cursor: pointer"><img *ngIf="!getLength(p.bookerId.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile" width="100px" height="100px"></a>
+            <a (click)="navigateToDetail(p.publisherId._id)" style="cursor: pointer"><img *ngIf="getLength(p.bookerId.image.length)" [src]="p.bookerId.name" alt="profile" width="100px" height="100px"></a>
             <h5 class="mb-4">BOOKER VERIFICATION</h5>
             <div>
               <div class="form-group">
                 <i class="fas fa-mobile-alt"></i>
-                <label>Name : Sapna</label>
+                <!-- <input  type="text" placeholder="Mobile" /> -->
+                <label>Name : {{p.bookerId.name}}</label>
               </div>
-              <label>Mobile : 1234567898</label>
+              <label>Mobile : {{p.bookerId.mobile}}</label>
             </div>
           </div>
           <div class="form-group otp">
-            <input  type="text" placeholder="OTP" />
+            <input [(ngModel)]="otp" type="text" placeholder="OTP" />
           </div>
           <div class="mt-3 mb-5">
-            <button class="btn btn-success px-4 verify-btn">verify</button>
+            <button (click)="matchOtp()" class="btn btn-success px-4 verify-btn">verify</button>
           </div>
         </div>
       </div>
