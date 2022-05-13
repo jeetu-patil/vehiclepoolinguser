@@ -39,4 +39,8 @@ export class NavbarComponent implements OnInit {
           this.router.navigate(['publish-info']);
     });
   }
+
+  navigateToUserRide(){
+    this.router.navigate(['userrides']);
+  }
 }

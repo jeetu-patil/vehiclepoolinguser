@@ -1,21 +1,31 @@
-<h1 class="text-center"> User Request</h1>
+<h1 class="text-center">User Request</h1>
 <div class="container mb-5">
-    <div class="row">
-    <div class="col-lg-3 col-md-3  image p-3 ">
-        <img src="../../assets/Images/activa1.jpg" width="100px" height="150px" alt="">
-        <h5>Name:</h5>
+  <div class="row"  *ngFor="let req of requets;index as i">
+    <div class="col-lg-3 col-md-3 p-3 image">
+      <img
+        *ngIf="!getLength(i)"
+        src="https://i.imgur.com/CFpa3nK.jpg"
+        width="100px"
+        height="150px"
+      />
+      <img *ngIf="getLength(i)" [src]="req.image" width="100px" height="150px" />
+      <h5>Name:{{ req.name }}</h5>
     </div>
-      <div class=" col-lg-3 col-md-2 form-group search2 mb-2" style="margin-top:15px;"> 
-        <input type="text" name="from" placeholder="From" autocomplete="off"><br>
-        <input type="text" name="to" placeholder="To" autocomplete="off">
+    <div
+      class="col-lg-3 col-md-2 form-group search2 mb-2"
+      style="margin-top: 15px"
+    >
+      From:<label>{{ from }}</label
+      ><br />
+      To:<label>{{ to }}</label>
     </div>
-    <div class="col-lg-3 col-md-3 places p-3 pt-4" >
-        Date:<br>
-        Number:<br>
+    <div class="col-lg-3 col-md-3 places p-3 pt-4">
+      Date:{{ date | date: "dd/MM/yyyy" }}<br />
+      Number:{{req.mobile}}<br />
     </div>
     <div class="col-lg-3 col-md-3 button p-3">
-        <button class="btn btn-primary m-4"><i class=" fas fa-check"></i></button>
-        <button class="btn btn-danger "><i class="fas fa-times"></i></button>
+      <button class="btn btn-primary m-4"><i class="fas fa-check"></i></button>
+      <button class="btn btn-danger"><i class="fas fa-times"></i></button>
     </div>
-    </div>
+  </div>
 </div>
