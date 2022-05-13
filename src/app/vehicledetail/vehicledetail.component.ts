@@ -25,7 +25,9 @@ export class VehicledetailComponent implements OnInit {
     const file = event.target.files[0];
     this.image = file;
   }
-
+  fileV(){
+    return !!!this.image;
+  }
   submitDetail(){
     let id:any=sessionStorage.getItem("userId");
     let formData =new FormData();

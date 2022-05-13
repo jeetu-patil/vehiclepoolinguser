@@ -6,39 +6,59 @@
       </div>
       <div class="form-group">
         <i class="fa fa-circle" aria-hidden="true"></i>
-        <input [(ngModel)]="name" type="text" placeholder="Vehicle Name" />
+        <input [(ngModel)]="name" type="text" #name1="ngModel" required placeholder="Vehicle Name" />
+        
+        <div class="validationS">
+          <span *ngIf="name1.errors?.required && name1.touched">!Please enter your vihicle
+            name</span>
+           <!-- <span *ngIf="name1.errors?.pattern" >Enter valid name</span> -->
+          </div>
       </div>
 
       <div class="form-group">
         <i class="fa fa-circle "></i>
-        <input  type="text" [(ngModel)]="number" placeholder="Vehicle Number" />
+        <input  type="text" [(ngModel)]="number" #Vnumber1="ngModel" pattern="^[A-Z]{2}[0-9]{2}[A-HJ-NP-Z]{1,2}[0-9]{4}$" required   placeholder="Vehicle Number" />
+        <!-- <input id="password1" type="password" [(ngModel)]="user.password" required minlength="10" #password1="ngModel"
+          placeholder="Password" autocomplete="off"> -->
+        <div class="validationS">
+          <span *ngIf="Vnumber1.errors?.required && Vnumber1.touched">!Please
+            Please Fill your Vihicle No.</span>
+        <span *ngIf="Vnumber1.errors?.pattern" >Enter valid  No. of Your Vihicle</span>
+         
+      </div>
       </div>
 
       <div class="card align">
         <div class="wheelertype  m-3" >
           <div class="form-check form-check-inline ">
             <!-- <label for="vehicletype"><h4>Vehicle Type</h4></label><br><br> -->
-            <input [(ngModel)]="wheeler" class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="2">
+            <input [(ngModel)]="wheeler" class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" required id="inlineRadio1" #inlineRadio1="ngModel"value="2">
             <label class="form-check-label pl-3" class="m-2" for="inlineRadio1"> 2-Wheeler</label>
           </div>
           <div class="form-check form-check-inline">
-            <input [(ngModel)]="wheeler" class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="4">
+            <input [(ngModel)]="wheeler" class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" required #inlineRadio1="ngModel"value="4">
             <label class="form-check-label pl-3" class="m-2"  for="inlineRadio2">4-Wheeler</label>
+          </div>
+          <div class="validationS">
+            <span *ngIf="inlineRadio1.errors?.required && inlineRadio1.touched">!Please
+              Please Fill your Vihicle No.</span>
           </div>
 
         </div>
+
       </div>
 
       <div class="left" >
         <label for="VehicleImage" class="mt-3" style="margin-right:104px;"><h4>Upload Vehicle Image</h4></label>
       <div class="input-field ">
         <i class="fa fa-image" style="margin-bottom: 400px"></i>
-        <input (change)="selectImage($event)" type="file" class="pt-3" placeholder="Select Image" />
+        <input id="fileV" (change)="selectImage($event)" type="file"  class="pt-3" placeholder="Select Image" />
       </div>
-</div>
+    </div>
 
      <div class="form-group">
-        <a (click)="submitDetail()" style="cursor: pointer;"class="btn mt-3 signup">Submit Detail</a>
+        <!-- <a (click)="submitDetail()" style="cursor: pointer;"class="btn mt-3 signup">Submit Detail</a> -->
+        <button (click)="submitDetail()" [disabled]="fileV()||inlineRadio1.errors?.required||Vnumber1.errors?.pattern||name1.errors?.required ||Vnumber1.errors?.required" style="cursor: pointer;"class="btn mt-3 signup">Submit Detail</button>
       </div>
     </div>
   </div>
