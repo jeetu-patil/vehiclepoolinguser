@@ -43,4 +43,15 @@ export class PublishrideService {
   requestToThePublisher(publisherId:any){
     return this.http.post("http://localhost:3000/publishride/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),publisherId:publisherId});
   }
+
+
+
+  getAllRequests(rideId:any):Observable<any>{
+    return this.http.get("http://localhost:3000/publishride/showrequesttopublisher/"+sessionStorage.getItem("userId")+"/"+rideId);
+  }
+
+
+  getPublishRides():Observable<any>{
+    return this.http.get("http://localhost:3000/publishride/getPublishRidesOfSingle/"+sessionStorage.getItem("userId"));
+  }
 }
