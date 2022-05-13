@@ -36,13 +36,13 @@ const routes: Routes = [
   { path: "success" , component:SuccessMessageComponent},
   { path: "userrides", component:UserridesComponent,
     children:[
-      { path: "bookrides" , component:BookridesComponent},
-      { path: "publishride", component:PublishrideComponent},
-      { path: "bookhistory", component: BookhistoryComponent},
-      { path: "publishhistory", component: PublishhistoryComponent},
-      { path:'acceptrequest/:rideId',component:AcceptrequestpageComponent},
-      { path: "confirmbooker", component:ConfirmbookerComponent},
-    ]
+      { path: "bookrides" , component:BookridesComponent,canActivate:[AuthGuard]},
+      { path: "publishride", component:PublishrideComponent,canActivate:[AuthGuard]},
+      { path: "bookhistory", component: BookhistoryComponent,canActivate:[AuthGuard]},
+      { path: "publishhistory", component: PublishhistoryComponent,canActivate:[AuthGuard]},
+      { path:'acceptrequest/:rideId',component:AcceptrequestpageComponent,canActivate:[AuthGuard]},
+      { path: "confirmbooker", component:ConfirmbookerComponent,canActivate:[AuthGuard]},
+    ],canActivate:[AuthGuard]
   },
   { path: "publisherdetail/:userId" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
   { path: "**" , component:PageNotFoundComponent}

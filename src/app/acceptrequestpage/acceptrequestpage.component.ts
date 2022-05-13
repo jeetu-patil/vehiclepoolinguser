@@ -15,6 +15,7 @@ export class AcceptrequestpageComponent implements OnInit {
   date:any;
   from:any;
   to:any;
+  bookerId:any;
   rideId:any;
 
   user:any;
@@ -38,6 +39,14 @@ export class AcceptrequestpageComponent implements OnInit {
       return true;
     else  
       return false;
+  }
+
+  acceptRequest(bookerId:any){
+    this.publisRideService.acceptRequest(bookerId).subscribe(data => {
+      this.ngOnInit();
+    },err => {
+
+    });
   }
 
 }
