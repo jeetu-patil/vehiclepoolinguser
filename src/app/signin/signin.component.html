@@ -6,12 +6,28 @@
         </div>
   <div class="form-group">
           <i class="fa fa-mail-bulk"></i>
-          <input type="email" [(ngModel)]="email" placeholder="Email"  autocomplete="off">
+          <input id="email1" type="email" #email1="ngModel" name="email"
+          [(ngModel)]="email"  required placeholder="Email"  pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" autocomplete="off">
+          <div class="validationS">
+           <span  *ngIf="email1.errors?.required && email1.touched">!Please enter your
+             email</span>
+           <span *ngIf="email1.errors?.pattern" >
+             Invalid Email
+             </span>
+          </div>
         </div>
 
         <div class="form-group">
           <i class="fa fa-lock" aria-hidden="true"></i>
-          <input type="password" [(ngModel)]="password" placeholder="Password" autocomplete="off">
+          <input id="passwordV"  type="password" required  minlength="4"  [(ngModel)]="password" #passwordV="ngModel" placeholder=" Enter Password" autocomplete="off">
+          <div class="validationS">
+           <span  *ngIf="passwordV.errors?.required && passwordV.touched">!Please
+            Enter Your Password</span>
+        
+        <span  *ngIf="passwordV.errors?.['minlength']">
+            minimum 4 letter in password
+            </span>
+          </div>
         </div>
         <div class="links">
           <span>New User ? <a class="already" href="sign-up">Sign Up</a></span>
@@ -19,8 +35,11 @@
         </div>
 
         <div class="form-group signbtn">
-          <a style="cursor:pointer" (click)="signinUser()" class="btn signin">Sign In</a>
-        </div>
+          <!-- <a  (click)="signinUser()" disabled="email1.errors?.required|| passwordV.errors?.required" class="btn signin">   Sign In</a> -->
+        
+        <button [disabled]="email1.errors?.pattern||passwordV.errors?.['minlength']||email1.errors?.required|| passwordV.errors?.required" class="btn signin" style="cursor:pointer" (click)="signinUser()" 
+           class="btn solid">  Sign In </button>
+          </div>
         <span class="or mt-3">
           OR
         </span>

@@ -58,7 +58,8 @@
       </div>
       <div class="form-group">
         <i class="fa fa-circle" aria-hidden="true"></i>
-        <input [(ngModel)]="from" list="datalistOptions" id="exampleDataList" placeholder="From">
+        <input [(ngModel)]="from" required list="datalistOptions" id="exampleDataList" exampleDataList="ngModel" placeholder="From">
+        <!-- <div class="validationS" *ngIf="exampleDataList.errors?.required && exampleDataList                                 .touched">Enter the value</div> -->
         <datalist id="datalistOptions">
           <option *ngFor="let pla of places" [value]="pla.place ">
         </datalist>
