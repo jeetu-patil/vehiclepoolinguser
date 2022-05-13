@@ -21,6 +21,7 @@ import { PublishrideComponent } from './publishride/publishride.component';
 import { BookhistoryComponent } from './bookhistory/bookhistory.component';
 import { PublishhistoryComponent } from './publishhistory/publishhistory.component';
 import { ConfirmbookerComponent } from './confirmbooker/confirmbooker.component';
+import { ProfileUserComponent } from './profile-user/profile-user.component';
 
 const routes: Routes = [
   { path: "sign-in", component: SigninComponent },
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: "publisherdetail" , component:PublisherdetailComponent
   // ,canActivate:[AuthGuard]
 },
+{ path: "edit-profile", component:ProfileUserComponent},
 { path: "bookrides" , component:BookridesComponent},
 { path: "publishride", component:PublishrideComponent},
 { path: "userrides", component:UserridesComponent},
