@@ -37,6 +37,7 @@ import { BookhistoryComponent } from './bookhistory/bookhistory.component';
 import { PublishhistoryComponent } from './publishhistory/publishhistory.component';
 import { ConfirmbookerComponent } from './confirmbooker/confirmbooker.component';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
+import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpage.component';
 
 
 const socialProvider = {
@@ -79,7 +80,8 @@ const socialProvider = {
     BookhistoryComponent,
     PublishhistoryComponent,
     ConfirmbookerComponent,
-    ProfileUserComponent
+    ProfileUserComponent,
+    AcceptrequestpageComponent
   ],
   imports: [
     BrowserModule,

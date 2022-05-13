@@ -1,42 +1,51 @@
 <div class="heading text-center">
   <h1 class="pt-4">Publish Rides</h1>
 </div>
-<div class="container">
-<div class="publish">
-    <div class="row publish-card">
+<div class="container"  *ngFor="let ride of rides">
+  <div class="publish  ">
+    <div class="row  publish-card">
       <div class="col-md-6 left">
         <div class="from">
           <span id="from">From :</span>
-          <span id="from-text">Harda nimaber Handiya ram ram shre</span>
+          <span id="from-text">{{ ride.fromId.place }}</span>
         </div>
         <div class="to">
           <span id="to">To :</span>
-          <span id="to-text">Indore shree ram shyam singh rao</span>
+          <span id="to-text">{{ ride.toId.place }}</span>
         </div>
         <div class="date">
           <span id="date">Date :</span>
-          <span id="date-text">20/2/12</span>
+          <span id="date-text">{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
         </div>
       </div>
       <div class="col-md-6 right">
         <div class="total-seat">
-          <span>Total Seat : 500</span>
+          <span>Total Seat : {{ ride.totalSeat }}</span>
         </div>
         <div class="remaining-seat">
-          <span>Remaining Seats: 2 </span>
+          <span>Remaining Seats: {{ ride.seatAvailable }} </span>
         </div>
         <div class="book-seat">
-          <span>Book Seat : 0</span>
+          <span>Book Seat : {{ (ride.totalSeat-ride.seatAvailable) }}</span>
         </div>
       </div>
-    </div>
-    <div class="form-group text-center">
-      <button class="btn signin ">Cancel Ride</button>
-      <button class="btn signin btn2">User Request</button>
-      <button class="btn signin ">Check right User</button>
+      <div class="form-group text-center">
+        <button class="btn signin">Cancel Ride</button>
+        <button
+          style="cursor: pointer"
+          (click)="navigateToUserRequest(ride._id)"
+          class="btn signin btn2"
+        >
+          User Request
+        </button>
+        <button
+          style="cursor: pointer"
+          (click)="navigateToCheckRightBooker()"
+          class="btn signin"
+        >
+          Check right User
+        </button>
+      </div>
     </div>
   </div>
 </div>
-
-
-

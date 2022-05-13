@@ -68,11 +68,16 @@
 .form span .already
 {
   text-decoration: underline;
-  color: rgb(3, 45, 71);
+  color: #1B2A49;
   letter-spacing: 2px;
 }
 
 .btn{
-  background-color:rgb(2, 2, 50);
+  background-color:#1B2A49;
   color: #fff;
+}
+
+.validationS{
+  font-size: 14px;
+   color:red
 }

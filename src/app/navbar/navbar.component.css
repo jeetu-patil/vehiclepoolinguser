@@ -1,17 +1,19 @@
 .navbar {
   width: 100vw;
   /* background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));; */
-  background-color: rgb(3, 2, 48);
+  background-color:#1B2A49;
   backdrop-filter: blur(15px);
-
-
 }
 
+a {
+  color: white;
+  text-decoration: underline;
+}
 .navbar-brand {
   font-size: 24px;
   font-weight: 500;
   position: relative;
-  color: #000;
+  color: white;
 }
 
 .navbar-brand small {
@@ -32,11 +34,12 @@
 .nav-item .nav-link {
   padding: 0;
   font-weight: 500;
-  color: #000;
+  color: white;
+  text-decoration: none;
 }
 
 .nav-item:hover .nav-link {
-  color: rgb(0, 124, 181);
+  color: white;
 }
 
 .nav-item::before {
@@ -46,7 +49,7 @@
   height: 2px;
   top: 30px;
   left: 0;
-  background: #000;
+  background: white;
   opacity: 0;
   transition: 0.3s ease-in-out;
   -webkit-transition: 0.3s ease-in-out;
@@ -91,6 +94,7 @@
 .dropdown .dropdown-menu li a {
   color: rgb(0, 0, 0);
   z-index: 100;
+  text-decoration: none;
 }
 
 .dropdown .dropdown-menu li a i {
@@ -125,7 +129,7 @@
       -moz-transform: scale(1.2);
       -ms-transform: scale(1.2);
       -o-transform: scale(1.2);
-      color: rgb(0, 111, 222);
+      color: white;
   }
   .right-nav .search-link {
       display: none;
@@ -188,7 +192,7 @@
 }
 
 .nav-item:hover .nav-link {
-  color: rgb(0, 124, 181);
+  color: white
 }
 
 .nav-item::before {
@@ -272,7 +276,7 @@
       -moz-transform: scale(1.2);
       -ms-transform: scale(1.2);
       -o-transform: scale(1.2);
-      color: rgb(0, 111, 222);
+      color: white
   }
   .right-nav .search-link {
       display: none;

@@ -36,7 +36,31 @@ export class PublishrideService {
   }
 
 
-  bookRide(seat:any){
-    return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId")});
+  bookRide(seat:any,publisherId:any){
+    return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),publisherId:publisherId});
+  }
+
+  requestToThePublisher(publisherId:any){
+    return this.http.post("http://localhost:3000/publishride/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),publisherId:publisherId});
+  }
+
+
+
+  getAllRequests(rideId:any):Observable<any>{
+    return this.http.get("http://localhost:3000/publishride/showrequesttopublisher/"+sessionStorage.getItem("userId")+"/"+rideId);
+  }
+
+
+  getPublishRides():Observable<any>{
+    return this.http.get("http://localhost:3000/publishride/getPublishRidesOfSingle/"+sessionStorage.getItem("userId"));
+  }
+
+  getAllBookRides(){
+    return this.http.get("http://localhost:3000/bookride/getbookrides/"+sessionStorage.getItem("userId"));
+  }
+
+
+  acceptRequest(bookerId:any){
+    return this.http.get("http://localhost:3000/publishride/acceptrequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId"));
   }
 }

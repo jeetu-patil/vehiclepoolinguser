@@ -58,30 +58,37 @@
       </div>
       <div class="form-group">
         <i class="fa fa-circle" aria-hidden="true"></i>
-        <input [(ngModel)]="from" list="datalistOptions" id="exampleDataList" placeholder="From">
+        <input [(ngModel)]="from" required list="datalistOptions" id="exampleDataList" #exampleDataList="ngModel" placeholder="From">
+        <div class="validationS" *ngIf="exampleDataList.errors?.required && exampleDataList.touched">!Please Enter Place Name</div>
         <datalist id="datalistOptions">
           <option *ngFor="let pla of places" [value]="pla.place ">
         </datalist>
-       </div>
+       </div>   
 
       <div class="form-group">
         <i class="fa fa-circle "></i>
-        <input [(ngModel)]="to" list="datalistOptions" id="exampleDataList" placeholder="To">
+        <input [(ngModel)]="to" list="datalistOptions" id="exampleDataList1" #exampleDataList1="ngModel" required placeholder="To">
+        <div class="validationS" *ngIf="exampleDataList1.errors?.required && exampleDataList1.touched">!Please Enter Place Name</div>
         <datalist id="datalistOptions">
           <option *ngFor="let pla of places" [value]="pla.place ">
         </datalist>
       </div>
       <div class="form-group">
         <i class="fa fa-user" aria-hidden="true"></i>
-        <input type="number"  [(ngModel)]="seat" placeholder="Available Seat" />
+        <input id="seat1" type="number" [(ngModel)]="seat" required  min="1" placeholder="Available Seat" #seat1="ngModel"/>
+        <div class="validationS" *ngIf="seat1.errors?.required && seat1.touched">!Required Seat</div>
       </div>
       <div class="form-group">
         <i class="fa fa-calendar" aria-hidden="true"></i>
-        <input [(ngModel)]="date" type="date" id="birthday">
+        <input id="date1" [(ngModel)]="date"  type="date" (change)="dateValidation()" required #date1="ngModel">
+        <div *ngIf="dur">!can't be publish Ride !!Date Wrong</div>        
+        <div class="validationS" *ngIf="date1.errors?.required && date1.touched">!Required Date </div>
       </div>
       <div class="form-group">
         <i class="fa fa-times-circle" aria-hidden="true"></i>
-        <input type="time"  [(ngModel)]="time" placeholder="time" />
+        <input id="time1" type="time"  [(ngModel)]="time" #time1="ngModel" required placeholder="time" />
+          
+        <div class="validationS" *ngIf="time1.errors?.required && time1.touched">Required Time </div>
       </div>
 
 
@@ -90,7 +97,8 @@
         <textarea class="form-control" [(ngModel)]="message" placeholder="Message"></textarea>
       </div>
      <div class="form-group">
-        <a (click)="submitDetail()" style="cursor:pointer" class="btn signup">Publish</a>
+        <!-- <a (click)="submitDetail()" [disabled]="exampleDataList1.errors?.required||exampleDataList.errors?.required" style="cursor:pointer" class="btn signup">Publish</a> -->
+        <button (click)="submitDetail()" [disabled]="dur||date1.errors?.required||seat1.errors?.required||time1.errors?.required||exampleDataList1.errors?.required||exampleDataList.errors?.required" style="cursor:pointer" class="btn signup">Publish</button>
       </div>
     </div>
   </div>

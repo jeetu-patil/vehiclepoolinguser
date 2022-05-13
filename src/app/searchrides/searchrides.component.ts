@@ -39,7 +39,7 @@ export class SearchridesComponent implements OnInit {
   }
 
   viewRide(publishId:any){
-    this.router.navigate(['ridedetail/'+publishId+'/'+this.seat+'/'+publishId]);
+    this.router.navigate(['ridedetail/'+publishId+'/'+this.seat]);
   }
 
 }

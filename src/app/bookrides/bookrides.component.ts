@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PublishrideService } from '../services/publishride.service';
 
 @Component({
   selector: 'app-bookrides',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookridesComponent implements OnInit {
 
-  constructor() { }
+  constructor(private publishRideService: PublishrideService) { }
 
+  bookRides:any;
   ngOnInit(): void {
+    this.publishRideService.getAllBookRides().subscribe(data => {
+      this.bookRides = data;
+      console.log(this.bookRides)
+    });
   }
-
 }

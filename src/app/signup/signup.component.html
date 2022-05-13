@@ -2,48 +2,92 @@
   <div class="form-box">
     <div action="#" class="form-change">
       <div class="head">
-         <h1>Sign Up</h1>
+        <h1>Sign Up</h1>
       </div>
       <div class="form-group">
         <i class="fa fa-user" aria-hidden="true"></i>
-        <input  type="text" [(ngModel)]="user.name" placeholder="Name" autocomplete="off">
+        <input id="name1" type="text" [(ngModel)]="user.name" placeholder="Name" pattern="[a-zA-Z][a-zA-Z ][a-zA-Z ]+"
+          required #name1="ngModel" autocomplete="off">
+        <div class="validationS">
+          <span *ngIf="name1.errors?.required && name1.touched">!Please enter your
+            name</span>
+           <span *ngIf="name1.errors?.pattern" >Enter valid name</span>
+          </div>
       </div>
 
       <div class="form-group">
         <i class="fa fa-mail-bulk    "></i>
-        <input  type="email" [(ngModel)]="user.email" placeholder="Email"  autocomplete="off">
+        <input id="email1" type="email" [(ngModel)]="user.email" #email1="ngModel" required placeholder="Email"
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" autocomplete="off">
+        <div class="validationS">
+          <span *ngIf="email1.errors?.required && email1.touched">!Please enter
+            your email</span>
+
+          <span *ngIf="email1.errors?.pattern" >
+           Invalid Email
+          </span>
+       </div>
       </div>
 
       <div class="form-group">
         <i class="fa fa-lock" aria-hidden="true"></i>
-        <input type="password" [(ngModel)]="user.password" placeholder="Password" autocomplete="off">
+
+        <input id="password1" type="password" [(ngModel)]="user.password" required minlength="4" #password1="ngModel"
+          placeholder="Password" autocomplete="off">
+        <div class="validationS">
+          <span *ngIf="password1.errors?.required && password1.touched">!Please
+            Enter Your Password</span>
+
+         <span  *ngIf="password1.errors?.['minlength']">
+          minimum 4 letter in password
+        </span>
       </div>
+    </div>
 
       <div class="form-group">
         <i class="fa fa-book"></i>
-        <input id="aadhar1" type="text" [(ngModel)]="user.aadhar" required 
-          placeholder="Aadhar No."/>
-      </div>
+        <input id="aadhar1" type="text" [(ngModel)]="user.aadhar" pattern="^[0-9-]{1,15}$" required minlength="12"
+          maxlength="14" placeholder="Aadhar No." #aadhar1="ngModel" />
+        <div class="validationS">
+          <span *ngIf="aadhar1.errors?.pattern" >alphabets not support</span>
+          <span  *ngIf="aadhar1.errors?.required && aadhar1.touched">!Please Enter
+            Your Aadhar Number</span>
 
+        <span  *ngIf="aadhar1.errors?.['minlength']">
+          minimum 12 number required
+        </span>
+       </div>
+      </div>
       <div class="form-group">
         <i class="fa fa-book"></i>
-        <input id="" type="text" [(ngModel)]="user.age" required 
-          placeholder="Age"/>
-      </div>
+        <input id="age1" type="number" [(ngModel)]="user.age" required placeholder="Age" min="18" #age1="ngModel" />
+        <div class="validationS">
+          <span  *ngIf="age1.errors?.required && age1.touched">!Please Enter Your
+            Age</span>
 
+          <span  *ngIf="age1.errors?.['min']">!Your Age Must be 18 old</span>
+        </div>
+      </div>
       <div class="form-check form-check-inline">
-        <input [(ngModel)]="user.gender"  required class="form-check-input" class="m-2"
-          type="radio" id="inlineRadio1" value="female"  />
+        <input [(ngModel)]="user.gender" required class="form-check-input" class="m-2" type="radio" id="inlineRadio1"
+          value="female" #inlineRadio1="ngModel" />
         <label class="form-check-label" class="m-2" for="inlineRadio2">Female</label>
-        <input [(ngModel)]="user.gender"  required class="form-check-input" class="m-2"
-        type="radio" id="inlineRadio1" value="male"  />
+        <input [(ngModel)]="user.gender" required class="form-check-input" class="m-2" type="radio" id="inlineRadio1"
+          value="male" #inlineRadio1="ngModel" />
         <label class="form-check-label" class="m-2" for="inlineRadio2">Male</label>
+        <div class="validationS">
+        <span  *ngIf="inlineRadio1.errors?.required && inlineRadio1.touched">!Please
+          chose Your Gender</span>
+        </div>
       </div>
-      <!-- <span style="font-size: 8px; color: red;">!Please chose Your Gender</span> -->
+
 
 
       <div class="form-group">
-        <a style="cursor:pointer;" (click)="signupUser()" class="btn signup">Sign Up</a>
+        <!-- <a style="cursor:pointer;" [disabled]="name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required" (click)="signupUser()" class="btn signup">Sign Up</a> -->
+        <input style="cursor:pointer;" type="submit" (click)="signupUser()"
+          [disabled]="password1.errors?.['minlength']||aadhar1.errors?.['minlength']||email1.errors?.pattern||name1.errors?.pattern||age1.errors?.['min']||name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required"
+          value="Sign Up" class="btn signup"/>
       </div>
 
       <span>Already Registered ? <a class="already" href="sign-in">Sign In</a></span>
