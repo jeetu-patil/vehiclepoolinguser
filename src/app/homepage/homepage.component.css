@@ -88,10 +88,17 @@ section .card-link{
   .search-form .form-group #from, .search-form .form-group #search-btn{
     border-radius: 0;
   }
+  .Center{
+    text-align: center;
+ }
+
 }
 .help{
   text-align: center;
   padding: 70px;
+  font-size: 36px;
+  font-weight: 600;
+  font-family: ovileo;
   margin-bottom: 20px;
 }
 
@@ -126,6 +133,3 @@ background-size: cover;
    font-family: ovileo;
 }
 
-.Center{
-   text-align: center;
-}
