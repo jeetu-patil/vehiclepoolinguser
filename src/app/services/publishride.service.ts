@@ -54,4 +54,13 @@ export class PublishrideService {
   getPublishRides():Observable<any>{
     return this.http.get("http://localhost:3000/publishride/getPublishRidesOfSingle/"+sessionStorage.getItem("userId"));
   }
+
+  getAllBookRides(){
+    return this.http.get("http://localhost:3000/bookride/getbookrides/"+sessionStorage.getItem("userId"));
+  }
+
+
+  acceptRequest(bookerId:any){
+    return this.http.get("http://localhost:3000/publishride/acceptrequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId"));
+  }
 }
