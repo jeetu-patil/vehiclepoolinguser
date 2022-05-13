@@ -129,7 +129,7 @@ a {
       -moz-transform: scale(1.2);
       -ms-transform: scale(1.2);
       -o-transform: scale(1.2);
-      color: rgb(0, 111, 222);
+      color: white;
   }
   .right-nav .search-link {
       display: none;
@@ -192,7 +192,7 @@ a {
 }
 
 .nav-item:hover .nav-link {
-  color: rgb(0, 124, 181);
+  color: white
 }
 
 .nav-item::before {
@@ -276,7 +276,7 @@ a {
       -moz-transform: scale(1.2);
       -ms-transform: scale(1.2);
       -o-transform: scale(1.2);
-      color: rgb(0, 111, 222);
+      color: white
   }
   .right-nav .search-link {
       display: none;

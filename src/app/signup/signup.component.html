@@ -22,7 +22,7 @@
         <div class="validationS">
           <span *ngIf="email1.errors?.required && email1.touched">!Please enter
             your email</span>
-        
+
           <span *ngIf="email1.errors?.pattern" >
            Invalid Email
           </span>
@@ -37,7 +37,7 @@
         <div class="validationS">
           <span *ngIf="password1.errors?.required && password1.touched">!Please
             Enter Your Password</span>
-        
+
          <span  *ngIf="password1.errors?.['minlength']">
           minimum 4 letter in password
         </span>
@@ -52,7 +52,7 @@
           <span *ngIf="aadhar1.errors?.pattern" >alphabets not support</span>
           <span  *ngIf="aadhar1.errors?.required && aadhar1.touched">!Please Enter
             Your Aadhar Number</span>
-        
+
         <span  *ngIf="aadhar1.errors?.['minlength']">
           minimum 12 number required
         </span>
@@ -87,7 +87,7 @@
         <!-- <a style="cursor:pointer;" [disabled]="name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required" (click)="signupUser()" class="btn signup">Sign Up</a> -->
         <input style="cursor:pointer;" type="submit" (click)="signupUser()"
           [disabled]="password1.errors?.['minlength']||aadhar1.errors?.['minlength']||email1.errors?.pattern||name1.errors?.pattern||age1.errors?.['min']||name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required"
-          value="Sign Up" class="btn signup" />
+          value="Sign Up" class="btn signup"/>
       </div>
 
       <span>Already Registered ? <a class="already" href="sign-in">Sign In</a></span>
