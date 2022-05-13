@@ -1,41 +1,81 @@
-
-.form-control:focus {
-  box-shadow: none;
-  border-color: #BA68C8
+.col-6 h1{
+   margin-left: 290px;
 }
 
-.profile-button {
-  background: rgb(99, 39, 120);
-  box-shadow: none;
-  border: none
+.m-5{
+   margin: 7rem !important;
+}
+.head{
+  text-align: center;
 }
 
-.profile-button:hover {
-  background: #682773
+.head h1{
+  font-size: 40px;
 }
 
-.profile-button:focus {
-  background: #682773;
-  box-shadow: none
+.col-4{
+  /* margin-left: 100px; */
+  justify-content: center;
+  overflow: hidden;
+  height: 20%;
+  width: 20%;
+  margin:80px;
+}
+.verify label{
+  font-size: 20px;
+  vertical-align: middle;
+  margin:10px;
 }
 
-.profile-button:active {
-  background: #682773;
-  box-shadow: none
+.check{
+  padding:30px;
+  margin-bottom:20px;
 }
 
-.back:hover {
-  color: #682773;
-  cursor: pointer
+.verfy  .i{
+  margin: 30px;
+height: 30px;
+width:100px;
 }
 
-.labels {
-  font-size: 11px
+.bio{
+  margin-bottom: 35px;
+}
+.bio h1 ,h4{
+  margin: 20px;
 }
 
-.add-experience:hover {
-  background: #BA68C8;
+.form-group {
+  margin: 50px 0 0;
+}
+.form-group .signin{
+  padding: 8px 50px;
+  background: rgb(1, 2, 35);
   color: #fff;
-  cursor: pointer;
-  border: solid 1px #BA68C8
+
 }
+.form-group .btn2{
+  margin:0 15px;
+}
+
+.heading h1{
+  font-size: 35px;
+}
+
+.col-6 img{
+  margin-top: 35px;
+  margin-left: 200px;
+}
+
+.col-6 h2{
+  margin-left: 21px;
+}
+@media screen and (max-width: 523px){
+  .m-5{
+    margin: 0.1rem !important;
+ }
+
+
+}
+
+
