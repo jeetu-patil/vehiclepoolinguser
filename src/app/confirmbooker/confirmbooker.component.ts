@@ -34,8 +34,8 @@ export class ConfirmbookerComponent implements OnInit {
     this.router.navigate(['publisherdetail',id]);
   }
 
-  matchOtp(){
-    this.publisRideService.matchOtp(this.otp).subscribe(data => {
+  matchOtp(id:any){
+    this.publisRideService.matchOtp(this.otp,id).subscribe(data => {
       console.log(data)
       if(data.msg=="Success")
       { 

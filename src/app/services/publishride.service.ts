@@ -37,11 +37,12 @@ export class PublishrideService {
 
 
   bookRide(seat:any,publisherId:any){
+    console.log(publisherId);
     return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),publisherId:publisherId});
   }
 
-  requestToThePublisher(publisherId:any){
-    return this.http.post("http://localhost:3000/publishride/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),publisherId:publisherId});
+  requestToThePublisher(rideId:any){
+    return this.http.post("http://localhost:3000/publishride/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),rideId:rideId});
   }
 
 
@@ -60,8 +61,9 @@ export class PublishrideService {
   }
 
 
-  acceptRequest(bookerId:any){
-    return this.http.get("http://localhost:3000/publishride/acceptrequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId"));
+  acceptRequest(bookerId:any,rideId:any){
+    return this.http.get("http://localhost:3000/publishride/acceptrequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId")
+    +"/"+rideId);
   }
 
   checkConfirmBoooker():Observable<any>{
@@ -69,7 +71,16 @@ export class PublishrideService {
   }
 
 
-  matchOtp(otp:any):Observable<any>{
-    return this.http.post("http://localhost:3000/publishride/matchotp",{otp:otp,publisherId:sessionStorage.getItem("userId")});
+  matchOtp(otp:any,id:any):Observable<any>{
+    return this.http.post("http://localhost:3000/publishride/matchotp",{otp:otp,publisherId:sessionStorage.getItem("userId"),id:id});
+  }
+
+
+  getAllBookRidesHistory(){
+    return this.http.get("http://localhost:3000/bookerhistory/viewbookerhistory/"+sessionStorage.getItem("userId"));
+  }
+
+  getAllpublishHistory(){
+    return this.http.get("http://localhost:3000/publisherhistory/viewpublisherhistory/"+sessionStorage.getItem("userId"));
   }
 }

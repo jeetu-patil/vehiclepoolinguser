@@ -22,6 +22,7 @@ import { PublishhistoryComponent } from './publishhistory/publishhistory.compone
 import { ConfirmbookerComponent } from './confirmbooker/confirmbooker.component';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpage.component';
+import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent},
@@ -30,16 +31,13 @@ const routes: Routes = [
   { path :"searchride/:from/:to/:date/:seat" ,component:SearchridesComponent},
   { path: "vehicle-detail", component: VehicledetailComponent,canActivate:[AuthGuard]},
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
-  { path: "ridedetail/:publishId/:seat", component: RideDetailComponent
-  //  ,canActivate:[AuthGuard]
-  },
+  { path: "ridedetail/:publishId/:seat", component: RideDetailComponent,canActivate:[AuthGuard]},
   { path: "verify-email", component:VerifyEmailComponent},
   { path: "view-profile" , component:UserProfileComponent,canActivate:[AuthGuard]},
-  { path: "publish-info", component:RidePublishInfoComponent
-  // ,canActivate:[AuthGuard]
-},
+  { path: "publish-info", component:RidePublishInfoComponent,canActivate:[AuthGuard]},
   { path: "success" , component:SuccessMessageComponent},
   { path: "edit-profile", component:ProfileUserComponent},
+  {path:"alluserogpublisher",component:AlluserogpublisherComponent},
   { path: "userrides", component:UserridesComponent,
     children:[
       { path: "bookrides" , component:BookridesComponent,canActivate:[AuthGuard]},

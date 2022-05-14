@@ -8,20 +8,29 @@ import { UserService } from '../services/user.service';
   styleUrls: ['./user-profile.component.css']
 })
 export class UserProfileComponent implements OnInit {
-data:any;
+user:any;
 name:string = '';
 email:string = '';
 address:string = '';
 mobile:string = '';
-  constructor(private userService:UserService , private router:Router) { }
+  constructor(private userService:UserService,private router:Router) { }
 
   ngOnInit(): void {
     this.userService.getUser().subscribe(data=>{
-      this.data = data;
+      this.user = data;
+      console.log(this.user);
     });
   }
 
-  editProfile(){
-    this.router.navigate(["edit-profile"]);
+  getLength(len:any){
+    if(len>0)
+      return true;
+    else  
+      return false;
   }
+
+  editProfile(){
+    this.router.navigate(['edit-profile']);
+  }
+
 }
