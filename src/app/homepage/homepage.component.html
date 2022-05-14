@@ -33,7 +33,7 @@
 
 
 
-<!-- -----------------------------Publish rides ----------------------- -->
+<!-------------------------------Publish rides------------------------------>
 
 <div class="ride-heading">
   <h1>PUBLISH RIDES</h1>
@@ -49,14 +49,14 @@
           <h5 class="card-title "><b>Date : </b>{{publish.rideDate | date:'dd/MM/yyyy'}}</h5>
         </div>
         <div class="card-body">
-          <a (click)="viewRide(publish._id)" style="cursor:pointer;" class="card-link">View Ride Details</a>
+          <button type="submit" (click)="viewRide(publish._id)" style="cursor:pointer;" class="card-link btn btn-primary">View Details</button>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- --------------------------Why RideSharely ?---------------------------- -->
+<!----------------------------Why RideSharely ?---------------------------- -->
 
 <div class="container mt-5">
   <div class="row">
