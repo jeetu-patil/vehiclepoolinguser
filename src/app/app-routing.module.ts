@@ -30,10 +30,14 @@ const routes: Routes = [
   { path :"searchride/:from/:to/:date/:seat" ,component:SearchridesComponent},
   { path: "vehicle-detail", component: VehicledetailComponent,canActivate:[AuthGuard]},
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
-  { path: "ridedetail/:publishId/:seat", component: RideDetailComponent ,canActivate:[AuthGuard]},
+  { path: "ridedetail/:publishId/:seat", component: RideDetailComponent
+  //  ,canActivate:[AuthGuard]
+  },
   { path: "verify-email", component:VerifyEmailComponent},
   { path: "view-profile" , component:UserProfileComponent,canActivate:[AuthGuard]},
-  { path: "publish-info", component:RidePublishInfoComponent,canActivate:[AuthGuard]},
+  { path: "publish-info", component:RidePublishInfoComponent
+  // ,canActivate:[AuthGuard]
+},
   { path: "success" , component:SuccessMessageComponent},
   { path: "edit-profile", component:ProfileUserComponent},
   { path: "userrides", component:UserridesComponent,
