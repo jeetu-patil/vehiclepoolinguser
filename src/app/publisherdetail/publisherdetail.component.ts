@@ -15,17 +15,16 @@ export class PublisherdetailComponent implements OnInit {
   user:any;
   ngOnInit(): void {
     this.userId=this.activatedRoute.snapshot.paramMap.get("userId");
-
     this.userService.getPublisher(this.userId).subscribe(data => {
-      console.log(data)
       this.user=data;
+      console.log(this.user)
     },err => {
 
     });
   }
 
-  getLength(){
-    if(this.user.image.length>0)
+  getLength(len:any){
+    if(len>0)
       return true;
     else  
       return false;

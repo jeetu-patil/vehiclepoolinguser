@@ -2,8 +2,8 @@
   <section class="userProfile card-p-3">
     <div class="profileimage col-6">
 
-      <img *ngIf="!getLength()" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile" width="50px" height="50px">
-      <img *ngIf="getLength()" [src]="user.image" alt="profile" width="50px" height="50px">
+      <img *ngIf="!getLength(user.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile" width="50px" height="50px">
+      <img *ngIf="getLength(user.image.length)" [src]="user.image" alt="profile" width="50px" height="50px">
     </div>
     <div class="col-6">
       <h1>{{user.name}}</h1>

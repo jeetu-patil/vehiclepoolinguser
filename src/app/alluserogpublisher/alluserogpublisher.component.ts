@@ -30,6 +30,7 @@ export class AlluserogpublisherComponent implements OnInit {
   }
 
   navigateToDetail(id:any){
+    console.log(id)
     this.router.navigate(['publisherdetail',id]);
   }
 
