@@ -2,38 +2,39 @@
   <div class="form-box">
     <div action="#" class="form mt-5">
       <div class="product-content">
-        <h1 style="font-size:30px; margin-left:20px;">{{publish.rideDate | date:'dd/MM/yyyy'}}</h1>
-        <div class="detail" style="margin-left: 73px;">
-          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="!getLength()" type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i></a>
+        <h1 style="font-size:50px; margin-left:80px;">{{publish.rideDate | date:'dd/MM/yyyy'}}</h1>
+        <div class="detail" style="margin-left: 150px;">
+          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="!getLength()" type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle"></i></a>
 
           <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="getLength()"><img [src]="publish.publisherId.image" id="userProfile"/></a>
 
             <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" class="name">{{publish.publisherId.name}}</a>
-        
+
         </div>
         <div class="from">
-          <label style="padding-right:10px;"></label>
-          <i class="material-icons" style="color:black;">radio_button_checked</i>
-          <label style="padding-left:10px;"> {{publish.fromId.place}}</label>
-        </div>
-        <div class="vl">
+          <label></label>
+          <i  style="color:black; font-weight:bold;">From  </i>
+          <label style="padding-left:10px;">: {{publish.fromId.place}}</label>
         </div>
         <div class="from">
-          <i class="material-icons " style="color:black; margin-top: 35px;margin-left:73px; ">radio_button_checked</i>
-          <label style="padding-left:10px;">{{publish.toId.place}}</label>
+          <i  style="color:black; margin-top: 15px; font-weight:bold; ">To </i>
+          <label style="padding-left:10px; margin-left: 25px;">: {{publish.toId.place}}</label>
         </div>
-        <div class="from">
+        <div class="from mt-5">
           <label>Date : {{publish.rideDate | date:'dd/MM/yyyy'}}</label>
         </div>
         <div class="from">
           <label>Price for 1 Person : {{publish.amountPerPerson}}</label>
         </div>
-        <h2>Message :</h2>
-        <div class="card">
+        <div class="from m-3">
+          <label>Distance : 2km</label>
+        </div>
+        <h2 class="m-3">Message :</h2>
+        <div class="card m-3">
           <h3 style="padding-left:10px;">{{publish.msgForBooker}}</h3>
         </div>
         <div class="form-group">
-          <a style="cursor:pointer;" (click)="bookRide()" class="btn signup">Book Now</a>
+          <a style="cursor:pointer; margin-left:90px" (click)="bookRide()" class="btn signup">Book Now</a>
         </div>
       </div>
     </div>

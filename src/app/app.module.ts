@@ -38,6 +38,7 @@ import { PublishhistoryComponent } from './publishhistory/publishhistory.compone
 import { ConfirmbookerComponent } from './confirmbooker/confirmbooker.component';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpage.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
 
 
@@ -83,6 +84,7 @@ const socialProvider = {
     ConfirmbookerComponent,
     ProfileUserComponent,
     AcceptrequestpageComponent,
+    AboutUsComponent,
     AlluserogpublisherComponent
   ],
   imports: [
