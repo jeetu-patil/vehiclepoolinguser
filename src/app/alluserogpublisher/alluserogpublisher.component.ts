@@ -13,9 +13,8 @@ export class AlluserogpublisherComponent implements OnInit {
 
   bookRides:any;
   ngOnInit(): void {
-    this.publishRideService.getAllpublishHistory().subscribe(data =>{
+    this.publishRideService.getAllUserOfPublishHistory().subscribe(data =>{
       this.bookRides=data;
-      console.log(this.bookRides);
     });
   }
 

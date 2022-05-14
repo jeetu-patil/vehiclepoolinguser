@@ -81,6 +81,10 @@ export class PublishrideService {
   }
 
   getAllpublishHistory(){
+    return this.http.get("http://localhost:3000/publisherhistory/publishhistiry/"+sessionStorage.getItem("userId"));
+  }
+
+  getAllUserOfPublishHistory(){
     return this.http.get("http://localhost:3000/publisherhistory/viewpublisherhistory/"+sessionStorage.getItem("userId"));
   }
 }
