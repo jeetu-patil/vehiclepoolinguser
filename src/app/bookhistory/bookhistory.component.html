@@ -2,28 +2,29 @@
   <div class="heading text-center">
    <h1 class="pt-4">Book History</h1>
   </div>
-  <div class="publish">
+  <div class="publish" *ngFor="let user of users">
   <div class="row publish-card">
     <div class="col-md-6 left">
        <div class="from">
          <span id="from">From :</span>
-         <span id="from-text">Harda nimaber Handiya ram ram shre</span>
+         <span id="from-text">{{user.fromId.place}}</span>
        </div>
        <div class="to">
          <span id="to">To :</span>
-         <span id="to-text">Indore shree ram shyam singh rao</span>
+         <span id="to-text">{{user.toId.place}}</span>
        </div>
        <div class="date">
          <span id="date">Date :</span>
-         <span id="date-text">20/2/12</span>
+         <span id="date-text">{{user.rideDate | date: "dd/MM/yyyy" }}</span>
        </div>
     </div>
     <div class="col-md-6 right">
      <div class="total-seat">
-       <span>Image : <img src="../../assets/Images/profile.png" alt="Avatar" class="avatar" height="80px" width="80px;"></span>
+       <span>Image : <a (click)="navigateToDetail(user.publisherId._id)" style="cursor: pointer"><img *ngIf="!getLength(user.publisherId.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile" width="100px" height="100px"></a>
+        <a (click)="navigateToDetail(user.publisherId._id)" style="cursor: pointer"><img *ngIf="getLength(user.publisherId.image.length)" [src]="user.publisherId.image" alt="profile" width="100px" height="100px"></a></span>
      </div>
      <div class="remaining-seat">
-       <span>Name: sapna </span>
+       <span>Name: {{user.publisherId.name}} </span>
      </div>
      <div class="book-seat">
 

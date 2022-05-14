@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PublishrideService } from '../services/publishride.service';
 
 @Component({
   selector: 'app-bookhistory',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookhistoryComponent implements OnInit {
 
-  constructor() { }
+  constructor(private publisRideService: PublishrideService,private router:Router) { }
 
+  users:any;
   ngOnInit(): void {
+    this.publisRideService.getAllBookRidesHistory().subscribe(data => {
+      this.users=data;
+      console.log(this.users);
+    })
+  }
+
+  getLength(len:any){
+    if(len>0)
+      return true;
+    else  
+      return false;
+  }
+
+  navigateToDetail(id:any){
+    console.log("Id : "+id);
+    this.router.navigate(['publisherdetail',id]);
   }
 
 }

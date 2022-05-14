@@ -26,8 +26,11 @@ export class NavbarComponent implements OnInit {
   }
 
   signout(){
-    sessionStorage.removeItem("userId");
-    sessionStorage.removeItem("jwt-token");
+    if(confirm("Are you Sure ?")){
+      sessionStorage.removeItem("userId");
+      sessionStorage.removeItem("jwt-token");
+       this.router.navigate(["sign-in"]);
+    }
   }
 
   navigateToVehicleDetail(){

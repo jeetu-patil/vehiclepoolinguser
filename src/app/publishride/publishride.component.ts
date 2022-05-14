@@ -22,10 +22,8 @@ export class PublishrideComponent implements OnInit {
   }
 
   navigateToUserRequest(id:any){
+    console.log(id);
     this.router.navigate(['userrides/acceptrequest',id]);
   }
 
-  navigateToCheckRightBooker(){
-    this.router.navigate(['userrides/confirmbooker']);
-  } 
 }                                                            

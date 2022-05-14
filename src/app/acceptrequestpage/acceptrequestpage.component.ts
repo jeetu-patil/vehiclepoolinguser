@@ -42,7 +42,7 @@ export class AcceptrequestpageComponent implements OnInit {
   }
 
   acceptRequest(bookerId:any){
-    this.publisRideService.acceptRequest(bookerId).subscribe(data => {
+    this.publisRideService.acceptRequest(bookerId,this.rideId).subscribe(data => {
       this.ngOnInit();
     },err => {
 
