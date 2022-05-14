@@ -22,9 +22,11 @@ import { PublishhistoryComponent } from './publishhistory/publishhistory.compone
 import { ConfirmbookerComponent } from './confirmbooker/confirmbooker.component';
 import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpage.component';
+import { AboutUsComponent } from './about-us/about-us.component';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent},
+  { path: "aboutus", component: AboutUsComponent},
   { path: "sign-in", component: SigninComponent},
   { path: "sign-up", component: SignupComponent},
   { path :"searchride/:from/:to/:date/:seat" ,component:SearchridesComponent},
