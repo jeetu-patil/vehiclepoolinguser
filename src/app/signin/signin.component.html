@@ -23,7 +23,7 @@
           <div class="validationS">
            <span  *ngIf="passwordV.errors?.required && passwordV.touched">!Please
             Enter Your Password</span>
-        
+
         <span  *ngIf="passwordV.errors?.['minlength']">
             minimum 4 letter in password
             </span>
@@ -36,15 +36,15 @@
 
         <div class="form-group signbtn">
           <!-- <a  (click)="signinUser()" disabled="email1.errors?.required|| passwordV.errors?.required" class="btn signin">   Sign In</a> -->
-        
-        <button [disabled]="email1.errors?.pattern||passwordV.errors?.['minlength']||email1.errors?.required|| passwordV.errors?.required" class="btn signin" style="cursor:pointer" (click)="signinUser()" 
+
+        <button [disabled]="email1.errors?.pattern||passwordV.errors?.['minlength']||email1.errors?.required|| passwordV.errors?.required" class="btn signin" style="cursor:pointer" (click)="signinUser()"
            class="btn solid">  Sign In </button>
           </div>
         <span class="or mt-3">
           OR
         </span>
         <div class="google-btn mt-3">
-          <a  (click)="signInWithGoogle()" style="cursor:pointer" class="btn-google">Sign in with Google <i class="fa fa-google"></i></a>
+          <a  (click)="signInWithGoogle()" style="cursor:pointer" class="btn-google">Sign in with Google <i class="fab fa-google fa-3x"></i></a>
         </div>
 
       </div>

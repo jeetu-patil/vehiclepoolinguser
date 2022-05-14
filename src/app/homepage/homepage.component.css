@@ -37,6 +37,9 @@ section .card-link{
   display: flex;
   font-size: 14px;
 }
+.btn{
+  text-align: center;
+}
 
 .search-form{
   padding: 60px 0;
