@@ -2,7 +2,8 @@
     <div class="heading text-center">
      <h1 class="pt-4">Publish User History</h1>
     </div>
-    <div class="publish" *ngFor="let user of bookRides">
+    <div class="publish" *ngFor="let u of bookRides">
+    <div *ngFor="let user of u">
     <div class="row publish-card">
       <div class="col-md-6 left">
          <div class="from">
@@ -10,12 +11,12 @@
            <span id="from-text">{{user.name}}</span>
          </div>
          <div class="to">
-           <span id="to">To :</span>
+           <span id="to">Mobile :</span>
            <span id="to-text">{{user.mobile}}</span>
          </div>
          <div class="date">
-           <span id="date">Date :</span>
-           <span id="date-text">{{user.rideDate | date: "dd/MM/yyyy" }}</span>
+           <span id="date">Email :</span>
+           <span id="date-text">{{user.email}}</span>
          </div>
       </div>
       <div class="col-md-6 right">
@@ -37,5 +38,6 @@
      <button class="btn signin btn2 mt-3">FeedBack</button>
    </div>
   </div>
+</div>
   </div>
   
