@@ -34,7 +34,7 @@ export class BookhistoryComponent implements OnInit {
   }
 
   addComment(id:any){
-    this.userService.addComment(this.comment).subscribe(data=>{
+    this.userService.addComment(this.comment,id).subscribe(data=>{
       alert("Comment added...");
       this.ngOnInit();
     });

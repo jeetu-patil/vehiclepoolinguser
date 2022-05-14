@@ -13,11 +13,13 @@ export class PublisherdetailComponent implements OnInit {
 
   userId:any;
   user:any;
+  comments:any;
   ngOnInit(): void {
     this.userId=this.activatedRoute.snapshot.paramMap.get("userId");
     this.userService.getPublisher(this.userId).subscribe(data => {
       this.user=data;
       console.log(this.user)
+      this.comments=this.user.comments;
     },err => {
 
     });

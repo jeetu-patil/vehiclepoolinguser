@@ -25,7 +25,7 @@
     </div>
     <div class="col-lg-3 col-md-3 button p-3">
       <button (click)="acceptRequest(req._id)" style="cursor:pointer" class="btn btn-primary m-4"><i class="fas fa-check"></i></button>
-      <button class="btn btn-danger"><i class="fas fa-times"></i></button>
+      <button (click)="declineRequest(req._id)" class="btn btn-danger"><i class="fas fa-times"></i></button>
     </div>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PublishrideService } from '../services/publishride.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class AcceptrequestpageComponent implements OnInit {
 
-  constructor(private publisRideService:PublishrideService,private activatedRoute: ActivatedRoute) { }
+  constructor(private publisRideService:PublishrideService,private activatedRoute: ActivatedRoute,private router:Router) { }
 
   requets:any;
   date:any;
@@ -43,6 +43,14 @@ export class AcceptrequestpageComponent implements OnInit {
 
   acceptRequest(bookerId:any){
     this.publisRideService.acceptRequest(bookerId,this.rideId).subscribe(data => {
+      this.ngOnInit();
+    },err => {
+
+    });
+  }
+
+  declineRequest(bookerId:any){
+    this.publisRideService.declineRequest(bookerId,this.rideId).subscribe(data => {
       this.ngOnInit();
     },err => {
 

@@ -38,8 +38,8 @@ export class UserService {
     return this.http.get("http://localhost:3000/user/getuser/"+userId);
   }
 
-  addComment(comment:any){
-    return this.http.post("http://localhost:3000/user/addComment",{feedback:comment,userId:sessionStorage.getItem("userId")});
+  addComment(comment:any,id:any){
+    return this.http.post("http://localhost:3000/user/addComment",{feedback:comment,userId:sessionStorage.getItem("userId"),uId:id});
   }
 
 }

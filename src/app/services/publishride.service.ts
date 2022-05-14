@@ -87,4 +87,8 @@ export class PublishrideService {
   getAllUserOfPublishHistory(){
     return this.http.get("http://localhost:3000/publisherhistory/viewpublisherhistory/"+sessionStorage.getItem("userId"));
   }
+
+  declineRequest(bookerId:any,rideId:any){
+    return this.http.get("http://localhost:3000/publishride/declinerequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId")+"/"+rideId);
+  }
 }
