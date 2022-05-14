@@ -82,13 +82,13 @@
       <div class="form-group">
         <i class="fa fa-calendar" aria-hidden="true"></i>
         <input id="date1" [(ngModel)]="date"  type="date" (change)="dateValidation()" required #date1="ngModel">
-        <div *ngIf="dur">!can't be publish Ride !!Date Wrong</div>        
+        <div *ngIf="dur">!can't be publish Ride !!Date Wrong</div>
         <div class="validationS" *ngIf="date1.errors?.required && date1.touched">!Required Date </div>
       </div>
       <div class="form-group">
         <i class="fa fa-times-circle" aria-hidden="true"></i>
         <input id="time1" type="time"  [(ngModel)]="time" #time1="ngModel" required placeholder="time" />
-          
+
         <div class="validationS" *ngIf="time1.errors?.required && time1.touched">Required Time </div>
       </div>
 
