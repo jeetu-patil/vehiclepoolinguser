@@ -63,4 +63,13 @@ export class PublishrideService {
   acceptRequest(bookerId:any){
     return this.http.get("http://localhost:3000/publishride/acceptrequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId"));
   }
+
+  checkConfirmBoooker():Observable<any>{
+    return this.http.get("http://localhost:3000/publishride/showallacceptrequestbypublisher/"+sessionStorage.getItem("userId"));
+  }
+
+
+  matchOtp(otp:any):Observable<any>{
+    return this.http.post("http://localhost:3000/publishride/matchotp",{otp:otp,publisherId:sessionStorage.getItem("userId")});
+  }
 }

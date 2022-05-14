@@ -1,3 +1,4 @@
+import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -14,9 +15,11 @@ export class RidePublishInfoComponent implements OnInit {
 
   from:any;
   to:any;
-
+  dur:boolean=false;
   date:any;
   time:any;
+  date1:any;
+  date2:any
   message:any;
   seat:any;
 
@@ -29,6 +32,20 @@ export class RidePublishInfoComponent implements OnInit {
     this.placeService.getAllPlace().subscribe(data =>{
       this.places=data;
     });
+  }
+  dateValidation(){
+    this.date1 = formatDate(new Date(),'yyyy-MM-dd','en_US');
+   this.date2 =  formatDate(this.date,'yyyy-MM-dd','en_US');
+    console.log(this.date);
+    console.log(this.date1);
+    console.log(this.date2);
+    if(this.date1<this.date2){
+      console.log('---date1 is greater----');
+      this.dur=false;
+     }else{
+       this.dur=true;
+      console.log('---date2 is greater-----');
+     }
   }
 
   submitDetail(){
