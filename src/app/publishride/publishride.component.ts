@@ -26,4 +26,15 @@ export class PublishrideComponent implements OnInit {
     this.router.navigate(['userrides/acceptrequest',id]);
   }
 
+  cancelRide(id:any){
+    this.publisRideService.cancelRide(id).subscribe(data => {
+      if(data.msg=="cancel")
+        alert("ride cancel");
+      else
+        alert("something went wrong");
+    },err=>{
+
+    });
+  }
+
 }                                                            

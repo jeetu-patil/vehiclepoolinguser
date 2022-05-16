@@ -30,7 +30,7 @@
         </div>
       </div>
       <div class="form-group text-center">
-        <button class="btn signin">Cancel Ride</button>
+        <button (click)="cancelRide(ride._id)" class="btn signin">Cancel Ride</button>
         <button
           style="cursor: pointer"
           (click)="navigateToUserRequest(ride._id)"
