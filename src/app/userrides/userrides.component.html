@@ -14,11 +14,21 @@
   </div>
 </nav> -->
 
-<nav class="sidebar">
-  <a (click)="navigateToBookRides()"  routerLink="">Book Rides</a>
-  <a (click)="navigateToBookHistory()"  routerLink="">Confirm Book Rides</a>
-  <a (click)="navigateToPublishRides()" routerLink="">Publish Rides</a>
-  <a (click)="navigateToPublisherHistory()" routerLink="" >Confirm Publish Rides</a>
-</nav>
+<div class="cintainer">
+  <div class="row">
+    <div class="col-md-2">
+      <nav class="sidebar">
+        <a (click)="navigateToBookRides()" >Book Rides</a>
+        <a (click)="navigateToBookHistory()" >Confirm Book Rides</a>
+        <a (click)="navigateToPublishRides()" >Publish Rides</a>
+        <a (click)="navigateToPublisherHistory()">Confirm Publish Rides</a>
+      </nav>
+    </div>
+    <div class="col-md-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>
 
-<router-outlet></router-outlet>
+
+

@@ -8,8 +8,8 @@
         width="150px"
         height="150px"
       />
-      <img *ngIf="getLength(i)" [src]="req.image" width="150px" height="150px" />
-      <h3>Name:{{ req.name }}</h3>
+      <img *ngIf="getLength(i)" [src]="req.userId.image" width="150px" height="150px" />
+      <h3>Name:{{ req.userId.name }}</h3>
     </div>
     <div
       class="col-lg-3 col-md-2 form-group search2 mb-2"
@@ -21,11 +21,11 @@
     </div>
     <div class="col-lg-3 col-md-3 places p-3 pt-4">
       Date:{{ date | date: "dd/MM/yyyy" }}<br />
-      Number:{{req.mobile}}<br />
+      Number:{{req.userId.mobile}}<br />
     </div>
     <div class="col-lg-3 col-md-3 button p-3">
-      <button (click)="acceptRequest(req._id)" style="cursor:pointer" class="btn btn-primary m-4"><i class="fas fa-check"></i></button>
-      <button (click)="declineRequest(req._id)" class="btn btn-danger"><i class="fas fa-times"></i></button>
+      <button (click)="acceptRequest(req.userId._id,req.bookRideId)" style="cursor:pointer" class="btn btn-primary m-4"><i class="fas fa-check"></i></button>
+      <button (click)="declineRequest(req.userId._id)" class="btn btn-danger"><i class="fas fa-times"></i></button>
     </div>
   </div>
 </div>

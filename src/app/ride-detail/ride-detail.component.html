@@ -27,8 +27,13 @@
           <label>Price for 1 Person : {{publish.amountPerPerson}}</label>
         </div>
         <div class="from m-3">
-          <label>Distance : 2km</label>
+          <label>Distance : {{publish.distance}} km</label>
         </div>
+
+        <div class="from m-3">
+          <label>Expected Time  : {{getTime(publish.distance)}} minute</label>
+        </div>
+
         <h2 class="m-3">Message :</h2>
         <div class="card m-3">
           <h3 style="padding-left:10px;">{{publish.msgForBooker}}</h3>
