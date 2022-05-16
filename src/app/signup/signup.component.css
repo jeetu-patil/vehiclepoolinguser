@@ -1,12 +1,15 @@
 .form-box
 {
-  /* background: #000; */
   padding: 50px 0 0 0 ;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
+  background-image: url("../../assets/Images/illus2.webp");
+  /* background-image: url("https://paperpillar.com/assets/images/footer-white-mask-lg.png"); */
+  background-size: cover;
+  /* opacity: 0.6; */
 }
+
 .form-change{
   display: flex;
   justify-content: center;
@@ -22,6 +25,10 @@
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
+  /*box-shadow: rgba(153, 0, 110, 0.17) 0px -23px 25px 0px inset, rgba(116, 0, 85, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  *//*box-shadow: rgba(240, 46, 169, 0.089) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+  */box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  -webkit-border-radius: 8px;
 }
 .form .logo svg{
   width: 104px;
@@ -53,6 +60,7 @@
   font-weight: 600;
   font-size: 14px;
 }
+
 .form-group .signup{
   padding: 8px 30px !important;
   margin-bottom: 10px;
@@ -75,9 +83,31 @@
 .btn{
   background-color:#1B2A49;
   color: #fff;
+
 }
 
 .validationS{
   font-size: 14px;
    color:red
 }
+
+h1{
+  margin-bottom: 70px auto;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size:40px;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1:hover {
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
+      0 3px 0 #ccc, 0 4px 0 #ccc,
+      0 5px 0 #ccc, 0 6px 0 #ccc,
+      0 7px 0 #ccc, 0 8px 0 #ccc,
+      0 9px 0 #ccc, 0 10px 0 #ccc,
+      0 11px 0 #ccc, 0 12px 0 #ccc,
+      0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+

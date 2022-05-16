@@ -1,6 +1,10 @@
-<div class="container">
+
+
+<div class="container-fluid-lg">
+
   <div class="form-box">
-    <div action="#" class="form-change">
+
+    <div action="#" class="form-change mb-5">
       <div class="head">
         <h1>Sign Up</h1>
       </div>
@@ -11,8 +15,8 @@
         <div class="validationS">
           <span *ngIf="name1.errors?.required && name1.touched">!Please enter your
             name</span>
-           <span *ngIf="name1.errors?.pattern" >Enter valid name</span>
-          </div>
+          <span *ngIf="name1.errors?.pattern">Enter valid name</span>
+        </div>
       </div>
 
       <div class="form-group">
@@ -23,10 +27,10 @@
           <span *ngIf="email1.errors?.required && email1.touched">!Please enter
             your email</span>
 
-          <span *ngIf="email1.errors?.pattern" >
-           Invalid Email
+          <span *ngIf="email1.errors?.pattern">
+            Invalid Email
           </span>
-       </div>
+        </div>
       </div>
 
       <div class="form-group">
@@ -38,34 +42,34 @@
           <span *ngIf="password1.errors?.required && password1.touched">!Please
             Enter Your Password</span>
 
-         <span  *ngIf="password1.errors?.['minlength']">
-          minimum  6 letter in password
-        </span>
+          <span *ngIf="password1.errors?.['minlength']">
+            minimum 6 letter in password
+          </span>
+        </div>
       </div>
-    </div>
 
       <div class="form-group">
         <i class="fa fa-book"></i>
         <input id="aadhar1" type="text" [(ngModel)]="user.aadhar" pattern="^[0-9-]{1,15}$" required minlength="12"
           maxlength="14" placeholder="Aadhar No." #aadhar1="ngModel" />
         <div class="validationS">
-          <span *ngIf="aadhar1.errors?.pattern" >alphabets not support</span>
-          <span  *ngIf="aadhar1.errors?.required && aadhar1.touched">!Please Enter
+          <span *ngIf="aadhar1.errors?.pattern">alphabets not support</span>
+          <span *ngIf="aadhar1.errors?.required && aadhar1.touched">!Please Enter
             Your Aadhar Number</span>
 
-        <span  *ngIf="aadhar1.errors?.['minlength']">
-          minimum 12 number required
-        </span>
-       </div>
+          <span *ngIf="aadhar1.errors?.['minlength']">
+            minimum 12 number required
+          </span>
+        </div>
       </div>
       <div class="form-group">
         <i class="fa fa-book"></i>
         <input id="age1" type="number" [(ngModel)]="user.age" required placeholder="Age" min="18" #age1="ngModel" />
         <div class="validationS">
-          <span  *ngIf="age1.errors?.required && age1.touched">!Please Enter Your
+          <span *ngIf="age1.errors?.required && age1.touched">!Please Enter Your
             Age</span>
 
-          <span  *ngIf="age1.errors?.['min']">!Your Age Must be 18 old</span>
+          <span *ngIf="age1.errors?.['min']">!Your Age Must be 18 old</span>
         </div>
       </div>
       <div class="form-check form-check-inline">
@@ -76,8 +80,8 @@
           value="male" #inlineRadio1="ngModel" />
         <label class="form-check-label" class="m-2" for="inlineRadio2">Male</label>
         <div class="validationS">
-        <span  *ngIf="inlineRadio1.errors?.required && inlineRadio1.touched">!Please
-          chose Your Gender</span>
+          <span *ngIf="inlineRadio1.errors?.required && inlineRadio1.touched">!Please
+            chose Your Gender</span>
         </div>
       </div>
 
@@ -87,7 +91,7 @@
         <!-- <a style="cursor:pointer;" [disabled]="name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required" (click)="signupUser()" class="btn signup">Sign Up</a> -->
         <input style="cursor:pointer;" type="submit" (click)="signupUser()"
           [disabled]="password1.errors?.['minlength']||aadhar1.errors?.['minlength']||email1.errors?.pattern||name1.errors?.pattern||age1.errors?.['min']||name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required"
-          value="Sign Up" class="btn signup"/>
+          value="Sign Up" class="btn signup" />
       </div>
 
       <span>Already Registered ? <a class="already" href="sign-in">Sign In</a></span>
