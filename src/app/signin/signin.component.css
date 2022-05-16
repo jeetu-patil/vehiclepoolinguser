@@ -1,10 +1,18 @@
+.container-fluid{
+  /* background-image: url("../../assets/Images/illus4.jpg"); */
+  background-repeat: no-repeat;
+  background-position: center;
+  /* background-color: rgb(1, 1, 54); */
+
+}
 .form-box
 {
-   overflow:hidden;
+   /* overflow:hidden; */
   padding: 50px 0 0 0 ;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow:#000;
 }
 .form-change{
   margin-top :5%;
@@ -12,16 +20,18 @@
   justify-content: center;
   flex-direction: column;
   align-items: center;
+
 }
 .form-change{
-  background: #fff;
+
   padding: 30px 70px 40px 70px;
   border-radius: 8px;
-  box-shadow: 0 0 5px rgba(255, 255, 255, 0.0);
+  box-shadow: 0 0 5px rgba(255, 255, 255, 0);
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   -ms-border-radius: 8px;
   -o-border-radius: 8px;
+  overflow: hidden;
 }
 .form .logo svg{
   width: 104px;
@@ -149,7 +159,7 @@
 }
 
 .btn{
-  color:white
+  color:white;
 }
 .validationS{
   font-size: 14;
@@ -161,4 +171,88 @@
   background-clip: text;
   color: transparent;
   -webkit-text-fill-color: transparent;
+}
+.head h1{
+  margin-bottom: 40px;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  font-size:40px;
+  transition: 0.5s;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1:hover {
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #ccc,
+      0 3px 0 #ccc, 0 4px 0 #ccc,
+      0 5px 0 #ccc, 0 6px 0 #ccc,
+      0 7px 0 #ccc, 0 8px 0 #ccc,
+      0 9px 0 #ccc, 0 10px 0 #ccc,
+      0 11px 0 #ccc, 0 12px 0 #ccc,
+      0 20px 30px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (max-width: 390px){
+
+  .form-change{
+    margin-top :5%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+/* overflow: hidden; */
+  }
+  .form-change{
+
+    padding: 30px -3px 39px 70px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.0);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+  }
+  .form .logo svg{
+    width: 104px;
+    height: 146px;
+    ;
+  }
+  .form-group{
+    margin: 20px 0;
+    position: relative;
+  }
+  .form-group i{
+    position: absolute;
+    top: 10px;
+    left: 5px;
+  }
+  .form-group input{
+    width: 350px;
+    font-weight: 500;
+    padding: 5px 10px 5px 50px;
+    border: 0;
+    border-bottom: 2px solid rgb(196, 196, 196);
+    outline: 0;
+  }
+
+  .form .already
+  {
+    text-decoration: none;
+    color: #000;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  .links{
+    display: flex;
+    justify-content: space-between;
+    width: 800%;
+    font-size: 10px;
+    margin-top:10px;
+  }
+  .links .forget{
+    font-weight: 300;
+    color: rgb(0, 0, 0);
+  }
+
+
+
 }

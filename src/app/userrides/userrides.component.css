@@ -1,194 +1,57 @@
-.navbar {
-  width: 100vw;
-  /* background-image: linear-gradient(rgb(0, 238, 255), rgb(255, 255, 255));; */
-  background-color: #6689ca;
-  backdrop-filter: blur(15px);
 
 
-}
-
-.navbar-brand {
-  font-size: 24px;
-  font-weight: 500;
-  position: relative;
-  color: rgb(255, 0, 0);
-}
-
-.navbar-brand small {
-  position: absolute;
-  top: 20px;
-  left: 50px;
-}
-
-.navbar-brand small sub {
-  font-size: 12px;
-}
-
-.nav-item {
-  position: relative;
-  margin: 0 10px;
-}
-
-.nav-item .nav-link {
+.sidebar {
+  margin: 0;
   padding: 0;
-  font-weight: 500;
-  color: #000;
+  width: 200px;
+  background-color: #f1f1f1;
+  /* position: fixed; */
+  height: 100%;
+  overflow: auto;
 }
 
-.nav-item:hover .nav-link {
-  color: rgb(165, 195, 210);
+/* Sidebar links */
+.sidebar a {
+  display: block;
+  color: black;
+  padding: 16px;
+  text-decoration: none;
 }
 
-.nav-item::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  top: 30px;
-  left: 0;
-  background: #000;
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -ms-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
+/* Active/current link */
+.sidebar a.active {
+  background-color: #04022a;
+  color: white;
 }
 
-.nav-item:hover::before {
-  opacity: 1;
+/* Links on mouse-over */
+.sidebar a:hover:not(.active) {
+  background-color: #04022a;
+  color: white;
 }
 
-.right-nav .nav-item .nav-link {
-  font-size: 14px;
+/* Page content. The value of the margin-left property should match the value of the sidebar's width property */
+div.content {
+  margin-left: 200px;
+  padding: 1px 16px;
+  height: 1000px;
 }
 
-.right-nav .nav-item .nav-link i {
-  font-size: 20px !important;
-}
-
-@media only screen and (max-width: 768px) {
-
-  .navbar-nav {
-      display: flex;
-      justify-content: right;
-      align-items: right;
-      flex-direction: column;
-      margin-top: 25px;
-      vertical-align:left;
+/* On screens that are less than 700px wide, make the sidebar into a topbar */
+@media screen and (max-width: 700px) {
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
   }
-  .navbar-nav li {
-      margin-bottom: 35px;
+  .sidebar a {float: left;}
+  div.content {margin-left: 0;}
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .sidebar a {
+    text-align: center;
+    float: none;
   }
-  .navbar-nav li a {
-      font-size: 16px;
-      transition: 0.5s ease-in-out;
-      -webkit-transition: 0.5s ease-in-out;
-      -moz-transition: 0.5s ease-in-out;
-      -ms-transition: 0.5s ease-in-out;
-      -o-transition: 0.5s ease-in-out;
-  }
-  .navbar-nav li:hover a {
-      transform: scale(1.2);
-      -webkit-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      -o-transform: scale(1.2);
-      color: rgb(0, 111, 222);
-  }
-  .right-nav .search-link {
-      display: none;
-  }
-}
-
-/* add */
-.navbar-brand {
-  font-size: 24px;
-  font-weight: 500;
-  position: relative;
-  color: rgb(0, 0, 0);
-}
-
-.navbar-brand small {
-  position: absolute;
-  top: 20px;
-  left: 50px;
-}
-
-.navbar-brand small sub {
-  font-size: 12px;
-}
-
-.nav-item {
-  position: relative;
-  margin: 0 10px;
-}
-
-.nav-item .nav-link {
-  padding: 0;
-  font-weight: 500;
-  color: rgb(255, 255, 255);
-}
-
-.nav-item:hover .nav-link {
-  color: rgb(255, 255, 255);
-}
-
-.nav-item::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  top: 30px;
-  left: 0;
-  background: rgb(255, 255, 255);
-  opacity: 0;
-  transition: 0.3s ease-in-out;
-  -webkit-transition: 0.3s ease-in-out;
-  -moz-transition: 0.3s ease-in-out;
-  -ms-transition: 0.3s ease-in-out;
-  -o-transition: 0.3s ease-in-out;
-}
-
-.nav-item:hover::before {
-  opacity: 1;
-}
-
-.right-nav .nav-item .nav-link {
-  font-size: 14px;
-}
-
-.right-nav .nav-item .nav-link i {
-  font-size: 20px !important;
-}
-
-@media only screen and (max-width: 768px) {
-
-  .navbar-nav {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      margin-top: 25px;
-  }
-  .navbar-nav li {
-      margin-bottom: 35px;
-  }
-  .navbar-nav li a {
-      font-size: 16px;
-      transition: 0.5s ease-in-out;
-      -webkit-transition: 0.5s ease-in-out;
-      -moz-transition: 0.5s ease-in-out;
-      -ms-transition: 0.5s ease-in-out;
-      -o-transition: 0.5s ease-in-out;
-  }
-  .navbar-nav li:hover a {
-      transform: scale(1.2);
-      -webkit-transform: scale(1.2);
-      -moz-transform: scale(1.2);
-      -ms-transform: scale(1.2);
-      -o-transform: scale(1.2);
-      color: rgb(255, 255, 255);
-  }
-
 }
