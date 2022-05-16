@@ -41,6 +41,24 @@
   </div>
 </div>
 
+
+<section class="comment card">
+  <div class="container  commentss">
+    <div class="row">
+      <div class="col-sm-5 col-md-6 col-12 pb-4">
+        <h1>Comments</h1>
+        <div class="comment mt-4 text-justify float-left" style="color:white;" *ngFor="let comment of comments">
+          <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
+        <h4 style="color:white;">{{comment.userId.name}}</h4>
+          <span style="color:white;">{{comment.userId.email}}</span>
+          <br>
+          <p style="color:white;">{{comment.feedback}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  </section>
+
 <div class="form-group text-center mb-5">
   <button (click)="editProfile()" class="btn signin btn2">Edit Your Profile</button>
 </div>

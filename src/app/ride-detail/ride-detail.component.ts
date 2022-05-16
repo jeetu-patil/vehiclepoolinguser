@@ -30,7 +30,7 @@ export class RideDetailComponent implements OnInit {
 
   bookRide(){
     this.publisRideService.bookRide(this.seat,this.publish.publisherId._id).subscribe(data => {
-      this.publisRideService.requestToThePublisher(this.id).subscribe(data => {
+      this.publisRideService.requestToThePublisher(this.id,data._id).subscribe(data => {
         alert("Your request sent to the publisher please wait fotr response..");
       })
     })

@@ -79,3 +79,48 @@ width:100px;
 }
 
 
+.comment{
+  margin:30px;
+}
+
+.comments{
+  margin:10px;
+}
+
+.comments h3,h4{
+margin:30px;
+}
+
+
+.comments{
+  margin-top: 5%;
+  margin-left: 20px;
+}
+
+
+
+.comment{
+  border: 1px solid rgba(16, 46, 46, 1);
+  background-color: rgba(16, 46, 46, 0.973);
+  margin-left:12%;
+  margin-right:11%;
+
+}
+/* .comment h4,.comment span,.darker h4,.darker span{
+  display: inline;
+}
+
+.comment p,.comment span,.darker p,.darker span{
+  color: rgb(184, 183, 183);
+}
+
+.commentss h1,h4{
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+}
+label{
+  color: rgb(212, 208, 208);
+} */
+
+
+

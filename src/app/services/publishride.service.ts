@@ -36,13 +36,12 @@ export class PublishrideService {
   }
 
 
-  bookRide(seat:any,publisherId:any){
-    console.log(publisherId);
+  bookRide(seat:any,publisherId:any):Observable<any>{
     return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),publisherId:publisherId});
   }
 
-  requestToThePublisher(rideId:any){
-    return this.http.post("http://localhost:3000/publishride/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),rideId:rideId});
+  requestToThePublisher(rideId:any,bookRideId:any):Observable<any>{
+    return this.http.post("http://localhost:3000/publishride/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),rideId:rideId,bookRideId:bookRideId});
   }
 
 
@@ -90,5 +89,9 @@ export class PublishrideService {
 
   declineRequest(bookerId:any,rideId:any){
     return this.http.get("http://localhost:3000/publishride/declinerequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId")+"/"+rideId);
+  }
+
+  cancelRide(rideId:any):Observable<any>{
+    return this.http.get("http://localhost:3000/publishride/cancellride/"+sessionStorage.getItem("userId")+"/"+rideId);
   }
 }

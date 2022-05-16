@@ -13,12 +13,14 @@ name:string = '';
 email:string = '';
 address:string = '';
 mobile:string = '';
+comments:any;
   constructor(private userService:UserService,private router:Router) { }
 
   ngOnInit(): void {
     this.userService.getUser().subscribe(data=>{
       this.user = data;
       console.log(this.user);
+      this.comments=this.user.comments;
     });
   }
 
