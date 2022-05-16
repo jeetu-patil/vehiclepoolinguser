@@ -34,12 +34,14 @@ export class UserService {
      return this.http.post("http://localhost:3000/user/signin",{email:email,password:password});
   }
 
-  getPublisher(userId:any){
+  getPublisher(userId:any):Observable<any>{
     return this.http.get("http://localhost:3000/user/getuser/"+userId);
   }
 
-  addComment(comment:any,id:any){
+  addComment(comment:any,id:any):Observable<any>{
     return this.http.post("http://localhost:3000/user/addComment",{feedback:comment,userId:sessionStorage.getItem("userId"),uId:id});
   }
-
+  editNMI(formdata:FormData):Observable<any>{
+     return this.http.post("http://localhost:3000/user/edit-profile",formdata)
+  }
 }

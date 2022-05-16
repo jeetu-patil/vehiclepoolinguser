@@ -18,7 +18,7 @@ export class PublishrideService {
     return this.http.get<any>("http://localhost:3000/publishride/checkuserride/"+sessionStorage.getItem("userId"));
   }
 
-  addPublisherDetails(formData:any) :Observable<any>{
+  addPublisherDetails(formData:any):Observable<any>{
     return this.http.post("http://localhost:3000/publishride/firstpublishride",formData);
   }
 
@@ -43,7 +43,7 @@ export class PublishrideService {
   requestToThePublisher(rideId:any,bookRideId:any):Observable<any>{
     return this.http.post("http://localhost:3000/publishride/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),rideId:rideId,bookRideId:bookRideId});
   }
-
+  
 
 
   getAllRequests(rideId:any):Observable<any>{
