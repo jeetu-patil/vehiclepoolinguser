@@ -46,4 +46,10 @@ export class RideDetailComponent implements OnInit {
   navigateToDetail(publisherId:any){
     this.router.navigate(['publisherdetail',publisherId])
   }
+
+  getTime(distance:any){
+    if(distance*3>60)
+      return (distance*3)/60;
+    return distance*3;
+  }
 }

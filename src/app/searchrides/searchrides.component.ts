@@ -28,9 +28,11 @@ export class SearchridesComponent implements OnInit {
     this.publisRideService.getRidesOfBooker(this.from, this.to, this.date,this.seat).subscribe(data => {
       if(data.length>0){
         this.publishRide=data;
+        console.log(this.publishRide)
       }
       else
       {
+        console.log("hiii")
          this.status=true;
       }
     },err=>{

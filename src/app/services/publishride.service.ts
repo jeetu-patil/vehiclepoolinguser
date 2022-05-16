@@ -60,9 +60,9 @@ export class PublishrideService {
   }
 
 
-  acceptRequest(bookerId:any,rideId:any){
+  acceptRequest(bookerId:any,rideId:any,bookRideId:any){
     return this.http.get("http://localhost:3000/publishride/acceptrequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId")
-    +"/"+rideId);
+    +"/"+rideId+"/"+bookRideId);
   }
 
   checkConfirmBoooker():Observable<any>{

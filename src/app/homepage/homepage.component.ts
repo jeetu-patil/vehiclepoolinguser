@@ -24,6 +24,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.publisRideService.getAllPublishRides().subscribe(data => {
       this.publishRide=data;
+      console.log(this.publishRide)
     },err =>{
 
     });
