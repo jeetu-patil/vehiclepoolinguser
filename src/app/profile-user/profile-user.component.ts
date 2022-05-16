@@ -19,7 +19,33 @@ export class ProfileUserComponent implements OnInit {
       console.log(this.user);
     });
   }
+  selectImage(event:any){
+    if(event.target.files.length>0)
+    this.user.image=event.target.files[0];
+  
+  }
+  doneMethod(id:any){
+    let formData =new FormData();
+    formData.append("image",this.user.image);
+    formData.append("name",this.user.name);
+    formData.append("number",this.user.miniBio);
+    formData.append("userId",id);
+    this.userService.editNMI(formData).subscribe(result=>{
+      if(result){
+      console.log(result);
+         alert("Your Profile is Edit Succefully")
+      }
+         else
+          alert("Failed To Edit profile");
+    }
+      )
+  }
+  mobileEdit(id:any){
+    
+  }
+  emailEdit(id:any){
 
+  }
   getLength(len:any){
     if(len>0)
       return true;

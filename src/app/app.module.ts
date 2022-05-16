@@ -40,6 +40,7 @@ import { ProfileUserComponent } from './profile-user/profile-user.component';
 import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpage.component';
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
+import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.component';
 
 
 const socialProvider = {
@@ -85,7 +86,8 @@ const socialProvider = {
     ProfileUserComponent,
     AcceptrequestpageComponent,
     AboutUsComponent,
-    AlluserogpublisherComponent
+    AlluserogpublisherComponent,
+    VihicleprofileComponent
   ],
   imports: [
     BrowserModule,

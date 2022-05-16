@@ -35,14 +35,15 @@ export class AcceptrequestpageComponent implements OnInit {
   }
 
   getLength(i:any){
-    if(this.requets[i].image.length>0)
+    console.log(this.requets[i].userId.image)
+    if(this.requets[i].userId.image.length>0)
       return true;
     else  
       return false;
   }
 
-  acceptRequest(bookerId:any){
-    this.publisRideService.acceptRequest(bookerId,this.rideId).subscribe(data => {
+  acceptRequest(bookerId:any,bookRideId:any){
+    this.publisRideService.acceptRequest(bookerId,this.rideId,bookRideId).subscribe(data => {
       this.ngOnInit();
     },err => {
 
