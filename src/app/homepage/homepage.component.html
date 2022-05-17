@@ -39,7 +39,7 @@
   <h1>PUBLISH RIDES</h1>
 </div>
 <div class="container main">
-  <div class="row" *ngFor="let publish of publishRide">
+  <div class="row" *ngFor="let publish of publishRide | paginate: { itemsPerPage: 8, currentPage: p }">
     <div class="col-md-4">
       <div class="card product">
         <div class="card-header">
@@ -54,8 +54,7 @@
       </div>
     </div>
   </div>
-</section>
-<div class="text-center">
+<div class="text-center mt-5">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 <!-- ------------------********************------------------------------- -->
