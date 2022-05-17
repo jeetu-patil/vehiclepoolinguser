@@ -12,7 +12,7 @@ export class NavbarComponent implements OnInit {
 
   constructor(private userService: UserService,private publisRideService: PublishrideService,private router:Router) { }
 
-  name:any;
+  name:any="";
   ngOnInit(): void {
     this.userService.getUser().subscribe((user) => {
       this.name=user.name;

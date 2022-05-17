@@ -18,7 +18,7 @@ export class UserService {
     return this.http.get("http://localhost:3000/user/verify-mobile/"+mobile+"/"+userId);
   }
 
-  verifyMobile(mobile:any) {
+  verifyMobile(mobile:any):Observable<any> {
     return this.http.get("http://localhost:3000/user/verifymobile/"+mobile);
   }
 
