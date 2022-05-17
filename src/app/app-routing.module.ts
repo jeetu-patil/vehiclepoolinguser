@@ -25,6 +25,7 @@ import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpag
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
 import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent},
@@ -53,6 +54,7 @@ const routes: Routes = [
     ],canActivate:[AuthGuard]
   },
   { path: "publisherdetail/:userId" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
+  { path: "contact-us" , component:ContactUsComponent},
   { path: "**" , component:PageNotFoundComponent}
 ];
 
