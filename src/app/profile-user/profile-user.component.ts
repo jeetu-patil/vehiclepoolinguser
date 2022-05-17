@@ -12,6 +12,8 @@ export class ProfileUserComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute,private userService: UserService) { }
 
   user:any;
+  FileImage:any;
+  imageUrl:any;
 
   ngOnInit(): void {
     this.userService.getUser().subscribe(data=>{
@@ -19,11 +21,8 @@ export class ProfileUserComponent implements OnInit {
       console.log(this.user);
     });
   }
-  selectImage(event:any){
-    if(event.target.files.length>0)
-    this.user.image=event.target.files[0];
+ 
   
-  }
   doneMethod(id:any){
     let formData =new FormData();
     formData.append("image",this.user.image);
@@ -40,8 +39,23 @@ export class ProfileUserComponent implements OnInit {
     }
       )
   }
-  mobileEdit(id:any){
+  selectImage(event:any){
+    const file = event.target.files[0];
+    console.log(file)
+    this.user.image = file;
+    var reader = new FileReader();
     
+         this.FileImage = event.target.files[0];
+         var reader = new FileReader();
+         reader.onload = (event:any) => {
+           this.imageUrl = event.target.result;   
+        }
+         reader.readAsDataURL(this.FileImage);
+      
+    
+  }
+  mobileEdit(id:any){
+
   }
   emailEdit(id:any){
 
