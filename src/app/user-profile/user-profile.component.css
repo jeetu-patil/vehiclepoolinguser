@@ -101,10 +101,9 @@ margin:30px;
 
 
 .comment{
-  border: 1px solid rgba(16, 46, 46, 1);
-  background-color: rgba(16, 46, 46, 0.973);
-  margin-left:12%;
-  margin-right:11%;
+  border: 1px solid #eee;
+  background-color: #eee;
+  margin:auto;
 
 }
 /* .comment h4,.comment span,.darker h4,.darker span{

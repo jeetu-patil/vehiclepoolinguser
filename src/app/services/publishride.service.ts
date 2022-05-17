@@ -36,8 +36,8 @@ export class PublishrideService {
   }
 
 
-  bookRide(seat:any,publisherId:any):Observable<any>{
-    return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),publisherId:publisherId});
+  bookRide(seat:any,rideId:any):Observable<any>{
+    return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),rideId:rideId});
   }
 
   requestToThePublisher(rideId:any,bookRideId:any):Observable<any>{
@@ -65,13 +65,13 @@ export class PublishrideService {
     +"/"+rideId+"/"+bookRideId);
   }
 
-  checkConfirmBoooker():Observable<any>{
-    return this.http.get("http://localhost:3000/publishride/showallacceptrequestbypublisher/"+sessionStorage.getItem("userId"));
+  checkConfirmBoooker(rideId:any):Observable<any>{
+    return this.http.get("http://localhost:3000/publishride/showallacceptrequestbypublisher/"+sessionStorage.getItem("userId")+"/"+rideId);
   }
 
 
-  matchOtp(otp:any,id:any):Observable<any>{
-    return this.http.post("http://localhost:3000/publishride/matchotp",{otp:otp,publisherId:sessionStorage.getItem("userId"),id:id});
+  matchOtp(otp:any,id:any,rideId:any):Observable<any>{
+    return this.http.post("http://localhost:3000/publishride/matchotp",{otp:otp,publisherId:sessionStorage.getItem("userId"),id:id,rideId:rideId});
   }
 
 
