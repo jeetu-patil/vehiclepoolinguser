@@ -5,8 +5,10 @@
     <!-- left column -->
     <div class="col-md-3 sara">
       <div class="text-center">
-        <img *ngIf="!getLength(user.image.length)" [src]="user.image"   height="200px" width="200px">
-      <img *ngIf="getLength(user.image.length)" [(ngModel)]="user.image"  [src]="user.image" height="200px" width="200px">
+        <img *ngIf="!getLength(user.image.length)" [src]="imageUrl"   height="200px" width="200px">
+      <img *ngIf="getLength(user.image.length)"   [src]="user.image" height="200px" width="200px">
+      <!-- <img *ngIf="!getLength(image.length)" [src]="imageUrl"   height="200px" width="200px">
+        <img *ngIf="getLength(image.length)"  [src]="image" height="200px" width="200px"> -->
         <h6>Upload a different photo...</h6>
 
         <input type="file" (change)="selectImage($event)"  name="image" class="form-control">

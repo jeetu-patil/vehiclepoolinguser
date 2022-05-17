@@ -15,7 +15,7 @@ export class VihicleprofileComponent implements OnInit {
   number:any
   image:any;
   imageUrl:any;
-  imagePath:any;
+  // imagePath:any;
   FileImage: any
 
   constructor(private publishrideService: PublishrideService,private toastr:ToastrService,private router:Router) { 
