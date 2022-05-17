@@ -15,6 +15,7 @@ export class BookridesComponent implements OnInit {
   ngOnInit(): void {
     this.publishRideService.getAllBookRides().subscribe(data => {
       this.bookRides = data;
+      console.log(this.bookRides)
     });
   }
 

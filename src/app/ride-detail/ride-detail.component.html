@@ -6,7 +6,7 @@
         <div class="detail" style="margin-left: 150px;">
           <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="!getLength()" type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle"></i></a>
 
-          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="getLength()"><img [src]="publish.publisherId.image" id="userProfile"/></a>
+          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="getLength()"><img [src]="publish.publisherId.image" id="userProfile" height="100" width="100"/></a>
 
             <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" class="name">{{publish.publisherId.name}}</a>
 
