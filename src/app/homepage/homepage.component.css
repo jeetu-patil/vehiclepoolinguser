@@ -1,8 +1,9 @@
 .banner{
-    /* background-image: url("https://cdn.blablacar.com/kairos/assets/images/carpool_only_large-1fb250954893109fa160f6fb41c3ef3d.svg"); */
-    /* background-image: url("https://blog.quickride.in/wp-content/uploads/2020/01/3-2-850x425.jpg"); */
+  /* background: linear-gradient(to right, rgba(0, 0, 78, 0.5),rgba(0, 0, 0.8, 0.9) ), url("https://blog.quickride.in/wp-content/uploads/2019/12/bike-pool-quick-ride.jpg") center top no-repeat; */
+
  background: linear-gradient(to right, rgba(0, 0, 78, 0.5),rgba(0, 0, 0.8, 0.9) ), url("https://cdn-ds.com/blogs-media/sites/369/2018/03/18114555/two-lanes-of-cars-backed-up-in-traffic-with-brake-lights_b.jpg") center top no-repeat;
-    background-repeat: no-repeat;
+
+ background-repeat: no-repeat;
     background-size:1550px 600px;
     position: relative;
     z-index: -1;
@@ -267,3 +268,65 @@ a{
 .text h1 {
   text-shadow: 8px 8px 8px rgba(255, 255, 255, 0);
 }
+
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: #f7f8fc;
+  font-family: "Roboto", sans-serif;
+  color: #10182f;
+}
+.main {
+  display: flex;
+  /* width: 1040px; */
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.product {
+  margin: 10px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  width: 300px;
+}
+.card-header img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.card-title1{
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.card-body1 {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 220px;
+}
+
+.tag {
+  background: #cccccc;
+  border-radius: 50px;
+  font-size: 12px;
+  margin:auto;
+  color: #fff;
+  padding: 5px 19px;
+  text-transform: uppercase;
+  cursor: pointer;
+  text-align: center;
+}
+.tag-teal {
+  background-color: #1b2a49;
+}
+
