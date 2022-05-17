@@ -1,5 +1,59 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
+<div class="heading text-center">
+  <h1 class="pt-4">Your Profile</h1>
+</div>
+<div class="container card mt-5">
+  <div class="row">
+    <div class="col-6">
+      <img *ngIf="!getLength(user.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" height="200" width="200">
+      <img *ngIf="getLength(user.image.length)" [src]="user.image" height="200" width="200">
+    </div>
+    <div class="col-6 mt-5">
+      <h2>Name : {{user.name}}</h2>
+      <h4>Gender : {{user.gender}}</h4>
+      <h4>Age : {{user.age}} Year Old</h4>
+      <h4>Email : {{user.email}}</h4>
+      <h4>Contact : {{user.mobile}}</h4>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="check card">
+    <h1>Verified Profile</h1>
+    <div class="verify">
+      <label><i class="fa fa-check-circle"
+          style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verify Govt. Id</label><br>
+      <label><i class="fa fa-check-circle"
+          style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Confirm Email
+        {{user.email}}</label><br>
+      <label><i class="fa fa-check-circle"
+          style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verified Mobile</label><br>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="bio card">
+    <h1>
+      Mini Bio
+    </h1>
+    <h4>{{user.miniBio}}.</h4>
+  </div>
+</div>
+
+
+<section class="comment card">
+  <div class="container  commentss">
+=======
 <section style="background-color: #eee">
   <div class="container py-5">
+>>>>>>> fb1123545f6aa7a1c5a3700d63fa6f6ef56a3f6e
+=======
+<section style="background-color: #eee">
+  <div class="container py-5">
+>>>>>>> 79e4448a905f27e5551fd4cea610be0546bee9f9
     <div class="row">
       <div class="col">
         <nav aria-label="breadcrumb" class="rounded-3 p-3 mb-4" style="  background-color:#1B2A49;color:white">
@@ -7,7 +61,6 @@
         </nav>
       </div>
     </div>
-
     <div class="row">
       <div class="col-lg-4">
         <div class="card mb-4">

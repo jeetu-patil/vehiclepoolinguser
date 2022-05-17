@@ -12,14 +12,26 @@
 
   </section>
 
-  <section>
+  <!-- <section>
     <div class="card checkbox">
       <h1>{{user.name}} has a Verified Profile</h1>
       <mat-checkbox checked class="example-margin">Confirmed Email</mat-checkbox>
       <mat-checkbox checked class="example-margin">Confirmed Phone Number</mat-checkbox>
       <mat-checkbox class="example-margin">Confirmed Govt. Id</mat-checkbox>
     </div>
-  </section>
+  </section> -->
+
+  <div class="verify">
+    <h1>{{user.name}} has a Verified Profile</h1>
+
+    <label><i class="fa fa-check-circle"
+        style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verified Govt. Id</label><br>
+    <label><i class="fa fa-check-circle"
+        style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verified Email
+      {{user.email}}</label><br>
+    <label><i class="fa fa-check-circle"
+        style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verified Mobile : {{user.mobile}}</label><br>
+  </div>
 
   <section>
     <div class="card about">
