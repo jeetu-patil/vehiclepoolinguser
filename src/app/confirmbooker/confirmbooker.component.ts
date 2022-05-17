@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PublishrideService } from '../services/publishride.service';
 
 @Component({
@@ -11,10 +11,12 @@ export class ConfirmbookerComponent implements OnInit {
 
   pubilsh:any;
   otp:any;
-  constructor(private publisRideService: PublishrideService,private router:Router) { }
+  constructor(private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
 
+  rideId:any;
   ngOnInit(): void {
-    this.publisRideService.checkConfirmBoooker().subscribe(data => {
+    this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
+    this.publisRideService.checkConfirmBoooker(this.rideId).subscribe(data => {
       this.pubilsh=data.otp;
       console.log(this.pubilsh.otp);
     },err=>{
@@ -35,7 +37,7 @@ export class ConfirmbookerComponent implements OnInit {
   }
 
   matchOtp(id:any){
-    this.publisRideService.matchOtp(this.otp,id).subscribe(data => {
+    this.publisRideService.matchOtp(this.otp,id,this.rideId).subscribe(data => {
       console.log(data)
       if(data.msg=="Success")
       { 
