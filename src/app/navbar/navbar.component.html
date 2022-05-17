@@ -21,7 +21,7 @@
       </ul>
     </div>
     <div class="dropdown">
-      <a class="text-white" style="text-decoration: none;" *ngIf="isLoggedIn()">{{name}}</a>
+      <a class="text-white" style="text-decoration: none;" *ngIf="isLoggedIn()">{{name |uppercase}}</a>
       <a class="dropdown-toggle" type="button" class=name id="userProfile" data-bs-toggle="dropdown"
         aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i>
       </a>

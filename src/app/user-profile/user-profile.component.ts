@@ -14,6 +14,7 @@ email:string = '';
 address:string = '';
 mobile:string = '';
 comments:any;
+p:any;
   constructor(private userService:UserService,private router:Router) { }
 
   ngOnInit(): void {
@@ -33,6 +34,10 @@ comments:any;
 
   editProfile(){
     this.router.navigate(['edit-profile']);
+  }
+
+  navigateToDetail(publisherId:any){
+    this.router.navigate(['publisherdetail',publisherId])
   }
 
 }

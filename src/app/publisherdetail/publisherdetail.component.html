@@ -1,69 +1,154 @@
-<div class="container profile">
-  <section class="userProfile card-p-3">
-    <div class="profileimage col-6">
 
-      <img *ngIf="!getLength(user.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile" width="50px" height="50px">
-      <img *ngIf="getLength(user.image.length)" [src]="user.image" alt="profile" width="50px" height="50px">
+ <section style="background-color: #eee">
+  <div class="container py-5 text-center">
+    <div class="row">
+      <div class="col">
+        <nav aria-label="breadcrumb" class="rounded-3 p-1 mb-1" style=" background-color:#1B2A49;color:white">
+          <h1 >User Detail</h1>
+        </nav>
+      </div>
     </div>
-    <div class="col-6">
-      <h1>{{user.name}}</h1>
-      <h3>{{user.age}} Y/O</h3>
-    </div>
-
-  </section>
-
-  <!-- <section>
-    <div class="card checkbox">
-      <h1>{{user.name}} has a Verified Profile</h1>
-      <mat-checkbox checked class="example-margin">Confirmed Email</mat-checkbox>
-      <mat-checkbox checked class="example-margin">Confirmed Phone Number</mat-checkbox>
-      <mat-checkbox class="example-margin">Confirmed Govt. Id</mat-checkbox>
-    </div>
-  </section> -->
-
-  <div class="verify">
-    <h1>{{user.name}} has a Verified Profile</h1>
-
-    <label><i class="fa fa-check-circle"
-        style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verified Govt. Id</label><br>
-    <label><i class="fa fa-check-circle"
-        style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verified Email
-      {{user.email}}</label><br>
-    <label><i class="fa fa-check-circle"
-        style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verified Mobile : {{user.mobile}}</label><br>
-  </div>
-
-  <section>
-    <div class="card about">
-      <h1>About {{user.name}}</h1>
-      <h3>{{user.miniBio}}</h3>
-    </div>
-  </section>
-
-  <section class="timeline_about card">
-    <div class="tabs">
-      <h1>Total No. of Rides</h1>
-      <h3>{{user.publishRideCount}}</h3>
-    </div>
-  </section>
-
-  <section class="comment card">
-    <div class="container  commentss">
-      <div class="row">
-        <div class="col-sm-5 col-md-6 col-12 pb-4">
-          <h1>Comments</h1>
-          <div class="comment mt-4 text-justify float-left" *ngFor="let comment of comments">
-            <img src="https://i.imgur.com/yTFUilP.jpg" alt="" class="rounded-circle" width="40" height="40">
-          <h4>{{comment.userId.name}}</h4>
-            <span>{{comment.userId.email}}</span>
-            <br>
-            <p>{{comment.feedback}}</p>
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img *ngIf="!getLength(user.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" height="180" width="180">
+            <img *ngIf="getLength(user.image.length)" [src]="user.image" height="180" width="180">
+            <h5 class="my-3">{{user.name}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{user.name}}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{user.email}}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{user.mobile}}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Age</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{user.age}}</p>
+              </div>
+            </div>
+            <hr />
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Mini Bio</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">{{user.miniBio}}</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-    </section>
+  </div>
+</section>
 
+<div class="row">
+  
+</div>
+<div class="card p-2" style="background-color: #eee">
+      <div class="container p-3">
+        <div class="check card mt-2">
+          <h1>Verify Your Detail</h1>
+          <div class="verify">
+            <label class="mt-2"
+              ><i
+                class="fa fa-check-circle"
+                style="
+                  font-size: 28px;
+                  padding-right: 10px;
+                  color: rgb(46, 46, 249);
+                "
+              ></i
+              >Verify Govt. Id</label
+            ><br />
+            <label
+            class="mt-2"
+              ><i
+                class="fa fa-check-circle"
+                style="
+                  font-size: 28px;
+                  padding-right: 10px;
+                  color: rgb(46, 46, 249);
+                "
+              ></i
+              >Confirm Email {{ user.email }}</label
+            ><br />
+            <label
+            class="mt-2"
+              ><i
+                class="fa fa-check-circle"
+                style="
+                  font-size: 28px;
+                  padding-right: 10px;
+                  color: rgb(46, 46, 249);
+                "
+              ></i
+              >Verify Mobile : {{ user.mobile }}</label
+            ><br />
+          </div>
+        </div>
+      </div>
+</div>
 
-
-
+<div class="container bootdey" >
+  <div class="container text-center mt-4 mb-4">
+    <h1 >Feedbacks of <b>{{user.name}}</b></h1>
+  </div>
+  <div class="row" >
+      <div class="col-sm-6 col-md-6"*ngFor="let comment of comments| paginate: { itemsPerPage: 4, currentPage: p }">
+          <div class="review-block">
+              <div class="row">
+                  <div class="col-sm-3">
+                      <div class="review-block-img">
+                        <img *ngIf="!getLength(comment.userId.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" height="180" width="180">
+                        <img *ngIf="getLength(comment.userId.image.length)" [src]="comment.userId.image" height="180" width="180">
+                      </div>
+                      <div class="review-block-name"><a (click)="navigateToDetail(comment.userId._id)" style="cursor: pointer;">{{ comment.userId.name }}</a></div>
+                      <div class="review-block-date">{{ comment.userId.email }}</div>
+                  </div>
+                  <div class="col-sm-9">
+                      <div class="review-block-rate">
+                          
+                      </div>
+                      <div class="review-block-title">{{ comment.feedback }}</div>
+                      <div class="review-block-description"> </div>
+                  </div>
+              </div>
+              <hr>
+          </div>
+      </div>
+  </div> 
+  </div>
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,11 +9,12 @@ import { UserService } from '../services/user.service';
 })
 export class PublisherdetailComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute,private userService: UserService) { }
+  constructor(private activatedRoute: ActivatedRoute,private userService: UserService,private router:Router) { }
 
   userId:any;
   user:any;
   comments:any;
+  p:any;
   ngOnInit(): void {
     this.userId=this.activatedRoute.snapshot.paramMap.get("userId");
     this.userService.getPublisher(this.userId).subscribe(data => {
@@ -30,6 +31,10 @@ export class PublisherdetailComponent implements OnInit {
       return true;
     else  
       return false;
+  }
+
+  navigateToDetail(publisherId:any){
+    this.router.navigate(['publisherdetail',publisherId])
   }
 
 }

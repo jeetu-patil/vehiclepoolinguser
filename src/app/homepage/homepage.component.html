@@ -41,26 +41,25 @@
 <div class="ride-heading">
   <h1>PUBLISH RIDES</h1>
 </div>
-<div class="container">
-  <div class="row">
-      <div class="col-md-12 mt-3"  *ngFor="let publish of publishRide">
-          <div class="card ride">
-              <div class="card-horizontal">
-                  <div class="img-square-wrapper">
-                      <img class="" [src]="publish.publisherId.vehicle.image" height="200px" alt="Card image cap">
-                  </div>
-                  <div class="card-body mt-2">
-                    <h3 class="card-title"><b>From : </b>{{publish.fromId.place}}</h3>
-                    <h3 class="card-title "><b>To &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </b>{{publish.toId.place}}</h3>
-                    <h3 class="card-title "><b>Date : </b>{{publish.rideDate | date:'dd/MM/yyyy'}}</h3>
-                  </div>
-                  <div class="card-body">
-                    <button type="submit" (click)="viewRide(publish._id)" style="cursor:pointer; margin-top: 70px;" class="card-link btn btn-primary">View Details</button>
-                  </div>
-              </div>
-          </div>
+<section class="category mt-3">
+  <div class="row justify-content-around" style="width: 80%; margin: auto; margin-bottom: 20px;">
+    <div class="col-md-4 mt-5" *ngFor="let publish of publishRide | paginate: { itemsPerPage: 6, currentPage: p }">
+      <div class="card" >
+        <img [src]="publish.publisherId.vehicle.image" height="200px">
+        <div class="card-body">
+          <h5 class="card-title"><b>From : </b>{{publish.fromId.place}}</h5>
+          <h5 class="card-title "><b>To : </b>{{publish.toId.place}}</h5>
+          <h5 class="card-title "><b>Date : </b>{{publish.rideDate | date:'dd/MM/yyyy'}}</h5>
+        </div>
+        <div class="card-body">
+          <a (click)="viewRide(publish._id)" style="cursor:pointer;" class="card-link">View Ride Details</a>
+        </div>
       </div>
+    </div>
   </div>
+</section>
+<div class="text-center">
+  <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 
 <!-- ------------------********************------------------------------- -->
