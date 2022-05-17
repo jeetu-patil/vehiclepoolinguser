@@ -41,6 +41,7 @@ import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpag
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
 import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 
 const socialProvider = {
@@ -87,7 +88,8 @@ const socialProvider = {
     AcceptrequestpageComponent,
     AboutUsComponent,
     AlluserogpublisherComponent,
-    VihicleprofileComponent
+    VihicleprofileComponent,
+    ContactUsComponent
   ],
   imports: [
     BrowserModule,

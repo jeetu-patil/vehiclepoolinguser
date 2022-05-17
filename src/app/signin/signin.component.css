@@ -1,9 +1,11 @@
 .container-fluid{
-  /* background-image: url("../../assets/Images/illus4.jpg"); */
+
   background-repeat: no-repeat;
   background-position: center;
   /* background-color: rgb(1, 1, 54); */
-
+  /* background-image: url("../../assets/Images/backsign.jpg"); */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .form-box
 {
@@ -13,6 +15,9 @@
   justify-content: center;
   align-items: center;
   box-shadow:#000;
+  /* background-image: url("../../assets/Images/backsign.jpg"); */
+  background-repeat: no-repeat;
+  background-position: center;
 }
 .form-change{
   margin-top :5%;
