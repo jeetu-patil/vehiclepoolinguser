@@ -25,6 +25,7 @@ import { AcceptrequestpageComponent } from './acceptrequestpage/acceptrequestpag
 import { AboutUsComponent } from './about-us/about-us.component';
 import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
 import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.component';
+import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent},
@@ -41,7 +42,6 @@ const routes: Routes = [
   { path: "success" , component:SuccessMessageComponent},
   { path: "edit-profile", component:ProfileUserComponent},
   { path:"view-vihicle",component:VihicleprofileComponent},
-  {path:"alluserogpublisher",component:AlluserogpublisherComponent},
   { path: "userrides", component:UserridesComponent,
     children:[
       { path: "bookrides" , component:BookridesComponent,canActivate:[AuthGuard]},
@@ -49,10 +49,12 @@ const routes: Routes = [
       { path: "bookhistory", component: BookhistoryComponent,canActivate:[AuthGuard]},
       { path: "publishhistory", component: PublishhistoryComponent,canActivate:[AuthGuard]},
       { path:'acceptrequest/:rideId',component:AcceptrequestpageComponent,canActivate:[AuthGuard]},
-      { path: "confirmbooker", component:ConfirmbookerComponent,canActivate:[AuthGuard]},
+      { path: "confirmbooker/:rideId", component:ConfirmbookerComponent,canActivate:[AuthGuard]}, 
+      {path:"alluserogpublisher",component:AlluserogpublisherComponent,canActivate:[AuthGuard]},
     ],canActivate:[AuthGuard]
   },
   { path: "publisherdetail/:userId" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
+  { path: "contact-us" , component:ContactUsComponent},
   { path: "**" , component:PageNotFoundComponent}
 ];
 

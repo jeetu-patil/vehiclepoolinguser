@@ -19,11 +19,11 @@ export class PublishhistoryComponent implements OnInit {
     });
   }
 
-  navigateToCheckRightBooker(){
-    this.router.navigate(['userrides/confirmbooker']);
+  navigateToCheckRightBooker(rideId:any){
+    this.router.navigate(['userrides/confirmbooker',rideId]);
   } 
 
   allUser(){
-    this.router.navigate(['alluserogpublisher']);
+    this.router.navigate(['userrides/alluserogpublisher']);
   }
 }
