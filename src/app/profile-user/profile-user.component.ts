@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { UserService } from '../services/user.service';
 })
 export class ProfileUserComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute,private userService: UserService) { }
+  constructor(private activatedRoute: ActivatedRoute,private userService: UserService,private router: Router) { }
 
   user:any;
   FileImage:any;
@@ -55,7 +55,7 @@ export class ProfileUserComponent implements OnInit {
     
   }
   mobileEdit(id:any){
-
+    this.router.navigate(['verification-otp',id]);
   }
   emailEdit(id:any){
 

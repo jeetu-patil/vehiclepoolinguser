@@ -254,7 +254,6 @@ a{
   color: white;
   background: linear-gradient( rgba(252, 253, 255, 0.908), rgba(253, 214, 123, 0.941), rgb(225, 247, 255), rgba(255, 231, 93, 0.941));
   background-size: auto 180%;
-  -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: shine 8s linear infinite;
 }

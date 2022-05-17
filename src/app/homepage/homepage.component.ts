@@ -20,6 +20,7 @@ export class HomepageComponent implements OnInit {
   status=true;
   seat:any;
   places:any=[];
+  p:any;
 
   ngOnInit(): void {
     this.publisRideService.getAllPublishRides().subscribe(data => {

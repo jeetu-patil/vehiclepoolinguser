@@ -94,4 +94,9 @@ export class PublishrideService {
   cancelRide(rideId:any):Observable<any>{
     return this.http.get("http://localhost:3000/publishride/cancellride/"+sessionStorage.getItem("userId")+"/"+rideId);
   }
+
+
+  cancelRideByBooker(publisherId:any,rideId:any):Observable<any>{
+      return this.http.get("http://localhost:3000/publishride/cancelridebybooker/"+sessionStorage.getItem("userId")+"/"+rideId+"/"+publisherId);
+  }
 }

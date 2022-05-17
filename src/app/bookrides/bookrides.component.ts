@@ -27,7 +27,11 @@ export class BookridesComponent implements OnInit {
   }
 
   cancelRide(publisherId:any,rideId:any){
-    console.log(publisherId,rideId);
+    // this.publishRideService.cancelRideByBooker(publisherId,rideId).subscribe(data =>{
+
+    // },err =>{
+
+    // });
   }
 
   navigateToDetail(id:any){
