@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { PublishrideService } from '../services/publishride.service';
 import { UserService } from '../services/user.service';
 
@@ -10,12 +10,14 @@ import { UserService } from '../services/user.service';
 })
 export class AlluserogpublisherComponent implements OnInit {
 
-  constructor(private publishRideService: PublishrideService,private router:Router,private userService: UserService) { }
+  constructor(private activatedRoute: ActivatedRoute,private publishRideService: PublishrideService,private router:Router,private userService: UserService) { }
 
   bookRides:any;
   comment:any;
+  rideId:any;
   ngOnInit(): void {
-    this.publishRideService.getAllUserOfPublishHistory().subscribe(data =>{
+    this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
+    this.publishRideService.getAllUserOfPublishHistory(this.rideId).subscribe(data =>{
       this.bookRides=data;
     });
   }

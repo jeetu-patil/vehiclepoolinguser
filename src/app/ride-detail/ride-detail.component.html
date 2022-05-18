@@ -23,15 +23,18 @@
         <div class="from mt-5">
           <label>Date : {{publish.rideDate | date:'dd/MM/yyyy'}}</label>
         </div>
+        <div class="from mt-5">
+          <label>Time : {{publish.rideDate | date:'shortTime'}}</label>
+        </div>
         <div class="from">
-          <label>Price for 1 Person : {{publish.amountPerPerson}}</label>
+          <label>Price for 1 Person : {{publish.amountPerPerson | number}} Rs</label>
         </div>
         <div class="from m-3">
-          <label>Distance : {{publish.distance}} km</label>
+          <label>Distance : {{publish.distance | number }} km</label>
         </div>
 
         <div class="from m-3">
-          <label>Expected Time  : {{getTime(publish.distance)}} minute</label>
+          <label>Expected Time  : {{getTime(publish.distance) | number:'0.0-0'}} minute</label>
         </div>
 
         <h2 class="m-3">Message :</h2>

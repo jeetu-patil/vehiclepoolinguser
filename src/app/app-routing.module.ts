@@ -49,8 +49,8 @@ const routes: Routes = [
       { path: "bookhistory", component: BookhistoryComponent,canActivate:[AuthGuard]},
       { path: "publishhistory", component: PublishhistoryComponent,canActivate:[AuthGuard]},
       { path:'acceptrequest/:rideId',component:AcceptrequestpageComponent,canActivate:[AuthGuard]},
-      { path: "confirmbooker/:rideId", component:ConfirmbookerComponent,canActivate:[AuthGuard]},
-      {path:"alluserogpublisher",component:AlluserogpublisherComponent,canActivate:[AuthGuard]},
+      { path: "confirmbooker/:rideId", component:ConfirmbookerComponent,canActivate:[AuthGuard]}, 
+      {path:"alluserogpublisher/:rideId",component:AlluserogpublisherComponent,canActivate:[AuthGuard]},
     ],canActivate:[AuthGuard]
   },
   { path: "publisherdetail/:userId" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
