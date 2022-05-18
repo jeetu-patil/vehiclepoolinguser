@@ -1,63 +1,9 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
-<div class="heading text-center">
-  <h1 class="pt-4">Your Profile</h1>
-</div>
-<div class="container card mt-5">
-  <div class="row">
-    <div class="col-6">
-      <img *ngIf="!getLength(user.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" height="200" width="200">
-      <img *ngIf="getLength(user.image.length)" [src]="user.image" height="200" width="200">
-    </div>
-    <div class="col-6 mt-5">
-      <h2>Name : {{user.name}}</h2>
-      <h4>Gender : {{user.gender}}</h4>
-      <h4>Age : {{user.age}} Year Old</h4>
-      <h4>Email : {{user.email}}</h4>
-      <h4>Contact : {{user.mobile}}</h4>
-    </div>
-  </div>
-</div>
-
-<div class="container mt-3">
-  <div class="check card">
-    <h1>Verified Profile</h1>
-    <div class="verify">
-      <label><i class="fa fa-check-circle"
-          style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verify Govt. Id</label><br>
-      <label><i class="fa fa-check-circle"
-          style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Confirm Email
-        {{user.email}}</label><br>
-      <label><i class="fa fa-check-circle"
-          style="font-size:28px; padding-right:10px; color:rgb(46, 46, 249);"></i>Verified Mobile</label><br>
-    </div>
-  </div>
-</div>
-
-<div class="container mt-3">
-  <div class="bio card">
-    <h1>
-      Mini Bio
-    </h1>
-    <h4>{{user.miniBio}}.</h4>
-  </div>
-</div>
-
-
-<section class="comment card">
-  <div class="container  commentss">
-=======
 <section style="background-color: #eee">
   <div class="container py-5">
->>>>>>> fb1123545f6aa7a1c5a3700d63fa6f6ef56a3f6e
-=======
-<section style="background-color: #eee">
-  <div class="container py-5">
->>>>>>> 79e4448a905f27e5551fd4cea610be0546bee9f9
     <div class="row">
       <div class="col">
-        <nav aria-label="breadcrumb" class="rounded-3 p-3 mb-4" style="  background-color:#1B2A49;color:white">
-          <h1 class="text-center">User Profile</h1>
+        <nav aria-label="breadcrumb" class="rounded-1 p-1 mb-1" style=" ">
+          <h1 class="text-center">Profile</h1>
         </nav>
       </div>
     </div>
@@ -126,7 +72,7 @@
 </section>
 
 <div class="row">
-  
+
 </div>
 <div class="card " style="background-color: #eee">
       <div class="container">
@@ -171,34 +117,38 @@
       </div>
 </div>
 
-<section class="comment card">
-  <div class="container commentss">
-    <div class="card mb-4">
-      <div class="card-body">
-        <div class="row">
-          <h1 class="text-center mt-4">Comments</h1>
-          <div
-            class="comment mt-4 text-justify float-left"
-            style="color: black"
-            *ngFor="let comment of comments"
-          >
-            <img
-              src="https://i.imgur.com/yTFUilP.jpg"
-              alt=""
-              class="rounded-circle"
-              width="40"
-              height="40"
-            />
-            <h4 style="color: black">{{ comment.userId.name }}</h4>
-            <span style="color: black">{{ comment.userId.email }}</span>
-            <br />
-            <p style="color: black">{{ comment.feedback }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+<div class="container bootdey" >
+  <div class="container text-center mt-4 mb-4">
+    <h1 >Your feedback</h1>
   </div>
-</section> 
+  <div class="row" >
+      <div class="col-sm-6 col-md-6"*ngFor="let comment of comments| paginate: { itemsPerPage: 4, currentPage: p }">
+          <div class="review-block">
+              <div class="row">
+                  <div class="col-sm-3">
+                      <div class="review-block-img">
+                        <img *ngIf="!getLength(comment.userId.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" height="180" width="180">
+                        <img *ngIf="getLength(comment.userId.image.length)" [src]="comment.userId.image" height="180" width="180">
+                      </div>
+                      <div class="review-block-name"><a (click)="navigateToDetail(comment.userId._id)" style="cursor: pointer;">{{ comment.userId.name }}</a></div>
+                      <div class="review-block-date">{{ comment.userId.email }}</div>
+                  </div>
+                  <div class="col-sm-9">
+                      <div class="review-block-rate">
+                          
+                      </div>
+                      <div class="review-block-title">{{ comment.feedback }}</div>
+                      <div class="review-block-description"> </div>
+                  </div>
+              </div>
+              <hr>
+          </div>
+      </div>
+  </div> 
+  </div>
+  <div class="text-center">
+    <pagination-controls (pageChange)="p = $event"></pagination-controls>
+  </div>
 
 <div class="form-group text-center mb-5">
   <button (click)="editProfile()" class="btn signin btn2">Edit Your Profile</button>

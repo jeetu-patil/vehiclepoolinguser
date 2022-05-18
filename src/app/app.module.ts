@@ -43,6 +43,7 @@ import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpubli
 import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CashingmemoryService } from './services/cashingmemory.service';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const socialProvider = {
@@ -90,7 +91,7 @@ const socialProvider = {
     AboutUsComponent,
     AlluserogpublisherComponent,
     VihicleprofileComponent,
-    ContactUsComponent
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -104,6 +105,7 @@ const socialProvider = {
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     Ng2SearchPipeModule,
+    NgxPaginationModule
   ],
   providers: [
     socialProvider,
