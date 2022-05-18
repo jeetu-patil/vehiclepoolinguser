@@ -55,7 +55,7 @@ export class PublishrideService {
     return this.http.get("http://localhost:3000/publishride/getPublishRidesOfSingle/"+sessionStorage.getItem("userId"));
   }
 
-  getAllBookRides(){
+  getAllBookRides():Observable<any>{
     return this.http.get("http://localhost:3000/bookride/getbookrides/"+sessionStorage.getItem("userId"));
   }
 
@@ -83,8 +83,8 @@ export class PublishrideService {
     return this.http.get("http://localhost:3000/publisherhistory/publishhistiry/"+sessionStorage.getItem("userId"));
   }
 
-  getAllUserOfPublishHistory(){
-    return this.http.get("http://localhost:3000/publisherhistory/viewpublisherhistory/"+sessionStorage.getItem("userId"));
+  getAllUserOfPublishHistory(rideId:any){
+    return this.http.get("http://localhost:3000/publisherhistory/viewpublisherhistory/"+rideId);
   }
 
   declineRequest(bookerId:any,rideId:any){
@@ -96,7 +96,7 @@ export class PublishrideService {
   }
 
 
-  cancelRideByBooker(publisherId:any,rideId:any):Observable<any>{
-      return this.http.get("http://localhost:3000/publishride/cancelridebybooker/"+sessionStorage.getItem("userId")+"/"+rideId+"/"+publisherId);
+  cancelRideByBooker(publisherId:any,rideId:any,bookRideId:any):Observable<any>{
+      return this.http.get("http://localhost:3000/publishride/cancelridebybooker/"+sessionStorage.getItem("userId")+"/"+rideId+"/"+publisherId+"/"+bookRideId);
   }
 }

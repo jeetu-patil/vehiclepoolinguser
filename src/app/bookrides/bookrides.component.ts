@@ -12,10 +12,12 @@ export class BookridesComponent implements OnInit {
   constructor(private publishRideService: PublishrideService,private router:Router) { }
 
   bookRides:any;
+  ids:any;
+  bookRideId:any;
   ngOnInit(): void {
     this.publishRideService.getAllBookRides().subscribe(data => {
-      this.bookRides = data;
-      console.log(this.bookRides)
+      this.bookRides = data.temp;
+      this.ids=data.result;
     });
   }
 
@@ -26,12 +28,18 @@ export class BookridesComponent implements OnInit {
       return false;
   }
 
-  cancelRide(publisherId:any,rideId:any){
-    // this.publishRideService.cancelRideByBooker(publisherId,rideId).subscribe(data =>{
+  cancelRide(publisherId:any,rideId:any,i:any){
+    this.bookRideId=this.getBookRideId(i)
+    this.publishRideService.cancelRideByBooker(publisherId,rideId,this.bookRideId).subscribe(data =>{
+      alert("Your ride cancel...");
+      this.ngOnInit();
+    },err =>{
 
-    // },err =>{
+    });
+  }
 
-    // });
+  getBookRideId(i:any){
+    return this.ids[i];
   }
 
   navigateToDetail(id:any){

@@ -11,11 +11,29 @@ export class PublishhistoryComponent implements OnInit {
 
   constructor(private publishRideService: PublishrideService,private router:Router) { }
 
-  rides:any;
+  rides:any=[];
+  completeRides:any=[];
+
+  confirmStatus=false;
+  rideStatus=false;
+
+  k=0;
+  j=0;
   ngOnInit(): void {
     this.publishRideService.getAllpublishHistory().subscribe(data =>{
-      this.rides=data;
+      let r:any=data;
       console.log(this.rides);
+
+      for(var i=0; i<r.length; i++){
+        if(r[i].otp.length>0){
+          this.rides[this.k++]=r[i];
+          this.rideStatus=true;
+        }
+        else{
+          this.confirmStatus=true;
+          this.completeRides[this.j++]=r[i];
+        }
+      }
     });
   }
 
@@ -23,7 +41,7 @@ export class PublishhistoryComponent implements OnInit {
     this.router.navigate(['userrides/confirmbooker',rideId]);
   } 
 
-  allUser(){
-    this.router.navigate(['userrides/alluserogpublisher']);
+  allUser(rideId:any){
+    this.router.navigate(['userrides/alluserogpublisher',rideId]);
   }
 }
