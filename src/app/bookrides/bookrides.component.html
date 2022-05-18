@@ -15,32 +15,12 @@
 <div class="heading text-center">
   <h1 class="pt-4">Book Rides</h1>
 </div>
-<<<<<<< HEAD
-
-<div class="container" *ngFor="let book of bookRides;index as i">
-  <div class="publish">
-    <div class="row publish-card">
-      <div class="col-md-6 left">
-        <div class="from">
-          <span id="from">From : </span>
-          <span id="from-text">{{book.fromId.place}}</span>
-        </div>
-        <div class="to">
-          <span id="to">To :</span>
-          <span id="to-text">{{book.toId.place}}</span>
-        </div>
-        <div class="date">
-          <span id="date">Date :</span>
-          <span id="date-text">{{book.rideDate | date: "dd/MM/yyyy"}}</span>
-        </div>
-=======
 <div id="container" *ngFor="let book of bookRides">
   <div class="product-details">
     <div class="control">
       <div class="from mb-3">
         <span id="from" style="font-size:20px;font-weight: bold;">From : </span>
         <span id="from-text">{{book.fromId.place}}</span>
->>>>>>> 892e046341e6ec2acebbb4abd74f89975e3eb08f
       </div>
       <div class="to mb-3">
         <span id="to" style="font-size:20px;font-weight: bold; ">To :</span>
@@ -54,15 +34,11 @@
         <a (click)="navigateToDetail(book.publisherId._id)" style="cursor: pointer"><span>Name :
             {{book.publisherId.name}} </span></a>
         <div class="form mt-5">
-          <button (click)="cancelRide(book.publisherId._id,book._id)" style="cursor: pointer;"
+          <button (click)="cancelRide(book.publisherId._id,book._id,book._id)" style="cursor: pointer;"
             class="btn signin btn2">Cancel Ride</button>
         </div>
       </div>
     </div>
-<<<<<<< HEAD
-    <div class="form-group text-center">
-      <button (click)="cancelRide(book.publisherId._id,book._id,i)" style="cursor: pointer;" class="btn signin btn2">Cancel Ride</button>
-=======
   </div>
   <div class="product-image">
     <span>
@@ -80,7 +56,6 @@
         <li><strong>Decoration: </strong>balls and bells</li>
         <li><strong>Material: </strong>Eco-Friendly</li>
       </ul>
->>>>>>> 892e046341e6ec2acebbb4abd74f89975e3eb08f
     </div>
   </div>
 </div>
