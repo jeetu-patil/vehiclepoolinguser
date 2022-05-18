@@ -11,7 +11,7 @@ export class InterceptorService implements HttpInterceptor {
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
     let myToken=req.clone({
       setHeaders:{
-        authorization:""+sessionStorage.getItem("jwt-token")
+        Authorization:""+sessionStorage.getItem("jwt-token")
       }
     });
     return next.handle(myToken);

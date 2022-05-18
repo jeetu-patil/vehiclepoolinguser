@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class RideDetailComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService,private router:Router) { }
+  constructor(private toastr:ToastrService,private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService,private router:Router) { }
 
   id:any;
   publish:any;
@@ -31,7 +32,8 @@ export class RideDetailComponent implements OnInit {
   bookRide(){
     this.publisRideService.bookRide(this.seat,this.publish._id).subscribe(data => {
       this.publisRideService.requestToThePublisher(this.id,data._id).subscribe(data => {
-        alert("Your request sent to the publisher please wait fotr response..");
+        this.toastr.success("Your request sent to the publisher please wait fotr response..","success")
+        this.router.navigate(['']);
       })
     })
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class AcceptrequestpageComponent implements OnInit {
 
-  constructor(private publisRideService:PublishrideService,private activatedRoute: ActivatedRoute,private router:Router) { }
+  constructor(private toastr:ToastrService,private publisRideService:PublishrideService,private activatedRoute: ActivatedRoute,private router:Router) { }
 
   requets:any;
   date:any;
@@ -22,10 +23,8 @@ export class AcceptrequestpageComponent implements OnInit {
 
   ngOnInit(): void {
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
-    console.log(this.rideId);
     this.publisRideService.getAllRequests(this.rideId).subscribe(data => {
       this.requets = data.publisherRequest;
-      console.log(data);
       this.date=data.rideDate;
       this.from=data.fromId.place;
       this.to=data.toId.place;
@@ -44,6 +43,7 @@ export class AcceptrequestpageComponent implements OnInit {
 
   acceptRequest(bookerId:any,bookRideId:any){
     this.publisRideService.acceptRequest(bookerId,this.rideId,bookRideId).subscribe(data => {
+      this.toastr.success("User Accept...","Success");
       this.ngOnInit();
     },err => {
 
@@ -52,6 +52,7 @@ export class AcceptrequestpageComponent implements OnInit {
 
   declineRequest(bookerId:any){
     this.publisRideService.declineRequest(bookerId,this.rideId).subscribe(data => {
+      this.toastr.success("User Decline...","Success");
       this.ngOnInit();
     },err => {
 

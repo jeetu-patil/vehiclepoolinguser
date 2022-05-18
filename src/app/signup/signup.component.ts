@@ -21,8 +21,12 @@ export class SignupComponent implements OnInit {
 
   signupUser(){
       this.userService.signupUser(this.user).subscribe(data => {
-     this.toastr.success("SignUp success","success")
-       this.router.navigate(['verification-otp',data._id]);
+        if(data.msg=="error")
+          this.toastr.error("Fill All Detail","Error");
+        else{
+          this.toastr.success("SignUp success","success")
+          this.router.navigate(['verification-otp',data._id]);
+        }
      },err=>{
       if(err instanceof HttpErrorResponse){
         if(err.status == 500){

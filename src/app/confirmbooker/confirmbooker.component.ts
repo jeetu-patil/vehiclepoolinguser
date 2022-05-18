@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class ConfirmbookerComponent implements OnInit {
 
   pubilsh:any;
   otp:any;
-  constructor(private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
+  constructor(private toastr:ToastrService,private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
 
   rideId:any;
   ngOnInit(): void {
@@ -32,21 +33,19 @@ export class ConfirmbookerComponent implements OnInit {
   }
 
   navigateToDetail(id:any){
-    console.log("Id : "+id);
     this.router.navigate(['publisherdetail',id]);
   }
 
   matchOtp(id:any){
     this.publisRideService.matchOtp(this.otp,id,this.rideId).subscribe(data => {
-      console.log(data)
       if(data.msg=="Success")
       { 
-        alert("Otp matched.......");
+        this.toastr.success("Otp matched","success")
         this.ngOnInit();
       }
       else
       { 
-        alert("Otp is not matched.......");
+        this.toastr.error("Otp Not matched","error");
         this.ngOnInit();
       }
     },err => {

@@ -37,34 +37,24 @@ export class RidePublishInfoComponent implements OnInit {
   dateValidation(){
     this.date1 = formatDate(new Date(),'yyyy-MM-dd','en_US');
    this.date2 =  formatDate(this.date,'yyyy-MM-dd','en_US');
-    console.log(this.date);
-    console.log(this.date1);
-    console.log(this.date2);
     
     if(this.date1<=this.date2){
-      console.log('---date1 is greater----');
       this.dur=false;
      }else{
        this.dur=true;
-      console.log('---date2 is greater-----');
      }
   }
   timeValidation(){
     var time = new Date();
     this.ctime= time.toLocaleString('en-US', { hour: 'numeric', minute:'2-digit', hour12: false, })
-    // console.log(time.toLocaleTimeString);
-    console.log(this.ctime)
-    console.log(this.time);
     let hour1 = (this.ctime.split(':'))[0]
       let min1 = (this.ctime.split(':'))[1]
       let ampm1= time.getMinutes();
       let hour = (this.time.split(':'))[0]
       if(hour>=12){
         hour= hour-12
-        console.log(hour+"in if")
       }
-      // if()
-      
+
       let min = (this.time.split(':'))[1]
       console.log(hour1)
       console.log(hour)
@@ -78,11 +68,6 @@ export class RidePublishInfoComponent implements OnInit {
        console.log("Enter time Invalid");
       
     }
-
-    // console.log(
-
-   
-// );  
   
 
   submitDetail(){

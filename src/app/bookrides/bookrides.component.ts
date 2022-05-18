@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class BookridesComponent implements OnInit {
 
-  constructor(private publishRideService: PublishrideService,private router:Router) { }
+  constructor(private toastr:ToastrService,private publishRideService: PublishrideService,private router:Router) { }
 
   bookRides:any;
   ids:any;
@@ -31,7 +32,7 @@ export class BookridesComponent implements OnInit {
   cancelRide(publisherId:any,rideId:any,i:any){
     this.bookRideId=this.getBookRideId(i)
     this.publishRideService.cancelRideByBooker(publisherId,rideId,this.bookRideId).subscribe(data =>{
-      alert("Your ride cancel...");
+      this.toastr.success("Your ride cancel","success")
       this.ngOnInit();
     },err =>{
 
