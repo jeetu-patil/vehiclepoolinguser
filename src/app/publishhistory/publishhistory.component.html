@@ -1,103 +1,57 @@
 <div class="heading text-center" *ngIf="rideStatus">
-  <b><h1 class="pt-4">Publish Rides</h1></b>
+  <div class="section-title">
+    <h2 class="text-center mt-5">Publish Rides</h2>
+  </div>
 </div>
-<div class="container" *ngFor="let ride of rides">
-  <div class="publish  ">
-    <div class="row publish-card">
-      <div class="col-md-6 left">
-        <div class="from">
-          <span id="from">From :</span>
-          <span id="from-text">{{ ride.fromId.place }}</span>
-        </div>
-        <div class="to">
-          <span id="to">To :</span>
-          <span id="to-text">{{ ride.toId.place }}</span>
-        </div>
-        <div class="date">
-          <span id="date">Date :</span>
-          <span id="date-text">{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
-        </div>
-        <div class="date mt-4">
-          <span id="date">timeExpired :{{ride.isTimeExpired}}</span>
-          <span id="date-text"></span>
-        </div>
+
+<div id="container" *ngFor="let ride of rides">
+  <div class="product-details">
+    <div class="control" style="margin: -25px;">
+      <div class="from  mb-3" style="margin-top:30px;">
+        <span id="from"  style="font-size:20px;font-weight: bold; ">From : </span>
+        <span id="from-text">{{ ride.fromId.place }}</span>
       </div>
-      <div class="col-md-6 right">
-        <div class="total-seat">
-          <span>Total Seat :{{ ride.totalSeat }}</span>
-        </div>
-        <div class="remaining-seat">
-          <span>Remaining Seats: {{ ride.seatAvailable }}</span>
-        </div>
-        <div class="book-seat">
-          <span>Book Seat : {{ (ride.totalSeat-ride.seatAvailable) }}</span>
-        </div>
-        <div class="book-seat mt-4">
-          <span>Booked : {{ride.isBooked}}</span>
-        </div>
+      <div class="to mt-3">
+        <span id="to mb-3"  style="font-size:20px;font-weight: bold; ">To : </span>
+        <span id="to-text">{{ ride.toId.place }}</span>
+      </div>
+      <div class="date mt-3">
+        <span id="date"  style="font-size:20px;font-weight: bold; ">Date : </span>
+        <span id="date-text">{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
+      </div>
+      <div class="date mt-4">
+        <span id="date"  style="font-size:20px;font-weight: bold; ">Time Expired : {{ride.isTimeExpired}}</span>
+        <span id="date-text"></span>
       </div>
       <div class="form-group text-center">
-        <button
-          style="cursor: pointer"
-          (click)="navigateToCheckRightBooker(ride._id)"
-          class="btn signin"
-        >
+        <button style="cursor: pointer" (click)="navigateToCheckRightBooker(ride._id)" class="btn signin">
           Check right User
         </button>
       </div>
     </div>
   </div>
-</div>
-
-
-
-<div class="heading text-center" *ngIf="confirmStatus">
-  <b><h1 class="pt-4">Complete Rides</h1></b>
-</div>
-<div class="container" *ngFor="let ride of completeRides">
-  <div class="publish  ">
-    <div class="row publish-card">
-      <div class="col-md-6 left">
-        <div class="from">
-          <span id="from">From :</span>
-          <span id="from-text">{{ ride.fromId.place }}</span>
-        </div>
-        <div class="to">
-          <span id="to">To :</span>
-          <span id="to-text">{{ ride.toId.place }}</span>
-        </div>
-        <div class="date">
-          <span id="date">Date :</span>
-          <span id="date-text">{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
-        </div>
-        <div class="date mt-4">
-          <span id="date">timeExpired :{{ride.isTimeExpired}}</span>
-          <span id="date-text"></span>
-        </div>
-      </div>
-      <div class="col-md-6 right">
-        <div class="total-seat">
-          <span>Total Seat :{{ ride.totalSeat }}</span>
-        </div>
-        <div class="remaining-seat">
-          <span>Remaining Seats: {{ ride.seatAvailable }}</span>
-        </div>
-        <div class="book-seat">
-          <span>Book Seat : {{ (ride.totalSeat-ride.seatAvailable) }}</span>
-        </div>
-        <div class="book-seat mt-4">
-          <span>Booked : {{ride.isBooked}}</span>
-        </div>
-      </div>
-      <div class="form-group text-center">
-        <button
-          style="cursor: pointer"
-         (click)="allUser(ride._id)"
-          class="btn signin"
-        >
-          Your Rides
-        </button>
-      </div>
+  <div class="product-image"  style="margin: 50px;">
+    <div class="total-seat mt-3" style="font-size:20px;font-weight: bold;margin-right:55px; ">
+      <span>Total Seat : {{ ride.totalSeat }}</span>
+    </div>
+    <div class="remaining-seat mt-5"  style="font-size:20px;font-weight: bold; ">
+      <span>Remaining Seats : {{ ride.seatAvailable }}</span>
+    </div>
+    <div class="book-seat mt-5"  style="font-size:20px;font-weight: bold;margin-right:55px; ">
+      <span>Book Seat : {{ (ride.totalSeat-ride.seatAvailable) }}</span>
+    </div>
+    <div class="book-seat mt-5"  style="font-size:20px;font-weight: bold; margin-right:55px; ">
+      <span>Booked : {{ride.isBooked}}</span>
+    </div>
+    <div class="info" style="border-radius: 300px;">
+      <img style="border-radius: 300px;"
+        src="../../assets/Images/form22.png"
+        alt="">
     </div>
   </div>
 </div>
+
+
+
+
+

@@ -21,12 +21,13 @@ body{
 
 .card-header{
   color: white !important;
-  background: linear-gradient(-45deg, #005af4 0%, #ffffff 100%);
+  background: linear-gradient(-45deg, #556580 0%, #ffffff 100%);
+  /* background-color: #1b2a49; */
   text-align: center;
 }
 
-.card-header > img{
-  width: 180px;
+.card-header  img{
+  width: 200px;
   height: 180px;
 }
 

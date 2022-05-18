@@ -53,7 +53,7 @@
   background-color: #040330;
   position: relative;
   z-index: 1;
-  margin-top:50px;
+  margin-top:20px;
   border-radius: 0 100px 0 100px;
   -webkit-border-radius: 0 100px 0 100px;
   -moz-border-radius: 0 100px 0 100px;
@@ -86,12 +86,19 @@
 #hero {
   width: 100%;
   height: 100vh;
-  background: white;
+  background-image: linear-gradient(to bottom right, rgb(153, 183, 239), rgb(255, 255, 255));
   border-bottom: 2px solid white;
   text-align: center;
+  overflow: hidden;
+  border-radius: 0 0 0 1000px;
+  -webkit-border-radius: 0 0 0 1000px;
+  -moz-border-radius: 0 0 0 1000px;
+  -ms-border-radius: 0 0 0 1000px;
+  -o-border-radius: 0 0 0 1000px;
 }
 #hero .container {
-  padding-top: 70px;
+  padding-top: 30px;
+  padding-bottom: 50px;
 }
 #hero h1 {
   margin: 0;
@@ -175,7 +182,7 @@
 
 
 section {
-  padding: 60px 0;
+  /* padding: 60px 0; */
   overflow: hidden;
 }
 
@@ -190,7 +197,7 @@ section {
 .section-title h2 {
   font-size: 32px;
   font-weight: bold;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
   padding-bottom: 20px;
   position: relative;
   color: #2d405f;
