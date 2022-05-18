@@ -42,6 +42,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
 import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { CashingmemoryService } from './services/cashingmemory.service';
 
 
 const socialProvider = {
@@ -112,6 +113,10 @@ const socialProvider = {
       useClass: InterceptorService,
       multi: true,
     },
+    {
+      useClass: CashingmemoryService,
+    provide: HTTP_INTERCEPTORS,
+    multi: true },
   ],
   bootstrap: [AppComponent],
 })
