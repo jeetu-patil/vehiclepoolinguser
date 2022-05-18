@@ -42,7 +42,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
 import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { NgxPaginationModule } from 'ngx-pagination'
+import { CashingmemoryService } from './services/cashingmemory.service';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const socialProvider = {
@@ -90,7 +91,7 @@ const socialProvider = {
     AboutUsComponent,
     AlluserogpublisherComponent,
     VihicleprofileComponent,
-    ContactUsComponent
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,
@@ -114,6 +115,10 @@ const socialProvider = {
       useClass: InterceptorService,
       multi: true,
     },
+    {
+      useClass: CashingmemoryService,
+    provide: HTTP_INTERCEPTORS,
+    multi: true },
   ],
   bootstrap: [AppComponent],
 })

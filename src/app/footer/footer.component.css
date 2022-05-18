@@ -7,7 +7,7 @@
 body{
   min-height: 100vh;
   width: 100%;
-  background: #EEECEB;
+  /* background: #EEECEB; */
 }
 footer{
   /* position: fixed; */
@@ -51,45 +51,10 @@ footer .content .top{
   border-radius: 50%;
   text-align: center;
   line-height: 40px;
-  color: #fff;
+  color: white;
   font-size: 17px;
   text-decoration: none;
   transition: all 0.4s ease;
-}
-.top .media-icons a:nth-child(1){
-  background: #4267B2;
-}
-.top .media-icons a:nth-child(1):hover{
-  color: #4267B2;
-  background: #fff;
-}
-.top .media-icons a:nth-child(2){
-  background: #1DA1F2;
-}
-.top .media-icons a:nth-child(2):hover{
-  color: #1DA1F2;
-  background: #fff;
-}
-.top .media-icons a:nth-child(3){
-  background: #E1306C;
-}
-.top .media-icons a:nth-child(3):hover{
-  color: #E1306C;
-  background: #fff;
-}
-.top .media-icons a:nth-child(4){
-  background: #0077B5;
-}
-.top .media-icons a:nth-child(4):hover{
-  color: #0077B5;
-  background: #fff;
-}
-.top .media-icons a:nth-child(5){
-  background: #FF0000;
-}
-.top .media-icons a:nth-child(5):hover{
-  color: #FF0000;
-  background: #fff;
 }
 footer .content .link-boxes{
   width: 100%;
@@ -100,10 +65,10 @@ footer .content .link-boxes .box{
   width: calc(100% / 5 - 10px);
 }
 .content .link-boxes .box .link_name{
-  color: #fff;
+  color: white;
   font-size: 18px;
   font-weight: 400;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   position: relative;
 }
 .link-boxes .box .link_name::before{
@@ -113,14 +78,14 @@ footer .content .link-boxes .box{
   bottom: -2px;
   height: 2px;
   width: 35px;
-  background: #fff;
+  background: white;
 }
 .content .link-boxes .box li{
   margin: 6px 0;
   list-style: none;
 }
 .content .link-boxes .box li a{
-  color: #fff;
+  color: white;
   font-size: 14px;
   font-weight: 400;
   text-decoration: none;
@@ -179,7 +144,7 @@ footer .bottom-details .bottom_text{
 .bottom-details .bottom_text a{
   font-size: 14px;
   font-weight: 300;
-  color: #fff;
+  color: white;
   opacity: 0.8;
   text-decoration: none;
 }
@@ -239,4 +204,8 @@ footer .bottom-details .bottom_text{
   footer .content .link-boxes .input-box{
     width: 100%;
   }
+}
+
+li{
+  color: white;
 }
