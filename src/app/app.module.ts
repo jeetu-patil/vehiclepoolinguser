@@ -42,7 +42,7 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
 import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
-import { NgxPaginationModule } from 'ngx-pagination'
+import { NgxPaginationModule } from 'ngx-pagination';
 
 
 const socialProvider = {
@@ -90,7 +90,7 @@ const socialProvider = {
     AboutUsComponent,
     AlluserogpublisherComponent,
     VihicleprofileComponent,
-    ContactUsComponent
+    ContactUsComponent,
   ],
   imports: [
     BrowserModule,

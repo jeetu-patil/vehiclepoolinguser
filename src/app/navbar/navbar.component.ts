@@ -33,6 +33,10 @@ export class NavbarComponent implements OnInit {
     }
   }
 
+  navigateToSearchPage(){
+    this.router.navigate(["search-ride"])
+  }
+
   navigateToVehicleDetail(){
         this.publisRideService.getDetailOfPubliisher().subscribe(data => {
         if(data.count==0){
