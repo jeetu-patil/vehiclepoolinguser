@@ -35,7 +35,9 @@ const routes: Routes = [
   { path :"searchride/:from/:to/:date/:seat" ,component:SearchridesComponent},
   { path: "vehicle-detail", component: VehicledetailComponent,canActivate:[AuthGuard]},
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
-  { path: "ridedetail/:publishId/:seat", component: RideDetailComponent,canActivate:[AuthGuard]},
+  { path: "ridedetail/:publishId/:seat", component: RideDetailComponent
+  // ,canActivate:[AuthGuard]
+},
   { path: "verify-email", component:VerifyEmailComponent},
   { path: "view-profile" , component:UserProfileComponent,canActivate:[AuthGuard]},
   { path: "publish-info", component:RidePublishInfoComponent,canActivate:[AuthGuard]},
@@ -49,7 +51,7 @@ const routes: Routes = [
       { path: "bookhistory", component: BookhistoryComponent,canActivate:[AuthGuard]},
       { path: "publishhistory", component: PublishhistoryComponent,canActivate:[AuthGuard]},
       { path:'acceptrequest/:rideId',component:AcceptrequestpageComponent,canActivate:[AuthGuard]},
-      { path: "confirmbooker/:rideId", component:ConfirmbookerComponent,canActivate:[AuthGuard]}, 
+      { path: "confirmbooker/:rideId", component:ConfirmbookerComponent,canActivate:[AuthGuard]},
       {path:"alluserogpublisher/:rideId",component:AlluserogpublisherComponent,canActivate:[AuthGuard]},
     ],canActivate:[AuthGuard]
   },

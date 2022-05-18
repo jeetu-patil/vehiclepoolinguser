@@ -1,7 +1,7 @@
-<div class="heading text-center">
+<!-- <div class="heading text-center">
   <h1 class="pt-4">Publish Rides</h1>
 </div>
-<div class="container"  *ngFor="let ride of rides;index as i">
+<div class="container" *ngFor="let ride of rides;index as i">
   <div class="publish  ">
     <div class="row publish-card">
       <div class="col-md-6 left">
@@ -29,16 +29,124 @@
           <span>Book Seat : {{ (ride.totalSeat-ride.seatAvailable) }}</span>
         </div>
       </div>
-      <div class="form-group text-center">
-        <button (click)="cancelRide(ride._id)" class="btn signin">Cancel Ride</button>
-        <button
-          style="cursor: pointer"
-          (click)="navigateToUserRequest(ride._id)"
-          class="btn signin btn2"
-        >
+      <div class="form">
+      <span><button (click)="cancelRide(ride._id)" class="btn signin btn2">Cancel Ride</button></span>
+        <span><button style="cursor: pointer" (click)="navigateToUserRequest(ride._id)" class="btn signin btn2">
           User Request
-        </button>
+        </button></span>
       </div>
     </div>
   </div>
+</div> -->
+<section id="hero" class="d-flex align-items-center">
+
+  <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+    <h1>Build Better Websites With Bikin</h1>
+    <h2>We are team of talented designers making websites with Bootstrap</h2>
+    <!-- <img src="../../assets/Images/form22.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150"> -->
+  </div>
+
+</section><!-- End Hero -->
+
+<div class="section-title">
+  <h2 class="text-center mt-5">Publish Rides</h2>
 </div>
+<div id="container" *ngFor="let ride of rides;index as i">
+  <div class="product-details">
+    <div class="control">
+      <div class="from mb-3">
+        <span id="from" style="font-size:20px;font-weight: bold;">From : </span>
+        <span id="from-text">{{ ride.fromId.place }}</span>
+      </div>
+      <div class="to mb-3">
+        <span id="to" style="font-size:20px;font-weight: bold; ">To :</span>
+        <span id="to-text" style="margin-left:25px;">{{ ride.toId.place }}</span>
+      </div>
+      <div class="date">
+        <span id="date" style="font-size:20px;font-weight: bold;">Date : </span>
+        <span id="date-text ">{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
+      </div>
+   <div class="form">
+
+       <span> <button style="cursor: pointer;margin-top:30px;" (click)="navigateToUserRequest(ride._id)" class="btn signin btn2">
+          User Request
+        </button></span>
+        <span><button style="cursor: pointer;margin-top:30px;" (click)="cancelRide(ride._id)" class="btn signin btn2">Cancel Ride</button></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="product-image" style="margin: 50px;">
+    <div class="total-seat mt-3" style="font-size:20px;font-weight: bold;margin-right:55px; ">
+      <span>Total Seat : {{ ride.totalSeat }}</span>
+    </div>
+    <div class="remaining-seat mt-5" style="font-size:20px;font-weight: bold; ">
+      <span>Remaining Seats : {{ ride.seatAvailable }}</span>
+    </div>
+    <div class="book-seat mt-5" style="font-size:20px;font-weight: bold;margin-right:55px; ">
+      <span>Book Seat : {{ (ride.totalSeat-ride.seatAvailable) }}</span>
+    </div>
+
+    <div class="info" style="border-radius: 300px;">
+      <img style="border-radius: 300px;" src="../../assets/Images/form22.png" alt="">
+    </div>
+  </div>
+</div>
+
+<section id="features" class="features" data-aos="fade-up">
+  <div class="container">
+
+    <div class="section-title">
+      <h2 class="text-center mt-5">Book Rides</h2>
+      <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+        <img src="../../assets/Images/form2.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+      </div>
+      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
+        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in
+        iste officiis commodi quidem hic quas.</p>
+    </div>
+
+    <div class="row content mt-5">
+      <div class="col-md-5" data-aos="fade-right" data-aos-delay="100">
+        <img src="../../assets/Images/register3.png" class="img-fluid mt-3" alt="">
+      </div>
+      <div class="col-md-7 mt-5 pt-4" data-aos="fade-left" data-aos-delay="100">
+        <h1>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h1>
+        <p class="fst-normal">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+          magna aliqua.
+        </p>
+      </div>
+    </div>
+
+    <div class="row m-5" data-aos="fade-up">
+      <div class="col-md-5 order-1 order-md-2 mt-5">
+        <img src="../../assets/Images/success.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5 mt-3 order-2 order-md-1">
+        <h1>Publish your Rides</h1>
+        <p class="fst-normal">
+          Indicate departure and arrival points, the date of the ride and check our recommended price to increase your chances of getting your first passengers and ratings.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</section>
+
+
+<section class="cta" data-aos="fade-up" data-aos-delay="0">
+  <h2 class="text-center" style="font-size:40px; margin-bottom:50px;">
+    How do I publish a carpool ride?
+  </h2>
+  <div class="container-fluid">
+    <div class="cta-content d-xl-flex align-items-center justify-content-around text-center text-xl-left">
+      <div class="content p-3 mt-5" data-aos="fade-right" data-aos-delay="200">
+<h2>
+        Offering a carpool ride on BlaBlaCar is easy. To publish your ride, use our mobile app or blablacar.com. Indicate your departure and arrival points, the date and time of your departure, how many passengers you can take and the price per seat. You’ll also need to choose how you want to accept bookings (either automatically or manually), and you have the option of adding any important details you think your passengers should know about. Then tap ‘Publish ride’ and you’re done!
+      </h2>
+      </div>
+    </div>
+  </div>
+</section>

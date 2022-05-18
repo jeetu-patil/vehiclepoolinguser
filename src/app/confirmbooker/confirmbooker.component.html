@@ -3,13 +3,12 @@
     <div class="col-md-4 mb-5" *ngFor="let p of pubilsh">
       <div class="container-fluid d-flex justify-content-center align-items-center bg-image">
         <div class="card text-center">
-          <div class="card-header p-5">
-            <a (click)="navigateToDetail(p.bookerId._id)" style="cursor: pointer"><img *ngIf="!getLength(p.bookerId.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile" width="100px" height="100px"></a>
-            <a (click)="navigateToDetail(p.publisherId._id)" style="cursor: pointer"><img *ngIf="getLength(p.bookerId.image.length)" [src]="p.bookerId.image" alt="profile" width="100px" height="100px"></a>
-            <h5 class="mb-4">BOOKER VERIFICATION</h5>
+          <div class="card-header p-5" >
+            <a  (click)="navigateToDetail(p.bookerId._id)" style="cursor: pointer"><img *ngIf="!getLength(p.bookerId.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile" width="100px" height="100px"></a>
+            <a (click)="navigateToDetail(p.publisherId._id)" style="cursor: pointer"><img *ngIf="getLength(p.bookerId.image.length)" [src]="p.bookerId.image" alt="profile" width="100px" height="100px" ></a>
+            <h5 class="m-4">BOOKER VERIFICATION</h5>
             <div>
               <div class="form-group">
-                <i class="fas fa-mobile-alt"></i>
                 <!-- <input  type="text" placeholder="Mobile" /> -->
                 <label>Name : {{p.bookerId.name}}</label>
               </div>
