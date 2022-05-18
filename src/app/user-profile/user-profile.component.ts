@@ -20,7 +20,6 @@ p:any;
   ngOnInit(): void {
     this.userService.getUser().subscribe(data=>{
       this.user = data;
-      console.log(this.user);
       this.comments=this.user.comments;
     });
   }

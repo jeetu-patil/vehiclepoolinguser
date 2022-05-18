@@ -32,7 +32,6 @@ export class SearchridesComponent implements OnInit {
       }
       else
       {
-        console.log("hiii")
          this.status=true;
       }
     },err=>{

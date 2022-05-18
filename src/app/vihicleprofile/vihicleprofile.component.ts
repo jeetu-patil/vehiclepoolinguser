@@ -15,19 +15,14 @@ export class VihicleprofileComponent implements OnInit {
   number:any
   image:any;
   imageUrl:any;
-  // imagePath:any;
   FileImage: any
 
   constructor(private publishrideService: PublishrideService,private toastr:ToastrService,private router:Router) { 
     this.publishrideService.getDetailOfPubliisher().subscribe(result=>{
-      console.log(result.result.vehicle.image)
-      // console.log(result);
        this.name=result.result.vehicle.name;
-       console.log(this.name)
        this.wheeler=result.result.vehicle.wheeler;
        this.number=result.result.vehicle.number;
        this.image=result.result.vehicle.image;
-       console.log(this.image)
     })
   }
 

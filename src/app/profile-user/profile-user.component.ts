@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { UserService } from '../services/user.service';
 })
 export class ProfileUserComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute,private userService: UserService,private router: Router) { }
+  constructor(private toastr:ToastrService,private activatedRoute: ActivatedRoute,private userService: UserService,private router: Router) { }
 
   user:any;
   FileImage:any;
@@ -31,11 +32,10 @@ export class ProfileUserComponent implements OnInit {
     formData.append("userId",id);
     this.userService.editNMI(formData).subscribe(result=>{
       if(result){
-      console.log(result);
-         alert("Your Profile is Edit Succefully")
+        this.toastr.success("Your profile edit successfully","Success");
       }
          else
-          alert("Failed To Edit profile");
+         this.toastr.error("Failed to edit your profile","Error");
     }
       )
   }

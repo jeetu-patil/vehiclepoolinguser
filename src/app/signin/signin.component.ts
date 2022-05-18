@@ -43,12 +43,17 @@ export class SigninComponent implements OnInit {
   }
 
   signinUser(){
-    console.log(this.email+"  ----   "+this.password);
       this.userService.signinUser(this.email,this.password).subscribe(data=>{
+
+        if(data.msg=="error"){
+          this.toastr.error("Please Fill Detail");
+        }
+        else{
           this.toastr.success("Login Success","Success");
           sessionStorage.setItem("jwt-token",data.token);
           sessionStorage.setItem("userId",data.result._id);
           this.router.navigate([""]);
+        }
       },err=>{
         if(err instanceof HttpErrorResponse){
           if(err.status == 401){

@@ -15,7 +15,7 @@ export class PublishrideService {
   }
 
   getDetailOfPubliisher():Observable<any>{
-    return this.http.get<any>("http://localhost:3000/publishride/checkuserride/"+sessionStorage.getItem("userId"));
+    return this.http.post<any>("http://localhost:3000/publishride/checkuserride",{id:sessionStorage.getItem("userId")});
   }
 
   addPublisherDetails(formData:any):Observable<any>{
@@ -28,7 +28,7 @@ export class PublishrideService {
   }
 
   getParticularRideDetail(id:any){
-    return this.http.get("http://localhost:3000/publishride/particualride/"+id);
+    return this.http.post("http://localhost:3000/publishride/particualride",{id:id});
   }
 
   getRidesOfBooker(from:any,to:any, date:any,seat:any):Observable<any>{
@@ -47,16 +47,16 @@ export class PublishrideService {
 
 
   getAllRequests(rideId:any):Observable<any>{
-    return this.http.get("http://localhost:3000/publishride/showrequesttopublisher/"+sessionStorage.getItem("userId")+"/"+rideId);
+    return this.http.post("http://localhost:3000/publishride/showrequesttopublisher",{publisherId:sessionStorage.getItem("userId"),rideId:rideId});
   }
 
 
   getPublishRides():Observable<any>{
-    return this.http.get("http://localhost:3000/publishride/getPublishRidesOfSingle/"+sessionStorage.getItem("userId"));
+    return this.http.post("http://localhost:3000/publishride/getPublishRidesOfSingle",{publisherId:sessionStorage.getItem("userId")});
   }
 
   getAllBookRides():Observable<any>{
-    return this.http.get("http://localhost:3000/bookride/getbookrides/"+sessionStorage.getItem("userId"));
+    return this.http.post("http://localhost:3000/bookride/getbookrides",{bookerId:sessionStorage.getItem("userId")});
   }
 
 
