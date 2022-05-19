@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { Publishride } from '../model/publishride';
 import { PlaceService } from '../services/place.service';
 import { PublishrideService } from '../services/publishride.service';
@@ -11,7 +12,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class HomepageComponent implements OnInit {
 
-  constructor(private placeService: PlaceService,private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
+  constructor(private spinner : NgxSpinnerService, private placeService: PlaceService,private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
 
   publishRide!:any;
   from:any;
@@ -23,12 +24,17 @@ export class HomepageComponent implements OnInit {
   p:any;
 
   ngOnInit(): void {
+    this.spinner.show();
     this.publisRideService.getAllPublishRides().subscribe(data => {
       this.publishRide=data;
       console.log(this.publishRide)
     },err =>{
 
     });
+    setTimeout(() => {
+      /** spinner ends after 5 seconds */
+      this.spinner.hide();
+    }, 5000);
 
     setTimeout(() => {
       this.placeService.getAllPlace().subscribe(data => {

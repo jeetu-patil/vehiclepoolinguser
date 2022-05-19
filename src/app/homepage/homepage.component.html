@@ -39,7 +39,7 @@
 </div>
 
 <!-------------------------------Publish rides------------------------------>
-
+<ngx-spinner type="ball-scale-multiple"></ngx-spinner>
 <div class="ride-heading">
   <h1 style="text-shadow: 4px 0px 3px #1b2a49; font-size: 40px" data-aos="fade-up">PUBLISH RIDES</h1>
 </div>
@@ -53,7 +53,7 @@
         <div class="card-body1">
           <h3 class="card-title1"><b><i class="fa fa-map-pin"></i> From : </b>{{publish.fromId.place}}</h3>
           <h3 class="card-title1"><b><i class="fa fa-map-pin"></i> To : </b>{{publish.toId.place}}</h3>
-          <h4 class="card-title1"><i class="fas fa-calendar-alt"></i> {{publish.rideDate | date:'dd/MM/yyyy'}}</h4>
+          <h4 class="card-title1"><i class="fas fa-calendar-alt"></i> {{publish.rideDate | date:'dd/MM/yyyy'}} {{publish.rideDate | date:'shortTime'}}</h4>
           <span class="tag tag-teal" (click)="viewRide(publish._id)">View Details</span>
         </div>
       </div>

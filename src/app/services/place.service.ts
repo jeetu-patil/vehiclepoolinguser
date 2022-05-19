@@ -11,6 +11,6 @@ export class PlaceService {
   constructor(private http:HttpClient) { }
 
   getAllPlace():Observable<Place>{
-    return this.http.get<Place>("http://localhost:3000/place/getallplace");
+    return this.http.get<Place>("https://ridesharely-backend-api.herokuapp.com/place/getallplace");
   }
 }

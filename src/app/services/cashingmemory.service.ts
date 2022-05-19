@@ -5,7 +5,7 @@ import { Observable, of, tap } from 'rxjs';
 @Injectable()
 export class CashingmemoryService implements HttpInterceptor {
   cache:Map<string,HttpResponse<any>>=new Map<string,HttpResponse<any>>();
-  constructor() { 
+  constructor() {
     console.log("In Cashing Memory Area")
   }
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -17,7 +17,7 @@ export class CashingmemoryService implements HttpInterceptor {
       if(cachedResponse){
         console.log("Response Return from cached")
         return of(cachedResponse);
-      
+
       }else{
         return next.handle(request).pipe(tap(statevent=>{
           if(statevent instanceof HttpResponse){
