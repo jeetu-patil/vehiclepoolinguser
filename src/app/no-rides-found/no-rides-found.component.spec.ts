@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UserridesComponent } from './userrides.component';
+import { NoRidesFoundComponent } from './no-rides-found.component';
 
-describe('UserridesComponent', () => {
-  let component: UserridesComponent;
-  let fixture: ComponentFixture<UserridesComponent>;
+describe('NoRidesFoundComponent', () => {
+  let component: NoRidesFoundComponent;
+  let fixture: ComponentFixture<NoRidesFoundComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ UserridesComponent ]
+      declarations: [ NoRidesFoundComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UserridesComponent);
+    fixture = TestBed.createComponent(NoRidesFoundComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

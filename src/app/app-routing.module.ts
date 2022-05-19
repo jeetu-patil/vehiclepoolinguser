@@ -15,7 +15,6 @@ import { PublisherdetailComponent } from './publisherdetail/publisherdetail.comp
 import { AuthGuard } from './auth.guard';
 import { SearchridesComponent } from './searchrides/searchrides.component';
 import { BookridesComponent } from './bookrides/bookrides.component';
-import { UserridesComponent } from './userrides/userrides.component';
 import { PublishrideComponent } from './publishride/publishride.component';
 import { BookhistoryComponent } from './bookhistory/bookhistory.component';
 import { PublishhistoryComponent } from './publishhistory/publishhistory.component';
@@ -44,17 +43,18 @@ const routes: Routes = [
   { path: "success" , component:SuccessMessageComponent},
   { path: "edit-profile", component:ProfileUserComponent},
   { path:"view-vihicle",component:VihicleprofileComponent},
-  { path: "userrides", component:UserridesComponent,
-    children:[
-      { path: "bookrides" , component:BookridesComponent,canActivate:[AuthGuard]},
-      { path: "publishride", component:PublishrideComponent,canActivate:[AuthGuard]},
-      { path: "bookhistory", component: BookhistoryComponent,canActivate:[AuthGuard]},
-      { path: "publishhistory", component: PublishhistoryComponent,canActivate:[AuthGuard]},
-      { path:'acceptrequest/:rideId',component:AcceptrequestpageComponent,canActivate:[AuthGuard]},
-      { path: "confirmbooker/:rideId", component:ConfirmbookerComponent,canActivate:[AuthGuard]},
-      {path:"alluserogpublisher/:rideId",component:AlluserogpublisherComponent,canActivate:[AuthGuard]},
-    ],canActivate:[AuthGuard]
-  },
+  { path: "bookrides" , component:BookridesComponent,canActivate:[AuthGuard]},
+  { path: "publishride", component:PublishrideComponent,canActivate:[AuthGuard]},
+  { path: "bookhistory", component: BookhistoryComponent,canActivate:[AuthGuard]},
+  { path: "publishhistory", component: PublishhistoryComponent,canActivate:[AuthGuard]},
+  { path:'acceptrequest/:rideId',component:AcceptrequestpageComponent,canActivate:[AuthGuard]},
+  { path: "confirmbooker/:rideId", component:ConfirmbookerComponent,canActivate:[AuthGuard]},
+  { path:"alluserogpublisher/:rideId",component:AlluserogpublisherComponent,canActivate:[AuthGuard]},
+  // { path: "userrides", component:UserridesComponent,
+  //   children:[
+
+  //   ],canActivate:[AuthGuard]
+  // },
   { path: "publisherdetail/:userId" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
   { path: "contact-us" , component:ContactUsComponent},
   { path: "**" , component:PageNotFoundComponent}
