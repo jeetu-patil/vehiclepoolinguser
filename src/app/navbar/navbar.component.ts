@@ -50,4 +50,20 @@ export class NavbarComponent implements OnInit {
   navigateToUserRide(){
     this.router.navigate(['userrides']);
   }
+
+  navigateToBookRides(){
+    this.router.navigate(['bookrides']);
+  }
+
+  navigateToBookHistory(){
+    this.router.navigate(['bookhistory']);
+  }
+
+  navigateToPublishRides(){
+    this.router.navigate(['publishride']);
+  }
+
+  navigateToPublisherHistory(){
+    this.router.navigate(['publishhistory']);
+  }
 }

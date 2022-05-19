@@ -30,7 +30,6 @@ import { SearchridesComponent } from './searchrides/searchrides.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
-import { UserridesComponent } from './userrides/userrides.component';
 import { BookridesComponent } from './bookrides/bookrides.component';
 import { PublishrideComponent } from './publishride/publishride.component';
 import { BookhistoryComponent } from './bookhistory/bookhistory.component';
@@ -45,6 +44,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CashingmemoryService } from './services/cashingmemory.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
+import { NoRidesFoundComponent } from './no-rides-found/no-rides-found.component';
 
 
 const socialProvider = {
@@ -81,7 +81,6 @@ const socialProvider = {
     PublisherdetailComponent,
     HistoryRidesComponent,
     SearchridesComponent,
-    UserridesComponent,
     BookridesComponent,
     PublishrideComponent,
     BookhistoryComponent,
@@ -93,6 +92,7 @@ const socialProvider = {
     AlluserogpublisherComponent,
     VihicleprofileComponent,
     ContactUsComponent,
+    NoRidesFoundComponent,
   ],
   imports: [
     BrowserModule,

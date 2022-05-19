@@ -10,7 +10,19 @@
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
       </ul>
       <ul class="navbar-nav right-nav">
-
+        <li class="nav-item">
+          <div class="dropdown">
+            <a class="dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="text-decoration: none;">
+              Dropdown button
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" (click)="navigateToBookRides()" style="cursor: pointer;">Book Rides</a></li>
+              <li><a class="dropdown-item" (click)="navigateToBookHistory()" style="cursor: pointer;">Book Rides History</a></li>
+              <li><a class="dropdown-item" (click)="navigateToPublishRides()" style="cursor: pointer;">Publish Rides</a></li>
+              <li><a class="dropdown-item" (click)="navigateToPublisherHistory()" style="cursor: pointer;">Publish Rides History</a></li>
+            </ul>
+          </div>
+        </li>
         <li class="nav-item">
           <a *ngIf="isLoggedIn()" (click)="navigateToVehicleDetail()" class="nav-link" style="cursor: pointer; margin-right: 25px; margin-top: -3px;"><i class="fas fa-plus-circle" style="padding-right: 8px;"></i>PUBLISH A RIDE</a>
         </li>
