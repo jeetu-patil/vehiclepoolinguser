@@ -1,7 +1,7 @@
 <div class="ride-heading">
   <h1>YOUR SEARCH RIDES</h1>
 </div>
-<section class="category mt-3">
+<!-- <section class="category mt-3">
   <div class="row justify-content-around" style="width: 80%; margin: auto; margin-bottom: 20px;">
     <div class="col-md-4 mt-5" *ngFor="let publish of publishRide">
       <div class="card" >
@@ -17,7 +17,25 @@
       </div>
     </div>
   </div>
-</section>
+</section> -->
+
+<div class="container main">
+  <div class="row" *ngFor="let publish of publishRide">
+    <div class="col-md-4">
+      <div class="card product">
+        <div class="card-header">
+          <img [src]="publish.publisherId.vehicle.image" alt="rover" />
+        </div>
+        <div class="card-body1">
+          <h3 class="card-title1"><b><i class="fa fa-map-pin"></i> From : </b>{{publish.fromId.place}}</h3>
+          <h3 class="card-title1"><b><i class="fa fa-map-pin"></i> To : </b>{{publish.toId.place}}</h3>
+          <h4 class="card-title1"><i class="fas fa-calendar-alt"></i> {{publish.rideDate | date:'dd/MM/yyyy'}}</h4>
+          <span class="tag tag-teal" (click)="viewRide(publish._id)">View Details</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
 
   <div class="product-card " *ngIf="status">
     <div class="row">

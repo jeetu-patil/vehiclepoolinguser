@@ -12,12 +12,12 @@
       <ul class="navbar-nav right-nav">
 
         <li class="nav-item">
-          <a *ngIf="isLoggedIn()" (click)="navigateToVehicleDetail()" class="nav-link" style="cursor: pointer;"><i class="fas fa-plus-circle" style="padding-right: 5px;"></i>PUBLISH A RIDE</a>
+          <a *ngIf="isLoggedIn()" (click)="navigateToVehicleDetail()" class="nav-link" style="cursor: pointer; margin-right: 25px; margin-top: -3px;"><i class="fas fa-plus-circle" style="padding-right: 8px;"></i>PUBLISH A RIDE</a>
         </li>
       </ul>
     </div>
     <div class="dropdown">
-      <a class="text-white" style="text-decoration: none;" *ngIf="isLoggedIn()">{{name |uppercase}}</a>
+      <a class="text-white" style="text-decoration: none; vertical-align: middle;" *ngIf="isLoggedIn()">{{name |uppercase}}</a>
       <a class="dropdown-toggle" type="button" class=name id="userProfile" data-bs-toggle="dropdown"
         aria-expanded="false"><i class="fa fa-user-circle" aria-hidden="true"></i>
       </a>

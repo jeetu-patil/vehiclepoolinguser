@@ -1,43 +1,3 @@
-<!-- <div class="heading text-center">
-  <h1 class="pt-4">Publish Rides</h1>
-</div>
-<div class="container" *ngFor="let ride of rides;index as i">
-  <div class="publish  ">
-    <div class="row publish-card">
-      <div class="col-md-6 left">
-        <div class="from">
-          <span id="from">From :</span>
-          <span id="from-text">{{ ride.fromId.place }}</span>
-        </div>
-        <div class="to">
-          <span id="to">To :</span>
-          <span id="to-text">{{ ride.toId.place }}</span>
-        </div>
-        <div class="date">
-          <span id="date">Date :</span>
-          <span id="date-text">{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
-        </div>
-      </div>
-      <div class="col-md-6 right">
-        <div class="total-seat">
-          <span>Total Seat : {{ ride.totalSeat }}</span>
-        </div>
-        <div class="remaining-seat">
-          <span>Remaining Seats: {{ ride.seatAvailable }} </span>
-        </div>
-        <div class="book-seat">
-          <span>Book Seat : {{ (ride.totalSeat-ride.seatAvailable) }}</span>
-        </div>
-      </div>
-      <div class="form">
-      <span><button (click)="cancelRide(ride._id)" class="btn signin btn2">Cancel Ride</button></span>
-        <span><button style="cursor: pointer" (click)="navigateToUserRequest(ride._id)" class="btn signin btn2">
-          User Request
-        </button></span>
-      </div>
-    </div>
-  </div>
-</div> -->
 <section id="hero" class="d-flex align-items-center">
 
   <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
@@ -132,21 +92,5 @@
     </div>
 
 
-  </div>
-</section>
-
-
-<section class="cta" data-aos="fade-up" data-aos-delay="0">
-  <h2 class="text-center" style="font-size:40px; margin-bottom:50px;">
-    How do I publish a carpool ride?
-  </h2>
-  <div class="container-fluid">
-    <div class="cta-content d-xl-flex align-items-center justify-content-around text-center text-xl-left">
-      <div class="content p-3 mt-5" data-aos="fade-right" data-aos-delay="200">
-<h2>
-        Offering a carpool ride on BlaBlaCar is easy. To publish your ride, use our mobile app or blablacar.com. Indicate your departure and arrival points, the date and time of your departure, how many passengers you can take and the price per seat. You’ll also need to choose how you want to accept bookings (either automatically or manually), and you have the option of adding any important details you think your passengers should know about. Then tap ‘Publish ride’ and you’re done!
-      </h2>
-      </div>
-    </div>
   </div>
 </section>

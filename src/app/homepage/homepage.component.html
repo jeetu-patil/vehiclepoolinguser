@@ -1,14 +1,19 @@
 <!-- -------------------Banner-------------------------------- -->
 
-<div class="container-fluid banner">
-  <!-- <h1 style="color: #000000; text-shadow: 2px 2px 0 #e46363, 4px 4px 0 #9c9c9c;">RideSharely</h1> -->
+<div class="container-fluid banner" data-aos="zoom-in">
+  <h1 data-aos="fade-up" style="text-shadow: 5px 0px 2px rgb(3, 26, 239); color: #ffffff; letter-spacing: 5pt; font-size: 40px; font-weight: 600; text-align: center; box-sizing: border-box; position: relative; top: 50%;">RideSharely</h1>
+  <h1 data-aos="fade-up"
+  style=" background: -webkit-linear-gradient(#ffffff, rgb(34, 41, 243));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing:0.5ch;  font-size: 32px; font-weight: 500; text-align: center; box-sizing: border-box; position: relative; top: 50%;">Chalo Saath Chale</h1>
 </div>
 <!-- <div class="text">
   <h1>RideSharely</h1>
 </div> -->
 
 <!-- --------------------Search Bar--------------------------------- -->
-<div class="container search-form">
+<div class="container search-form" data-aos="fade-up">
   <div class="search-bar form-group">
     <input [(ngModel)]="from" list="datalistOptions" class="search-box form-control" id="from" placeholder="From">
     <datalist id="datalistOptions">
@@ -36,12 +41,12 @@
 <!-------------------------------Publish rides------------------------------>
 
 <div class="ride-heading">
-  <h1 style="text-shadow: 4px 0px 3px #1b2a49; font-size: 40px">PUBLISH RIDES</h1>
+  <h1 style="text-shadow: 4px 0px 3px #1b2a49; font-size: 40px" data-aos="fade-up">PUBLISH RIDES</h1>
 </div>
 <div class="container main">
   <div class="row" *ngFor="let publish of publishRide | paginate: { itemsPerPage: 8, currentPage: p }">
-    <div class="col-md-4">
-      <div class="card product">
+    <div class="col-md-4" data-aos-delay="400" data-aos="fade-up">
+      <div class="card product ">
         <div class="card-header">
           <img [src]="publish.publisherId.vehicle.image" alt="rover" />
         </div>
@@ -54,23 +59,25 @@
       </div>
     </div>
   </div>
+</div>
 <div class="text-center mt-5">
   <pagination-controls (pageChange)="p = $event"></pagination-controls>
 </div>
 <!-- ------------------********************------------------------------- -->
 
 <div class="container mt-5">
-  <h1 style="font-family: ovileo; text-align: center; font-size: 36px; font-weight: 600;">Publish your ride in just a
+  <h1 style="font-family: ovileo; text-align: center; font-size: 36px; font-weight: 600;" data-aos="fade-up">Publish
+    your ride in just a
     minute</h1>
   <div class="row box rte mt-5 ">
     <div class="col-md-6">
       <iframe style="width: 100%;" height="315" src="https://www.youtube.com/embed/sJ28m5v1CHM"
         title="YouTube video player" frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+        data-aos="zoom-in"></iframe>
     </div>
     <div class="col-md-5" style="padding-left: 20px;">
-      <div class="row  side-content">
+      <div class="row  side-content" data-aos="fade-left">
         <div class="col-md-12 mt-3">
           <i class="fa fa-user fa-lg" aria-hidden="true"></i><span class="heading2"> Create a account</span>
           <br><br> <span class="para">Add your profile picture, a few words about you and your phone number to increase
@@ -96,8 +103,8 @@
 
 <div class="container big-box mt-5">
   <div class="row">
-    <h1 class="heading1 text-center">Why RideSharely ?</h1>
-    <div class="col-md-6">
+    <h1 class="heading1 text-center" data-aos="fade-up">Why RideSharely ?</h1>
+    <div class="col-md-6" data-aos="fade-up">
       <div class="row mt-5 r1">
         <div class="col-md-4 Center">
           <img src="../../assets/Images/svg/grup4.svg" height="130px" width="200px" alt="">
@@ -132,7 +139,7 @@
       </div>
     </div>
 
-    <div class="col-md-6">
+    <div class="col-md-6" data-aos="fade-up">
       <div class="row mt-5">
         <div class="col-md-4 Center">
           <img src="../../assets/Images/svg/Group3.svg" height="130px" width="200px" alt="">
@@ -162,7 +169,7 @@
 </div>
 
 <!-- ------------------carousel--------------------------------- -->
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
   <div class="carousel-indicators">
     <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
       aria-current="true" aria-label="Slide 1"></button>
@@ -231,7 +238,7 @@
 
 <link rel="stylesheet" href="//cdn.materialdesignicons.com/3.7.95/css/materialdesignicons.min.css">
 <div class="container">
-  <div class="row">
+  <div class="row" data-aos="fade-up">
     <div class="col-12 grid-margin">
       <div class="card">
         <div class="card-body">
@@ -245,152 +252,287 @@
   <div class="row">
     <div class="col-12 col-md-6">
       <div class="row">
-        <div class="col-12 grid-margin grid-margin-md-0">
+        <div class="col-12 grid-margin grid-margin-md-0" data-aos="fade-up">
           <div class="card">
-          <div class="faq-block card-body">
-            <div id="accordion-1" class="accordion">
-              <div class="card">
-                <div class="card-header" id="headingOne">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
-                      aria-controls="collapseOne">
-                      <h2>How do I book a vehiclepool ride ?</h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-1">
-                  <div class="card-body">
-                    <p class="mb-0">
-                      You can book a vehiclepool ride on our ridesharely.com.
-                      Simply search for your destination, choose the date you want
-                      to travel
-                      and pick the carpool that suits you best! Some rides can be booked
-                      instantly, while other rides require manual approval from the driver.
-                      Either way, booking a carpool ride is fast, simple and easy.
-                    </p>
-                    <p>
-                    </p>
+            <div class="faq-block card-body">
+              <div id="accordion-1" class="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
+                        aria-controls="collapseOne">
+                        <h2>How do I book a carpool/bikepool ride ?</h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-1">
+                    <div class="card-body">
+                      <p class="mb-0">
+                        You can book a vehiclepool ride on our ridesharely.com.
+                        Simply search for your destination, choose the date you want
+                        to travel
+                        and pick the carpool or bikepool that suits you best! Rides require manual approval from the
+                        driver.
+                        Either way, booking a carpool ride is fast, simple and easy.
+                      </p>
+                      <p>
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
-                      aria-controls="collapseTwo">
-                      <h2>How do I cancel my carpool ride ? </h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-1">
-                  <div class="card-body">
-                    <p class="mb-0"> If you have a change of plans, you can always cancel your carpool ride
-                      from the ‘Your rides’ section of our app. The sooner you cancel, the
-                      better. That way the driver has time to accept new passengers.
-                      The amount of your refund will depend on how far in advance you cancel.
-                      If you cancel more than 24 hours before departure, for example,
-                      you’ll receive a full refund, excluding the service fee.</p>
-                    <p>
-                    </p>
+                <div class="card">
+                  <div class="card-header" id="headingTwo">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false"
+                        aria-controls="collapseTwo">
+                        <h2>How do I cancel my carpool/bikepool ride ? </h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-1">
+                    <div class="card-body">
+                      <p class="mb-0"> If you have a change of plans, you can always cancel your carpool ride
+                        from the ‘Your rides’ section of our app. The sooner you cancel, the
+                        better. That way the driver has time to accept new passengers.</p>
+                      <p>
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
-                      aria-controls="collapseThree">
-                      <h2>How much does a carpool ride cost?</h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-1">
-                  <div class="card-body">
-                    <p class="mb-0"> The costs of a carpool ride can vary greatly, and depend on factors
-                      like distance, time of departure, the demand of that ride and more.
-                      It is also up to the driver to decide how much to charge per seat,
-                      so it’s hard to put an exact price tag on a ride. Check out some of
-                      our top carpool destinations to get an idea of price, or start
-                      searching for your next carpool ride on blablacar.com.</p>
-                    <p>
-                    </p>
+                <div class="card">
+                  <div class="card-header" id="headingThree">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseThree" aria-expanded="false"
+                        aria-controls="collapseThree">
+                        <h2>How much does a carpool ride cost?</h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-1">
+                    <div class="card-body">
+                      <p class="mb-0"> The costs of a carpool ride can vary greatly, and depend on factors
+                        like distance, the demand of that ride and more . We charge 5rs per km . Check out some of
+                        our top carpool destinations to get an idea of price, or start
+                        searching for your next carpool/bikepool ride on RideSharely.com.</p>
+                      <p>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="col-12 grid-margin grid-margin-md-0" data-aos="fade-up">
+          <div class="card">
+            <div class="faq-block card-body">
+              <div id="accordion-4" class="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne-4">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseOne-4" aria-expanded="true"
+                        aria-controls="collapseOne-4">
+                        <h2>How do I publish a carpool/bikepool ride?</h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseOne-4" class="collapse show" aria-labelledby="headingOne-4"
+                    data-parent="#accordion-4">
+                    <div class="card-body">
+                      <p class="mb-0">Offering a carpool/bikepool ride on RideSharely is easy. To publish your ride,
+                        use our RideSharely.com. Indicate your departure and
+                        arrival points, the date and time of your departure, how many
+                        passengers you can take and the price per seat. You’ll also need
+                        to choose how you want to accept bookings , and you have the option of adding any important
+                        details you think your passengers should know about. Then tap
+                        ‘Publish ride’ and you’re done!</p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingTwo-4">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseTwo-4" aria-expanded="false"
+                        aria-controls="collapseTwo-4">
+                        <h2>What are the benefits of travelling by carpool/bikepool ?</h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo-4" class="collapse" aria-labelledby="headingTwo-4" data-parent="#accordion-4">
+                    <div class="card-body">
+                      <p class="mb-0"> There are multiple advantages to carpooling, over other means
+                        of transport. Travelling by carpool is usually more affordable,
+                        especially for longer distances. Carpooling/bikepool is also more eco-friendly,
+                        as sharing a car/bike means there will be fewer cars and bike on the road,
+                        and therefore fewer emissions. Taking a carpool/bikepool ride is also
+                        a safe way to travel in the current times. Because there are
+                        only a few people in a car/bike, you have fewer points of contact
+                        and there’s less risk than other travel options.</p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree-4">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseThree-4" aria-expanded="false"
+                        aria-controls="collapseThree-4">
+                        <h2>How do I start carpooling/bikepooling ?</h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseThree-4" class="collapse" aria-labelledby="headingThree-4"
+                    data-parent="#accordion-4">
+                    <div class="card-body">
+                      <p class="mb-0">Carpooling/Bikepooling with RideSharely is super easy, and free! Simply sign up
+                        for an account and
+                        tell us some basic details
+                        about yourself. Once you have a RideSharely account, you can start booking or publishing rides
+                        directly on our website.</p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      <div class="col-12 grid-margin grid-margin-md-0">
-        <div class="card">
-          <div class="faq-block card-body">
-            <div id="accordion-4" class="accordion">
-              <div class="card">
-                <div class="card-header" id="headingOne-4">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseOne-4" aria-expanded="true"
-                      aria-controls="collapseOne-4">
-                      <h2>How do I publish a carpool ride?</h2>
-                    </a>
-                  </h5>
+      </div>
+    </div>
+    <div class="col-12 col-md-6">
+      <div class="row">
+        <div class="col-12 grid-margin" data-aos="fade-up">
+          <div class="card">
+            <div class="faq-block card-body">
+              <div id="accordion-3" class="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne-3">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseOne-3" aria-expanded="true"
+                        aria-controls="collapseOne-3">
+                        <h2>How is RideSharely different than other carpooling cab services?</h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseOne-3" class="collapse show" aria-labelledby="headingOne-3"
+                    data-parent="#accordion-3">
+                    <div class="card-body">
+                      <p class="mb-0">RideSharely is not a cab service. It is an online carpool as well as bikepool
+                        platform that connects Driver(s) and Rider(s). RideSharely caters exclusively to working
+                        professionals, who are verified riders.</p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div id="collapseOne-4" class="collapse show" aria-labelledby="headingOne-4" data-parent="#accordion-4">
-                  <div class="card-body">
-                    <p class="mb-0">Offering a carpool ride on BlaBlaCar is easy. To publish your ride,
-                      use our mobile app or blablacar.com. Indicate your departure and
-                      arrival points, the date and time of your departure, how many
-                      passengers you can take and the price per seat. You’ll also need
-                      to choose how you want to accept bookings (either automatically
-                      or manually), and you have the option of adding any important
-                      details you think your passengers should know about. Then tap
-                      ‘Publish ride’ and you’re done!</p>
-                    <p>
-                    </p>
+                <div class="card">
+                  <div class="card-header" id="headingTwo-3">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseTwo-3" aria-expanded="false"
+                        aria-controls="collapseTwo-3">
+                        <h2>How secure is the platform ?</h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo-3" class="collapse" aria-labelledby="headingTwo-3" data-parent="#accordion-3">
+                    <div class="card-body">
+                      <p class="mb-0"> RideSharely is only open to professionals and we verify users through their email
+                        and mobile. We ensure that all Users have their privacy protected by routing all calls through
+                        our website .
+                      </p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header" id="headingThree-3">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseThree-3" aria-expanded="false"
+                        aria-controls="collapseThree-3">
+                        <h2>How is the verification done ?</h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseThree-3" class="collapse" aria-labelledby="headingThree-3"
+                    data-parent="#accordion-3">
+                    <div class="card-body">
+                      <p class="mb-0">We send an email verification to your email ID that you provide us at
+                        the time of creation of your profile. Click on the link given in the mail which will automatically verify the
+                        account. Or if we talk about contact than we will send you OTP to your number that you provide us at
+                        the time of creation of your profile.
+                      </p>
+                      <p>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo-4">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseTwo-4" aria-expanded="false"
-                      aria-controls="collapseTwo-4">
-                      <h2>What are the benefits of travelling by carpool ?</h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseTwo-4" class="collapse" aria-labelledby="headingTwo-4" data-parent="#accordion-4">
-                  <div class="card-body">
-                    <p class="mb-0"> There are multiple advantages to carpooling, over other means
-                      of transport. Travelling by carpool is usually more affordable,
-                      especially for longer distances. Carpooling is also more eco-friendly,
-                      as sharing a car means there will be fewer cars on the road,
-                      and therefore fewer emissions. Taking a carpool ride is also
-                      a safe way to travel in the current times. Because there are
-                      only a few people in a car, you have fewer points of contact
-                      and there’s less risk than other travel options.</p>
-                    <p>
-                    </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-12" data-aos="fade-up">
+          <div class="card">
+            <div class="faq-block card-body">
+              <div id="accordion-2" class="accordion">
+                <div class="card">
+                  <div class="card-header" id="headingOne-2">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseOne-2" aria-expanded="true"
+                        aria-controls="collapseOne-2">
+                        <h2>Can I Login on RideSharely using my Google account ? </h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseOne-2" class="collapse show" aria-labelledby="headingOne-2"
+                    data-parent="#accordion-2">
+                    <div class="card-body">
+                      <p class="mb-0"> Yes, you can Login using your Google account.</p>
+                      <p>
+                      </p>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree-4">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseThree-4" aria-expanded="false"
-                      aria-controls="collapseThree-4">
-                      <h2>How do I start carpooling ?</h2>
-                    </a>
-                  </h5>
+                <div class="card">
+                  <div class="card-header" id="headingTwo-2">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseTwo-2" aria-expanded="false"
+                        aria-controls="collapseTwo-2">
+                        <h2>Where do I see my publish and book history ?</h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseTwo-2" class="collapse" aria-labelledby="headingTwo-2" data-parent="#accordion-2">
+                    <div class="card-body">
+                      <p class="mb-0">
+                        You can view your history from  " Your Rides " section in profile.</p>
+                      <p>
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <div id="collapseThree-4" class="collapse" aria-labelledby="headingThree-4" data-parent="#accordion-4">
-                  <div class="card-body">
-                    <p class="mb-0">Carpooling with BlaBlaCar is super easy, and free! Simply sign up for an account and
-                      tell us some basic details
-                      about yourself. Once you have a BlaBlaCar account, you can start booking or publishing rides
-                      directly on our app
-                      or website.</p>
-                    <p>
-                    </p>
+                <div class="card">
+                  <div class="card-header" id="headingThree-2">
+                    <h5 class="mb-0">
+                      <a data-toggle="collapse" data-target="#collapseThree-2" aria-expanded="false"
+                        aria-controls="collapseThree-2">
+                        <h2>How do I contact RideSharely ’s support team ? </h2>
+                      </a>
+                    </h5>
+                  </div>
+                  <div id="collapseThree-2" class="collapse" aria-labelledby="headingThree-2"
+                    data-parent="#accordion-2">
+                    <div class="card-body">
+                      <p class="mb-0">We are always here to help, in case of any issue do email us at
+                        vastram826@gmail.com for any queries.
+                      </p>
+                      <p>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -400,167 +542,5 @@
       </div>
     </div>
   </div>
-  <div class="col-12 col-md-6">
-    <div class="row">
-      <div class="col-12 grid-margin">
-        <div class="card">
-          <div class="faq-block card-body">
-            <div id="accordion-3" class="accordion">
-              <div class="card">
-                <div class="card-header" id="headingOne-3">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseOne-3" aria-expanded="true"
-                      aria-controls="collapseOne-3">
-                      <h2>What is Lorum Ipsum and who invented it ?</h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseOne-3" class="collapse show" aria-labelledby="headingOne-3" data-parent="#accordion-3">
-                  <div class="card-body">
-                    <p class="mb-0">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                      on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                      lomo. Leggings occaecat craft beer farm-to-table,
-                      raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable
-                      VHS.</p>
-                    <p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo-3">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseTwo-3" aria-expanded="false"
-                      aria-controls="collapseTwo-3">
-                      <h2>What is Lorum Ipsum and who invented it ?</h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseTwo-3" class="collapse" aria-labelledby="headingTwo-3" data-parent="#accordion-3">
-                  <div class="card-body">
-                    <p class="mb-0">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                      on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                      lomo. Leggings occaecat craft beer farm-to-table,
-                      raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable
-                      VHS.</p>
-                    <p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree-3">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseThree-3" aria-expanded="false"
-                      aria-controls="collapseThree-3">
-                      <h2>How may times Lorum Ipsum has been used in theme ?</h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseThree-3" class="collapse" aria-labelledby="headingThree-3" data-parent="#accordion-3">
-                  <div class="card-body">
-                    <p class="mb-0">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird
-                      on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica,
-                      craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                      lomo. Leggings occaecat craft beer farm-to-table,
-                      raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable
-                      VHS.</p>
-                    <p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-12">
-        <div class="card">
-          <div class="faq-block card-body">
-            <div id="accordion-2" class="accordion">
-              <div class="card">
-                <div class="card-header" id="headingOne-2">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseOne-2" aria-expanded="true"
-                      aria-controls="collapseOne-2">
-                      <h2>What is Lorum Ipsum and who invented it ?</h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseOne-2" class="collapse show" aria-labelledby="headingOne-2" data-parent="#accordion-2">
-                  <div class="card-body">
-                    <p class="mb-0">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-                      single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-                      labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                      Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                      haven't heard of them accusamus labore sustainable VHS.</p>
-                    <p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingTwo-2">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseTwo-2" aria-expanded="false"
-                      aria-controls="collapseTwo-2">
-                      <h2>What is Lorum Ipsum and who invented it ?</h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseTwo-2" class="collapse" aria-labelledby="headingTwo-2" data-parent="#accordion-2">
-                  <div class="card-body">
-                    <p class="mb-0">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-                      single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-                      labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                      Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                      haven't heard of them accusamus labore sustainable VHS.</p>
-                    <p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <div class="card">
-                <div class="card-header" id="headingThree-2">
-                  <h5 class="mb-0">
-                    <a data-toggle="collapse" data-target="#collapseThree-2" aria-expanded="false"
-                      aria-controls="collapseThree-2">
-                      <h2>How may times Lorum Ipsum has been used in this theme ?</h2>
-                    </a>
-                  </h5>
-                </div>
-                <div id="collapseThree-2" class="collapse" aria-labelledby="headingThree-2" data-parent="#accordion-2">
-                  <div class="card-body">
-                    <p class="mb-0">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry
-                      richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck
-                      quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
-                      single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer
-                      labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo.
-                      Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably
-                      haven't heard of them accusamus labore sustainable VHS.</p>
-                    <p>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
 
-<!----------------------********************----------------------- -->
+  <!----------------------********************----------------------- -->
