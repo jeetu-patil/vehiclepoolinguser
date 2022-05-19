@@ -1,6 +1,6 @@
 .banner{
 
-  background: linear-gradient( rgba(0, 0, 0, 0.6),rgba(0, 0, 1, 0.95) ), url("https://commutingsolutions.org/wp-content/uploads/2022/01/Banner-Carpool.jpg") center top no-repeat fixed;
+  background: linear-gradient( rgba(0, 0, 0, 0.6),rgba(0, 0, 1, 0.95) ), url("https://commutingsolutions.org/wp-content/uploads/2022/01/Banner-Carpool.jpg") center top no-repeat ;
   /* background: linear-gradient(to right, rgba(0, 0, 78, 0.5),rgba(0, 0, 0.8, 0.9) ), url("https://cdn-ds.com/blogs-media/sites/369/2018/03/18114555/two-lanes-of-cars-backed-up-in-traffic-with-brake-lights_b.jpg") center top no-repeat; */
  background-repeat: no-repeat;
     background-size:1550px 600px;
