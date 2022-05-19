@@ -1,31 +1,46 @@
-<h1 class="text-center">User Request</h1>
-<div class="container mb-5">
-  <div class="row mb-5"  *ngFor="let req of requets;index as i">
-    <div class="col-lg-3 col-md-3 p-3 image">
-      <img
-        *ngIf="!getLength(i)"
-        src="https://i.imgur.com/CFpa3nK.jpg"
-        width="150px"
-        height="150px"
-      />
-      <img *ngIf="getLength(i)" [src]="req.userId.image" width="150px" height="150px" />
-      <h3>Name:{{ req.userId.name }}</h3>
-    </div>
-    <div
-      class="col-lg-3 col-md-2 form-group search2 mb-2"
-      style="margin-top: 15px"
-    >
-      From:<label>{{ from }}</label
-      ><br />
-      To:<label>{{ to }}</label>
-    </div>
-    <div class="col-lg-3 col-md-3 places p-3 pt-4">
-      Date:{{ date | date: "dd/MM/yyyy" }}<br />
-      Number:{{req.userId.mobile}}<br />
-    </div>
-    <div class="col-lg-3 col-md-3 button p-3">
-      <button (click)="acceptRequest(req.userId._id,req.bookRideId)" style="cursor:pointer" class="btn btn-primary m-4"><i class="fas fa-check"></i></button>
-      <button (click)="declineRequest(req.userId._id)" class="btn btn-danger"><i class="fas fa-times"></i></button>
+<div class="section-title">
+  <h2 class="text-center mt-5">User Request</h2>
+</div>
+<div id="container" *ngFor="let req of requets;index as i">
+  <div class="product-details">
+    <div class="control">
+      <div class="from mb-3">
+        <span id="from" style="font-size:20px;font-weight: bold;">Name : </span>
+        <span id="from-text">{{ req.userId.name | uppercase }}</span> <div class="from mb-3">
+      </div>
+      </div>
+      <div class="from mb-3">
+        <span id="from" style="font-size:20px;font-weight: bold;">From : </span>
+        <span id="from-text">{{ from }}</span>
+      </div>
+      <div class="to mb-3">
+        <span id="to" style="font-size:20px;font-weight: bold; ">To :</span>
+        <span id="to-text" style="margin-left:25px;">{{ to }}</span>
+      </div>
+      <div class="date">
+        <span id="date" style="font-size:20px;font-weight: bold;">Date : </span>
+        <span id="date-text ">{{ date | date: "dd/MM/yyyy" }}</span>
+      </div>
+      <div class="date mt-3">
+        <span id="date" style="font-size:20px;font-weight: bold;">Number : </span>
+        <span id="date-text ">{{req.userId.mobile}}</span>
+      </div>
+   <div class="form">
+
+       <span> <button (click)="acceptRequest(req.userId._id,req.bookRideId)" style="cursor:pointer" class="btn btn-primary m-4"><i class="fas fa-check"></i></button></span>
+        <span><button (click)="declineRequest(req.userId._id)" class="btn btn-danger"><i class="fas fa-times"></i></button></span>
+      </div>
     </div>
   </div>
+
+  <div class="product-image" >
+    <img *ngIf="!getLength(i)"
+    src="https://i.imgur.com/CFpa3nK.jpg" alt="">
+    <img *ngIf="getLength(i)" [src]="req.userId.image" width="100px" height="100px" />
+    
+  </div>
 </div>
+
+
+  
+
