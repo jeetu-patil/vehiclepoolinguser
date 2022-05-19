@@ -31,7 +31,9 @@ export class BookridesComponent implements OnInit {
   }
 
   cancelRide(publisherId:any,rideId:any,i:any){
-    this.bookRideId=this.getBookRideId(i)
+    console.log(i);
+    console.log(this.ids[i]);
+    this.bookRideId=this.ids[i];
     this.publishRideService.cancelRideByBooker(publisherId,rideId,this.bookRideId).subscribe(data =>{
       this.toastr.success("Your ride cancel","success")
       this.ngOnInit();
