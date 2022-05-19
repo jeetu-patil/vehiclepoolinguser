@@ -1,5 +1,5 @@
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { ToastrModule } from 'ngx-toastr';
 import { AppRoutingModule } from './app-routing.module';
@@ -44,6 +44,7 @@ import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.compone
 import { ContactUsComponent } from './contact-us/contact-us.component';
 import { CashingmemoryService } from './services/cashingmemory.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { NgxSpinnerModule } from 'ngx-spinner';
 
 
 const socialProvider = {
@@ -105,7 +106,8 @@ const socialProvider = {
     BrowserAnimationsModule,
     ToastrModule.forRoot(),
     Ng2SearchPipeModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    NgxSpinnerModule
   ],
   providers: [
     socialProvider,
@@ -120,6 +122,7 @@ const socialProvider = {
     provide: HTTP_INTERCEPTORS,
     multi: true },
   ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
