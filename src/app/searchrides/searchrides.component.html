@@ -27,30 +27,39 @@
           <img [src]="publish.publisherId.vehicle.image" alt="rover" />
         </div>
         <div class="card-body1">
-          <h3 class="card-title1"><b><i class="fa fa-map-pin"></i> From : </b>{{publish.fromId.place}}</h3>
-          <h3 class="card-title1"><b><i class="fa fa-map-pin"></i> To : </b>{{publish.toId.place}}</h3>
-          <h4 class="card-title1"><i class="fas fa-calendar-alt"></i> {{publish.rideDate | date:'dd/MM/yyyy'}} &nbsp;{{publish.rideDate | date:'shortTime'}}</h4>
-          <span class="tag tag-teal" (click)="viewRide(publish._id)">View Details</span>
+          <h3 class="card-title1">
+            <b><i class="fa fa-map-pin"></i> From : </b
+            >{{ publish.fromId.place }}
+          </h3>
+          <h3 class="card-title1">
+            <b><i class="fa fa-map-pin"></i> To : </b>{{ publish.toId.place }}
+          </h3>
+          <h4 class="card-title1">
+            <i class="fas fa-calendar-alt"></i>
+            {{ publish.rideDate | date: "dd/MM/yyyy" }} &nbsp;{{
+              publish.rideDate | date: "shortTime"
+            }}
+          </h4>
+          <span class="tag tag-teal" (click)="viewRide(publish._id)"
+            >View Details</span
+          >
         </div>
       </div>
     </div>
   </div>
-  </div>
+</div>
 
-  <div class="product-card " *ngIf="status">
-    <div class="row">
-      <div class="outer-card ">
-        <div class="card publish" *ngFor="let publish of publishRide">
-          <div class="card-content" >
-            <table>
-              <tr>
-                  <h1>No Ride On That Day . Sorry For Inconvinience...</h1>
-              </tr>
-            </table>
-          </div>
-
-        </div>
+<div class="product-card norides mt-5">
+  <div class="card" style="width: 18rem" *ngIf="status">
+    <div class="card-body">
+      <h1 class="card-title text-center">No Rides Found</h1>
+      <p class="card-text text-center">
+        <img src="../../assets/Images/nothing-found.png">
+      </p>
+      <div class="text-center mt-5">
+        <a routerLink="" style="cursor: pointer;">Back Home</a>
       </div>
     </div>
+    
   </div>
-
+</div>
