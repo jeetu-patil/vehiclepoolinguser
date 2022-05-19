@@ -6,7 +6,7 @@
     <!-- <img src="../../assets/Images/form22.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150"> -->
   </div>
 
-</section>
+</section><!-- End Hero -->
 
 <div class="section-title">
   <h2 class="text-center mt-5">Publish Rides</h2>
@@ -26,24 +26,17 @@
         <span id="date" style="font-size:20px;font-weight: bold;">Date : </span>
         <span id="date-text ">{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
       </div>
-    </div>
-      <div class="form">
+   <div class="form">
 
-        <!-- <span> -->
-          <button style="cursor: pointer;margin-top:30px;" (click)="navigateToUserRequest(ride._id)"
-            class="btn signin btn2">
-            User Request
-          </button>
-        <!-- </span>
-        <span> -->
-          <button style="cursor: pointer;margin-top:30px;" (click)="cancelRide(ride._id)"
-            class="btn signin btn2">Cancel Ride
-          </button>
-        <!-- </span> -->
+       <span> <button style="cursor: pointer;margin-top:30px;" (click)="navigateToUserRequest(ride._id)" class="btn signin btn2">
+          User Request
+        </button></span>
+        <span><button style="cursor: pointer;margin-top:30px;" (click)="cancelRide(ride._id)" class="btn signin btn2">Cancel Ride</button></span>
       </div>
+    </div>
   </div>
 
-  <div class="product-image">
+  <div class="product-image" style="margin: 50px;">
     <div class="total-seat mt-3" style="font-size:20px;font-weight: bold;margin-right:55px; ">
       <span>Total Seat : {{ ride.totalSeat }}</span>
     </div>
@@ -54,9 +47,9 @@
       <span>Book Seat : {{ (ride.totalSeat-ride.seatAvailable) }}</span>
     </div>
 
-    <!-- <div class="info" style="border-radius: 300px;">
+    <div class="info" style="border-radius: 300px;">
       <img style="border-radius: 300px;" src="../../assets/Images/form22.png" alt="">
-    </div> -->
+    </div>
   </div>
 </div>
 
@@ -66,8 +59,7 @@
     <div class="section-title">
       <h2 class="text-center mt-5">Book Rides</h2>
       <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
-        <img src="../../assets/Images/form2.png" class="img-fluid hero-img" alt="" data-aos="zoom-in"
-          data-aos-delay="150">
+        <img src="../../assets/Images/form2.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
       </div>
       <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
         consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in
@@ -94,8 +86,7 @@
       <div class="col-md-7 pt-5 mt-3 order-2 order-md-1">
         <h1>Publish your Rides</h1>
         <p class="fst-normal">
-          Indicate departure and arrival points, the date of the ride and check our recommended price to increase your
-          chances of getting your first passengers and ratings.
+          Indicate departure and arrival points, the date of the ride and check our recommended price to increase your chances of getting your first passengers and ratings.
         </p>
       </div>
     </div>
