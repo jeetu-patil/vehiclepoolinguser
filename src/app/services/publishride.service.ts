@@ -41,7 +41,7 @@ export class PublishrideService {
   }
 
   requestToThePublisher(rideId:any,bookRideId:any):Observable<any>{
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),rideId:rideId,bookRideId:bookRideId});
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/requestforpublisher",{bookerId:sessionStorage.getItem("userId"),rideId:rideId,bookRideId:bookRideId});
   }
 
 
@@ -96,6 +96,7 @@ acceptRequest(bookerId:any,rideId:any,bookRideId:any){
 
 
   cancelRideByBooker(publisherId:any,rideId:any,bookRideId:any):Observable<any>{
+    console.log(publisherId,rideId,bookRideId);
       return this.http.get("https://ridesharely-backend-api.herokuapp.com/publishride/cancelridebybooker/"+sessionStorage.getItem("userId")+"/"+rideId+"/"+publisherId+"/"+bookRideId);
   }
 }

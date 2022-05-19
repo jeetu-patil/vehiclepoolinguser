@@ -23,7 +23,7 @@ export class PublishrideComponent implements OnInit {
   }
 
   navigateToUserRequest(id:any){
-    this.router.navigate(['userrides/acceptrequest',id]);
+    this.router.navigate(['acceptrequest',id]);
   }
 
   cancelRide(id:any){

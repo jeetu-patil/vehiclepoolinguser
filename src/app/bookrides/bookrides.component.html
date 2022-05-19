@@ -14,7 +14,7 @@
 <div class="section-title">
   <h2 class="text-center mt-5">Book Rides</h2>
 </div>
-<div id="container" *ngFor="let book of bookRides">
+<div id="container" *ngFor="let book of bookRides index as i">
   <div class="product-details">
     <div class="control">
       <div class="from mb-3">
@@ -33,7 +33,7 @@
         <a (click)="navigateToDetail(book.publisherId._id)" style="cursor: pointer"><span>Name :
             {{book.publisherId.name}} </span></a>
         <div class="form mt-5">
-          <button (click)="cancelRide(book.publisherId._id,book._id,book._id)" style="cursor: pointer;"
+          <button (click)="cancelRide(book.publisherId._id,book._id,i)" style="cursor: pointer;"
             class="btn signin btn2">Cancel Ride</button>
         </div>
       </div>
