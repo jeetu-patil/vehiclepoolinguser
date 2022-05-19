@@ -19,6 +19,7 @@ export class BookridesComponent implements OnInit {
     this.publishRideService.getAllBookRides().subscribe(data => {
       this.bookRides = data.temp;
       this.ids=data.result;
+      console.log(this.bookRides);
     });
   }
 

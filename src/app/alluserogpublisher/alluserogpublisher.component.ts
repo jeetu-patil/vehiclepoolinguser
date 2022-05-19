@@ -19,6 +19,8 @@ export class AlluserogpublisherComponent implements OnInit {
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
     this.publishRideService.getAllUserOfPublishHistory(this.rideId).subscribe(data =>{
       this.bookRides=data;
+
+      console.log(this.bookRides);
     });
   }
 

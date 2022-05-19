@@ -29,7 +29,7 @@ body{
 .card-header{
   color: white !important;
   /* background: #00ffd5 !important; */
-  background: linear-gradient(-45deg, #005af4 0%, #ffffff 100%);
+  background: linear-gradient(-45deg, #556580 0%, #556580 100%);
   text-align: center;
 }
 
