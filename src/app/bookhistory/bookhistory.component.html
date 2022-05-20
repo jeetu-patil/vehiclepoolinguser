@@ -1,56 +1,3 @@
-<!-- <div class="container">
-  <div class="heading text-center">
-   <h1 class="pt-4">Book History</h1>
-  </div>
-  <div class="publish" *ngFor="let user of users">
-  <div class="row publish-card">
-    <div class="col-md-6 left">
-       <div class="from">
-         <span id="from">From :</span>
-         <span id="from-text">{{user.fromId.place}}</span>
-       </div>
-       <div class="to">
-         <span id="to">To :</span>
-         <span id="to-text">{{user.toId.place}}</span>
-       </div>
-       <div class="date">
-         <span id="date">Date :</span>
-         <span id="date-text">{{user.rideDate | date: "dd/MM/yyyy" }}</span>
-       </div>
-    </div>
-    <div class="col-md-6 right">
-     <div class="total-seat">
-       <span>Image : <a (click)="navigateToDetail(user.publisherId._id)" style="cursor: pointer"><img *ngIf="!getLength(user.publisherId.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile" width="100px" height="100px"></a>
-        <a (click)="navigateToDetail(user.publisherId._id)" style="cursor: pointer"><img *ngIf="getLength(user.publisherId.image.length)" [src]="user.publisherId.image" alt="profile" width="100px" height="100px"></a></span>
-     </div>
-     <div class="remaining-seat">
-       <span>Name: {{user.publisherId.name}} </span>
-     </div>
-     <div class="book-seat">
-
-     </div>
-    </div>
-  </div>
-  <div class="form-group text-center" >
-    <label>Feedback to the User</label>
-        <textarea [(ngModel)]="comment" class="form-control mt-2" style="width:60%;margin-left:190px" placeholder="Feedback"></textarea>
-   <button (click)="addComment(user.publisherId._id)" class="btn signin btn2 mt-3">FeedBack</button>
- </div>
-</div>
-</div> -->
-
-
-<!-- <section id="hero" class="d-flex justify-cntent-center align-items-center"> -->
-  <!-- <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000"> -->
-
-    <!-- Slide 1 -->
-    <!-- <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
-      <h1>Build Better Websites With Bikin</h1>
-      <h2>We are team of talented designers making websites with Bootstrap</h2>
-    </div>
-  </div>
-</section> -->
-
 <div class="heading text-center">
   <h1 class="pt-4">Book History</h1>
 </div>
@@ -93,3 +40,49 @@
     </div>
   </div>
 </div>
+
+
+
+<div class="heading text-center" *ngIf="cancelStatus">
+  <h1 class="pt-4">Book Cancel History</h1>
+</div>
+<!-- <div id="container" *ngFor="let user of cancelRides">
+  <div class="product-details">
+    <div class="control">
+      <div class="from mb-3">
+        <span id="from" style="font-size:20px;font-weight: bold; ">From : </span>
+        <span id="from-text">{{user.fromId.place}}</span>
+      </div>
+      <div class="to mb-3">
+        <span id="to" style="font-size:20px;font-weight: bold;">To :</span>
+        <span id="to-text">{{user.toId.place}}</span>
+      </div>
+      <div class="date">
+        <span id="date" style="font-size:20px;font-weight: bold;">Date :</span>
+        <span id="date-text">{{user.rideDate | date: "dd/MM/yyyy" }}</span>
+      </div>
+      <div class="form mt-3" style="font-size:20px;font-weight: bold;">
+        <label>Feedback to the User</label>
+        <textarea [(ngModel)]="comment" class="form-control mt-3" placeholder="Feedback"></textarea>
+        <button (click)="addComment(user.publisherId._id)" class="btn signin btn2 mt-3">FeedBack</button>
+      </div>
+    </div>
+  </div>
+  <div div class="product-image">
+    <span>Image : <a (click)="navigateToDetail(user.publisherId._id)" style="cursor: pointer"><img
+          *ngIf="!getLength(user.publisherId.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile"
+          width="100px" height="100px"></a>
+      <a (click)="navigateToDetail(user.publisherId._id)" style="cursor: pointer"><img
+          *ngIf="getLength(user.publisherId.image.length)" [src]="user.publisherId.image" alt="profile" width="100ppx"
+          height="100px"></a></span>
+    <div class="info">
+      <h2> Description</h2>
+      <ul>
+        <li><strong>Name : </strong>{{user.publisherId.name}}</li>
+        <li><strong>Mobile : </strong>{{user.publisherId.mobile}}</li>
+        <li><strong>Email: </strong>{{user.publisherId.email}}</li>
+      </ul>
+    </div>
+  </div>
+</div>
+ -->

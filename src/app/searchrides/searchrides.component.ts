@@ -26,9 +26,9 @@ export class SearchridesComponent implements OnInit {
     this.seat =this.activatedRoute.snapshot.paramMap.get("seat");
 
     this.publisRideService.getRidesOfBooker(this.from, this.to, this.date,this.seat).subscribe(data => {
+      console.log(data)
       if(data.length>0){
         this.publishRide=data;
-        console.log(this.publishRide)
       }
       else
       {
