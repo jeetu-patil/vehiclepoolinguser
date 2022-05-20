@@ -37,7 +37,8 @@ export class PublishrideService {
 
 
   bookRide(seat:any,rideId:any):Observable<any>{
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),rideId:rideId});
+    // return this.http.post("https://ridesharely-backend-api.herokuapp.com/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),rideId:rideId});
+    return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),rideId:rideId});
   }
 
   requestToThePublisher(rideId:any,bookRideId:any):Observable<any>{

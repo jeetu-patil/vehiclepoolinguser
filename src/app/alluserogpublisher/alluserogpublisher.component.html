@@ -59,3 +59,66 @@
     </div>
   </div>
 </div>
+
+
+<div class="heading text-center" *ngIf="cancelStatus">
+  <h1 class="pt-4">Publish Cancel History</h1>
+</div>
+<div class="container" *ngFor="let u of cancelRides">
+  <div class="publish" *ngFor="let user of u">
+    <div class="row publish-card">
+      <div class="col-md-6 left">
+        <div class="from">
+          <span id="from">Name :</span>
+          <span id="from-text">{{ user.name }}</span>
+        </div>
+        <div class="to">
+          <span id="to">Mobile :</span>
+          <span id="to-text">{{ user.mobile }}</span>
+        </div>
+        <div class="date">
+          <span id="date">Email :</span>
+          <span id="date-text">{{ user.email }}</span>
+        </div>
+      </div>
+      <div class="col-md-6 right">
+        <div class="total-seat">
+          <span
+            >Image :
+            <a (click)="navigateToDetail(user._id)" style="cursor: pointer"
+              ><img
+                *ngIf="!getLength(user.image.length)"
+                src="https://i.imgur.com/CFpa3nK.jpg"
+                alt="profile"
+                width="100px"
+                height="100px"
+            /></a>
+            <a (click)="navigateToDetail(user._id)" style="cursor: pointer"
+              ><img
+                *ngIf="getLength(user.image.length)"
+                [src]="user.image"
+                alt="profile"
+                width="100px"
+                height="100px" /></a
+          ></span>
+        </div>
+        <div class="remaining-seat">
+          <span>Name: {{ user.name }} </span>
+        </div>
+        <div class="book-seat"></div>
+      </div>
+    </div>
+    <div class="form-group text-center">
+      <label>Feedback to the User</label>
+      <textarea
+        [(ngModel)]="comment"
+        class="form-control mt-2"
+        style="width: 60%; margin-left: 190px"
+        placeholder="Feedback"
+      ></textarea>
+      <button (click)="addComment(user._id)" class="btn signin btn2 mt-3">
+        FeedBack
+      </button>
+    </div>
+  </div>
+</div>
