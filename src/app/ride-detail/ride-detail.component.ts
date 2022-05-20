@@ -31,10 +31,14 @@ export class RideDetailComponent implements OnInit {
 
   bookRide(){
     this.publisRideService.bookRide(this.seat,this.publish._id).subscribe(data => {
-      this.publisRideService.requestToThePublisher(this.id,data._id).subscribe(data => {
-        this.toastr.success("Your request sent to the publisher please wait fotr response..","success")
-        this.router.navigate(['']);
-      })
+      if(data.msg=="already available")
+        this.toastr.success("You booked already one ride please wait for publisher response..","success");
+      else{
+        this.publisRideService.requestToThePublisher(this.id,data._id).subscribe(data => {
+          this.toastr.success("Your request sent to the publisher please wait fotr response..","success")
+          this.router.navigate(['']);
+        })
+      }
     })
   }
 

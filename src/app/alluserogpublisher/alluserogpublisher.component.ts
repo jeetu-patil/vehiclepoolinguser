@@ -15,12 +15,19 @@ export class AlluserogpublisherComponent implements OnInit {
   bookRides:any;
   comment:any;
   rideId:any;
+  cancelStatus=false;
+  cancelRides:any;
   ngOnInit(): void {
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
     this.publishRideService.getAllUserOfPublishHistory(this.rideId).subscribe(data =>{
       this.bookRides=data;
 
       console.log(this.bookRides);
+
+      for(var i=0;i<this.bookRides.cancelUser.length;i++){
+        this.cancelStatus=true;
+        this.cancelRides[i]=this.bookRides.cancelUser[i];
+      }
     });
   }
 
