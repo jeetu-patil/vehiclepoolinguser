@@ -1,12 +1,17 @@
-<section id="hero" class="d-flex align-items-center">
+<section id="hero" class="d-flex justify-cntent-center align-items-center">
+  <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
 
-  <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
-    <h1>Build Better Websites With Bikin</h1>
-    <h2>We are team of talented designers making websites with Bootstrap</h2>
-    <!-- <img src="../../assets/Images/form22.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150"> -->
+    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
+    </a>
+
+    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
+      <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
+    </a>
+
   </div>
+</section>
 
-</section><!-- End Hero -->
 
 <div class="section-title">
   <h2 class="text-center mt-5">Publish Rides</h2>
@@ -26,9 +31,9 @@
         <span id="date" style="font-size:20px;font-weight: bold;">Date : </span>
         <span id="date-text ">{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
       </div>
-   <div class="form">
+   <div class="form ">
 
-       <span> <button style="cursor: pointer;margin-top:30px;" (click)="navigateToUserRequest(ride._id)" class="btn signin btn2">
+       <span> <button style="cursor: pointer;margin-top:30px;" (click)="navigateToUserRequest(ride._id)" class="btn signin btn2 ">
           User Request
         </button></span>
         <span><button style="cursor: pointer;margin-top:30px;" (click)="cancelRide(ride._id)" class="btn signin btn2">Cancel Ride</button></span>
@@ -48,7 +53,7 @@
     </div>
 
     <div class="info" style="border-radius: 300px;">
-      <img style="border-radius: 300px;" src="../../assets/Images/form22.png" alt="">
+      <img style="border-radius: 300px;" src="https://www.kindpng.com/picc/m/722-7223309_bike-taxi-png-transparent-png.png" alt="">
     </div>
   </div>
 </div>
@@ -57,13 +62,11 @@
   <div class="container">
 
     <div class="section-title">
-      <h2 class="text-center mt-5">Book Rides</h2>
+      <h2 class="text-center mt-5">Publish Rides</h2>
       <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
         <img src="../../assets/Images/form2.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
       </div>
-      <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-        consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in
-        iste officiis commodi quidem hic quas.</p>
+      <p>Offering a carpool/bikepool ride on RideSharely is easy. To publish your ride, use our RideSharely.com. Indicate your departure and arrival points, the date and time of your departure, how many passengers you can take and the price per seat. You’ll also need to choose how you want to accept bookings , and you have the option of adding any important details you think your passengers should know about. Then tap ‘Publish ride’ and you’re done!</p>
     </div>
 
     <div class="row content mt-5">
@@ -71,10 +74,9 @@
         <img src="../../assets/Images/register3.png" class="img-fluid mt-3" alt="">
       </div>
       <div class="col-md-7 mt-5 pt-4" data-aos="fade-left" data-aos-delay="100">
-        <h1>Voluptatem dignissimos provident quasi corporis voluptates sit assumenda.</h1>
+        <h1>On RideSharely</h1>
         <p class="fst-normal">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-          magna aliqua.
+          Carpooling/Bikepooling with RideSharely is super easy, and free! Simply sign up for an account and tell us some basic details about yourself. Once you have a RideSharely account, you can start booking or publishing rides directly on our website.
         </p>
       </div>
     </div>
@@ -84,10 +86,9 @@
         <img src="../../assets/Images/success.png" class="img-fluid" alt="">
       </div>
       <div class="col-md-7 pt-5 mt-3 order-2 order-md-1">
-        <h1>Publish your Rides</h1>
+        <h1>Verify Your Accont</h1>
         <p class="fst-normal">
-          Indicate departure and arrival points, the date of the ride and check our recommended price to increase your chances of getting your first passengers and ratings.
-        </p>
+          We send an email verification to your email ID that you provide us at the time of creation of your profile. Click on the link given in the mail which will automatically verify the account. Or if we talk about contact than we will send you OTP to your number that you provide us at the time of creation of your profile.        </p>
       </div>
     </div>
 

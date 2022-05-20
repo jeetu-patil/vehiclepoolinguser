@@ -4,8 +4,11 @@
     <!-- Slide 1 -->
     <div class="carousel-item active">
       <div class="carousel-container">
-        <h2 class="animate__animated animate__fadeInDown">Welcome to <span>RideSharely</span></h2>
-        <p class="animate__animated animate__fadeInUp">RideSharel is an eco-smart option for handling all your travel needs by connecting you with fellow professional riders. As our cities are growing, increased traffic adds to the chaos and pollution. Hence, we have committed to providing a convenient, economical and sustainable solution to this problem through carpooling and bike pooling.</p>
+        <h2 class="animate__animated animate__fadeInDown">Book Your Rides on <span>RideSharely</span></h2>
+        <p class="animate__animated animate__fadeInUp">RideSharel is an eco-smart option for handling all your travel
+          needs by connecting you with fellow professional riders. As our cities are growing, increased traffic adds to
+          the chaos and pollution. Hence, we have committed to providing a convenient, economical and sustainable
+          solution to this problem through carpooling and bike pooling.</p>
         <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
       </div>
     </div>
@@ -14,7 +17,9 @@
     <div class="carousel-item">
       <div class="carousel-container">
         <h2 class="animate__animated animate__fadeInDown">RideSharely With In Your City</h2>
-        <p class="animate__animated animate__fadeInUp">Ridesharing is the best option for socially responsible citizens to commute within the city. Optimizing every ride, RideSharely makes it easy to find fellow riders on your route and split your commute costs.</p>
+        <p class="animate__animated animate__fadeInUp">Ridesharing is the best option for socially responsible citizens
+          to commute within the city. Optimizing every ride, RideSharely makes it easy to find fellow riders on your
+          route and split your commute costs.</p>
         <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
       </div>
     </div>
@@ -23,7 +28,9 @@
     <div class="carousel-item">
       <div class="carousel-container">
         <h2 class="animate__animated animate__fadeInDown">How do I start carpooling?</h2>
-        <p class="animate__animated animate__fadeInUp">Carpooling with RideSharely is super easy, and free! Simply sign up for an account and tell us some basic details about yourself. Once you have a RideSharely account, you can start booking or publishing rides directly on our app or website.</p>
+        <p class="animate__animated animate__fadeInUp">Carpooling with RideSharely is super easy, and free! Simply sign
+          up for an account and tell us some basic details about yourself. Once you have a RideSharely account, you can
+          start booking or publishing rides directly on our app or website.</p>
         <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
       </div>
     </div>
@@ -44,48 +51,55 @@
   <div class="form-box">
     <div action="#" class="form mt-5">
       <div class="product-content">
-        <h1 style="font-size:50px; margin-left:80px;">{{publish.rideDate | date:'dd/MM/yyyy'}}</h1>
+        <h1 style="font-size:50px; margin-left:80px; margin-top:30px; color:white;text-decoration:underline;">
+          {{publish.rideDate | date:'dd/MM/yyyy'}}</h1>
         <div class="detail" style="margin-left: 150px;">
-          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="!getLength()" type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle"></i></a>
+          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="!getLength()"
+            type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle"></i></a>
 
-          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="getLength()"><img [src]="publish.publisherId.image" id="userProfile" height="100" width="100"/></a>
+          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="getLength()"><img
+              [src]="publish.publisherId.image" id="userProfile" height="100" width="100" /></a>
 
-            <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" class="name">{{publish.publisherId.name}}</a>
+          <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;text-decoration: underline;"
+            class="name">{{publish.publisherId.name}}</a>
 
         </div>
-        <div class="from">
-          <label></label>
-          <i  style="color:black; font-weight:bold;">From  </i>
-          <label style="padding-left:10px;">: {{publish.fromId.place}}</label>
+        <div class="from mb-3">
+          <i class="fst-normal" style="color:rgb(255, 255, 255); font-weight:bold;">From : </i>
+          <label style="padding-left:10px;">{{publish.fromId.place}}</label>
         </div>
-        <div class="from">
-          <i  style="color:black; margin-top: 15px; font-weight:bold; ">To </i>
-          <label style="padding-left:10px; margin-left: 25px;">: {{publish.toId.place}}</label>
+        <div class="from mb-3">
+          <i class="fst-normal" style="color:rgb(255, 255, 255); font-weight:bold; ">To : </i>
+          <label style="padding-left:10px; margin-left: 25px;">{{publish.toId.place}}</label>
         </div>
-        <div class="from mt-5">
-          <label>Date : {{publish.rideDate | date:'dd/MM/yyyy'}}</label>
+        <div class="from mb-3">
+          <i class="fst-normal" style="color:rgb(255, 255, 255); font-weight:bold; ">Date : </i>
+          <label>{{publish.rideDate | date:'dd/MM/yyyy'}}</label>
         </div>
-        <div class="from mt-5">
-          <label>Time : {{publish.rideDate | date:'shortTime'}}</label>
+        <div class="from mb-3">
+          <i class="fst-normal" style="color:rgb(255, 255, 255); font-weight:bold; ">Time : </i>
+          <label>{{publish.rideDate | date:'shortTime'}}</label>
         </div>
-        <div class="from">
-          <label>Price for 1 Person : {{publish.amountPerPerson | number}} Rs</label>
+        <div class="from mb-3">
+          <i class="fst-normal" style="color:rgb(255, 255, 255); font-weight:bold; ">Price for 1 Person : </i>
+          <label>{{publish.amountPerPerson | number}} Rs</label>
         </div>
-        <div class="from m-3">
-          <label>Distance : {{publish.distance | number }} km</label>
+        <div class="from mb-3">
+          <i class="fst-normal" style="color:rgb(255, 255, 255);font-weight:bold; ">Distance : </i>
+          <label>{{publish.distance | number }} km</label>
         </div>
 
+        <div class="from mb-3">
+          <i class="fst-normal" style="color:rgb(255, 255, 255);  font-weight:bold; ">Expected Time : </i>
+          <label>{{getTime(publish.distance) | number:'0.0-0'}} minute</label>
+        </div>
         <div class="from m-3">
           <label>Seat Available : {{publish.seatAvailable}} </label>
         </div>
 
-        <div class="from m-3">
-          <label>Expected Time  : {{getTime(publish.distance) | number:'0.0-0'}} minute</label>
-        </div>
-
-        <h2 class="m-3">Message :</h2>
-        <div class="card m-3">
-          <h3 style="padding-left:10px;">{{publish.msgForBooker}}</h3>
+        <h2 class="m-3" style="color:rgb(255, 255, 255);">Message :</h2>
+        <div class=" card m-3">
+          <textarea style="padding-left:10px;">{{publish.msgForBooker}}</textarea>
         </div>
         <div class="form-group">
           <a style="cursor:pointer; margin-left:90px" (click)="bookRide()" class="btn signup">Book Now</a>
@@ -105,7 +119,8 @@
         <div class="icon-box icon-box-pink">
           <div class="icon"><i class="fas fa-user"></i></div>
           <h4 class="title"><a href="">Shubham Burghate</a></h4>
-          <p class="description">Riding bike is an best feeling and if you are in depression or feeling lonely then take your bike pull the throttle and go for ride. </p>
+          <p class="description">Riding bike is an best feeling and if you are in depression or feeling lonely then take
+            your bike pull the throttle and go for ride. </p>
         </div>
       </div>
 
@@ -113,7 +128,8 @@
         <div class="icon-box icon-box-green">
           <div class="icon"><i class="fas fa-user"></i></div>
           <h4 class="title"><a href="">Mohit Rajput</a></h4>
-          <p class="description">Life is short, break the rules, forgive quickly, love honestly, laugh easy, keep it simple, ride often, ride free and never regret anything that makes you smile.</p>
+          <p class="description">Life is short, break the rules, forgive quickly, love honestly, laugh easy, keep it
+            simple, ride often, ride free and never regret anything that makes you smile.</p>
         </div>
       </div>
 
@@ -126,8 +142,8 @@
   <div class="container">
 
     <div class="section-title">
-      <h2>Publish Your Rides</h2>
-      <h1>In RideSharely app You can Publish your Rides in Just a Minute.</h1>
+      <h2>Book Your Rides</h2>
+      <h1>In RideSharely app You can Book your Rides in Just a Minute.</h1>
     </div>
 
     <div class="row" data-aos="fade-up">

@@ -45,13 +45,11 @@
   <div class="form-box">
     <div action="#" class="form-change">
       <div class="head">
-        <h2 class="title ">PUBLISH RIDE</h2>
+        <p>PUBLISH RIDE</p>
       </div>
       <div class="form-group">
-        <i class="fa-solid fa-map-pin"></i>
+        <i class="fa fa-circle"></i>
         <input [(ngModel)]="from" required list="datalistOptions" id="exampleDataList" exampleDataList="ngModel" placeholder="From">
-        <!-- <div class="validationS" *ngIf="exampleDataList.errors?.required && exampleDataList                                 .touched">Enter the value</div> -->
-
         <datalist id="datalistOptions">
           <option *ngFor="let pla of places" [value]="pla.place ">
         </datalist>
@@ -82,14 +80,11 @@
 
         <div class="validationS" *ngIf="time1.errors?.required && time1.touched">Required Time </div>
       </div>
-
-
       <div class="form-group" style="color:white;">
-        <label>Your Message</label>
+        <h2>Your Message</h2>
         <textarea class="form-control" [(ngModel)]="message" placeholder="Message"></textarea>
       </div>
      <div class="form-group">
-        <!-- <a (click)="submitDetail()" [disabled]="exampleDataList1.errors?.required||exampleDataList.errors?.required" style="cursor:pointer" class="btn signup">Publish</a> -->
         <button (click)="submitDetail()" [disabled]="dur||date1.errors?.required||seat1.errors?.required||time1.errors?.required||exampleDataList1.errors?.required||exampleDataList1.errors?.required" style="cursor:pointer" class="btn signup">Publish</button>
       </div>
     </div>
