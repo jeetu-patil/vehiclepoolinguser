@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 import { UserService } from '../services/user.service';
 
@@ -10,22 +11,14 @@ import { UserService } from '../services/user.service';
 })
 export class BookhistoryComponent implements OnInit {
 
-  constructor(private publisRideService: PublishrideService,private router:Router,private userService:UserService) { }
+  constructor(private toastr:ToastrService,private publisRideService: PublishrideService,private router:Router,private userService:UserService) { }
 
   users:any;
   comment:any;
-  cancelStatus=false;
-  cancelRides=[];
+
   ngOnInit(): void {
     this.publisRideService.getAllBookRidesHistory().subscribe(data => {
       this.users=data;
-      this.publisRideService.getAllCancelHistory().subscribe(data => {
-        this.cancelRides=data;
-        if(this.cancelRides.length>0)
-          this.cancelStatus=true;
-
-        console.log(this.cancelRides);
-      })
     })
   }
 
@@ -43,7 +36,7 @@ export class BookhistoryComponent implements OnInit {
 
   addComment(id:any){
     this.userService.addComment(this.comment,id).subscribe(data=>{
-      alert("Comment added...");
+      this.toastr.success("Comment Added..","success")
       this.ngOnInit();
     });
   }

@@ -38,10 +38,10 @@ export class PublishhistoryComponent implements OnInit {
   }
 
   navigateToCheckRightBooker(rideId:any){
-    this.router.navigate(['userrides/confirmbooker',rideId]);
+    this.router.navigate(['confirmbooker',rideId]);
   } 
 
   allUser(rideId:any){
-    this.router.navigate(['userrides/alluserogpublisher',rideId]);
+    this.router.navigate(['alluserogpublisher',rideId]);
   }
 }

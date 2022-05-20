@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 import { UserService } from '../services/user.service';
 
@@ -10,24 +11,17 @@ import { UserService } from '../services/user.service';
 })
 export class AlluserogpublisherComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute,private publishRideService: PublishrideService,private router:Router,private userService: UserService) { }
+  constructor(private toastr:ToastrService,private activatedRoute: ActivatedRoute,private publishRideService: PublishrideService,private router:Router,private userService: UserService) { }
 
   bookRides:any;
   comment:any;
   rideId:any;
-  cancelStatus=false;
-  cancelRides:any;
+
   ngOnInit(): void {
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
     this.publishRideService.getAllUserOfPublishHistory(this.rideId).subscribe(data =>{
       this.bookRides=data;
-
       console.log(this.bookRides);
-
-      for(var i=0;i<this.bookRides.cancelUser.length;i++){
-        this.cancelStatus=true;
-        this.cancelRides[i]=this.bookRides.cancelUser[i];
-      }
     });
   }
 
@@ -48,7 +42,7 @@ export class AlluserogpublisherComponent implements OnInit {
 
   addComment(id:any){
     this.userService.addComment(this.comment,id).subscribe(data=>{
-      alert("Comment added...");
+      this.toastr.success("Comment Added..","success")
       this.ngOnInit();
     });
   }
