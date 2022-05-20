@@ -1,23 +1,6 @@
 <div class="ride-heading">
   <h1>YOUR SEARCH RIDES</h1>
 </div>
-<!-- <section class="category mt-3">
-  <div class="row justify-content-around" style="width: 80%; margin: auto; margin-bottom: 20px;">
-    <div class="col-md-4 mt-5" *ngFor="let publish of publishRide">
-      <div class="card" >
-        <img [src]="publish.publisherId.vehicle.image" height="200px">
-        <div class="card-body">
-          <h5 class="card-title"><b>From : </b>{{publish.fromId.place}}</h5>
-          <h5 class="card-title "><b>To : </b>{{publish.toId.place}}</h5>
-          <h5 class="card-title "><b>Date : </b>{{publish.rideDate | date:'dd/MM/yyyy'}}</h5>
-        </div>
-        <div class="card-body">
-          <a (click)="viewRide(publish._id)" style="cursor:pointer;" class="card-link">View Ride Details</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
 
 <div class="container main">
   <div class="row" *ngFor="let publish of publishRide">

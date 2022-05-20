@@ -14,10 +14,18 @@ export class BookhistoryComponent implements OnInit {
 
   users:any;
   comment:any;
+  cancelStatus=false;
+  cancelRides=[];
   ngOnInit(): void {
     this.publisRideService.getAllBookRidesHistory().subscribe(data => {
       this.users=data;
-      console.log(this.users);
+      this.publisRideService.getAllCancelHistory().subscribe(data => {
+        this.cancelRides=data;
+        if(this.cancelRides.length>0)
+          this.cancelStatus=true;
+
+        console.log(this.cancelRides);
+      })
     })
   }
 

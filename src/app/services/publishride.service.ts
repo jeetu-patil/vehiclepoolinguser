@@ -33,6 +33,7 @@ export class PublishrideService {
 
   getRidesOfBooker(from:any,to:any, date:any,seat:any):Observable<any>{
     return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/ridesforbooker",{to:to,date:date,from:from,seat:seat});
+    // return this.http.post("http://localhost:3000/publishride/ridesforbooker",{to:to,date:date,from:from,seat:seat});
   }
 
 
@@ -99,5 +100,9 @@ acceptRequest(bookerId:any,rideId:any,bookRideId:any){
   cancelRideByBooker(publisherId:any,rideId:any,bookRideId:any):Observable<any>{
     console.log(publisherId,rideId,bookRideId);
       return this.http.get("https://ridesharely-backend-api.herokuapp.com/publishride/cancelridebybooker/"+sessionStorage.getItem("userId")+"/"+rideId+"/"+publisherId+"/"+bookRideId);
+  }
+
+  getAllCancelHistory():Observable<any>{
+    return this.http.post("http://localhost:3000/publisherhistory/publishercancelhistory",{publisherId:sessionStorage.getItem("userId")});
   }
 }
