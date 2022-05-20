@@ -37,7 +37,8 @@ export class PublishrideService {
 
 
   bookRide(seat:any,rideId:any):Observable<any>{
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),rideId:rideId});
+    // return this.http.post("https://ridesharely-backend-api.herokuapp.com/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),rideId:rideId});
+    return this.http.post("http://localhost:3000/bookride/book",{seat:seat,bookerId:sessionStorage.getItem("userId"),rideId:rideId});
   }
 
   requestToThePublisher(rideId:any,bookRideId:any):Observable<any>{
@@ -96,6 +97,7 @@ acceptRequest(bookerId:any,rideId:any,bookRideId:any){
 
 
   cancelRideByBooker(publisherId:any,rideId:any,bookRideId:any):Observable<any>{
+    console.log(publisherId,rideId,bookRideId);
       return this.http.get("https://ridesharely-backend-api.herokuapp.com/publishride/cancelridebybooker/"+sessionStorage.getItem("userId")+"/"+rideId+"/"+publisherId+"/"+bookRideId);
   }
 }
