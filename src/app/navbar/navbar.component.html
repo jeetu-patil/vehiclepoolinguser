@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark sticky-top">
+<!-- <nav class="navbar navbar-expand-lg navbar-dark sticky-top">
   <div class="container px-5">
     <a class="navbar-brand" style="text-decoration: none;" routerLink="">RideSharely</a>
 
@@ -45,7 +45,48 @@
       </ul>
     </div>
   </div>
+</nav> -->
+
+<nav class="navbar navbar-expand-lg navbar-dark">
+  <div class="container">
+    <a class="navbar-brand" routerLink="">RideSharely</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mx-auto mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" routerLink="">Home</a>
+        </li> 
+        <li class="nav-item">
+          <a class="nav-link" routerLink=""  (click)="navigateToBookRides()">Book Rides</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"routerLink="" (click)="navigateToBookHistory()">Book Rides History</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"routerLink="" (click)="navigateToPublishRides()">Publish Rides</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link"routerLink="" (click)="navigateToPublisherHistory()">Publish Rides
+            History</a>
+        </li>
+      </ul>
+      <div class="dropdown">
+        <a class="username" *ngIf="isLoggedIn()">{{name |uppercase}}</a>
+        <a class="dropdown-toggle" type="button" class=name id="userProfile" data-bs-toggle="dropdown"
+          aria-expanded="false">
+          <i class="fa fa-user-circle" aria-hidden="true"></i>
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="userProfile">
+          <li><a *ngIf="!isLoggedIn()" routerLink="sign-up" class="nav-link dropdown-item">Sign Up</a>
+          <li><a *ngIf="!isLoggedIn()" routerLink="sign-in" class="nav-link dropdown-item">Sign In</a>
+          <li><a *ngIf="isLoggedIn()"  routerLink="view-profile" class="nav-link dropdown-item"><i class="fa fa-user"></i>Profile</a></li>
+          <li><a (click)="signout()" *ngIf="isLoggedIn()" class="nav-link dropdown-item"><i class="fas fa-sign-out-alt" aria-hidden="true"></i>Sign Out</a>
+          </li> 
+        </ul>
+      </div>
+    </div>
+  </div>
 </nav>
-<!-- <div class="container-fluid"> -->
-  <router-outlet></router-outlet>
-<!-- </div> -->
