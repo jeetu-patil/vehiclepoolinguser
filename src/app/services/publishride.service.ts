@@ -78,8 +78,7 @@ acceptRequest(bookerId:any,rideId:any,bookRideId:any){
   }
 
   getAllpublishHistory(){
-    // return this.http.get("https://ridesharely-backend-api.herokuapp.com/publisherhistory/publishhistiry/"+sessionStorage.getItem("userId"));
-    return this.http.get("http://localhost:3000/publisherhistory/publishhistiry/"+sessionStorage.getItem("userId"));
+    return this.http.get("https://ridesharely-backend-api.herokuapp.com/publisherhistory/publishhistiry/"+sessionStorage.getItem("userId"));
   }
 
   getAllUserOfPublishHistory(rideId:any){
