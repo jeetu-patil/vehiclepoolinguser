@@ -39,7 +39,7 @@ export class UserService {
   }
 
   getPublisher(userId:any):Observable<any>{
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/getuser",{userId:userId});
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/getuser",{id:userId});
   }
 
   addComment(comment:any,id:any):Observable<any>{

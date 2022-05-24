@@ -17,7 +17,9 @@ export class PublisherdetailComponent implements OnInit {
   p:any;
   ngOnInit(): void {
     this.userId=this.activatedRoute.snapshot.paramMap.get("userId");
+    console.log(this.userId)
     this.userService.getPublisher(this.userId).subscribe(data => {
+      console.log(data)
       this.user=data;
       this.comments=this.user.comments;
     },err => {
