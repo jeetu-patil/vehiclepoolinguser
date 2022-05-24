@@ -16,6 +16,7 @@
 .navbar .navbar-nav .nav-item{
   margin: 0 5px;
 }
+
 .collapse .dropdown .username{
   margin-right:25px;
   text-decoration: none;
@@ -26,4 +27,8 @@
   font-size:24px;
   color:#fff;
   vertical-align: middle;
+}
+
+.collapse .right-nav .nav-item{
+  margin-right:20px;
 }
