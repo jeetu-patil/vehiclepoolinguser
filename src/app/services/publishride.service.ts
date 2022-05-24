@@ -59,12 +59,12 @@ export class PublishrideService {
   }
 
 acceptRequest(bookerId:any,rideId:any,bookRideId:any){
-    return this.http.get("https://ridesharely-backend-api.herokuapp.com/publishride/acceptrequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId")
-    +"/"+rideId+"/"+bookRideId);
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/acceptrequestofbooker",{bookerId:bookerId,userId:sessionStorage.getItem("userId"),
+    rideId:rideId,bookRideId:bookRideId});
   }
 
   checkConfirmBoooker(rideId:any):Observable<any>{
-    return this.http.get("https://ridesharely-backend-api.herokuapp.com/publishride/showallacceptrequestbypublisher/"+sessionStorage.getItem("userId")+"/"+rideId);
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/showallacceptrequestbypublisher",{userId:sessionStorage.getItem("userId"),rideId:rideId});
   }
 
 
@@ -74,29 +74,29 @@ acceptRequest(bookerId:any,rideId:any,bookRideId:any){
 
 
   getAllBookRidesHistory(){
-    return this.http.get("https://ridesharely-backend-api.herokuapp.com/bookerhistory/viewbookerhistory/"+sessionStorage.getItem("userId"));
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/bookerhistory/viewbookerhistory",{userId:sessionStorage.getItem("userId")});
   }
 
   getAllpublishHistory(){
-    return this.http.get("https://ridesharely-backend-api.herokuapp.com/publisherhistory/publishhistiry/"+sessionStorage.getItem("userId"));
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publisherhistory/publishhistiry",{userId:sessionStorage.getItem("userId")});
   }
 
   getAllUserOfPublishHistory(rideId:any){
-    return this.http.get("https://ridesharely-backend-api.herokuapp.com/publisherhistory/viewpublisherhistory/"+rideId);
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publisherhistory/viewpublisherhistory/",{rideId:rideId});
   }
 
   declineRequest(bookerId:any,rideId:any){
-    return this.http.get("https://ridesharely-backend-api.herokuapp.com/publishride/declinerequestofbooker/"+bookerId+"/"+sessionStorage.getItem("userId")+"/"+rideId);
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/declinerequestofbooker",{bookerId:bookerId,userId:sessionStorage.getItem("userId"),rideId:rideId});
   }
 
   cancelRide(rideId:any):Observable<any>{
-    return this.http.get("https://ridesharely-backend-api.herokuapp.com/publishride/cancellride/"+sessionStorage.getItem("userId")+"/"+rideId);
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/cancellride",{userId:sessionStorage.getItem("userId"),rideId:rideId});
   }
 
 
   cancelRideByBooker(publisherId:any,rideId:any,bookRideId:any):Observable<any>{
     console.log(publisherId,rideId,bookRideId);
-      return this.http.get("https://ridesharely-backend-api.herokuapp.com/publishride/cancelridebybooker/"+sessionStorage.getItem("userId")+"/"+rideId+"/"+publisherId+"/"+bookRideId);
+      return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/cancelridebybooker",{userId:sessionStorage.getItem("userId"),rideId:rideId,publisherId:publisherId,bookRideId:bookRideId});
   }
 
   getAllCancelHistory():Observable<any>{

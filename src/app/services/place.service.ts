@@ -13,4 +13,5 @@ export class PlaceService {
   getAllPlace():Observable<Place>{
     return this.http.get<Place>("https://ridesharely-backend-api.herokuapp.com/place/getallplace");
   }
+  
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-page-not-found',
@@ -7,8 +8,12 @@ import { Router } from '@angular/router';
   styleUrls: ['./page-not-found.component.css']
 })
 export class PageNotFoundComponent implements OnInit {
-
-  constructor(private router:Router) { }
+//  id:any=5;
+  constructor(private router:Router,private api:UserService) { 
+    // this.api.forTesting(this.id).subscribe(res=>{
+    //   console.log(res);
+    // })
+  }
 
   homePage(){
      this.router.navigate(["home"]);
