@@ -165,6 +165,13 @@ background: #DFC2F2;
 
 }
 
+.norides{
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+}
+
 
 
 

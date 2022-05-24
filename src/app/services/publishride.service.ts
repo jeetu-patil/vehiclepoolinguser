@@ -11,7 +11,8 @@ export class PublishrideService {
   constructor(private http:HttpClient) { }
 
   getAllPublishRides():Observable<Publishride>{
-    return this.http.get<Publishride>("https://ridesharely-backend-api.herokuapp.com/publishride/publisherforuser");
+    // return this.http.get<Publishride>("https://ridesharely-backend-api.herokuapp.com/publishride/publisherforuser");
+    return this.http.get<Publishride>("http://localhost:3000/publishride/publisherforuser");
   }
 
   getDetailOfPubliisher():Observable<any>{
@@ -55,7 +56,7 @@ export class PublishrideService {
   }
 
   getAllBookRides():Observable<any>{
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/localhos/bookride/getbookrides",{bookerId:sessionStorage.getItem("userId")});
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/bookride/getbookrides",{bookerId:sessionStorage.getItem("userId")});
   }
 
 acceptRequest(bookerId:any,rideId:any,bookRideId:any){

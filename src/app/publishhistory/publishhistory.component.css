@@ -72,6 +72,13 @@
   margin-bottom: 0;
 }
 
+.norides{
+	display: flex;
+	justify-content: center;
+	height: 50%;
+	width: 100%;
+  }
+  
 
 
 

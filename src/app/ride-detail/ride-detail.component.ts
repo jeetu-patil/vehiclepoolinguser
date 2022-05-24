@@ -30,6 +30,7 @@ export class RideDetailComponent implements OnInit {
 
 
   bookRide(){
+    console.log(this.seat)
     this.publisRideService.bookRide(this.seat,this.publish._id).subscribe(data => {
       if(data.msg=="already available")
         this.toastr.success("You booked already one ride please wait for publisher response..","success");

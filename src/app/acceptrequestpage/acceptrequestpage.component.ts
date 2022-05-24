@@ -18,6 +18,7 @@ export class AcceptrequestpageComponent implements OnInit {
   to:any;
   bookerId:any;
   rideId:any;
+  status:any=false;
 
   user:any;
 
@@ -28,6 +29,8 @@ export class AcceptrequestpageComponent implements OnInit {
       this.date=data.rideDate;
       this.from=data.fromId.place;
       this.to=data.toId.place;
+      if(!(this.requets.length>0))
+        this.status=true;
     },err => {
 
     });
