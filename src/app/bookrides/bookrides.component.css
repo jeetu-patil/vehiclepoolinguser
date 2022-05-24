@@ -79,7 +79,12 @@
   margin-right: 30px;
 }
 
-
+.norides{
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+}
 
 
 

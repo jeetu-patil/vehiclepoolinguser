@@ -95,7 +95,10 @@ export class RidePublishInfoComponent implements OnInit {
 
   this.publisRideService.submitPublisherDetail(fromPlace._id, toPlace._id, this.message,this.date,d,amount,this.seat,this.time)
     .subscribe(data => {
-      this.toastr.success("Ride Published Successfully!","success")
+      if(data.msg=="check-failed")
+        this.toastr.success("You alread publish same ride....","success");
+      else
+        this.toastr.success("Ride Published Successfully!","success");
        this.router.navigate(['']);
     },err=>{
 

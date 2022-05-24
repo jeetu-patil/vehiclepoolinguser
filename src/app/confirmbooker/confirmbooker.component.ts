@@ -11,6 +11,7 @@ import { PublishrideService } from '../services/publishride.service';
 export class ConfirmbookerComponent implements OnInit {
 
   pubilsh:any;
+  status=false;
   otp:any;
   constructor(private toastr:ToastrService,private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
 
@@ -19,7 +20,9 @@ export class ConfirmbookerComponent implements OnInit {
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
     this.publisRideService.checkConfirmBoooker(this.rideId).subscribe(data => {
       this.pubilsh=data.otp;
-      console.log(this.pubilsh.otp);
+
+      if(!(this.pubilsh.length>0))
+        this.status=true;
     },err=>{
 
     });

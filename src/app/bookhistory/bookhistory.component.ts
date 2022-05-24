@@ -15,10 +15,14 @@ export class BookhistoryComponent implements OnInit {
 
   users:any;
   comment:any;
+  status=false;
 
   ngOnInit(): void {
     this.publisRideService.getAllBookRidesHistory().subscribe(data => {
       this.users=data;
+
+      if(!(this.users.length > 0))
+        this.status=true;
     })
   }
 

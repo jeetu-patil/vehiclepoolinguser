@@ -190,6 +190,13 @@ top: 10%;
   top: 0;
 }
 
+.norides{
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+}
+
 .btn .buy {z-index: 3; font-weight: bolder;}
 
 .btn:hover .price {transform: translateX(-110%);}

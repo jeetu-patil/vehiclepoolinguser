@@ -15,11 +15,18 @@ export class BookridesComponent implements OnInit {
   bookRides:any;
   ids:any;
   bookRideId:any;
+  status=false;
+
+
   ngOnInit(): void {
     this.publishRideService.getAllBookRides().subscribe(data => {
       this.bookRides = data.temp;
       this.ids=data.result;
-      console.log(this.bookRides);
+
+      console.log(this.bookRides.length);
+
+      if(!(this.bookRides.length > 0))
+        this.status=true;
     });
   }
 
