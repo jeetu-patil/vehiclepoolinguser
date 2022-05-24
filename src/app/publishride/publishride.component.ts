@@ -13,9 +13,14 @@ export class PublishrideComponent implements OnInit {
   constructor(private toastr:ToastrService,private router: Router,private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService) { }
 
   rides:any;
+  status=false;
+
+
   ngOnInit(): void {
     this.publisRideService.getPublishRides().subscribe(data=>{
       this.rides=data;
+      if(!(this.rides.length>0))
+        this.status=true;
       console.log(this.rides);
     },err=>{
 

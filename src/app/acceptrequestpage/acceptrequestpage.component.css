@@ -399,6 +399,13 @@ h1{
     -ms-border-radius: 0 100px 0 100px;
     -o-border-radius: 0 100px 0 100px;
   }
+
+  .norides{
+    display: flex;
+    justify-content: center;
+    height: 50%;
+    width: 100%;
+  }
   
   .cta-content::after {
   
