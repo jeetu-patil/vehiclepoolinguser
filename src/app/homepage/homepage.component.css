@@ -140,6 +140,7 @@ background-size: cover;
   background: #fff;
   padding: 30px;
   margin: 0 0 24px 0;
+  box-shadow: 0 0 8px rgba(40, 40, 40, 0.2);
 }
 
 .rte .boxHeadline {
@@ -283,10 +284,16 @@ body {
 }
 .main {
   display: flex;
-  /* width: 1040px; */
-  justify-content: space-evenly;
+  /*width: 1040px;
+  */justify-content: space-evenly;
   flex-wrap: wrap;
+  transition: 0.5s ease-in-out;
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -ms-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
 }
+
 .product {
   margin: 10px;
   background-color: #fff;

@@ -52,6 +52,13 @@ body{
   -o-border-radius: 5px !important;
 }
 
+.norides{
+  display: flex;
+  justify-content: center;
+  height: 50%;
+  width: 100%;
+}
+
 .form-group{
   margin: 10px 0;
   position: relative;
