@@ -60,16 +60,16 @@
         <a class="nav-link active" aria-current="page" routerLink="">Home</a>
       </li>  -->
         <li class="nav-item">
-          <a class="nav-link" routerLink="" (click)="navigateToBookRides()">Book Rides</a>
+          <a *ngIf="isLoggedIn()" class="nav-link" routerLink="" (click)="navigateToBookRides()">Book Rides</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="" (click)="navigateToBookHistory()">Book Rides History</a>
+          <a *ngIf="isLoggedIn()" class="nav-link" routerLink="" (click)="navigateToBookHistory()">Book Rides History</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="" (click)="navigateToPublishRides()">Publish Rides</a>
+          <a *ngIf="isLoggedIn()" class="nav-link" routerLink="" (click)="navigateToPublishRides()">Publish Rides</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" routerLink="" (click)="navigateToPublisherHistory()">Publish Rides
+          <a *ngIf="isLoggedIn()" class="nav-link" routerLink="" (click)="navigateToPublisherHistory()">Publish Rides
             History</a>
         </li>
       </ul>
