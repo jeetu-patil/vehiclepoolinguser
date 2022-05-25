@@ -13,6 +13,7 @@ export class PublishhistoryComponent implements OnInit {
 
   rides:any=[];
   completeRides:any=[];
+  status:any=false;
 
   confirmStatus=false;
   rideStatus=false;
@@ -22,7 +23,9 @@ export class PublishhistoryComponent implements OnInit {
   ngOnInit(): void {
     this.publishRideService.getAllpublishHistory().subscribe(data =>{
       let r:any=data;
-      console.log(this.rides);
+
+      if(!(r.length > 0))
+        this.status=true;
 
       for(var i=0; i<r.length; i++){
         if(r[i].otp.length>0){

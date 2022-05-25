@@ -14,6 +14,10 @@ export class RideDetailComponent implements OnInit {
 
   id:any;
   publish:any;
+  time:any={
+    hour:0,
+    minute:0
+  };
   seat:any;
 
   ngOnInit(): void {
@@ -30,6 +34,7 @@ export class RideDetailComponent implements OnInit {
 
 
   bookRide(){
+    console.log(this.seat)
     this.publisRideService.bookRide(this.seat,this.publish._id).subscribe(data => {
       if(data.msg=="already available")
         this.toastr.success("You booked already one ride please wait for publisher response..","success");
@@ -54,8 +59,8 @@ export class RideDetailComponent implements OnInit {
   }
 
   getTime(distance:any){
-    if(distance*3>60)
-      return (distance*3)/60;
-    return distance*3;
+    let t=distance*3;
+    this.time.hour=t/60;
+    this.time.minute=t%60;
   }
 }

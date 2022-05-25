@@ -33,7 +33,7 @@ section .card .size{
   font-size: 14px;
 }
 section .card-link{
-  text-align: center;     
+  text-align: center;
   justify-content: center;
   display: flex;
   font-size: 14px;

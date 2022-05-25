@@ -51,8 +51,8 @@
   <div class="form-box">
     <div action="#" class="form mt-5">
       <div class="product-content">
-        <h1 style="font-size:50px; margin-left:80px; margin-top:30px; color:white;text-decoration:underline;">
-          {{publish.rideDate | date:'dd/MM/yyyy'}}</h1>
+        <!-- <h1 style="font-size:50px; margin-left:80px; margin-top:30px; color:white;text-decoration:underline;"> -->
+          <!-- {{publish.rideDate | date:'dd/MM/yyyy'}}</h1> -->
         <div class="detail" style="margin-left: 150px;">
           <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="!getLength()"
             type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle"></i></a>
@@ -82,7 +82,7 @@
         </div>
         <div class="from mb-3">
           <i class="fst-normal" style="color:rgb(255, 255, 255); font-weight:bold; ">Price for 1 Person : </i>
-          <label>{{publish.amountPerPerson | number}} Rs</label>
+          <label>{{publish.amountPerPerson | number:"0.0-0"}} Rs</label>
         </div>
         <div class="from mb-3">
           <i class="fst-normal" style="color:rgb(255, 255, 255);font-weight:bold; ">Distance : </i>
@@ -91,14 +91,14 @@
 
         <div class="from mb-3">
           <i class="fst-normal" style="color:rgb(255, 255, 255);  font-weight:bold; ">Expected Time : </i>
-          <label>{{getTime(publish.distance) | number:'0.0-0'}} minute</label>
+          <label>{{getTime(publish.distance)}}{{time.hour| number:"0.0-0"}} hour : {{time.minute | number:"0.0-0"}} minute</label>
         </div>
         <div class="from m-3">
           <label>Seat Available : {{publish.seatAvailable}} </label>
         </div>
 
         <div class="from m-3">
-          <input type="number" min="1" max="{{publish.seatAvailable}}" [(ngModel)]="seat" value="seat">
+          <label style="color:white">Seat Want : </label><input type="number" min="1" max="{{publish.seatAvailable}}" [(ngModel)]="seat" value="seat">
         </div>
 
         <h2 class="m-3" style="color:rgb(255, 255, 255);">Message :</h2>
