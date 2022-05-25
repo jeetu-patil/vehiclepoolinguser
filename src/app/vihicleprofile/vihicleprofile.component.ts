@@ -15,18 +15,37 @@ export class VihicleprofileComponent implements OnInit {
   number:any
   image:any;
   imageUrl:any;
-  FileImage: any
+  FileImage: any;
+  two:any=0;
+  four:any=0;
 
   constructor(private publishrideService: PublishrideService,private toastr:ToastrService,private router:Router) { 
     this.publishrideService.getDetailOfPubliisher().subscribe(result=>{
        this.name=result.result.vehicle.name;
-       this.wheeler=result.result.vehicle.wheeler;
+       this.wheeler=1
+      //  this.wheeler=result.result.vehicle.wheeler;
+
        this.number=result.result.vehicle.number;
        this.image=result.result.vehicle.image;
+       console.log(this.image)
+       
     })
   }
 
  
+  status1(n:any):boolean{
+    if(this.wheeler==4)
+      return true;
+    else
+      return false;
+  }
+
+  status(n:any):boolean{
+    if(this.wheeler==2)
+      return true;
+    else
+      return false;
+  }
 
   ngOnInit(): void {
   }
@@ -34,7 +53,7 @@ export class VihicleprofileComponent implements OnInit {
   selectImage(event:any){
     const file = event.target.files[0];
     console.log(file)
-    this.image = file;
+    this.image = "";
     var reader = new FileReader();
     
          this.FileImage = event.target.files[0];
@@ -46,6 +65,11 @@ export class VihicleprofileComponent implements OnInit {
       
     
   }
+
+  wheels(n:any){
+    console.log(this.wheeler)
+  }
+
   fileV(){
     return !!!this.image;
   }
@@ -53,7 +77,8 @@ export class VihicleprofileComponent implements OnInit {
   submitDetail(){
     let id:any=sessionStorage.getItem("userId");
     let formData =new FormData();
-    formData.append("image",this.image);
+    formData.append("imageUrl",this.image);
+    formData.append("image",this.FileImage)
     formData.append("name",this.name);
     formData.append("mobile",this.number);
     formData.append("wheeler",this.wheeler)

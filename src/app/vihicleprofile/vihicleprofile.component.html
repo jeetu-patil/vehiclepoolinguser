@@ -46,10 +46,11 @@
                   <p class="mb-0">Wheeler</p>
                 </div>
                 <div class="col-sm-9">
-                  <input [(ngModel)]="wheeler"  class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions"  id="inlineRadio1" value="2">
+                  <input (click)="wheels(2)" checked="{{status(2)}}" class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions"  id="inlineRadio1" [value]="two">
                 <label class="form-check-label pl-3" class="m-2" for="inlineRadio1"> 2-Wheeler</label>
-                <input [(ngModel)]="wheeler"  class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio1" required #inlineRadio1="ngModel"value="4">
+                <input (click)="wheels(4)" checked="{{status1(4)}}" class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio1">
                 <label class="form-check-label pl-3" class="m-2"  for="inlineRadio2">4-Wheeler</label>
+              
                 </div>
               </div>
               <hr />
