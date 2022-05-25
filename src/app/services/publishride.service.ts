@@ -12,7 +12,6 @@ export class PublishrideService {
 
   getAllPublishRides():Observable<Publishride>{
     return this.http.get<Publishride>("https://ridesharely-backend-api.herokuapp.com/publishride/publisherforuser");
-    // return this.http.get<Publishride>("http://localhost:3000/publishride/publisherforuser");
   }
 
   getDetailOfPubliisher():Observable<any>{

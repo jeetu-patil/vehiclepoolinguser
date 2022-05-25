@@ -80,7 +80,7 @@ export class VihicleprofileComponent implements OnInit {
     formData.append("imageUrl",this.image);
     formData.append("image",this.FileImage)
     formData.append("name",this.name);
-    formData.append("number",this.number);
+    formData.append("mobile",this.number);
     formData.append("wheeler",this.wheeler)
     formData.append("userId",id);
     this.publishrideService.addPublisherDetails(formData).subscribe(data => {

@@ -82,7 +82,7 @@
         </div>
         <div class="from mb-3">
           <i class="fst-normal" style="color:rgb(255, 255, 255); font-weight:bold; ">Price for 1 Person : </i>
-          <label>{{publish.amountPerPerson | number}} Rs</label>
+          <label>{{publish.amountPerPerson | number:"0.0-0"}} Rs</label>
         </div>
         <div class="from mb-3">
           <i class="fst-normal" style="color:rgb(255, 255, 255);font-weight:bold; ">Distance : </i>
@@ -91,7 +91,7 @@
 
         <div class="from mb-3">
           <i class="fst-normal" style="color:rgb(255, 255, 255);  font-weight:bold; ">Expected Time : </i>
-          <label>{{getTime(publish.distance) | number:'0.0-0'}} hour</label>
+          <label>{{getTime(publish.distance)}}{{time.hour| number:"0.0-0"}} hour : {{time.minute | number:"0.0-0"}} minute</label>
         </div>
         <div class="from m-3">
           <label>Seat Available : {{publish.seatAvailable}} </label>

@@ -26,8 +26,8 @@ export class UserService {
     return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/verifymobile",{mobile:mobile});
   }
 
-  loginWithGoogle(email:any):Observable<any>{
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/loginwithgoogle",{email:email});
+  loginWithGoogle(email:any,name:any):Observable<any>{
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/loginwithgoogle",{email:email,name:name});
   }
 
   getUser():Observable<any>{
@@ -47,7 +47,5 @@ export class UserService {
   }
   editNMI(formdata:FormData):Observable<any>{
      return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/edit-profile",formdata)
-    //  return this.http.post("http://localhost:3000/user/edit-profile",formdata)
-
   }
 }

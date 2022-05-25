@@ -26,8 +26,6 @@ export class ProfileUserComponent implements OnInit {
   
   doneMethod(id:any){
     let formData =new FormData();
-
-    console.log(this.FileImage)
     formData.append("image",this.FileImage);
     console.log(this.user.image)
     formData.append("imageUrl",this.user.image);
