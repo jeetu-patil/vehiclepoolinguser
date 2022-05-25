@@ -29,7 +29,7 @@ export class ProfileUserComponent implements OnInit {
     formData.append("image",this.FileImage);
     formData.append("name",this.user.name);
     formData.append("miniBio",this.user.miniBio);
-    formData.append("oldImageUrl",this.user.image)
+    formData.append("imageUrl",this.user.image)
     formData.append("userId",id);
     this.userService.editNMI(formData).subscribe(result=>{
       if(result){
@@ -43,7 +43,7 @@ export class ProfileUserComponent implements OnInit {
   selectImage(event:any){
     const file = event.target.files[0];
     console.log(file)
-    this.user.image = file;
+    this.user.image = "";
     var reader = new FileReader();
     
          this.FileImage = event.target.files[0];
