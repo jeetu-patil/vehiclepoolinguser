@@ -27,7 +27,6 @@ export class ProfileUserComponent implements OnInit {
   doneMethod(id:any){
     let formData =new FormData();
     formData.append("image",this.FileImage);
-    console.log(this.user.image)
     formData.append("imageUrl",this.user.image);
     formData.append("name",this.user.name);
     formData.append("miniBio",this.user.miniBio);
@@ -44,9 +43,7 @@ export class ProfileUserComponent implements OnInit {
   }
   selectImage(event:any){
     const file = event.target.files[0];
-    console.log(file)
-    console.log(this.user)
-    this.user.image="";
+    this.user.image = "";
     var reader = new FileReader();
     
          this.FileImage = event.target.files[0];
