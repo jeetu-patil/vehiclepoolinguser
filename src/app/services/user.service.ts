@@ -47,5 +47,7 @@ export class UserService {
   }
   editNMI(formdata:FormData):Observable<any>{
      return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/edit-profile",formdata)
+    //  return this.http.post("http://localhost:3000/user/edit-profile",formdata)
+
   }
 }
