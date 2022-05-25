@@ -33,7 +33,7 @@ export class VerificationOtpComponent implements OnInit {
     if(this.tempOtp==this.otp)
     {
       this.userService.verifyMobile(this.mobile).subscribe(data => {
-        this.toastr.success("Your MObile Number Varify Successfully...","success")
+        this.toastr.success("Welcome To RideSharely...","success")
         if(this.publishRideCount>0)
           return this.router.navigate(['']);
         return this.router.navigate(['verify-email']);
