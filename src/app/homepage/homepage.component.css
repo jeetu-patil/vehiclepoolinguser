@@ -21,7 +21,7 @@ section h5{
 
 section .card{
   box-shadow: var(--box-shadow);
-}
+}   
 
 section .card-title{
   font-size: 14px;
