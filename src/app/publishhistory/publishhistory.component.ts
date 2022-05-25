@@ -23,7 +23,6 @@ export class PublishhistoryComponent implements OnInit {
   ngOnInit(): void {
     this.publishRideService.getAllpublishHistory().subscribe(data =>{
       let r:any=data;
-      console.log(this.rides);
 
       if(!(r.length > 0))
         this.status=true;
