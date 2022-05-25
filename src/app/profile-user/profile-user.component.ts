@@ -26,9 +26,10 @@ export class ProfileUserComponent implements OnInit {
   
   doneMethod(id:any){
     let formData =new FormData();
-    formData.append("image",this.user.image);
+    formData.append("image",this.FileImage);
     formData.append("name",this.user.name);
-    formData.append("number",this.user.miniBio);
+    formData.append("miniBio",this.user.miniBio);
+    formData.append("oldImageUrl",this.user.image)
     formData.append("userId",id);
     this.userService.editNMI(formData).subscribe(result=>{
       if(result){

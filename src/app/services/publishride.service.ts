@@ -20,7 +20,8 @@ export class PublishrideService {
   }
 
   addPublisherDetails(formData:any):Observable<any>{
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/firstpublishride",formData);
+    // return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/firstpublishride",formData);
+    return this.http.post("http://localhost:3000/publishride/firstpublishride",formData);
   }
 
   submitPublisherDetail(fromId:any,toId:any,message:any,date:any,d:any,amount:any,seat:any,time:any):Observable<any>{

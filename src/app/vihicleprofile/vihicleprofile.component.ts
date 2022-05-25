@@ -55,7 +55,7 @@ export class VihicleprofileComponent implements OnInit {
     let formData =new FormData();
     formData.append("image",this.image);
     formData.append("name",this.name);
-    formData.append("number",this.number);
+    formData.append("mobile",this.number);
     formData.append("wheeler",this.wheeler)
     formData.append("userId",id);
     this.publishrideService.addPublisherDetails(formData).subscribe(data => {
