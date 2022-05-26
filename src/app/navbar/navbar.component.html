@@ -50,8 +50,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
   <div class="container">
     <a class="navbar-brand" routerLink="">RideSharely</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -60,38 +67,106 @@
         <a class="nav-link active" aria-current="page" routerLink="">Home</a>
       </li>  -->
         <li class="nav-item">
-          <a *ngIf="isLoggedIn()" class="nav-link" routerLink="" (click)="navigateToBookRides()">Book Rides</a>
+          <a
+            *ngIf="isLoggedIn()"
+            class="nav-link"
+            routerLink=""
+            (click)="navigateToBookRides()"
+            >Book Rides</a
+          >
         </li>
         <li class="nav-item">
-          <a *ngIf="isLoggedIn()" class="nav-link" routerLink="" (click)="navigateToBookHistory()">Book Rides History</a>
+          <a
+            *ngIf="isLoggedIn()"
+            class="nav-link"
+            routerLink=""
+            (click)="navigateToBookHistory()"
+            >Book Rides History</a
+          >
         </li>
         <li class="nav-item">
-          <a *ngIf="isLoggedIn()" class="nav-link" routerLink="" (click)="navigateToPublishRides()">Publish Rides</a>
+          <a
+            *ngIf="isLoggedIn()"
+            class="nav-link"
+            routerLink=""
+            (click)="navigateToPublishRides()"
+            >Publish Rides</a
+          >
         </li>
         <li class="nav-item">
-          <a *ngIf="isLoggedIn()" class="nav-link" routerLink="" (click)="navigateToPublisherHistory()">Publish Rides
-            History</a>
+          <a
+            *ngIf="isLoggedIn()"
+            class="nav-link"
+            routerLink=""
+            (click)="navigateToPublisherHistory()"
+            >Publish Rides History</a
+          >
         </li>
       </ul>
       <ul class="navbar-nav right-nav">
         <li class="nav-item">
-          <a *ngIf="isLoggedIn()" (click)="navigateToVehicleDetail()" class="nav-link" routerLink=""><i class="fas fa-plus-circle"
-              style="padding-right: 8px;"></i>PUBLISH A RIDE</a>
+          <a
+            *ngIf="isLoggedIn()"
+            (click)="navigateToVehicleDetail()"
+            class="nav-link"
+            routerLink=""
+            ><i class="fas fa-plus-circle" style="padding-right: 8px"></i
+            >PUBLISH A RIDE</a
+          >
         </li>
       </ul>
       <div class="dropdown">
-        <a class="username" *ngIf="isLoggedIn()">{{name |uppercase}}</a>
-        <a class="dropdown-toggle" type="button" class=name id="userProfile" data-bs-toggle="dropdown"
-          aria-expanded="false">
+        <a class="username" *ngIf="isLoggedIn()">{{ name | uppercase }}</a>
+        <a
+          class="dropdown-toggle"
+          type="button"
+          class="name"
+          id="userProfile"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
           <i class="fa fa-user-circle" aria-hidden="true"></i>
         </a>
         <ul class="dropdown-menu" aria-labelledby="userProfile">
-          <li><a *ngIf="!isLoggedIn()" routerLink="sign-up" class="nav-link dropdown-item">Sign Up</a>
-          <li><a *ngIf="!isLoggedIn()" routerLink="sign-in" class="nav-link dropdown-item">Sign In</a>
-          <li><a *ngIf="isLoggedIn()" routerLink="view-profile" class="nav-link dropdown-item"><i
-                class="fa fa-user"></i>Profile</a></li>
-          <li><a (click)="signout()" *ngIf="isLoggedIn()" class="nav-link dropdown-item"><i class="fas fa-sign-out-alt"
-                aria-hidden="true"></i>Sign Out</a>
+          <li>
+            <a
+              *ngIf="!isLoggedIn()"
+              routerLink="sign-up"
+              class="nav-link dropdown-item"
+              >Sign Up</a
+            >
+          </li>
+          <li>
+            <a
+              *ngIf="!isLoggedIn()"
+              routerLink="sign-in"
+              class="nav-link dropdown-item"
+              >Sign In</a
+            >
+          </li>
+          <li>
+            <a
+              *ngIf="isLoggedIn()"
+              routerLink="view-vihicle"
+              class="nav-link dropdown-item"
+              ><i class="fa fa-car"></i>Update your Vehicle</a
+            >
+          </li>
+          <li>
+            <a
+              *ngIf="isLoggedIn()"
+              routerLink="view-profile"
+              class="nav-link dropdown-item"
+              ><i class="fa fa-user"></i>Profile</a
+            >
+          </li>
+          <li>
+            <a
+              (click)="signout()"
+              *ngIf="isLoggedIn()"
+              class="nav-link dropdown-item"
+              ><i class="fas fa-sign-out-alt" aria-hidden="true"></i>Sign Out</a
+            >
           </li>
         </ul>
       </div>
