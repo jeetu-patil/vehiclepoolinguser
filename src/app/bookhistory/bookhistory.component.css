@@ -479,3 +479,48 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
+
+.btn-get-started {
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 12px 32px;
+  border-radius: 50px;
+  transition: 0.5s;
+  line-height: 1;
+  margin: -100px;
+  color: rgb(1, 7, 62);
+  -webkit-animation-delay: 0.8s;
+  animation-delay: 0.8s;
+  border: 2px solid #1b2a49;
+}
+.btn-get-started:hover {
+  background: #1B2A49;
+  color: #fff;
+  text-decoration: none;
+}
+
+.section-title {
+  text-align: center;
+  /* padding-bottom: 30px; */
+}
+.section-title h2 {
+  font-size: 32px;
+  font-weight: bold;
+  /* margin-bottom: 20px; */
+  /* padding-bottom: 10px; */
+  position: relative;
+  color: #2d405f;
+}
+.section-title h2::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #aabbd7;
+  bottom: 0;
+  left: calc(50% - 25px);
+}
