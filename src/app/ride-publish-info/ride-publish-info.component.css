@@ -17,9 +17,10 @@
   align-items: center;
 }
 .form-change{
-  /* background: #fff; */
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgb(1, 24, 56)), url("../../assets/Images/CarFOrUi2.png") center top no-repeat;
+  background: #ffffff;
+  /* background: linear-gradient(to bottom, rgba(255, 255, 255, 0.8), rgb(1, 24, 56)), url("../../assets/Images/CarFOrUi2.png") center top no-repeat; */
 
+/* opacity:0.8; */
   padding: 20px 70px 20px 70px;
   border-radius: 8px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
