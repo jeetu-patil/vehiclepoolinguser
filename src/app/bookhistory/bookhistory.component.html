@@ -1,5 +1,5 @@
-<div class="heading text-center">
-  <h1 class="pt-4">Book History</h1>
+<div class="section-title">
+  <h2 class="text-center mt-5">Book History</h2>
 </div>
 <div id="container" *ngFor="let user of users">
   <div class="product-details">
@@ -42,17 +42,61 @@
 </div>
 
 
-<div class="product-card norides mt-5">
-  <div class="card" style="width: 18rem" *ngIf="status">
+<div class="product-card norides">
+  <div class="card" style="width: 18rem;box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);" *ngIf="status">
     <div class="card-body">
       <h1 class="card-title text-center">No Book Rides</h1>
       <p class="card-text text-center">
-        <img src="../../assets/Images/nothing-found.png">
+        <!-- <img src="../../assets/Images/nothing-found.png"> -->
+        <img src="https://o.remove.bg/downloads/f714676a-99ae-49ba-8adf-a3351e71ba06/image-removebg-preview.png" style="height:10%; width:50%;">
+
       </p>
       <div class="text-center mt-5">
-        <a routerLink="" style="cursor: pointer;">Back Home</a>
+        <!-- <a routerLink="" style="cursor: pointer;">Back Home</a> -->
+        <a  routerLink="" class="btn-get-started animate__animated animate__fadeInUp;cursor: pointer;">Back Home</a>
+
       </div>
     </div>
-    
+
   </div>
 </div>
+
+<section id="features" class="features" data-aos="fade-up">
+  <div class="container">
+
+    <div class="section-title">
+      <h2 class="text-center mt-5">Our Aim To make your Ride Enjoyable</h2>
+      <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
+        <img src="https://o.remove.bg/downloads/904d4ee1-8f27-4d73-86d8-7dbf8f0cd522/image-removebg-preview.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
+      </div>
+      <h4>RideSharely Corporate+ is an exclusive bikepool and carpool model for corporates. RideSharely partners with corporates to provide carpooling and bikepooling as an alternative to existing modes of employee commute. RideSharely Corporate+ pools employees commuting in the same routes into a single ride, allowing them to travel smarter to work, save on commute costs, and make connections along the way.</h4>
+    </div>
+
+    <div class="row content mt-5">
+      <div class="col-md-5">
+        <img src="https://o.remove.bg/downloads/06bf4ac4-6812-4a94-ae02-0521970979c5/image-removebg-preview.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 mt-5 pt-4">
+        <h1>Enjoy Your Rides</h1>
+        <p class="fst-normal">
+          Employees enjoy the benefits of ridesharing and arrive fresh to work without having to take public transport.Both corporates and employees save money on employee transport and fuel
+        </p>
+      </div>
+    </div>
+
+    <div class="row m-5" data-aos="fade-up">
+      <div class="col-md-5 order-1 order-md-2">
+        <img src="../../assets/Images/form2.png" class="img-fluid" alt="">
+      </div>
+      <div class="col-md-7 pt-5 mt-5 order-2 order-md-1">
+        <h1>Book your Rides</h1>
+        <p class="fst-normal">
+          Indicate departure and arrival points, the date of the ride and check our recommended price to increase your chances of getting your first passengers and ratings.
+        </p>
+      </div>
+    </div>
+
+
+  </div>
+</section><!-- End Features Section -->
+
