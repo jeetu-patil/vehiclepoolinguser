@@ -175,4 +175,43 @@ background: #DFC2F2;
 
 
 
+.card{
+  box-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.ride-history .card-img{
+  height: 300px;
+    width: 200px;
+}
+.ride-history .card-img img{
+  
+  width: 100%;
+    height: 100%;
+  object-fit: contain;
+}
+.ride-history .card-body .card-content .ride-data{
+  display: flex;
+  align-items: center;
+  margin: 0 0 20px 0;
+}
+.ride-history .card-body .card-content .ride-data h2{
+  margin-bottom: 0;
+}
+.ride-history .card-body .card-content .ride-data span{
+  margin-left:15px;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+.ride-history .card-body .feedback .form-group #feedback-text{
+  margin-bottom: 15px;
+  border-color: rgb(47, 47, 47);
+}
+.ride-history .card-body .feedback .form-group .feedback-btn{
+text-decoration: none;
+font-size: 15px;
+letter-spacing: 1px;
+color: #fff;
+background: #1b2a49;
+padding:6px 15px;
 
+}

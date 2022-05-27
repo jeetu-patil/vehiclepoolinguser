@@ -1,124 +1,212 @@
-<div class="container-fluid"  style="background-color: rgb(247, 247, 247);">
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex justify-cntent-center align-items-center">
-  <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-    <!-- Slide 1 -->
+  <div
+    id="heroCarousel"
+    class="container carousel carousel-fade"
+    data-bs-ride="carousel"
+    data-bs-interval="5000"
+  >
     <div class="carousel-item active">
       <div class="carousel-container">
-        <h2 class="animate__animated animate__fadeInDown">Book Your Rides <span>On RideSharely</span></h2>
-        <p class="animate__animated animate__fadeInUp">RideSharel is an eco-smart option for handling all your travel needs by connecting you with fellow professional riders. As our cities are growing, increased traffic adds to the chaos and pollution. Hence, we have committed to providing a convenient, economical and sustainable solution to this problem through carpooling and bike pooling.</p>
+        <h2 class="animate__animated animate__fadeInDown">
+          Book Your Rides <span>On RideSharely</span>
+        </h2>
+        <p class="animate__animated animate__fadeInUp">
+          RideSharel is an eco-smart option for handling all your travel needs
+          by connecting you with fellow professional riders. As our cities are
+          growing, increased traffic adds to the chaos and pollution. Hence, we
+          have committed to providing a convenient, economical and sustainable
+          solution to this problem through carpooling and bike pooling.
+        </p>
       </div>
     </div>
-
   </div>
 </section>
-
-
 
 <div class="section-title">
   <h2 class="text-center mt-5">Book Rides</h2>
 </div>
-<div id="container" *ngFor="let book of bookRides index as i">
-  <div class="product-details">
-    <div class="control">
-      <div class="from mb-3">
-        <span id="from" style="font-size:20px;font-weight: bold;">From : </span>
-        <span id="from-text">{{book.fromId.place}}</span>
-      </div>
-      <div class="to mb-3">
-        <span id="to" style="font-size:20px;font-weight: bold; ">To :</span>
-        <span id="to-text" style="margin-left:25px;">{{book.toId.place}}</span>
-      </div>
-      <div class="date">
-        <span id="date" style="font-size:20px;font-weight: bold;">Date : </span>
-        <span id="date-text ">{{book.rideDate | date: "dd/MM/yyyy"}}</span>
-      </div>
-      <div class="remaining-seat mt-5" style="font-size:20px;font-weight: bold;">
-        <a (click)="navigateToDetail(book.publisherId._id)" style="cursor: pointer"><span>Name :
-            {{book.publisherId.name}} </span></a>
-        <div class="form mt-5">
-          <button (click)="cancelRide(book.publisherId._id,book._id,i)" style="cursor: pointer;"
-            class="btn signin btn2">Cancel Ride</button>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 book-rides" *ngFor="let book of bookRides; index as i">
+      <div class="card">
+        <a
+          (click)="navigateToDetail(book.publisherId._id)"
+          
+          style="cursor: pointer"
+          ><img
+          class="card-img-top"
+            *ngIf="!getLength(book.publisherId.image.length)"
+            src="https://i.imgur.com/CFpa3nK.jpg"
+            alt="profile"
+            width="100px"
+            height="250px"
+        /></a>
+        <a
+          (click)="navigateToDetail(book.publisherId._id)"
+          
+          style="cursor: pointer"
+          ><img
+          class="card-img-top"
+            *ngIf="getLength(book.publisherId.image.length)"
+            [src]="book.publisherId.image"
+            alt="profile"
+            width="100px"
+            height="250px" /></a
+      >
+
+        <div class="card-body">
+          <div class="card-content">
+            <div class="primary-content">
+              <div class="from from-to">
+                <h2>From-</h2>
+                <span>
+                  {{ book.fromId.place }}</span
+                >
+              </div>
+              <div class="to from-to">
+                <h2>To -</h2>
+                <span>{{ book.toId.place }}</span>
+              </div>
+              <div class="date from-to">
+                <h2>Date -</h2>
+                <span>{{ book.rideDate | date: "dd/MM/yyyy" }}</span>
+              </div>
+
+              <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header" id="panelsStayOpen-headingOne">
+                    <button
+                      class="accordion-button"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#panelsStayOpen-collapseOne"
+                      aria-expanded="true"
+                      aria-controls="panelsStayOpen-collapseOne"
+                    >
+                      Read more
+                    </button>
+                  </h2>
+                  <div
+                    id="panelsStayOpen-collapseOne"
+                    class="accordion-collapse collapse hide"
+                    aria-labelledby="panelsStayOpen-headingOne"
+                  >
+                    <div class="accordion-body">
+                      <div class="accordion-content">
+                        <div class="name text">
+                          <h2>Name :</h2>
+                          <span>{{ book.publisherId.name }}</span>
+                        </div>
+                        <div class="mobile text">
+                          <h2>Mobile :</h2>
+                          <span>{{ book.publisherId.mobile }}</span>
+                        </div>
+                        <div class="email text">
+                          <h2>Email :</h2>
+                          <span>{{ book.publisherId.email }}</span>
+                        </div>
+                      </div>
+                      <div class="buttons">
+                        <a (click)="cancelRide(book.publisherId._id, book._id, i)"
+                        style="cursor: pointer" class="cancel-btn">Cancel ride</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="product-image">
-    <span>
-      <a (click)="navigateToDetail(book.publisherId._id)" style="cursor: pointer"><img
-          *ngIf="!getLength(book.publisherId.image.length)" src="https://i.imgur.com/CFpa3nK.jpg" alt="profile"
-          width="100px" height="100px"></a>
-      <a (click)="navigateToDetail(book.publisherId._id)" style="cursor: pointer"><img
-          *ngIf="getLength(book.publisherId.image.length)" [src]="book.publisherId.image" alt="profile" width="100px"
-          height="100px"></a></span>
-    <div class="info">
-      <h2> Description</h2>
-      <ul>
-        <li><strong>Name : </strong>{{book.publisherId.name}}</li>
-        <li><strong>Mobile : </strong>{{book.publisherId.mobile}}</li>
-        <li><strong>Email: </strong>{{book.publisherId.email}}</li>
-      </ul>
-    </div>
-  </div>
-</div>
 
-<div class="product-card norides ">
-  <div class="card m-5" style="width: 18rem; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);" *ngIf="status">
-    <div class="card-body">
-      <h1 class="card-title text-center">No Book Rides</h1>
-      <p class="card-text text-center">
-        <img src="https://o.remove.bg/downloads/f714676a-99ae-49ba-8adf-a3351e71ba06/image-removebg-preview.png" style="height:10%; width:50%;">
-      </p>
-      <div class="text-center">
-        <!-- <a routerLink="" style="cursor: pointer;">Back Home</a> -->
-        <a  routerLink="" class="btn-get-started animate__animated animate__fadeInUp;cursor: pointer;">Back Home</a>
-      </div>
-    </div>
-
-  </div>
-</div>
-</div>
-
-
-
-<!-- ======= Features Section ======= -->
-<section id="features" class="features" data-aos="fade-up">
-  <div class="container">
-
-    <div class="section-title">
-      <h2 class="text-center mt-5">Book Rides</h2>
-      <div class="container d-flex flex-column align-items-center justify-content-center" data-aos="fade-up">
-        <img src="../../assets/Images/form3.png" class="img-fluid hero-img" alt="" data-aos="zoom-in" data-aos-delay="150">
-      </div>
-      <h4>RideSharely Corporate+ is an exclusive bikepool and carpool model for corporates. RideSharely partners with corporates to provide carpooling and bikepooling as an alternative to existing modes of employee commute. RideSharely Corporate+ pools employees commuting in the same routes into a single ride, allowing them to travel smarter to work, save on commute costs, and make connections along the way.</h4>
-    </div>
-
-    <div class="row content mt-5">
-      <div class="col-md-5">
-        <img src="https://o.remove.bg/downloads/06bf4ac4-6812-4a94-ae02-0521970979c5/image-removebg-preview.png" class="img-fluid" alt="">
-      </div>
-      <div class="col-md-7 mt-5 pt-4">
-        <h1>Enjoy Your Rides</h1>
-        <p class="fst-normal">
-          Employees enjoy the benefits of ridesharing and arrive fresh to work without having to take public transport.Both corporates and employees save money on employee transport and fuel
+  <div class="product-card norides">
+    <div
+      class="card m-5"
+      style="width: 18rem; box-shadow: 0 0 15px rgba(0, 0, 0, 0.3)"
+      *ngIf="status"
+    >
+      <div class="card-body">
+        <h1 class="card-title text-center">No Book Rides</h1>
+        <p class="card-text text-center">
+          <img
+            src="https://o.remove.bg/downloads/f714676a-99ae-49ba-8adf-a3351e71ba06/image-removebg-preview.png"
+            style="height: 10%; width: 50%"
+          />
         </p>
+        <div class="text-center">
+          <!-- <a routerLink="" style="cursor: pointer;">Back Home</a> -->
+          <a
+            routerLink=""
+            class="btn-get-started animate__animated animate__fadeInUp;cursor: pointer;"
+            >Back Home</a
+          >
+        </div>
       </div>
     </div>
-
-    <div class="row m-5" data-aos="fade-up">
-      <div class="col-md-5 order-1 order-md-2">
-        <img src="../../assets/Images/form2.png" class="img-fluid" alt="">
-      </div>
-      <div class="col-md-7 pt-5 mt-5 order-2 order-md-1">
-        <h1>Book your Rides</h1>
-        <p class="fst-normal">
-          Indicate departure and arrival points, the date of the ride and check our recommended price to increase your chances of getting your first passengers and ratings.
-        </p>
-      </div>
-    </div>
-
-
   </div>
-</section><!-- End Features Section -->
+  <!-- ======= Features Section ======= -->
+  <section id="features" class="features" data-aos="fade-up">
+    <div class="container">
+      <div class="section-title">
+        <h2 class="text-center mt-5">Book Rides</h2>
+        <div
+          class="container d-flex flex-column align-items-center justify-content-center"
+          data-aos="fade-up"
+        >
+          <img
+            src="../../assets/Images/form3.png"
+            class="img-fluid hero-img"
+            alt=""
+            data-aos="zoom-in"
+            data-aos-delay="150"
+          />
+        </div>
+        <h4>
+          RideSharely Corporate+ is an exclusive bikepool and carpool model for
+          corporates. RideSharely partners with corporates to provide carpooling
+          and bikepooling as an alternative to existing modes of employee
+          commute. RideSharely Corporate+ pools employees commuting in the same
+          routes into a single ride, allowing them to travel smarter to work,
+          save on commute costs, and make connections along the way.
+        </h4>
+      </div>
 
+      <div class="row content mt-5">
+        <div class="col-md-5">
+          <img
+            src="https://o.remove.bg/downloads/06bf4ac4-6812-4a94-ae02-0521970979c5/image-removebg-preview.png"
+            class="img-fluid"
+            alt=""
+          />
+        </div>
+        <div class="col-md-7 mt-5 pt-4">
+          <h1>Enjoy Your Rides</h1>
+          <p class="fst-normal">
+            Employees enjoy the benefits of ridesharing and arrive fresh to work
+            without having to take public transport.Both corporates and
+            employees save money on employee transport and fuel
+          </p>
+        </div>
+      </div>
+
+      <div class="row m-5" data-aos="fade-up">
+        <div class="col-md-5 order-1 order-md-2">
+          <img src="../../assets/Images/form2.png" class="img-fluid" alt="" />
+        </div>
+        <div class="col-md-7 pt-5 mt-5 order-2 order-md-1">
+          <h1>Book your Rides</h1>
+          <p class="fst-normal">
+            Indicate departure and arrival points, the date of the ride and
+            check our recommended price to increase your chances of getting your
+            first passengers and ratings.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Features Section -->
+</div>

@@ -1,14 +1,14 @@
 <section id="hero" class="d-flex justify-cntent-center align-items-center">
   <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
-
-    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-    </a>
-
-    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-      <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-    </a>
-
+    <div class="carousel-item active">
+      <div class="carousel-container">
+        <h2 class="animate__animated animate__fadeInDown">Publish Your Rides <span>On RideSharely</span></h2>
+        <p class="animate__animated animate__fadeInUp">RideSharel is an eco-smart option for handling all your travel
+          needs by connecting you with fellow professional riders. As our cities are growing, increased traffic adds
+          to the chaos and pollution. Hence, we have committed to providing a convenient, economical and sustainable
+          solution to this problem through carpooling and bike pooling.</p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -16,62 +16,63 @@
 <div class="section-title">
   <h2 class="text-center mt-5">Publish Rides</h2>
 </div>
-<div id="container" *ngFor="let ride of rides;index as i">
-  <div class="product-details">
-    <div class="control">
-      <div class="from mb-3">
-        <span id="from" style="font-size:20px;font-weight: bold;">From : </span>
-        <span id="from-text">{{ ride.fromId.place }}</span>
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 publish-card" *ngFor="let ride of rides;index as i">
+      <div class="card-content">
+        <div class="primary-content">
+          <div class="from from-to">
+            <h2>From- </h2>
+            <span> {{ ride.fromId.place }}</span>
+          </div>
+          <div class="to from-to">
+            <h2>To - </h2>
+            <span>{{ ride.toId.place }}</span>
+          </div>
+          <div class="date from-to">
+            <h2>Date - </h2>
+            <span>{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
+          </div>
+          <div class="read-btn from-to">
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+        <div class="overlay-content">
+          <div class="total-seat total">
+            <div class="title">
+              <h2>Total seat - </h2>
+            </div>
+            <div class="data">
+              <span>{{ ride.totalSeat }}</span>
+            </div>
+          </div>
+          <div class="remaining-seat total">
+            <div class="title">
+              <h2>Remaining seat- </h2>
+            </div>
+            <div class="data">
+              <span>{{ ride.seatAvailable }}</span>
+            </div>
+          </div>
+          <div class="book-seat total">
+            <div class="title">
+              <h2>Book seat -</h2>
+            </div>
+            <div class="data">
+              <span>{{ (ride.totalSeat-ride.seatAvailable) }}</span>
+            </div>
+          </div>
+          <div class="btns">
+            <a  style="cursor: pointer;" (click)="navigateToUserRequest(ride._id)"  class="request">User request</a>
+            <a style="cursor: pointer;" (click)="cancelRide(ride._id)" class="cancel">Cancel ride</a>
+          </div>
+        </div>
       </div>
-      <div class="to mb-3">
-        <span id="to" style="font-size:20px;font-weight: bold; ">To :</span>
-        <span id="to-text" style="margin-left:25px;">{{ ride.toId.place }}</span>
-      </div>
-      <div class="date">
-        <span id="date" style="font-size:20px;font-weight: bold;">Date : </span>
-        <span id="date-text ">{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>
-      </div>
-   <div class="form ">
-
-       <span> <button style="cursor: pointer;margin-top:30px;" (click)="navigateToUserRequest(ride._id)" class="btn signin btn2 ">
-          User Request
-        </button></span>
-        <span><button style="cursor: pointer;margin-top:30px;" (click)="cancelRide(ride._id)" class="btn signin btn2">Cancel Ride</button></span>
-      </div>
-    </div>
-  </div>
-
-  <div class="product-image" style="margin: 50px;">
-    <div class="total-seat mt-3" style="font-size:20px;font-weight: bold;margin-right:55px; ">
-      <span>Total Seat : {{ ride.totalSeat }}</span>
-    </div>
-    <div class="remaining-seat mt-5" style="font-size:20px;font-weight: bold; ">
-      <span>Remaining Seats : {{ ride.seatAvailable }}</span>
-    </div>
-    <div class="book-seat mt-5" style="font-size:20px;font-weight: bold;margin-right:55px; ">
-      <span>Book Seat : {{ (ride.totalSeat-ride.seatAvailable) }}</span>
-    </div>
-
-    <div class="info" style="border-radius: 300px;">
-      <img style="border-radius: 300px;" src="https://www.kindpng.com/picc/m/722-7223309_bike-taxi-png-transparent-png.png" alt="">
     </div>
   </div>
 </div>
 
-<div class="product-card norides mt-5">
-  <div class="card" style="width: 18rem" *ngIf="status">
-    <div class="card-body">
-      <h1 class="card-title text-center">No Book Rides</h1>
-      <p class="card-text text-center">
-        <img src="../../assets/Images/nothing-found.png">
-      </p>
-      <div class="text-center mt-5">
-        <a routerLink="" style="cursor: pointer;">Back Home</a>
-      </div>
-    </div>
-    
-  </div>
-</div>
+<h1 class="text-center" *ngIf="status">There is no publish rides.......</h1>
 
 <section id="features" class="features" data-aos="fade-up">
   <div class="container">
@@ -110,3 +111,10 @@
 
   </div>
 </section>
+
+<div class="container">
+
+</div>
+
+
+

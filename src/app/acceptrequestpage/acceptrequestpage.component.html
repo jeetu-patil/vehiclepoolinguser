@@ -1,4 +1,4 @@
-<div class="section-title">
+<!-- <!-- <div class="section-title">
   <h2 class="text-center mt-5">User Request</h2>
 </div>
 <div id="container" *ngFor="let req of requets;index as i">
@@ -37,25 +37,52 @@
     <img *ngIf="!getLength(i)"
     src="https://i.imgur.com/CFpa3nK.jpg" alt="">
     <img *ngIf="getLength(i)" [src]="req.userId.image" width="100px" height="100px" />
-    
+
   </div>
 </div>
 
-<div class="product-card norides mt-5">
-  <div class="card" style="width: 18rem" *ngIf="status">
-    <div class="card-body">
-      <h1 class="card-title text-center">No User Request</h1>
-      <p class="card-text text-center">
-        <img src="../../assets/Images/nothing-found.png">
-      </p>
-      <div class="text-center mt-5">
-        <a routerLink="" style="cursor: pointer;">Back Home</a>
+
+-->
+
+<div class="container bootstrap snippets bootdey">
+  <div class="row m-auto">
+    <h1 class="text-center mt-5">User Request</h1>
+    <div class="col-md-3" *ngFor="let req of requets; index as i">
+      <div class="box-info text-center user-profile-2">
+        <div class="header-cover"></div>
+        <div class="user-profile-inner">
+          <h4 class="white">Booker</h4>
+
+          <a style="cursor:pointer" (click)="navigateToDetail(req.userId._id)"><img
+            *ngIf="!getLength(i)"
+            class="img-circle profile-avatar"
+            src="https://i.imgur.com/CFpa3nK.jpg"
+            alt=""
+            style="border-radius: 50%"
+          />
+        </a>
+        <a style="cursor:pointer" (click)="navigateToDetail(req.userId._id)"> <img
+            class="img-circle profile-avatar"
+            style="border-radius: 50%"
+            *ngIf="getLength(i)"
+            [src]="req.userId.image"
+            width="100px"
+            height="100px"
+          /></a>
+          <a style="cursor:pointer" (click)="navigateToDetail(req.userId._id)"><h4 class="black">{{ req.userId.name | uppercase }}</h4></a>
+          <div class="user-button">
+            <div id="buttons">
+              <button type="button" (click)="acceptRequest(req.userId._id,req.bookRideId)" style="cursor:pointer" class="btn btn-primary btn-sm btn-block">
+                <i class="fas fa-check"></i>
+              </button>
+
+              <button type="button" (click)="declineRequest(req.userId._id)" style="cursor:pointer" class="btn btn-danger btn-sm btn-block">
+                <i class="fas fa-times"></i>
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    
   </div>
 </div>
-
-
-  
-

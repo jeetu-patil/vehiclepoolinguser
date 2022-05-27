@@ -62,4 +62,8 @@ export class AcceptrequestpageComponent implements OnInit {
     });
   }
 
+  navigateToDetail(publisherId:any){
+    this.router.navigate(['publisherdetail',publisherId])
+  }
+
 }
