@@ -34,8 +34,7 @@ const routes: Routes = [
   { path :"searchride/:from/:to/:date/:seat" ,component:SearchridesComponent},
   { path: "vehicle-detail", component: VehicledetailComponent,canActivate:[AuthGuard]},
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
-  { path: "ridedetail/:publishId/:seat", component: RideDetailComponent
-  // ,canActivate:[AuthGuard]
+  { path: "ridedetail/:publishId/:seat", component: RideDetailComponent,canActivate:[AuthGuard]
 },
   { path: "verify-email", component:VerifyEmailComponent},
   { path: "view-profile" , component:UserProfileComponent,canActivate:[AuthGuard]},
@@ -50,11 +49,6 @@ const routes: Routes = [
   { path:'acceptrequest/:rideId',component:AcceptrequestpageComponent,canActivate:[AuthGuard]},
   { path: "confirmbooker/:rideId", component:ConfirmbookerComponent,canActivate:[AuthGuard]},
   { path:"alluserogpublisher/:rideId",component:AlluserogpublisherComponent,canActivate:[AuthGuard]},
-  // { path: "userrides", component:UserridesComponent,
-  //   children:[
-
-  //   ],canActivate:[AuthGuard]
-  // },
   { path: "publisherdetail/:userId" , component:PublisherdetailComponent,canActivate:[AuthGuard]},
   { path: "contact-us" , component:ContactUsComponent},
   { path: "**" , component:PageNotFoundComponent}
