@@ -33,6 +33,24 @@
         </div>
       </div>
 
+
+      <div class="form-group">
+        <i class="fa fa-mail-bulk    "></i>
+        <input id="email2"  type="email" (change)="checkEmail()" [(ngModel)]="tempemail" #email2="ngModel" required placeholder="Confirm you Email address"
+          pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" autocomplete="off">
+        <div class="validationS">
+          <span *ngIf="email2.errors?.required && email2.touched ">!Please confirm
+            your email</span>
+
+          <span *ngIf="checkEmail()==false">
+            Wrong Email
+          </span>
+          <span *ngIf="email2.errors?.pattern">
+            Invalid Email
+          </span>
+        </div>
+      </div>
+
       <div class="form-group">
         <i class="fa fa-lock" aria-hidden="true"></i>
 
@@ -90,7 +108,7 @@
       <div class="form-group">
         <!-- <a style="cursor:pointer;" [disabled]="name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required" (click)="signupUser()" class="btn signup">Sign Up</a> -->
         <input style="cursor:pointer;" type="submit" (click)="signupUser()"
-          [disabled]="password1.errors?.['minlength']||aadhar1.errors?.['minlength']||email1.errors?.pattern||name1.errors?.pattern||age1.errors?.['min']||name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required"
+          [disabled]="checkEmail()==false||password1.errors?.['minlength']||aadhar1.errors?.['minlength']||email1.errors?.pattern||name1.errors?.pattern||age1.errors?.['min']||name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required"
           value="Sign Up" class="btn signup" />
       </div>
 

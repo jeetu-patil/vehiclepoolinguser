@@ -11,7 +11,8 @@ export class UserService {
   constructor(private http:HttpClient) { }
 
   signupUser(user: User):Observable<any> {
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/signup",user);
+    // return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/signup",user);
+    return this.http.post("http://localhost:3000/user/signup",user);
   }
   
   forTesting(Id:any):Observable<any>{
