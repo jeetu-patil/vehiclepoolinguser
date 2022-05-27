@@ -14,7 +14,6 @@ export class AlluserogpublisherComponent implements OnInit {
   constructor(private toastr:ToastrService,private activatedRoute: ActivatedRoute,private publishRideService: PublishrideService,private router:Router,private userService: UserService) { }
 
   bookRides:any;
-  comment:any;
   rideId:any;
   status=false;
 
@@ -45,8 +44,8 @@ export class AlluserogpublisherComponent implements OnInit {
     this.router.navigate(['publisherdetail',id]);
   }
 
-  addComment(id:any){
-    this.userService.addComment(this.comment,id).subscribe(data=>{
+  addComment(id:any,comment:any){
+    this.userService.addComment(comment,id).subscribe(data=>{
       this.toastr.success("Comment Added..","success")
       this.ngOnInit();
     });
