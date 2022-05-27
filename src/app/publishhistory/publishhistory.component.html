@@ -4,8 +4,8 @@
   </div>
 </div>
 
-<div id="container" *ngFor="let ride of rides">
-  <div class="product-details">
+<div class="container" *ngFor="let ride of rides">
+  <!-- <div class="product-details">
     <div class="control" style="margin: -25px;">
       <div class="from  mb-3" style="margin-top:30px;">
         <span id="from"  style="font-size:20px;font-weight: bold; ">From : </span>
@@ -48,6 +48,59 @@
         src="../../assets/Images/form22.png"
         alt="">
     </div>
+  </div> -->
+
+  <div class="row">
+    <div class="col-md-4 publish-card">
+      <div class="card-content">
+        <div class="primary-content">
+          <div class="from from-to">
+            <h2>From- </h2>
+            <span> Kushwah Nagar Main, Radhakrishna Nagar, Yadav Nand Nagar,</span>
+          </div>
+          <div class="to from-to">
+            <h2>To - </h2>
+            <span>Awantika Nagar</span>
+          </div>
+          <div class="date from-to">
+            <h2>Date - </h2>
+            <span>26/05/2022</span>
+          </div>
+          <div class="read-btn from-to">
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+        <div class="overlay-content">
+          <div class="total-seat total">
+            <div class="title">
+              <h2>Total seat - </h2>
+            </div>
+            <div class="data">
+              <span> 3</span>
+            </div>
+          </div>
+          <div class="remaining-seat total">
+            <div class="title">
+              <h2>Remaining seat- </h2>
+            </div>
+            <div class="data">
+              <span>3</span>
+            </div>
+          </div>
+          <div class="book-seat total">
+            <div class="title">
+              <h2>Book seat -</h2>
+            </div>
+            <div class="data">
+              <span>0</span>
+            </div>
+          </div>
+          <div class="btns">
+            <a class="request" (click)="navigateToCheckRightBooker(ride._id)">Check Right User</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -58,8 +111,8 @@
   </div>
 </div>
 
-<div id="container" *ngFor="let ride of completeRides">
-  <div class="product-details">
+<div class="container" *ngFor="let ride of completeRides">
+  <!-- <div class="product-details">
     <div class="control" style="margin: -25px;">
       <div class="from  mb-3" style="margin-top:30px;">
         <span id="from"  style="font-size:20px;font-weight: bold; ">From : </span>
@@ -102,6 +155,58 @@
         src="../../assets/Images/form22.png"
         alt="">
     </div>
+  </div> -->
+  <div class="row">
+    <div class="col-md-4 publish-card">
+      <div class="card-content">
+        <div class="primary-content">
+          <div class="from from-to">
+            <h2>From- </h2>
+            <span> Kushwah Nagar Main, Radhakrishna Nagar, Yadav Nand Nagar,</span>
+          </div>
+          <div class="to from-to">
+            <h2>To - </h2>
+            <span>Awantika Nagar</span>
+          </div>
+          <div class="date from-to">
+            <h2>Date - </h2>
+            <span>26/05/2022</span>
+          </div>
+          <div class="read-btn from-to">
+            <a href="#" class="read-more">Read more</a>
+          </div>
+        </div>
+        <div class="overlay-content">
+          <div class="total-seat total">
+            <div class="title">
+              <h2>Total seat - </h2>
+            </div>
+            <div class="data">
+              <span> 3</span>
+            </div>
+          </div>
+          <div class="remaining-seat total">
+            <div class="title">
+              <h2>Remaining seat- </h2>
+            </div>
+            <div class="data">
+              <span>3</span>
+            </div>
+          </div>
+          <div class="book-seat total">
+            <div class="title">
+              <h2>Book seat -</h2>
+            </div>
+            <div class="data">
+              <span>0</span>
+            </div>
+          </div>
+          <div class="btns">
+            <a class="request"  (click)="allUser(ride._id)">Your rides</a>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
 
@@ -117,7 +222,7 @@
         <a routerLink="" style="cursor: pointer;">Back Home</a>
       </div>
     </div>
-    
+
   </div>
 </div>
 
