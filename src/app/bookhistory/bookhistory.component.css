@@ -1,3 +1,113 @@
+
+
+
+
+
+
+
+
+.book-rides .card{
+  max-width: 360px;
+  padding: 10px 20px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+
+.accordion .accordion-item .accordion-header{
+  width: fit-content !important;
+}
+.accordion-button{
+  margin-right: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  background: none;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+#accordionPanelsStayOpenExample .accordion-item{
+border: 0 ;
+}
+.accordion-button{
+  padding: 0 10px 0 10px;
+  color: #333;
+}
+.text{
+  display: flex;
+  align-items: center;
+}
+.text h2{
+  margin-bottom: 0;
+}
+.text span{
+  margin-left: 10px;
+  font-weight: 500;
+}
+
+.buttons .cancel-btn{
+  color: #fff;
+  font-size: 15px;
+  background: #108d6f;
+  padding: 5px 15px;
+}
+.accordion-body{
+  padding: 10px 0;
+}
+#panelsStayOpen-collapseOne{
+  border: 0;
+}
+.book-rides .card-content .primary-content .from-to {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+ .book-rides .card-content .primary-content .from-to h2{
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 0;
+
+}
+.feedback{
+  margin: 10px 0;
+}
+.buttons{
+  margin-top: 15px;
+}
+/*
+.book-rides .card-content .overlay-content .total h2{
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+} */
+.book-rides .card-content .primary-content .from-to span, .book-rides .card-content .overlay-content .total span{
+  font-size: 17px;
+  font-weight: 500;
+  margin-left: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 28px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 .publish{
   margin: 35px auto;
   padding: 15px 30px;
