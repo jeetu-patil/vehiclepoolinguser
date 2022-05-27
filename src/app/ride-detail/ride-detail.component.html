@@ -1,58 +1,92 @@
-<!-- <section id="hero" class="d-flex justify-cntent-center align-items-center">
-  <div id="heroCarousel" class="container carousel carousel-fade" data-bs-ride="carousel" data-bs-interval="5000">
+<h1 class="text-center mt-5">Ride Details</h1>
 
+<div class="container ride-history mt-5">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card mb-3">
+        <div class="row g-0">
+          <div class="col-md-3 img">
+            <div class="card-img">
+              <div class="detail mb-3">
+               <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="!getLength()"
+               type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle"></i></a>
 
-    <div class="carousel-item active">
-      <div class="carousel-container">
-        <h2 class="animate__animated animate__fadeInDown">Book Your Rides on <span>RideSharely</span></h2>
-        <p class="animate__animated animate__fadeInUp">RideSharel is an eco-smart option for handling all your travel
-          needs by connecting you with fellow professional riders. As our cities are growing, increased traffic adds to
-          the chaos and pollution. Hence, we have committed to providing a convenient, economical and sustainable
-          solution to this problem through carpooling and bike pooling.</p>
-        <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
+             <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="getLength()"><img
+              class="img-fluid"
+                 [src]="publish.publisherId.image" id="userProfile"/></a>
+              </div>
+              <div class="texts text-center">
+                <a style="cursor: pointer;color: #1b2a49;" class="name">{{publish.publisherId.name}}</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <div class="card-content">
+                <div class="ride-data" id="name">
+                  <h2 class="title">From :</h2>
+                  <span>{{publish.fromId.place}}</span>
+                </div>
+                <div class="ride-data" id="mobile">
+                  <h2 class="title">To :</h2>
+                  <span>{{publish.toId.place}}</span>
+                </div>
+                <div class="ride-data" id="email">
+                  <h2 class="title">Date :</h2>
+                  <span>{{publish.rideDate | date:'dd/MM/yyyy'}}</span>
+                </div>
+                <div class="ride-data" id="email">
+                  <h2 class="title">Time :</h2>
+                  <span>{{publish.rideDate | date:'shortTime'}}</span>
+                </div>
+                <div class="ride-data" id="email">
+                  <h2 class="title">Seat Available :</h2>
+                  <span>{{publish.seatAvailable}} </span>
+                </div>
+                <div class="ride-data" id="name">
+                  <h2 class="title">Price for 1 person :</h2>
+                  <span>{{publish.amountPerPerson | number:"0.0-0"}} Rs</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card-body">
+              <div class="card-content">
+
+                <div class="ride-data" id="mobile">
+                  <h2 class="title">Distance :</h2>
+                  <span>{{publish.distance | number }} km</span>
+                </div>
+                <div class="ride-data" id="email">
+                  <h2 class="title">Expected Time :</h2>
+                  <span>{{getTime(publish.distance)}}{{time.hour| number:"0.0-0"}} hour : {{time.minute | number:"0.0-0"}}
+                    minute</span>
+                </div>
+                <div class="ride-data" id="email">
+                  <h2 class="title">Seat Want :</h2>
+                  <span><input type="number" min="1" max="{{publish.seatAvailable}}"
+                    [(ngModel)]="seat" value="seat"></span>
+                </div>
+              </div>
+              <div class="ride-data" id="email">
+                <h2 class="title">Message :</h2>
+                <textarea disabled id="feedback-text" cols="2" class="form-control">{{publish.msgForBooker}}</textarea>
+                <a (click)="bookRide()" style="cursor :pointer;" class="btn signup">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-
-    <div class="carousel-item">
-      <div class="carousel-container">
-        <h2 class="animate__animated animate__fadeInDown">RideSharely With In Your City</h2>
-        <p class="animate__animated animate__fadeInUp">Ridesharing is the best option for socially responsible citizens
-          to commute within the city. Optimizing every ride, RideSharely makes it easy to find fellow riders on your
-          route and split your commute costs.</p>
-        <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-      </div>
-    </div>
-
-
-    <div class="carousel-item">
-      <div class="carousel-container">
-        <h2 class="animate__animated animate__fadeInDown">How do I start carpooling?</h2>
-        <p class="animate__animated animate__fadeInUp">Carpooling with RideSharely is super easy, and free! Simply sign
-          up for an account and tell us some basic details about yourself. Once you have a RideSharely account, you can
-          start booking or publishing rides directly on our app or website.</p>
-        <a href="" class="btn-get-started animate__animated animate__fadeInUp">Read More</a>
-      </div>
-    </div>
-
-    <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-    </a>
-
-    <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-      <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-    </a>
-
   </div>
-</section> -->
+</div>
 
 
-<div class="container ">
+<!-- <div class="container ">
   <div class="form-box">
     <div action="#" class="form mt-5">
       <div class="product-content">
-        <!-- <h1 style="font-size:50px; margin-left:80px; margin-top:30px; color:white;text-decoration:underline;"> -->
-          <!-- {{publish.rideDate | date:'dd/MM/yyyy'}}</h1> -->
         <div class="detail" style="margin-left: 150px;">
           <a (click)="navigateToDetail(publish.publisherId._id)" style="cursor: pointer;" *ngIf="!getLength()"
             type="button" id="userProfile" aria-expanded="false"><i class="fa fa-user-circle"></i></a>
@@ -91,14 +125,16 @@
 
         <div class="from mb-3">
           <i class="fst-normal" style="color:rgb(255, 255, 255);  font-weight:bold; ">Expected Time : </i>
-          <label>{{getTime(publish.distance)}}{{time.hour| number:"0.0-0"}} hour : {{time.minute | number:"0.0-0"}} minute</label>
+          <label>{{getTime(publish.distance)}}{{time.hour| number:"0.0-0"}} hour : {{time.minute | number:"0.0-0"}}
+            minute</label>
         </div>
         <div class="from m-3">
           <label>Seat Available : {{publish.seatAvailable}} </label>
         </div>
 
         <div class="from m-3">
-          <label style="color:white">Seat Want : </label><input type="number" min="1" max="{{publish.seatAvailable}}" [(ngModel)]="seat" value="seat">
+          <label style="color:white">Seat Want : </label><input type="number" min="1" max="{{publish.seatAvailable}}"
+            [(ngModel)]="seat" value="seat">
         </div>
 
         <h2 class="m-3" style="color:rgb(255, 255, 255);">Message :</h2>
@@ -111,7 +147,7 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <section class="services">
   <div class="container">
@@ -167,8 +203,3 @@
 
 
 
-<div class="container">
-  <div class="row">
-    .col-md-
-  </div>
-</div>

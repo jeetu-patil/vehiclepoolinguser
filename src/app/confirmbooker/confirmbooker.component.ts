@@ -12,7 +12,6 @@ export class ConfirmbookerComponent implements OnInit {
 
   pubilsh:any;
   status=false;
-  otp:any;
   constructor(private toastr:ToastrService,private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
 
   rideId:any;
@@ -31,7 +30,7 @@ export class ConfirmbookerComponent implements OnInit {
   getLength(len:any){
     if(len>0)
       return true;
-    else  
+    else
       return false;
   }
 
@@ -39,15 +38,15 @@ export class ConfirmbookerComponent implements OnInit {
     this.router.navigate(['publisherdetail',id]);
   }
 
-  matchOtp(id:any){
-    this.publisRideService.matchOtp(this.otp,id,this.rideId).subscribe(data => {
+  matchOtp(id:any,otp:any){
+    this.publisRideService.matchOtp(otp,id,this.rideId).subscribe(data => {
       if(data.msg=="Success")
-      { 
+      {
         this.toastr.success("Otp matched","success")
         this.ngOnInit();
       }
       else
-      { 
+      {
         this.toastr.error("Otp Not matched","error");
         this.ngOnInit();
       }
@@ -55,5 +54,5 @@ export class ConfirmbookerComponent implements OnInit {
 
     });
   }
-  
+
 }
