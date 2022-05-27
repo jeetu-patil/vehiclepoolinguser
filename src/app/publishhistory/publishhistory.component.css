@@ -78,7 +78,7 @@
 	height: 50%;
 	width: 100%;
   }
-  
+
 
 
 
@@ -270,3 +270,110 @@ font-family: 'EB Garamond', serif;
 
 .product-image:hover img {transition: all 0.3s ease-out;}
 .product-image:hover img {transform: scale(1.2, 1.2);}
+
+
+
+
+/* new code */
+
+.publish-card .card-content{
+  padding: 10px 30px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  position: relative;
+}
+.publish-card .card-content .overlay-content {
+  padding:10px 30px;
+}
+.publish-card .card-content .primary-content .from-to , .publish-card .card-content .overlay-content .total{
+  display: flex;
+  align-items: center;
+  margin: 25px 0;
+}
+
+.publish-card .card-content .primary-content .from-to h2{
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: 0;
+
+}
+.publish-card .card-content .overlay-content .total h2{
+  font-size: 21px;
+  font-weight: 500;
+  margin-bottom: 0;
+  letter-spacing: 1px;
+}
+.publish-card .card-content .primary-content .from-to span, .publish-card .card-content .overlay-content .total span{
+  font-size: 17px;
+  font-weight: 500;
+  margin-left: 15px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 28px;
+}
+.publish-card .card-content .overlay-content .total .title{
+  width: 100%;
+  float: left;
+}
+.publish-card .card-content .overlay-content .total .data{
+ width: 100%;
+ float: right;
+text-align: center;
+}
+.publish-card .card-content .primary-content .to span{
+  margin-left: 35px;
+}
+.publish-card .card-content .overlay-content .remaining-seat .data span{
+  /* margin-left:18px; */
+}
+.read-more{
+  background: #1b2a49;
+  text-decoration: none;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+.publish-card .card-content .overlay-content .btns{
+  margin-top:25px;
+}
+.publish-card .card-content .overlay-content .btns a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
+  padding: 5px 15px;
+  margin-right: 15px;
+  border-radius: 3px;
+  border: 1px solid #eee;
+  transition:0.5s ease-out;
+  -webkit-transition:0.5s ease-out;
+  -moz-transition:0.5s ease-out;
+  -ms-transition:0.5s ease-out;
+  -o-transition:0.5s ease-out;
+}
+.publish-card .card-content .overlay-content .btns a:hover{
+  background-color: #fff;
+  color: #1b2a49;
+}
+.overlay-content{
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #1b2a49;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.4s ease-in;
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  -ms-transition: all 0.4s ease-in;
+  -o-transition: all 0.4s ease-in;
+  color: #fff;
+}
+
+.overlay-content:hover{
+  opacity: 1;
+}

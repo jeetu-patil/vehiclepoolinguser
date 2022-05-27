@@ -1,7 +1,7 @@
 <div class="heading text-center">
   <h1 class="pt-4">Publish User History</h1>
 </div>
-<div class="container" *ngFor="let u of bookRides">
+<!-- <div class="container" *ngFor="let u of bookRides">
   <div class="publish" *ngFor="let user of u">
     <div class="row publish-card">
       <div class="col-md-6 left">
@@ -58,8 +58,8 @@
       </button>
     </div>
   </div>
-</div>
-
+</div> -->
+<!--
 <div class="product-card norides mt-5">
   <div class="card" style="width: 18rem" *ngIf="status">
     <div class="card-body">
@@ -71,8 +71,81 @@
         <a routerLink="" style="cursor: pointer;">Back Home</a>
       </div>
     </div>
-    
+
+  </div>
+</div> -->
+
+<div class="container ride-history">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4 img">
+            <div class="card-img">
+              <img src="../../assets/Images/profile.png" class="img-fluid rounded-start" alt="profile">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <div class="card-content">
+                <div class="ride-data" id="name">
+                  <h2 class="title">Name :</h2>
+                  <span>Durgesh Rathore</span>
+                </div>
+                <div class="ride-data" id="mobile">
+                  <h2 class="title">Mobile :</h2>
+                  <span>7999888777</span>
+                </div>
+                <div class="ride-data" id="email">
+                  <h2 class="title">Email :</h2>
+                  <span>Durgeshrathore@gmail.com</span>
+                </div>
+              </div>
+              <div class="feedback">
+                <div class="form-group">
+                  <textarea id="feedback-text" cols="2" rows="2" class="form-control" placeholder="Feedback"></textarea>
+                  <a class="feedback-btn">Submit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card mb-3" >
+        <div class="row g-0">
+          <div class="col-md-4 img">
+            <div class="card-img">
+              <img src="../../assets/Images/profile1.webp" class="img-fluid rounded-start" alt="profile">
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <div class="card-content">
+                <div class="ride-data" id="name">
+                  <h2 class="title">Name :</h2>
+                  <span>Durgesh Rathore</span>
+                </div>
+                <div class="ride-data" id="mobile">
+                  <h2 class="title">Mobile :</h2>
+                  <span>7999888777</span>
+                </div>
+                <div class="ride-data" id="email">
+                  <h2 class="title">Email :</h2>
+                  <span>Durgeshrathore@gmail.com</span>
+                </div>
+              </div>
+              <div class="feedback">
+                <div class="form-group">
+                  <textarea id="feedback-text" cols="2" rows="2" class="form-control" placeholder="Feedback"></textarea>
+                  <a class="feedback-btn">Submit</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
-
-
