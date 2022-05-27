@@ -13,6 +13,8 @@ import { UserService } from '../services/user.service';
 export class SignupComponent implements OnInit {
 
   user:User = new User();
+  tempemail:any;
+  ET:any=false;
 
   constructor(private toastr:ToastrService, private userService: UserService,private router:Router) { }
 
@@ -38,4 +40,20 @@ export class SignupComponent implements OnInit {
   navigateToSignin(){
     this.router.navigate(['sign-in']);
   }
+
+  checkEmail():boolean{
+    console.log("In check email function");
+    console.log(this.tempemail);
+    console.log(this.user.email);
+    if(this.tempemail==this.user.email){
+      console.log("Et is ture")
+      this.ET=true;
+      return true;
+    }
+    else{
+    console.log("Et is False")
+    return false;}
+  }
 }
+
+
