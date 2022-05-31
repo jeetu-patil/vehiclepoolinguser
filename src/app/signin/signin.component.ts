@@ -17,7 +17,7 @@ export class SigninComponent implements OnInit {
   password:string = "";
   ngOnInit(): void {
   }
-
+//
   signInWithGoogle(){
     this.social.signIn(GoogleLoginProvider.PROVIDER_ID)
     .then(() => {
