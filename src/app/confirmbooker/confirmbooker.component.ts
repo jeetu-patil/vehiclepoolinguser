@@ -12,6 +12,7 @@ export class ConfirmbookerComponent implements OnInit {
 
   pubilsh:any;
   status=false;
+  data:any;
   constructor(private toastr:ToastrService,private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
 
   rideId:any;
@@ -19,6 +20,8 @@ export class ConfirmbookerComponent implements OnInit {
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
     this.publisRideService.checkConfirmBoooker(this.rideId).subscribe(data => {
       this.pubilsh=data.otp;
+      this.data=data;
+      console.log(this.pubilsh)
 
       if(!(this.pubilsh.length>0))
         this.status=true;
@@ -51,6 +54,20 @@ export class ConfirmbookerComponent implements OnInit {
         this.ngOnInit();
       }
     },err => {
+
+    });
+  }
+
+  cancel(bookRideId:any,bookerId:any) {
+    let rideId=this.data._id;
+    this.publisRideService.cancelBooker(bookRideId,rideId,bookRideId).subscribe(data=>{
+      console.log(data)
+      if(data)
+      {
+        this.toastr.success("User Cancel...","success");
+        this.ngOnInit();
+      }
+    },err=>{
 
     });
   }
