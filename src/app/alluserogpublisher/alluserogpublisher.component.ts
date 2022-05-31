@@ -21,7 +21,6 @@ export class AlluserogpublisherComponent implements OnInit {
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
     this.publishRideService.getAllUserOfPublishHistory(this.rideId).subscribe(data =>{
       this.bookRides=data;
-      console.log("Length : "+(this.bookRides.length))
       if(!(this.bookRides.length > 1)){
         this.status=true;
       }

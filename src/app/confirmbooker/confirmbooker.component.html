@@ -1,6 +1,6 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-4 mb-5" *ngFor="let p of pubilsh">
+    <div class="col-md-4 mb-5" *ngFor="let p of pubilsh;index as i">
       <div class="container-fluid d-flex justify-content-center align-items-center bg-image">
         <div class="card text-center">
           <div class="card-header p-5" >
@@ -20,7 +20,8 @@
             <input #otp type="text" placeholder="OTP" />
           </div>
           <div class="mt-3 mb-5">
-            <button (click)="matchOtp(p.bookerId._id,otp.value)" class="btn btn-success px-4 verify-btn">verify</button>
+            <button (click)="matchOtp(p.bookerId._id,otp.value)" class="btn btn-success px-4 verify-btn m-2">verify</button>
+            <button (click)="cancel(p.bookRideId,p.bookerId._id)" class="btn btn-success px-4 verify-btn m-2">Cancel</button>
           </div>
         </div>
       </div>
