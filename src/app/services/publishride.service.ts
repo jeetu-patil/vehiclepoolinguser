@@ -84,7 +84,7 @@ acceptRequest(bookerId:any,rideId:any,bookRideId:any){
   }
 
   getAllUserOfPublishHistory(rideId:any){
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publisherhistory/viewpublisherhistory/",{rideId:rideId});
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publisherhistory/viewpublisherhistory",{rideId:rideId});
   }
 
   declineRequest(bookerId:any,rideId:any){
@@ -103,5 +103,10 @@ acceptRequest(bookerId:any,rideId:any,bookRideId:any){
 
   getAllCancelHistory():Observable<any>{
     return this.http.post("https://ridesharely-backend-api.herokuapp.com/publisherhistory/publishercancelhistory",{publisherId:sessionStorage.getItem("userId")});
+  }
+
+
+  cancelBooker(bookRideId:any,rideId:any,bookerId:any) {
+    return this.http.post("http://localhost:3000/publishride/cancelbooker",{bookRideId:bookRideId,rideId:rideId,bookerId:bookerId});
   }
 }
