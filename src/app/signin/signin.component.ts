@@ -28,7 +28,7 @@ export class SigninComponent implements OnInit {
             this.router.navigate(["/signup"]);
             this.router.navigate(['verification-otp',data1.result._id]);
           }
-          else{
+          else{     
             this.toastr.success("Login Success..");
             sessionStorage.setItem("jwt-token",data1.token);
             sessionStorage.setItem("userId",data1.result._id);
