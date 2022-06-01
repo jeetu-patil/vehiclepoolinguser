@@ -12,11 +12,11 @@ export class UserService {
 
   signupUser(user: User):Observable<any> {
     // return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/signup",user);
-    return this.http.post("http://localhost:3000/user/signup",user);
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/signup",user);
   }
   
   forTesting(Id:any):Observable<any>{
-    return this.http.post("http://localhost:3000/bookride/isaccepted",{Id:Id})
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/bookride/isaccepted",{Id:Id})
   }
 
   getOtp(mobile:any,userId:any):Observable<any> {
