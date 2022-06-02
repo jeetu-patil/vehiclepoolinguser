@@ -16,7 +16,7 @@ export class UserService {
   }
   
   checkEmai():Observable<any>{
-    return this.http.get("http://localhost:3000/user/allUsers");
+    return this.http.get("https://ridesharely-backend-api.herokuapp.com/user/allUsers");
   }
 
   forTesting(Id:any):Observable<any>{
