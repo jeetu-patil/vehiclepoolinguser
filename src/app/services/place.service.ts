@@ -12,7 +12,7 @@ export class PlaceService {
   constructor(private http:HttpClient) { }
   apiUrl = environment.apiURL;
   getAllPlace():Observable<Place>{
-    return this.http.get<Place>(this.apiUrl+"https://ridesharely-backend-api.herokuapp.com/place/getallplace");
+    return this.http.get<Place>(this.apiUrl+"place/getallplace");
   }
 
 }
