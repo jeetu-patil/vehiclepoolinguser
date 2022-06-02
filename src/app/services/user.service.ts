@@ -15,6 +15,10 @@ export class UserService {
     return this.http.post("https://ridesharely-backend-api.herokuapp.com/user/signup",user);
   }
   
+  checkEmai():Observable<any>{
+    return this.http.get("https://ridesharely-backend-api.herokuapp.com/user/allUsers");
+  }
+
   forTesting(Id:any):Observable<any>{
     return this.http.post("https://ridesharely-backend-api.herokuapp.com/bookride/isaccepted",{Id:Id})
   }

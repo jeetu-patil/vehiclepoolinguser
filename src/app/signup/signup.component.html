@@ -21,11 +21,12 @@
 
       <div class="form-group">
         <i class="fa fa-mail-bulk    "></i>
-        <input id="email1" type="email" [(ngModel)]="user.email" #email1="ngModel" required placeholder="Enter Your Valid Email"
+        <input id="email1" type="email" (blur)="email()" [(ngModel)]="user.email" #email1="ngModel" required placeholder="Enter Your Valid Email"
           pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" autocomplete="off">
         <div class="validationS">
           <span *ngIf="email1.errors?.required && email1.touched">!Please enter
             your email</span>
+            <span *ngIf="ve">Email Already Exist</span>
 
           <span *ngIf="email1.errors?.pattern">
             Invalid Email
