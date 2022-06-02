@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment.prod';
 import { Place } from '../model/place';
 
 @Injectable({
@@ -9,9 +10,9 @@ import { Place } from '../model/place';
 export class PlaceService {
 
   constructor(private http:HttpClient) { }
-
+  apiUrl = environment.apiURL;
   getAllPlace():Observable<Place>{
-    return this.http.get<Place>("https://ridesharely-backend-api.herokuapp.com/place/getallplace");
+    return this.http.get<Place>(this.apiUrl+"https://ridesharely-backend-api.herokuapp.com/place/getallplace");
   }
-  
+
 }
