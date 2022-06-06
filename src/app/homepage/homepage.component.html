@@ -35,6 +35,15 @@
   <div class="search-bar form-group">
     <input [(ngModel)]="seat" class="search-box form-control" placeholder="Number of seats" min="1" type="number">
   </div>
+  <div class="dropdown search-bar form-group">
+    <select name="" id="" class="" [(ngModel)]="rideType">
+      <option  value="daily">Daily</option>
+      <option  value="monthly">Monthly</option>
+      <option  value="weekly">Weekly</option>
+      </select>
+  </div>
+
+
   <div class="search-bar form-group button-search">
     <input (click)="searchRides()" class="search-box form-control" type="button" id="search-btn" value="Search" />
   </div>

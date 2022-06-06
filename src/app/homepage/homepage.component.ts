@@ -56,7 +56,9 @@ export class HomepageComponent implements OnInit {
   let fromPlace = this.places.find((i: { place: any; }) => i.place === this.from);
   let toPlace = this.places.find((i: { place: any; }) => i.place === this.to);
   this.status=false;
-  this.router.navigate(['searchride',fromPlace._id,toPlace._id,this.date,this.seat]);
+  this.router.navigate(['searchride',fromPlace._id,toPlace._id,this.date,this.seat,this.rideType]);
   }
+
+  rideType:any;
 
 }

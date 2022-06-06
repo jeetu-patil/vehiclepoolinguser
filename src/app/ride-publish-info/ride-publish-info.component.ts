@@ -22,6 +22,7 @@ export class RidePublishInfoComponent implements OnInit {
   date2:any
   message:any;
   seat:any;
+  rideType:any;
   ctime:any;
 
   places:Array<Place> | any;
@@ -71,6 +72,7 @@ export class RidePublishInfoComponent implements OnInit {
   
 
   submitDetail(){
+    console.log("hello"+this.rideType)
   let fromPlace = this.places.find((i: { place: any; }) => i.place === this.from);
   let toPlace = this.places.find((i: { place: any; }) => i.place === this.to);
 
@@ -92,8 +94,10 @@ export class RidePublishInfoComponent implements OnInit {
 
   let amount=5*d;
 
+ 
 
-  this.publisRideService.submitPublisherDetail(fromPlace._id, toPlace._id, this.message,this.date,d,amount,this.seat,this.time)
+
+  this.publisRideService.submitPublisherDetail(fromPlace._id, toPlace._id, this.message,this.date,d,amount,this.seat,this.time,this.rideType)
     .subscribe(data => {
       if(data.msg=="check-failed")
         this.toastr.success("You alread publish same ride....","success");
@@ -103,6 +107,15 @@ export class RidePublishInfoComponent implements OnInit {
     },err=>{
 
     });
+  }
+
+  ride(n:any){
+    if(n==1)
+      this.rideType="daily";
+    else if(n==2)
+      this.rideType="monthly";
+    else
+      this.rideType="weekly";
   }
 
   deg2rad(deg:any) {

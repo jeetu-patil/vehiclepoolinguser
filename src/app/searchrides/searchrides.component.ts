@@ -18,14 +18,16 @@ export class SearchridesComponent implements OnInit {
   publishRide:any;
   status=false;
   seat:any;
+  rideType:any;
 
   ngOnInit(): void {
     this.from =this.activatedRoute.snapshot.paramMap.get("from");
     this.to =this.activatedRoute.snapshot.paramMap.get("to");
     this.date =this.activatedRoute.snapshot.paramMap.get("date");
     this.seat =this.activatedRoute.snapshot.paramMap.get("seat");
+    this.rideType =this.activatedRoute.snapshot.paramMap.get("ridetype");
 
-    this.publisRideService.getRidesOfBooker(this.from, this.to, this.date,this.seat).subscribe(data => {
+    this.publisRideService.getRidesOfBooker(this.from, this.to, this.date,this.seat,this.rideType).subscribe(data => {
       console.log(data)
       if(data.length>0){
         this.publishRide=data;
