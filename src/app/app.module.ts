@@ -46,7 +46,6 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NoRidesFoundComponent } from './no-rides-found/no-rides-found.component';
 
-
 const socialProvider = {
   provide: 'SocialAuthServiceConfig',
   useValue: {

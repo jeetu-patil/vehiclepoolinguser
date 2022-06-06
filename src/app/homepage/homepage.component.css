@@ -335,3 +335,7 @@ body {
   background-color: #1b2a49;
 }
 
+.dropdown select{
+  width: 100%;
+  padding: 10px 30px;
+}

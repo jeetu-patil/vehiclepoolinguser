@@ -31,7 +31,7 @@ const routes: Routes = [
   { path: "aboutus", component: AboutUsComponent},
   { path: "sign-in", component: SigninComponent},
   { path: "sign-up", component: SignupComponent},
-  { path :"searchride/:from/:to/:date/:seat" ,component:SearchridesComponent},
+  { path :"searchride/:from/:to/:date/:seat/:ridetype" ,component:SearchridesComponent},
   { path: "vehicle-detail", component: VehicledetailComponent,canActivate:[AuthGuard]},
   { path: "verification-otp/:userId", component: VerificationOtpComponent},
   { path: "ridedetail/:publishId/:seat", component: RideDetailComponent,canActivate:[AuthGuard]

@@ -29,6 +29,12 @@
             <h2>To - </h2>
             <span>{{ ride.toId.place }}</span>
           </div>
+
+          <div class="to from-to">
+            <h2>Type - </h2>
+            <span>{{ ride.rideType }}</span>
+          </div>
+
           <div class="date from-to">
             <h2>Date - </h2>
             <span>{{ ride.rideDate | date: "dd/MM/yyyy" }}</span>

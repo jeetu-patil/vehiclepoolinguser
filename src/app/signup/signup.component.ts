@@ -15,7 +15,6 @@ export class SignupComponent implements OnInit {
   user:User = new User();
   tempemail:any;
   ET:any=false;
-  ve=false;
 
   constructor(private toastr:ToastrService, private userService: UserService,private router:Router) { }
 
@@ -43,28 +42,17 @@ export class SignupComponent implements OnInit {
   }
 
   checkEmail():boolean{
+    console.log("In check email function");
+    console.log(this.tempemail);
+    console.log(this.user.email);
     if(this.tempemail==this.user.email){
+      console.log("Et is ture")
       this.ET=true;
       return true;
     }
     else{
+    console.log("Et is False")
     return false;}
-  }
-
-  email(){
-    this.userService.checkEmai().subscribe(data=>{
-      for(let i=0;i<data.length;i++){
-        if(data[i].email==this.user.email)
-        {
-          this.ve=true;
-          break;
-        }
-        else  
-          this.ve=false;
-      }
-    },err=>{
-
-    });
   }
 }
 

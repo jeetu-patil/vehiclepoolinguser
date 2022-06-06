@@ -66,4 +66,8 @@ export class NavbarComponent implements OnInit {
   navigateToPublisherHistory(){
     this.router.navigate(['publishhistory']);
   }
+
+  navigateToMonthWeek(){
+    this.router.navigate(['monthweek']);
+  }
 }
