@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment.prod';
 import { Publishride } from '../model/publishride';
 import { PlaceService } from '../services/place.service';
 import { PublishrideService } from '../services/publishride.service';
@@ -28,10 +29,11 @@ export class HomepageComponent implements OnInit {
     this.spinner.show();
     this.publisRideService.getAllPublishRides().subscribe(res=>{
       this.publishRide=res;
+      console.log(environment.apiURL);
      },err =>{
       this.toastr.warning("Something went wrong...");
      });
-    
+
     setTimeout(() => {
       /** spinner ends after 5 seconds */
       this.spinner.hide();

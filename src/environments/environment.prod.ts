@@ -1,3 +1,5 @@
 export const environment = {
-  production: true
+  production: true,
+  title: 'RideSharely',
+  apiURL: 'https://ridesharely-backend-api.herokuapp.com/'
 };
