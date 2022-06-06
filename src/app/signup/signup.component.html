@@ -21,12 +21,11 @@
 
       <div class="form-group">
         <i class="fa fa-mail-bulk    "></i>
-        <input id="email1" type="email" (blur)="email()" [(ngModel)]="user.email" #email1="ngModel" required placeholder="Enter Your Valid Email"
+        <input id="email1" type="email" [(ngModel)]="user.email" #email1="ngModel" required placeholder="Enter Your Valid Email"
           pattern="^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$" autocomplete="off">
         <div class="validationS">
           <span *ngIf="email1.errors?.required && email1.touched">!Please enter
             your email</span>
-            <span *ngIf="ve">Email Already Exist</span>
 
           <span *ngIf="email1.errors?.pattern">
             Invalid Email
@@ -91,6 +90,16 @@
           <span *ngIf="age1.errors?.['min']">!Your Age Must be 18 old</span>
         </div>
       </div>
+      <div class="form-group">
+        <i class="fa fa-book"></i>
+        <input id="mobileR1" type="text" [(ngModel)]="user.mobileR" pattern="^[0-9-]{1,10}$" required minlength="10"
+          maxlength="10" placeholder="reference No." #mobileR1="ngModel" />
+        <div class="validationS">
+          <span *ngIf="mobileR1.errors?.pattern && mobileR1.errors?.['minlength'] "> Invalid mobile number</span>
+          <span *ngIf="mobileR1.errors?.required && mobileR1.touched">!Please Enter
+            reference Number</span>
+           </div>
+      </div>
       <div class="form-check form-check-inline">
         <input [(ngModel)]="user.gender" required class="form-check-input" class="m-2" type="radio" id="inlineRadio1"
           value="female" #inlineRadio1="ngModel" />
@@ -100,7 +109,7 @@
         <label class="form-check-label" class="m-2" for="inlineRadio2">Male</label>
         <div class="validationS">
           <span *ngIf="inlineRadio1.errors?.required && inlineRadio1.touched">!Please
-            choose Your Gender</span>
+            chose Your Gender</span>
         </div>
       </div>
 
@@ -109,7 +118,7 @@
       <div class="form-group">
         <!-- <a style="cursor:pointer;" [disabled]="name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required" (click)="signupUser()" class="btn signup">Sign Up</a> -->
         <input style="cursor:pointer;" type="submit" (click)="signupUser()"
-          [disabled]="checkEmail()==false||password1.errors?.['minlength']||aadhar1.errors?.['minlength']||email1.errors?.pattern||name1.errors?.pattern||age1.errors?.['min']||name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required"
+          [disabled]="mobileR1.errors?.required||mobileR1.errors?.pattern && mobileR1.errors?.['minlength']||checkEmail()==false||password1.errors?.['minlength']||aadhar1.errors?.['minlength']||email1.errors?.pattern||name1.errors?.pattern||age1.errors?.['min']||name1.errors?.required|| email1.errors?.required || inlineRadio1.errors?.required  || password1.errors?.required ||aadhar1.errors?.required || age1.errors?.required"
           value="Sign Up" class="btn signup" />
       </div>
 
