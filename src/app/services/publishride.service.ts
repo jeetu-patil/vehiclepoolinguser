@@ -10,6 +10,10 @@ export class PublishrideService {
 
   constructor(private http:HttpClient) { }
 
+  getMonthWeekPublishRides():Observable<any>{
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/getweekmonthrides",{publisherId:sessionStorage.getItem("userId")});
+  }
+
   getAllPublishRides():Observable<Publishride>{
     return this.http.get<Publishride>("https://ridesharely-backend-api.herokuapp.com/publishride/publisherforuser");
   }
@@ -24,17 +28,19 @@ export class PublishrideService {
   
   }
 
-  submitPublisherDetail(fromId:any,toId:any,message:any,date:any,d:any,amount:any,seat:any,time:any):Observable<any>{
+  submitPublisherDetail(fromId:any,toId:any,message:any,date:any,d:any,amount:any,seat:any,time:any,rideType:any):Observable<any>{
     let id=sessionStorage.getItem("userId");
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/publishride",{fromId:fromId,toId:toId,msgForBooker:message,publisherId:id,rideDate:date,rideTime:time,seatAvailable:seat,distance:d,amountPerPerson:amount,totalAmount:amount});
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/publishride",{fromId:fromId,toId:toId,msgForBooker:message,publisherId:id,rideDate:date,rideTime:time,seatAvailable:seat,distance:d,amountPerPerson:amount,totalAmount:amount,rideType:rideType});
+    // return this.http.post("http://localhost:3000/publishride/publishride",{fromId:fromId,toId:toId,msgForBooker:message,publisherId:id,rideDate:date,rideTime:time,seatAvailable:seat,distance:d,amountPerPerson:amount,totalAmount:amount,rideType:rideType});
   }
 
   getParticularRideDetail(id:any){
     return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/particualride",{id:id});
   }
 
-  getRidesOfBooker(from:any,to:any, date:any,seat:any):Observable<any>{
-    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/ridesforbooker",{to:to,date:date,from:from,seat:seat});
+  getRidesOfBooker(from:any,to:any, date:any,seat:any,rideType:any):Observable<any>{
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/ridesforbooker",{to:to,date:date,from:from,seat:seat,rideType});
+    // return this.http.post("http://localhost:3000/publishride/ridesforbooker",{to:to,date:date,from:from,seat:seat,rideType});
   }
 
 
@@ -54,6 +60,7 @@ export class PublishrideService {
 
   getPublishRides():Observable<any>{
     return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/getPublishRidesOfSingle",{publisherId:sessionStorage.getItem("userId")});
+    // return this.http.post("http://localhost:3000/publishride/getPublishRidesOfSingle",{publisherId:sessionStorage.getItem("userId")});
   }
 
   getAllBookRides():Observable<any>{
@@ -107,6 +114,6 @@ acceptRequest(bookerId:any,rideId:any,bookRideId:any){
 
 
   cancelBooker(bookRideId:any,rideId:any,bookerId:any) {
-    return this.http.post("http://localhost:3000/publishride/cancelbooker",{bookRideId:bookRideId,rideId:rideId,bookerId:bookerId});
+    return this.http.post("https://ridesharely-backend-api.herokuapp.com/publishride/cancelbooker",{bookRideId:bookRideId,rideId:rideId,bookerId:bookerId});
   }
 }

@@ -38,106 +38,258 @@
   </div>
 </section> -->
 
-
-<div class="container-fluid" style="background-color: #F0F2F5;opacity:0.2px;background-repeat: no-repeat;background-size: cover;">
-  <div class="form-box" >
-    <div action="#" class="form-change" style="margin-top:50px;margin-bottom: 50px;">
+<div
+  class="container-fluid"
+  style="
+    background-color: #f0f2f5;
+    opacity: 0.2px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  "
+>
+  <div class="form-box">
+    <div
+      action="#"
+      class="form-change"
+      style="margin-top: 50px; margin-bottom: 50px"
+    >
       <div class="head">
         <p>PUBLISH RIDE</p>
       </div>
       <div class="form-group">
         <i class="fa fa-circle"></i>
-        <input [(ngModel)]="from" required list="datalistOptions" id="exampleDataList" exampleDataList="ngModel" placeholder="From">
+        <input
+          [(ngModel)]="from"
+          required
+          list="datalistOptions"
+          id="exampleDataList"
+          exampleDataList="ngModel"
+          placeholder="From"
+        />
         <datalist id="datalistOptions">
-          <option *ngFor="let pla of places" [value]="pla.place ">
+          <option *ngFor="let pla of places" [value]="pla.place"></option>
         </datalist>
-       </div>
+      </div>
 
       <div class="form-group">
-        <i class="fa fa-circle "></i>
-        <input [(ngModel)]="to" list="datalistOptions" id="exampleDataList1" #exampleDataList1="ngModel" required placeholder="To">
-        <div class="validationS" *ngIf="exampleDataList1.errors?.required && exampleDataList1.touched">!Please Enter Place Name</div>
+        <i class="fa fa-circle"></i>
+        <input
+          [(ngModel)]="to"
+          list="datalistOptions"
+          id="exampleDataList1"
+          #exampleDataList1="ngModel"
+          required
+          placeholder="To"
+        />
+        <div
+          class="validationS"
+          *ngIf="exampleDataList1.errors?.required && exampleDataList1.touched"
+        >
+          !Please Enter Place Name
+        </div>
         <datalist id="datalistOptions">
-          <option *ngFor="let pla of places" [value]="pla.place ">
+          <option *ngFor="let pla of places" [value]="pla.place"></option>
         </datalist>
       </div>
       <div class="form-group">
         <i class="fa fa-user" aria-hidden="true"></i>
-        <input id="seat1" type="number" [(ngModel)]="seat" required  min="1" placeholder="Available Seat" #seat1="ngModel"/>
-        <div class="validationS" *ngIf="seat1.errors?.required && seat1.touched">!Required Seat</div>
+        <input
+          id="seat1"
+          type="number"
+          [(ngModel)]="seat"
+          required
+          min="1"
+          placeholder="Available Seat"
+          #seat1="ngModel"
+        />
+        <div
+          class="validationS"
+          *ngIf="seat1.errors?.required && seat1.touched"
+        >
+          !Required Seat
+        </div>
       </div>
       <div class="form-group">
         <i class="fa fa-calendar" aria-hidden="true"></i>
-        <input id="date1" [(ngModel)]="date"  type="date" (change)="dateValidation()" required #date1="ngModel">
+        <input
+          id="date1"
+          [(ngModel)]="date"
+          type="date"
+          (change)="dateValidation()"
+          required
+          #date1="ngModel"
+        />
         <div *ngIf="dur">!can't be publish Ride !!Date Wrong</div>
-        <div class="validationS" *ngIf="date1.errors?.required && date1.touched">!Required Date </div>
+        <div
+          class="validationS"
+          *ngIf="date1.errors?.required && date1.touched"
+        >
+          !Required Date
+        </div>
       </div>
       <div class="form-group">
         <i class="fa fa-times-circle" aria-hidden="true"></i>
-        <input id="time1" type="time"  [(ngModel)]="time" #time1="ngModel" (change)="timeValidation()" required placeholder="time" />
+        <input
+          id="time1"
+          type="time"
+          [(ngModel)]="time"
+          #time1="ngModel"
+          (change)="timeValidation()"
+          required
+          placeholder="time"
+        />
 
-        <div class="validationS" *ngIf="time1.errors?.required && time1.touched">Required Time </div>
+        <div
+          class="validationS"
+          *ngIf="time1.errors?.required && time1.touched"
+        >
+          Required Time
+        </div>
       </div>
-      <div class="form-group" style="color:white;">
+
+      <div class="dropdown">
+        <a
+          class="dropdown-toggle"
+          type="button"
+          class="name"
+          id="userProfile"
+          data-bs-toggle="dropdown"
+          aria-expanded="false"
+        >
+          Select Ride Type
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="userProfile" >
+          <li (click)="ride(1)">
+              Daiyly
+          </li>
+
+          <li (click)="ride(2)">Monthly
+          </li>
+
+          <li (click)="ride(3)">
+              Weekly
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="form-group" style="color: white">
         <h2>Your Message</h2>
-        <textarea class="form-control" [(ngModel)]="message" placeholder="Message"></textarea>
+        <textarea
+          class="form-control"
+          [(ngModel)]="message"
+          placeholder="Message"
+        ></textarea>
       </div>
-     <div class="form-group">
-        <button (click)="submitDetail()" [disabled]="dur||date1.errors?.required||seat1.errors?.required||time1.errors?.required||exampleDataList1.errors?.required||exampleDataList1.errors?.required" style="cursor:pointer" class="btn signup">Publish</button>
+
+      <div class="form-group">
+        <button
+          (click)="submitDetail()"
+          [disabled]="
+            dur ||
+            date1.errors?.required ||
+            seat1.errors?.required ||
+            time1.errors?.required ||
+            exampleDataList1.errors?.required ||
+            exampleDataList1.errors?.required
+          "
+          style="cursor: pointer"
+          class="btn signup"
+        >
+          Publish
+        </button>
       </div>
     </div>
   </div>
 </div>
 
-
-<section class="services"style="background-color: #F0F2F5;opacity:0.2px;background-repeat: no-repeat;background-size: cover;">
+<section
+  class="services"
+  style="
+    background-color: #f0f2f5;
+    opacity: 0.2px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  "
+>
   <div class="container">
     <div class="section-title">
       <h2>Thoughts of Publishers</h2>
     </div>
     <div class="row">
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" style="background-color:#1b2a49 !important;">
-        <div class="icon-box icon-box-pink"> >
+      <div
+        class="col-md-6 col-lg-3 d-flex align-items-stretch"
+        data-aos="fade-up"
+        style="background-color: #1b2a49 !important"
+      >
+        <div class="icon-box icon-box-pink">
+          >
           <div class="icon"><i class="fas fa-user"></i></div>
           <h4 class="title"><a href="">Shubham Burghate</a></h4>
-          <p class="description">Riding bike is an best feeling and if you are in depression or feeling lonely then take your bike pull the throttle and go for ride. </p>
+          <p class="description">
+            Riding bike is an best feeling and if you are in depression or
+            feeling lonely then take your bike pull the throttle and go for
+            ride.
+          </p>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100" style="background-color:#1b2a49 !important">
+      <div
+        class="col-md-6 col-lg-3 d-flex align-items-stretch"
+        data-aos="fade-up"
+        data-aos-delay="100"
+        style="background-color: #1b2a49 !important"
+      >
         <div class="icon-box icon-box-cyan">
           <div class="icon"><i class="fas fa-user"></i></div>
           <h4 class="title"><a href="">Garvit Pathak</a></h4>
-          <p class="description">Life is like a bike ride sometimes it is high speed on the highways and sometimes low speed on rural roads full of patholes and any way you have to complete it.</p>
+          <p class="description">
+            Life is like a bike ride sometimes it is high speed on the highways
+            and sometimes low speed on rural roads full of patholes and any way
+            you have to complete it.
+          </p>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200" style="background-color:#1b2a49 !important">
+      <div
+        class="col-md-6 col-lg-3 d-flex align-items-stretch"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        style="background-color: #1b2a49 !important"
+      >
         <div class="icon-box icon-box-green">
           <div class="icon"><i class="fas fa-user"></i></div>
           <h4 class="title"><a href="">Mohit Rajput</a></h4>
-          <p class="description">Life is short, break the rules, forgive quickly, love honestly, laugh easy, keep it simple, ride often, ride free and never regret anything that makes you smile.</p>
+          <p class="description">
+            Life is short, break the rules, forgive quickly, love honestly,
+            laugh easy, keep it simple, ride often, ride free and never regret
+            anything that makes you smile.
+          </p>
         </div>
       </div>
 
-      <div class="col-md-6 col-lg-3 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200" style="background-color:#1b2a49 !important">
+      <div
+        class="col-md-6 col-lg-3 d-flex align-items-stretch"
+        data-aos="fade-up"
+        data-aos-delay="200"
+        style="background-color: #1b2a49 !important"
+      >
         <div class="icon-box icon-box-blue">
           <div class="icon"><i class="fas fa-user"></i></div>
           <h4 class="title"><a href="">Anjali Tomar</a></h4>
-          <p class="description">Difficult roads often lead to beautiful destinations.No road is too long when you have good company.</p>
+          <p class="description">
+            Difficult roads often lead to beautiful destinations.No road is too
+            long when you have good company.
+          </p>
         </div>
       </div>
-
     </div>
-
   </div>
-</section><!-- End Services Section -->
-
-
+</section>
+<!-- End Services Section -->
 
 <section class="features">
   <div class="container">
-
     <div class="section-title">
       <h2>Publish Your Rides</h2>
       <h1>In RideSharely app You can Publish your Rides in Just a Minute.</h1>
@@ -145,37 +297,41 @@
 
     <div class="row" data-aos="fade-up">
       <div class="col-md-5">
-        <img src="../../assets/Images/form2.png" class="img-fluid" alt="">
+        <img src="../../assets/Images/form2.png" class="img-fluid" alt="" />
       </div>
       <div class="col-md-7 mt-5 pt-4">
         <h1>Create a Ridesharely Account</h1>
         <p class="fst-normal">
-          Add your profile picture, a few words about you and your phone number to increase trust between members.
+          Add your profile picture, a few words about you and your phone number
+          to increase trust between members.
         </p>
       </div>
     </div>
 
     <div class="row" data-aos="fade-up">
       <div class="col-md-5 order-1 order-md-2">
-        <img src="../../assets/Images/form3.png" class="img-fluid" alt="">
+        <img src="../../assets/Images/form3.png" class="img-fluid" alt="" />
       </div>
       <div class="col-md-7 pt-5 mt-5 order-2 order-md-1">
         <h1>Publish your Rides</h1>
         <p class="fst-normal">
-          Indicate departure and arrival points, the date of the ride and check our recommended price to increase your chances of getting your first passengers and ratings.
+          Indicate departure and arrival points, the date of the ride and check
+          our recommended price to increase your chances of getting your first
+          passengers and ratings.
         </p>
       </div>
     </div>
 
     <div class="row" data-aos="fade-up">
       <div class="col-md-5">
-        <img src="../../assets/Images/form4.png" class="img-fluid" alt="">
+        <img src="../../assets/Images/form4.png" class="img-fluid" alt="" />
       </div>
       <div class="col-md-7 mt-5 pt-5">
         <!-- <h3>Sunt consequatur ad ut est nulla consectetur reiciendis animi voluptas</h3> -->
         <h1>Accept Booking Request</h1>
         <p class="fst-normal">
-          Review passenger profiles and accept their requests to ride with you. That’s how easy it is to start saving on travel costs!
+          Review passenger profiles and accept their requests to ride with you.
+          That’s how easy it is to start saving on travel costs!
         </p>
       </div>
     </div>
@@ -196,69 +352,100 @@
         </p>
       </div>
     </div> -->
-
   </div>
-</section><!-- End Features Section -->
-
-
+</section>
+<!-- End Features Section -->
 
 <section id="team" class="pb-5">
   <div class="container">
-      <h5 class="section-title h1">OUR TEAM</h5>
-      <div class="row">
-          <!-- Team member -->
-          <div class="col-xs-12 col-sm-6 col-md-4">
-              <div class="image-flip" >
-                  <div class="mainflip flip-0">
-                      <div class="frontside">
-                          <div class="card">
-                              <div class="card-body text-center">
-                                  <p><img class=" img-fluid" src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png" alt="card image"></p>
-                                  <h4 class="card-title">Sunlimetech</h4>
-                                  <p class="card-text">This is basic card with image on top, title, description and button.</p>
-                                  <a href="https://www.fiverr.com/share/qb8D02" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i></a>
-                              </div>
-                          </div>
-                      </div>
-                      <div class="backside">
-                          <div class="card">
-                              <div class="card-body text-center mt-4">
-                                  <h4 class="card-title">Sunlimetech</h4>
-                                  <p class="card-text">This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.This is basic card with image on top, title, description and button.</p>
-                                  <ul class="list-inline">
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-facebook"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-twitter"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-skype"></i>
-                                          </a>
-                                      </li>
-                                      <li class="list-inline-item">
-                                          <a class="social-icon text-xs-center" target="_blank" href="https://www.fiverr.com/share/qb8D02">
-                                              <i class="fa fa-google"></i>
-                                          </a>
-                                      </li>
-                                  </ul>
-                              </div>
-                          </div>
-                      </div>
-                  </div>
+    <h5 class="section-title h1">OUR TEAM</h5>
+    <div class="row">
+      <!-- Team member -->
+      <div class="col-xs-12 col-sm-6 col-md-4">
+        <div class="image-flip">
+          <div class="mainflip flip-0">
+            <div class="frontside">
+              <div class="card">
+                <div class="card-body text-center">
+                  <p>
+                    <img
+                      class="img-fluid"
+                      src="https://sunlimetech.com/portfolio/boot4menu/assets/imgs/team/img_01.png"
+                      alt="card image"
+                    />
+                  </p>
+                  <h4 class="card-title">Sunlimetech</h4>
+                  <p class="card-text">
+                    This is basic card with image on top, title, description and
+                    button.
+                  </p>
+                  <a
+                    href="https://www.fiverr.com/share/qb8D02"
+                    class="btn btn-primary btn-sm"
+                    ><i class="fa fa-plus"></i
+                  ></a>
+                </div>
               </div>
+            </div>
+            <div class="backside">
+              <div class="card">
+                <div class="card-body text-center mt-4">
+                  <h4 class="card-title">Sunlimetech</h4>
+                  <p class="card-text">
+                    This is basic card with image on top, title, description and
+                    button.This is basic card with image on top, title,
+                    description and button.This is basic card with image on top,
+                    title, description and button.
+                  </p>
+                  <ul class="list-inline">
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon text-xs-center"
+                        target="_blank"
+                        href="https://www.fiverr.com/share/qb8D02"
+                      >
+                        <i class="fa fa-facebook"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon text-xs-center"
+                        target="_blank"
+                        href="https://www.fiverr.com/share/qb8D02"
+                      >
+                        <i class="fa fa-twitter"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon text-xs-center"
+                        target="_blank"
+                        href="https://www.fiverr.com/share/qb8D02"
+                      >
+                        <i class="fa fa-skype"></i>
+                      </a>
+                    </li>
+                    <li class="list-inline-item">
+                      <a
+                        class="social-icon text-xs-center"
+                        target="_blank"
+                        href="https://www.fiverr.com/share/qb8D02"
+                      >
+                        <i class="fa fa-google"></i>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
-          <!-- ./Team member -->
-          <!-- Team member -->
-
-          <!-- ./Team member -->
-
+        </div>
       </div>
+      <!-- ./Team member -->
+      <!-- Team member -->
+
+      <!-- ./Team member -->
+    </div>
   </div>
 </section>
 <!-- Team -->
