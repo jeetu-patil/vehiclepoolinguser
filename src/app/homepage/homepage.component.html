@@ -1,19 +1,10 @@
 <!-- -------------------Banner-------------------------------- -->
 
 <div class="container-fluid banner" data-aos="zoom-in">
-  <h1 data-aos="fade-up" style="text-shadow: 5px 0px 2px rgb(255, 255, 255); color: #ffffff; letter-spacing: 5pt; font-size: 60px; font-weight: 600; text-align: center; box-sizing: border-box; position: relative; top: 50%;">RideSharely</h1>
+  <h1 data-aos="fade-up" style="text-shadow: 3px 0px 2px rgb(0, 0, 0); color: #ffffff; letter-spacing: 5pt; font-size: 60px; font-weight: 600; text-align: center; box-sizing: border-box; position: relative; top: 50%;">RideSharely</h1>
   <h1 data-aos="fade-up"
-  style=" background: -webkit-linear-gradient(#ffffff, rgb(255, 255, 255));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-   font-size: 32px; font-weight: 600; text-align: center; box-sizing: border-box; position: relative; top: 55%;">Chalo Saath Chale</h1>
-  <!-- <h3 data-aos="fade-up"
-  style=" background: -webkit-linear-gradient(#ffffff, rgb(255, 255, 255));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  letter-spacing:0.2ch; margin-top: 50px;  font-size: 30px; font-weight: 500; text-align: center; box-sizing: border-box; position: relative; top: 45%;">A car & Bike pooling Platform</h3> -->
-</div>
-<!--  -->
+  style=" text-shadow: 3px 0px 2px rgb(0, 0, 0);color: #ffffff; font-size: 32px; font-weight: 600; letter-spacing: 1pt; text-align: center; box-sizing: border-box; position: relative; top: 55%;">Chalo Saath Chale</h1>
+ </div>
 <!-- --------------------Search Bar--------------------------------- -->
 <div class="section-title">
   <h2 class="text-center mt-5">Search Rides</h2>
@@ -40,7 +31,8 @@
     <input [(ngModel)]="seat" class="search-box form-control" placeholder="Number of seats" min="1" type="number">
   </div>
   <div class="dropdown search-bar form-group">
-    <select name="" id="" class="search-box form-control" placeholder ="Ride Type" [(ngModel)]="rideType">
+    <select name="" id="" class="search-box form-control" (change)="changeRideType($event)">
+      <option  value="Ride Type" selected disabled>-Ride Type-</option>
       <option  value="daily">Daily</option>
       <option  value="monthly">Monthly</option>
       <option  value="weekly">Weekly</option>

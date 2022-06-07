@@ -1,6 +1,6 @@
 .banner{
 
-  background:linear-gradient(to right, rgba(0, 0, 78, 0.2),rgba(0, 0, 0.8, 0.8) ) ,url("https://media.istockphoto.com/photos/car-on-asphalt-road-in-summer-picture-id1189557488?k=20&m=1189557488&s=612x612&w=0&h=mr3oTUwQ6pdJUE5r9Z01YbHVYesrSZ1Q_ooV_m0Cem0=") center top no-repeat ;
+  background:linear-gradient(to right, rgba(0, 0, 0.8, 0.8),rgba(0, 0, 0.8, 0.8) ) ,url("https://media.istockphoto.com/photos/car-on-asphalt-road-in-summer-picture-id1189557488?k=20&m=1189557488&s=612x612&w=0&h=mr3oTUwQ6pdJUE5r9Z01YbHVYesrSZ1Q_ooV_m0Cem0=") center top no-repeat ;
   /* background: linear-gradient(to right, rgba(0, 0, 78, 0.5),rgba(0, 0, 0.8, 0.9) ), url("https://cdn-ds.com/blogs-media/sites/369/2018/03/18114555/two-lanes-of-cars-backed-up-in-traffic-with-brake-lights_b.jpg") center top no-repeat; */
  background-repeat: no-repeat;
  background-size: cover;

@@ -24,6 +24,7 @@ export class HomepageComponent implements OnInit {
   seat:any;
   places:any=[];
   p:any;
+  rideType:any;
 
   ngOnInit(): void {
     this.spinner.show();
@@ -59,6 +60,9 @@ export class HomepageComponent implements OnInit {
   this.router.navigate(['searchride',fromPlace._id,toPlace._id,this.date,this.seat,this.rideType]);
   }
 
-  rideType:any;
+  changeRideType(event:any){
+  this.rideType = event.target.value;
+   alert(this.rideType);
+  }
 
 }
