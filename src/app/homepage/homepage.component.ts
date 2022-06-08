@@ -54,10 +54,16 @@ export class HomepageComponent implements OnInit {
   }
 
   searchRides(){
+  if(sessionStorage.getItem("userId")){
   let fromPlace = this.places.find((i: { place: any; }) => i.place === this.from);
   let toPlace = this.places.find((i: { place: any; }) => i.place === this.to);
   this.status=false;
   this.router.navigate(['searchride',fromPlace._id,toPlace._id,this.date,this.seat,this.rideType]);
+  }else{
+    this.toastr.info("Please sign in first to search ride");
+    this.router.navigate(["sign-in"]);
+  }
+
   }
 
   changeRideType(event:any){

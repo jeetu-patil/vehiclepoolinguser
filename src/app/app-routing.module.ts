@@ -28,6 +28,7 @@ import { ContactUsComponent } from './contact-us/contact-us.component';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent},
+  { path: "home", component: HomepageComponent},
   { path: "aboutus", component: AboutUsComponent},
   { path: "sign-in", component: SigninComponent},
   { path: "sign-up", component: SignupComponent},
