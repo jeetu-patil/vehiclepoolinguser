@@ -63,7 +63,6 @@ export class HomepageComponent implements OnInit {
     this.toastr.info("Please sign in first to search ride");
     this.router.navigate(["sign-in"]);
   }
-
   }
 
   changeRideType(event:any){
