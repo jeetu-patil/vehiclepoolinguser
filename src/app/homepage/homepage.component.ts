@@ -62,7 +62,6 @@ export class HomepageComponent implements OnInit {
 
   changeRideType(event:any){
   this.rideType = event.target.value;
-   alert(this.rideType);
   }
 
 }
