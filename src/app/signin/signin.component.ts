@@ -23,7 +23,7 @@ export class SigninComponent implements OnInit {
     .then(() => {
       this.social.authState.subscribe(data => {
         this.userService.loginWithGoogle(data.email,data.name).subscribe(data1 => {
-          if(data1) {
+          if(data1.status=="Login Failed") {
             this.toastr.info("You are not register with us..");
             this.router.navigate(["signup"]);
           }
