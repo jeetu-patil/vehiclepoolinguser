@@ -23,10 +23,9 @@ export class SigninComponent implements OnInit {
     .then(() => {
       this.social.authState.subscribe(data => {
         this.userService.loginWithGoogle(data.email,data.name).subscribe(data1 => {
-          if(!data1) {
+          if(data1) {
             this.toastr.info("You are not register with us..");
-            this.router.navigate(["/signup"]);
-            this.router.navigate(['verification-otp',data1.result._id]);
+            this.router.navigate(["signup"]);
           }
           else{     
             this.toastr.success("Login Success..");
