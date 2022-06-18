@@ -38,7 +38,7 @@ export class RidePublishInfoComponent implements OnInit {
   dateValidation(){
     this.date1 = formatDate(new Date(),'yyyy-MM-dd','en_US');
    this.date2 =  formatDate(this.date,'yyyy-MM-dd','en_US');
-    
+
     if(this.date1<=this.date2){
       this.dur=false;
      }else{
@@ -61,15 +61,15 @@ export class RidePublishInfoComponent implements OnInit {
       console.log(hour)
       console.log(min1);
        if(hour1>=hour){
-         
+
         console.log("Enter Time is valid");
 
        }
        else
        console.log("Enter time Invalid");
-      
+
     }
-  
+
 
   submitDetail(){
     console.log("hello"+this.rideType)
@@ -83,18 +83,18 @@ export class RidePublishInfoComponent implements OnInit {
 
   var R = 6371; // Radius of the earth in km
   var dLat = this.deg2rad(lat2-lat1);  // deg2rad below
-  var dLon = this.deg2rad(lon2-lon1); 
-  var a = 
+  var dLon = this.deg2rad(lon2-lon1);
+  var a =
     Math.sin(dLat/2) * Math.sin(dLat/2) +
-    Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) * 
+    Math.cos(this.deg2rad(lat1)) * Math.cos(this.deg2rad(lat2)) *
     Math.sin(dLon/2) * Math.sin(dLon/2)
-    ; 
-  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
-  var d = R * c; 
+    ;
+  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  var d = R * c;
 
   let amount=5*d;
 
- 
+
 
 
   this.publisRideService.submitPublisherDetail(fromPlace._id, toPlace._id, this.message,this.date,d,amount,this.seat,this.time,this.rideType)
