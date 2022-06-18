@@ -53,8 +53,8 @@ const socialProvider = {
       {
         id: GoogleLoginProvider.PROVIDER_ID,
         provider: new GoogleLoginProvider(
-          '903687778738-tv34dkt0hqr6mbg1s4bja0g2crfchgbm.apps.googleusercontent.com'
-          // '1001369966895-6h7jafhdsqlk1u6asklf0jbulj8c4h8q.apps.googleusercontent.com'
+          // '903687778738-tv34dkt0hqr6mbg1s4bja0g2crfchgbm.apps.googleusercontent.com'
+          '1001369966895-6h7jafhdsqlk1u6asklf0jbulj8c4h8q.apps.googleusercontent.com'
         ),
       },
     ],
