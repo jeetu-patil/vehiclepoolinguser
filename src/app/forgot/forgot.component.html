@@ -1,0 +1,13 @@
+<h1>Change Password</h1>
+<label >Enter Your email Address</label> <br>
+<input type="email" [(ngModel)]="email" > <br>
+<label >Enter your mobile</label> <br>
+<input type="text" [(ngModel)]="mobile"> <br>
+<button (click)="verifyME()">Send Otp</button> <br>
+
+<label >verify your Otp</label> <br>
+<input type="text" [(ngModel)]="otp"> <br>
+<label >Enter your New password</label> <br>
+<input type="text" [(ngModel)]="password">
+<button (click)="updatePassword()" >Generate Password</button> <br>
+<!-- <p>  {{email}}   {{mobile}}</p> -->

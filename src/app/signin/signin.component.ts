@@ -38,6 +38,9 @@ export class SigninComponent implements OnInit {
     })
   }
 
+  change(){
+    this.router.navigate(['forgot']);
+  }
   navigateToSignup(){
     this.router.navigate(['sign-up']);
   }

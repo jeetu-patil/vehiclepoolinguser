@@ -58,4 +58,8 @@ export class UserService {
   editNMI(formdata:FormData):Observable<any>{
      return this.http.post(this.apiUrl+"user/edit-profile",formdata)
   }
+
+  forgot(password:any,userId:any):Observable<any>{
+    return this.http.post(this.apiUrl+"user/forgot",{password:password,userId:userId});
+  }
 }

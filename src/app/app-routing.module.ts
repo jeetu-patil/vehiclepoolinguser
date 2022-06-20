@@ -25,9 +25,11 @@ import { AboutUsComponent } from './about-us/about-us.component';
 import { AlluserogpublisherComponent } from './alluserogpublisher/alluserogpublisher.component';
 import { VihicleprofileComponent } from './vihicleprofile/vihicleprofile.component';
 import { ContactUsComponent } from './contact-us/contact-us.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 const routes: Routes = [
   { path: "", component: HomepageComponent},
+  { path:"forgot",component:ForgotComponent},
   { path: "home", component: HomepageComponent},
   { path: "aboutus", component: AboutUsComponent},
   { path: "sign-in", component: SigninComponent},
