@@ -25,15 +25,16 @@ export class UserService {
   getOtp(mobile:any,userId:any):Observable<any> {
     return this.http.post(this.apiUrl+"user/verify-mobile",{mobile:mobile,userId:userId});
   }
+  forgot(password:any,userId:any):Observable<any> {
+    return this.http.post(this.apiUrl+"user/forgot",{password:password,userId:userId});
+  }
 
   verifyMobile(mobile:any):Observable<any> {
     return this.http.post(this.apiUrl+"user/verifymobile",{mobile:mobile});
   }
 
   loginWithGoogle(email:any,name:any):Observable<any>{
-    console.log("loginWithGoogle")
-    // return this.http.post(this.apiUrl+"user/loginwithgoogle",{email:email,name:name});
-    return this.http.post("http://localhost:3000/user/loginwithgoogle",{email:email,name:name});
+    return this.http.post(this.apiUrl+"user/loginwithgoogle",{email:email,name:name});
   }
 
   getUser():Observable<any>{
