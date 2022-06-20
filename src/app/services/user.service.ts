@@ -8,10 +8,14 @@ import { environment } from '../../environments/environment.prod';
 })
 export class UserService {
   apiUrl = environment.apiURL;
+
+  url="http://localhost:3000/"
+
   constructor(private http:HttpClient) { }
 
   signupUser(user: User):Observable<any> {
-    return this.http.post(this.apiUrl+"user/signup",user);
+    // return this.http.post(this.apiUrl+"user/signup",user);
+    return this.http.post("http://localhost:3000/user/signup",user);
   }
 
   checkEmai():Observable<any>{
