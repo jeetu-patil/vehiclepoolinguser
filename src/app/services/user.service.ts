@@ -31,7 +31,9 @@ export class UserService {
   }
 
   loginWithGoogle(email:any,name:any):Observable<any>{
-    return this.http.post(this.apiUrl+"user/loginwithgoogle",{email:email,name:name});
+    console.log("loginWithGoogle")
+    // return this.http.post(this.apiUrl+"user/loginwithgoogle",{email:email,name:name});
+    return this.http.post("http://localhost:3000/user/loginwithgoogle",{email:email,name:name});
   }
 
   getUser():Observable<any>{
