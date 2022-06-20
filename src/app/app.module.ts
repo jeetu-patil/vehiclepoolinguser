@@ -45,6 +45,7 @@ import { CashingmemoryService } from './services/cashingmemory.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NoRidesFoundComponent } from './no-rides-found/no-rides-found.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 const socialProvider = {
   provide: 'SocialAuthServiceConfig',
@@ -92,6 +93,7 @@ const socialProvider = {
     AlluserogpublisherComponent,
     VihicleprofileComponent,
     ContactUsComponent,
+    ForgotComponent,
     NoRidesFoundComponent,
   ],
   imports: [
