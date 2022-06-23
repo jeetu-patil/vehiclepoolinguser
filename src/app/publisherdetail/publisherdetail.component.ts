@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -9,13 +10,14 @@ import { UserService } from '../services/user.service';
 })
 export class PublisherdetailComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute,private userService: UserService,private router:Router) { }
+  constructor(private spinner:NgxSpinnerService ,private activatedRoute: ActivatedRoute,private userService: UserService,private router:Router) { }
 
   userId:any;
   user:any;
   comments:any;
   p:any;
   ngOnInit(): void {
+    this.spinner.show();
     this.userId=this.activatedRoute.snapshot.paramMap.get("userId");
     console.log(this.userId)
     this.userService.getPublisher(this.userId).subscribe(data => {
@@ -25,12 +27,15 @@ export class PublisherdetailComponent implements OnInit {
     },err => {
 
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   getLength(len:any){
     if(len>0)
       return true;
-    else  
+    else
       return false;
   }
 

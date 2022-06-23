@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
@@ -13,10 +14,11 @@ export class ConfirmbookerComponent implements OnInit {
   pubilsh:any;
   status=false;
   data:any;
-  constructor(private toastr:ToastrService,private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
+  constructor(private spinner:NgxSpinnerService,private toastr:ToastrService,private publisRideService: PublishrideService,private router:Router,private activatedRoute: ActivatedRoute) { }
 
   rideId:any;
   ngOnInit(): void {
+    this.spinner.show();
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
     this.publisRideService.checkConfirmBoooker(this.rideId).subscribe(data => {
       this.pubilsh=data.otp;
@@ -28,6 +30,9 @@ export class ConfirmbookerComponent implements OnInit {
     },err=>{
 
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   getLength(len:any){

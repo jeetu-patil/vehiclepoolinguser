@@ -1,6 +1,7 @@
 import { formatDate } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { Place } from '../model/place';
 import { PlaceService } from '../services/place.service';
@@ -26,14 +27,18 @@ export class RidePublishInfoComponent implements OnInit {
   ctime:any;
 
   places:Array<Place> | any;
-  constructor(private placeService: PlaceService,private publisRideService: PublishrideService,private router:Router,private toastr:ToastrService) {
+  constructor(private spinner:NgxSpinnerService,private placeService: PlaceService,private publisRideService: PublishrideService,private router:Router,private toastr:ToastrService) {
     // this.timeValidation();
   }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.placeService.getAllPlace().subscribe(data =>{
       this.places=data;
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
   dateValidation(){
     this.date1 = formatDate(new Date(),'yyyy-MM-dd','en_US');

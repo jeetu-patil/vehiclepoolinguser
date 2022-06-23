@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
@@ -10,7 +11,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class RideDetailComponent implements OnInit {
 
-  constructor(private toastr:ToastrService,private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService,private router:Router) { }
+  constructor(private spinner:NgxSpinnerService,private toastr:ToastrService,private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService,private router:Router) { }
 
   id:any;
   publish:any;
@@ -21,6 +22,7 @@ export class RideDetailComponent implements OnInit {
   seat:any;
 
   ngOnInit(): void {
+    this.spinner.show();
     this.id=this.activatedRoute.snapshot.paramMap.get("publishId");
     this.publisRideService.getParticularRideDetail(this.id).subscribe(data => {
       this.publish=data;
@@ -30,6 +32,9 @@ export class RideDetailComponent implements OnInit {
     });
 
     this.seat=this.activatedRoute.snapshot.paramMap.get("seat");
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
 
@@ -50,7 +55,7 @@ export class RideDetailComponent implements OnInit {
   getLength(){
     if(this.publish.publisherId.image.length>0)
       return true;
-    else  
+    else
       return false;
   }
 

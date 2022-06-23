@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
@@ -10,7 +11,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class AcceptrequestpageComponent implements OnInit {
 
-  constructor(private toastr:ToastrService,private publisRideService:PublishrideService,private activatedRoute: ActivatedRoute,private router:Router) { }
+  constructor(private spinner:NgxSpinnerService, private toastr:ToastrService,private publisRideService:PublishrideService,private activatedRoute: ActivatedRoute,private router:Router) { }
 
   requets:any;
   date:any;
@@ -23,6 +24,7 @@ export class AcceptrequestpageComponent implements OnInit {
   user:any;
 
   ngOnInit(): void {
+    this.spinner.show();
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
     this.publisRideService.getAllRequests(this.rideId).subscribe(data => {
       this.requets = data.publisherRequest;
@@ -34,13 +36,17 @@ export class AcceptrequestpageComponent implements OnInit {
     },err => {
 
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
+
 
   getLength(i:any){
     console.log(this.requets[i].userId.image)
     if(this.requets[i].userId.image.length>0)
       return true;
-    else  
+    else
       return false;
   }
 

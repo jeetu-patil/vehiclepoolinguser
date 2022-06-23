@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
@@ -19,7 +20,7 @@ export class VihicleprofileComponent implements OnInit {
   two:any=0;
   four:any=0;
 
-  constructor(private publishrideService: PublishrideService,private toastr:ToastrService,private router:Router) { 
+  constructor(private spinner:NgxSpinnerService,private publishrideService: PublishrideService,private toastr:ToastrService,private router:Router) {
     this.publishrideService.getDetailOfPubliisher().subscribe(result=>{
        this.name=result.result.vehicle.name;
        this.wheeler=1
@@ -28,11 +29,11 @@ export class VihicleprofileComponent implements OnInit {
        this.number=result.result.vehicle.number;
        this.image=result.result.vehicle.image;
        console.log(this.image)
-       
+
     })
   }
 
- 
+
   status1(n:any):boolean{
     if(this.wheeler==4)
       return true;
@@ -48,6 +49,10 @@ export class VihicleprofileComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   selectImage(event:any){
@@ -55,15 +60,15 @@ export class VihicleprofileComponent implements OnInit {
     console.log(file)
     this.image = "";
     var reader = new FileReader();
-    
+
          this.FileImage = event.target.files[0];
          var reader = new FileReader();
          reader.onload = (event:any) => {
-           this.imageUrl = event.target.result;   
+           this.imageUrl = event.target.result;
         }
          reader.readAsDataURL(this.FileImage);
-      
-    
+
+
   }
 
   wheels(n:any){
@@ -97,7 +102,7 @@ export class VihicleprofileComponent implements OnInit {
   getLength(len:any){
     if(len>0)
       return true;
-    else  
+    else
       return false;
   }
 }

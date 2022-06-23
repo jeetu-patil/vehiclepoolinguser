@@ -1,3 +1,4 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color="#ffffff" type = "ball-scale-multiple" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
 <div class="container">
   <div class="form-box">
     <div action="#" class="form-change">
@@ -7,7 +8,7 @@
       <div class="form-group">
         <i class="fa fa-circle" aria-hidden="true"></i>
         <input [(ngModel)]="name" type="text" #name1="ngModel" required placeholder="Vehicle Name" />
-        
+
         <div class="validationS">
           <span *ngIf="name1.errors?.required && name1.touched">!Please enter your vihicle
             name</span>
@@ -24,7 +25,7 @@
           <span *ngIf="Vnumber1.errors?.required && Vnumber1.touched">!Please
             Please Fill your Vihicle No.</span>
         <span *ngIf="Vnumber1.errors?.pattern" >Enter valid  No. of Your Vihicle</span>
-         
+
       </div>
       </div>
 

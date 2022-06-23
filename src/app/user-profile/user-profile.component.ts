@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { UserService } from '../services/user.service';
 
 @Component({
@@ -15,19 +16,23 @@ address:string = '';
 mobile:string = '';
 comments:any;
 p:any;
-  constructor(private userService:UserService,private router:Router) { }
+  constructor(private spinner:NgxSpinnerService,private userService:UserService,private router:Router) { }
 
   ngOnInit(): void {
+    this.spinner.show();
     this.userService.getUser().subscribe(data=>{
       this.user = data;
       this.comments=this.user.comments;
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   getLength(len:any){
     if(len>0)
       return true;
-    else  
+    else
       return false;
   }
 

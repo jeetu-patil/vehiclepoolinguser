@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 import { UserService } from '../services/user.service';
@@ -11,13 +12,14 @@ import { UserService } from '../services/user.service';
 })
 export class AlluserogpublisherComponent implements OnInit {
 
-  constructor(private toastr:ToastrService,private activatedRoute: ActivatedRoute,private publishRideService: PublishrideService,private router:Router,private userService: UserService) { }
+  constructor(private spinner:NgxSpinnerService,private toastr:ToastrService,private activatedRoute: ActivatedRoute,private publishRideService: PublishrideService,private router:Router,private userService: UserService) { }
 
   bookRides:any;
   rideId:any;
   status=false;
 
   ngOnInit(): void {
+    this.spinner.show();
     this.rideId=this.activatedRoute.snapshot.paramMap.get("rideId");
     this.publishRideService.getAllUserOfPublishHistory(this.rideId).subscribe(data =>{
       this.bookRides=data;
@@ -26,12 +28,16 @@ export class AlluserogpublisherComponent implements OnInit {
       }
       console.log(this.bookRides);
     });
+
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   getLength(len:any){
     if(len>0)
       return true;
-    else  
+    else
       return false;
   }
 

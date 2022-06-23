@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { UserService } from '../services/user.service';
 
@@ -10,20 +11,24 @@ import { UserService } from '../services/user.service';
 })
 export class ProfileUserComponent implements OnInit {
 
-  constructor(private toastr:ToastrService,private activatedRoute: ActivatedRoute,private userService: UserService,private router: Router) { }
+  constructor(private spinner : NgxSpinnerService,private toastr:ToastrService,private activatedRoute: ActivatedRoute,private userService: UserService,private router: Router) { }
   loadImage:any;
   user:any;
   FileImage:any;
   imageUrl:any;
 
   ngOnInit(): void {
+    this.spinner.show();
     this.userService.getUser().subscribe(data=>{
       this.user = data;
       console.log(this.user);
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
- 
-  
+
+
   doneMethod(id:any){
     let formData =new FormData();
     formData.append("image",this.FileImage);
@@ -45,15 +50,15 @@ export class ProfileUserComponent implements OnInit {
     const file = event.target.files[0];
     this.user.image = "";
     var reader = new FileReader();
-    
+
          this.FileImage = event.target.files[0];
          var reader = new FileReader();
          reader.onload = (event:any) => {
-           this.imageUrl = event.target.result;   
+           this.imageUrl = event.target.result;
         }
          reader.readAsDataURL(this.FileImage);
-      
-    
+
+
   }
   mobileEdit(id:any){
     this.router.navigate(['verification-otp',id]);
@@ -64,7 +69,7 @@ export class ProfileUserComponent implements OnInit {
   getLength(len:any){
     if(len>0)
       return true;
-    else  
+    else
       return false;
   }
 

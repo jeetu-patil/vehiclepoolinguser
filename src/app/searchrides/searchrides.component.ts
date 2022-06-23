@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PublishrideService } from '../services/publishride.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class SearchridesComponent implements OnInit {
 
-  constructor(private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService,private router:Router) {
+  constructor(private spinner:NgxSpinnerService,private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService,private router:Router) {
    }
 
   from:any;
@@ -21,6 +22,7 @@ export class SearchridesComponent implements OnInit {
   rideType:any;
 
   ngOnInit(): void {
+    this.spinner.show();
     this.from =this.activatedRoute.snapshot.paramMap.get("from");
     this.to =this.activatedRoute.snapshot.paramMap.get("to");
     this.date =this.activatedRoute.snapshot.paramMap.get("date");
@@ -39,6 +41,9 @@ export class SearchridesComponent implements OnInit {
     },err=>{
 
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   viewRide(publishId:any){

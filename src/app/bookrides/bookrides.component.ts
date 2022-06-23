@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
@@ -10,7 +11,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class BookridesComponent implements OnInit {
 
-  constructor(private toastr:ToastrService,private publishRideService: PublishrideService,private router:Router) { }
+  constructor(private spinner:NgxSpinnerService,private toastr:ToastrService,private publishRideService: PublishrideService,private router:Router) { }
 
   bookRides:any;
   ids:any;
@@ -19,6 +20,7 @@ export class BookridesComponent implements OnInit {
 
 
   ngOnInit(): void {
+  this.spinner.show();
     this.publishRideService.getAllBookRides().subscribe(data => {
       this.bookRides = data.temp;
       this.ids=data.result;
@@ -28,12 +30,15 @@ export class BookridesComponent implements OnInit {
       if(!(this.bookRides.length > 0))
         this.status=true;
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   getLength(len:any){
     if(len>0)
       return true;
-    else  
+    else
       return false;
   }
 

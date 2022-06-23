@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
@@ -10,13 +11,14 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class PublishrideComponent implements OnInit {
 
-  constructor(private toastr:ToastrService,private router: Router,private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService) { }
+  constructor(private spinner:NgxSpinnerService,private toastr:ToastrService,private router: Router,private activatedRoute: ActivatedRoute,private publisRideService: PublishrideService) { }
 
   rides:any;
   status=false;
 
 
   ngOnInit(): void {
+    this.spinner.show();
     this.publisRideService.getPublishRides().subscribe(data=>{
       this.rides=data;
       if(!(this.rides.length>0))
@@ -25,6 +27,9 @@ export class PublishrideComponent implements OnInit {
     },err=>{
 
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   navigateToUserRequest(id:any){

@@ -1,6 +1,7 @@
 import { HttpErrorResponse } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { PublishrideService } from '../services/publishride.service';
 
@@ -11,7 +12,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class VehicledetailComponent implements OnInit {
 
-  constructor(private publishrideService: PublishrideService,private toastr:ToastrService,private router:Router) { }
+  constructor(private spinner:NgxSpinnerService,private publishrideService: PublishrideService,private toastr:ToastrService,private router:Router) { }
 
   name:any
   wheeler:any;
@@ -19,6 +20,10 @@ export class VehicledetailComponent implements OnInit {
   image:any;
 
   ngOnInit(): void {
+    this.spinner.show();
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   selectImage(event:any){

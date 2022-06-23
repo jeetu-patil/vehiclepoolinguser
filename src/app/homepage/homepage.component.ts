@@ -36,9 +36,8 @@ export class HomepageComponent implements OnInit {
      });
 
     setTimeout(() => {
-      /** spinner ends after 5 seconds */
       this.spinner.hide();
-    }, 5000);
+    }, 3000);
 
     setTimeout(() => {
       this.placeService.getAllPlace().subscribe(data => {

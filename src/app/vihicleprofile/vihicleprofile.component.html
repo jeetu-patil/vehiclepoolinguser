@@ -1,3 +1,4 @@
+<ngx-spinner bdColor = "rgba(0, 0, 0, 0.8)" size = "medium" color="#ffffff" type = "ball-scale-multiple" [fullScreen] = "true"><p style="color: white" > Loading... </p></ngx-spinner>
   <section style="background-color: #eee">
     <div class="container py-5">
       <div class="row">
@@ -7,7 +8,7 @@
           </nav>
         </div>
       </div>
-  
+
       <div class="row">
         <div class="col-lg-4">
           <div class="card mb-4">
@@ -15,7 +16,7 @@
               <img *ngIf="!getLength(image.length)" [src]="imageUrl"   height="200px" width="200px">
         <img *ngIf="getLength(image.length)"  [src]="image" height="200px" width="200px">
           <h6>Upload a different photo...</h6>
-  
+
           <input type="file" (change)="selectImage($event)"  multiple name="image" class="form-control">
             </div>
           </div>
@@ -50,7 +51,7 @@
                 <label class="form-check-label pl-3" class="m-2" for="inlineRadio1"> 2-Wheeler</label>
                 <input (click)="wheels(4)" checked="{{status1(4)}}" class="form-check-input pl-3" class="m-2" type="radio" name="inlineRadioOptions" id="inlineRadio1">
                 <label class="form-check-label pl-3" class="m-2"  for="inlineRadio2">4-Wheeler</label>
-              
+
                 </div>
               </div>
               <hr />
@@ -63,6 +64,5 @@
       <button (click)="submitDetail()"  style="cursor: pointer;"class="btn mt-3 signup mb-5">Udate Detail</button>
     </div>
   </section>
-  
-  
-  
+
+

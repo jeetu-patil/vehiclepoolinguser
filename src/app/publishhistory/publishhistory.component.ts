@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { NgxSpinnerService } from 'ngx-spinner';
 import { PublishrideService } from '../services/publishride.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { PublishrideService } from '../services/publishride.service';
 })
 export class PublishhistoryComponent implements OnInit {
 
-  constructor(private publishRideService: PublishrideService,private router:Router) { }
+  constructor(private spinner : NgxSpinnerService,private publishRideService: PublishrideService,private router:Router) { }
 
   rides:any=[];
   completeRides:any=[];
@@ -21,6 +22,7 @@ export class PublishhistoryComponent implements OnInit {
   k=0;
   j=0;
   ngOnInit(): void {
+    this.spinner.show();
     this.publishRideService.getAllpublishHistory().subscribe(data =>{
       let r:any=data;
 
@@ -38,11 +40,14 @@ export class PublishhistoryComponent implements OnInit {
         }
       }
     });
+    setTimeout(() => {
+      this.spinner.hide();
+    }, 3000);
   }
 
   navigateToCheckRightBooker(rideId:any){
     this.router.navigate(['confirmbooker',rideId]);
-  } 
+  }
 
   allUser(rideId:any){
     this.router.navigate(['alluserogpublisher',rideId]);
