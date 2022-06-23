@@ -25,7 +25,7 @@ export class SigninComponent implements OnInit {
         this.userService.loginWithGoogle(data.email,data.name).subscribe(data1 => {
           if(data1.status=="Login Failed") {
             this.toastr.info("You are not register with us..");
-            this.router.navigate(["signup"]);
+            this.router.navigate(["sign-up"]);
           }
           else{     
             this.toastr.success("Login Success..");
@@ -38,6 +38,9 @@ export class SigninComponent implements OnInit {
     })
   }
 
+  change(){
+    this.router.navigate(['forgot']);
+  }
   navigateToSignup(){
     this.router.navigate(['sign-up']);
   }

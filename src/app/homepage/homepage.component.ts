@@ -32,7 +32,7 @@ export class HomepageComponent implements OnInit {
       this.publishRide=res;
       console.log(environment.apiURL);
      },err =>{
-      this.toastr.warning("Something went wrong...");
+      // this.toastr.warning("Something went wrong...");
      });
 
     setTimeout(() => {

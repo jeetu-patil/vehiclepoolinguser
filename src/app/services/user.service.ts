@@ -8,10 +8,14 @@ import { environment } from '../../environments/environment.prod';
 })
 export class UserService {
   apiUrl = environment.apiURL;
+
+  url="http://localhost:3000/"
+
   constructor(private http:HttpClient) { }
 
   signupUser(user: User):Observable<any> {
-    return this.http.post(this.apiUrl+"user/signup",user);
+    // return this.http.post(this.apiUrl+"user/signup",user);
+    return this.http.post("http://localhost:3000/user/signup",user);
   }
 
   checkEmai():Observable<any>{
@@ -31,7 +35,9 @@ export class UserService {
   }
 
   loginWithGoogle(email:any,name:any):Observable<any>{
-    return this.http.post(this.apiUrl+"user/loginwithgoogle",{email:email,name:name});
+    console.log("loginWithGoogle")
+    // return this.http.post(this.apiUrl+"user/loginwithgoogle",{email:email,name:name});
+    return this.http.post("http://localhost:3000/user/loginwithgoogle",{email:email,name:name});
   }
 
   getUser():Observable<any>{
@@ -51,5 +57,9 @@ export class UserService {
   }
   editNMI(formdata:FormData):Observable<any>{
      return this.http.post(this.apiUrl+"user/edit-profile",formdata)
+  }
+
+  forgot(password:any,userId:any):Observable<any>{
+    return this.http.post(this.apiUrl+"user/forgot",{password:password,userId:userId});
   }
 }

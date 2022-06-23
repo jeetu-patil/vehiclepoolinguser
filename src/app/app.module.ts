@@ -45,6 +45,7 @@ import { CashingmemoryService } from './services/cashingmemory.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { NgxSpinnerModule } from 'ngx-spinner';
 import { NoRidesFoundComponent } from './no-rides-found/no-rides-found.component';
+import { ForgotComponent } from './forgot/forgot.component';
 
 const socialProvider = {
   provide: 'SocialAuthServiceConfig',
@@ -53,8 +54,8 @@ const socialProvider = {
       {
         id: GoogleLoginProvider.PROVIDER_ID,
         provider: new GoogleLoginProvider(
-          // '903687778738-tv34dkt0hqr6mbg1s4bja0g2crfchgbm.apps.googleusercontent.com'
-          '1001369966895-6h7jafhdsqlk1u6asklf0jbulj8c4h8q.apps.googleusercontent.com'
+           '903687778738-tv34dkt0hqr6mbg1s4bja0g2crfchgbm.apps.googleusercontent.com'
+          //'1001369966895-6h7jafhdsqlk1u6asklf0jbulj8c4h8q.apps.googleusercontent.com'
         ),
       },
     ],
@@ -92,6 +93,7 @@ const socialProvider = {
     AlluserogpublisherComponent,
     VihicleprofileComponent,
     ContactUsComponent,
+    ForgotComponent,
     NoRidesFoundComponent,
   ],
   imports: [
